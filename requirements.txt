@@ -1,2 +1,2 @@
-django
-djangorestframework
+django==4.2.3
+djangorestframework==3.14.0
