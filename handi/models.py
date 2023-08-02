@@ -1,6 +1,13 @@
 from django.db import models
+import os
 
-# Create your models here.
+
+# 함수 정의
+def renameImagePath(instance, filename):
+    upload_to = 'profiles'
+    ext = filename.split('.')[-1]
+    filename = '{}.{}'.format(instance.pk, ext)
+    return os.path.join(upload_to, filename)
 
 
 class User(models.Model):
@@ -10,7 +17,7 @@ class User(models.Model):
     game_score = models.IntegerField(default=0)
     phone_number = models.CharField(max_length=15)
     profile_img = models.ImageField(
-        upload_to="profiles/", blank=True, null=True)
+        upload_to=renameImagePath, blank=True, null=True)
 
 
 class MediaEntry(models.Model):

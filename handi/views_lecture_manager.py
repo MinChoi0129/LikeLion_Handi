@@ -1,17 +1,15 @@
-from django.shortcuts import render
 from rest_framework.generics import *
 from .models import LectureManager
 from .serializers import LectureManagerSerializer
 
-# Create your views here.
 
-
+# Create a LectureManager or Get All LectureManagers
 class LectureManagerList(ListCreateAPIView):
     queryset = LectureManager.objects.all()
     serializer_class = LectureManagerSerializer
 
 
-# READ LectureManager(s)
+# READ LectureManager
 class LectureManagerDetail(RetrieveAPIView):
     queryset = LectureManager.objects.all()
     serializer_class = LectureManagerSerializer
