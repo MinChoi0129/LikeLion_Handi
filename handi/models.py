@@ -63,3 +63,6 @@ class LectureManager(models.Model):
         Lecture, related_name="lecture", on_delete=models.CASCADE)
     percentage = models.FloatField(default=0)
     time = models.DateTimeField(auto_now=True, null=True)
+
+    def __str__(self):
+        return self.user

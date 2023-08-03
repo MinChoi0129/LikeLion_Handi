@@ -4,8 +4,10 @@ from django.contrib import admin
 
 from .models import User, Lecture, MediaEntry, LectureManager
 
+class LectureManagerAdmin(admin.ModelAdmin):
+    readonly_fields = ('time',)
 
 admin.site.register(User)
 admin.site.register(Lecture)
-admin.site.register(LectureManager)
+admin.site.register(LectureManager,LectureManagerAdmin)
 admin.site.register(MediaEntry)
