@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxLength = 50;
     const currentLength = text.length;
     const letterNumElement = document.querySelector('.ChangeLetterNum');
-    const textareaElement = document.querySelector('textarea[name="KoreanTranslation"]');
+    const textareaElement = document.querySelector('textarea[name="TranslationContent"]');
   
     if (currentLength > maxLength) {
       letterNumElement.textContent = maxLength;

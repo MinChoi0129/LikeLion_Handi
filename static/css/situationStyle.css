@@ -90,12 +90,14 @@ body {
 
     margin: 0 2rem;
 }
+
 /*수형영상*/
 .StudyWrap .StudyVideo {
     display: flex;
     flex-direction: column;
     align-items: baseline;
 }
+
 .StudyVideo .VideoTitle {
     font-family: 'Pretendard-SemiBold';
     font-size: 1.25rem;
@@ -103,6 +105,7 @@ body {
 
     margin-bottom: .825rem  ;
 }
+
 .StudyVideo .Video {
     width: 33rem;
     height: 22rem;
