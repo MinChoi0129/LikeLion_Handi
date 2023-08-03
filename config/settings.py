@@ -43,6 +43,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'handi.User'
 
 # Application definition
 

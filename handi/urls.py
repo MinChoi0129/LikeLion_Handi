@@ -8,6 +8,10 @@ from .import views_lecture_manager
 
 urlpatterns = [
     path("api/translate/", Translator.as_view()),
+    
+    path("api/login/", Login.as_view()),
+    path("api/logout/", Logout.as_view()),
+    path("api/signup/", Signup.as_view()),
 
     path("api/users/", UserList.as_view()),
     path("api/user/<pk>/", UserDetail.as_view()),

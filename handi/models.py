@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 import os
 
 
@@ -10,9 +11,9 @@ def renameImagePath(instance, filename):
     return os.path.join(upload_to, filename)
 
 
-class User(models.Model):
-    id = models.CharField(max_length=50, primary_key=True)
-    pw = models.CharField(max_length=250)
+class User(AbstractUser):
+    # id = models.CharField(max_length=50, primary_key=True)
+    # pw = models.CharField(max_length=250)
     name = models.CharField(max_length=10)
     game_score = models.IntegerField(default=0)
     phone_number = models.CharField(max_length=15)
