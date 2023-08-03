@@ -41,6 +41,7 @@ class MediaEntry(models.Model):
 
 class Lecture(models.Model):
     id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30, blank=True, null=True)
     main_category = models.CharField(max_length=15)
     sub_category = models.CharField(max_length=15)
     theme_category = models.CharField(max_length=15, blank=True, null=True)
@@ -51,6 +52,9 @@ class Lecture(models.Model):
         upload_to="lecture/", blank=True, null=True)
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class LectureManager(models.Model):
     user = models.ForeignKey(User, related_name="user",
@@ -58,3 +62,4 @@ class LectureManager(models.Model):
     lecture = models.ForeignKey(
         Lecture, related_name="lecture", on_delete=models.CASCADE)
     percentage = models.FloatField(default=0)
+    time = models.DateTimeField(auto_now=True, null=True)

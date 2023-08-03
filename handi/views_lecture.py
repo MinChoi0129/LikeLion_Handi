@@ -13,15 +13,3 @@ class LectureList(ListCreateAPIView):
 class LectureDetail(RetrieveAPIView):
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer
-
-
-# UPDATE Lecture
-class LectureUpdate(UpdateAPIView):
-    queryset = Lecture.objects.all()
-    serializer_class = LectureSerializer
-
-
-# DELETE Lecture
-class LectureDelete(DestroyAPIView):
-    queryset = Lecture.objects.all()
-    serializer_class = LectureSerializer
