@@ -79,13 +79,21 @@ body {
     flex-direction: column;
     justify-content: space-around;
     margin: 0 2rem;
-    margin-left: 4.5rem; 
+    margin-left: 3.5rem; 
+    font-family: 'Pretendard-SemiBold';
 }
 
-.ChapterExplain.ChapterTitle{
+.ChapterExplain .ChapterTitle {
     display: flex;
     flex-direction: column;
     /* align-items: baseline; */
+    font-size: 2.7rem;
+}
+
+.ChapterContent {
+    margin-top: -25px; 
+    color: #858585; 
+    font-family: 'Pretendard-SemiBold';
 }
 
 
@@ -98,6 +106,7 @@ body {
     justify-content: space-around;
     position: relative;
     margin: 0 2rem;
+    margin-top:50px;
 }
 
 
@@ -117,9 +126,9 @@ body {
 
 .KoreanInput {
     width: 33rem;
-    height: 22rem;
+    height: 30rem;
 
-    border: 2px solid #FFBD6C;
+    border: 3px solid #e1e1e1;
     border-radius: 1rem;
     position: relative;
 }
@@ -129,51 +138,52 @@ body {
     content: "";
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 15%;
     width: 100%; 
-    border-bottom: 1px solid #FFBD6C;
+    border-bottom: 3px solid #e1e1e1;
     transform: translateX(-50%) translateY(-50%); 
 }
 
 .KoreanInput .KoreanFlag {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%; 
-    background-color: #FF9A23; 
+    /* background-image: url('..\static\image\translation\koreanflag.png'); */
+    background-size: cover; 
+    border: 1px solid black;
     position: absolute;
-    left: 40%; 
-    top: 10%; 
+    left: 44%; 
+    top: 7%; 
     transform: translate(-50%, -50%); 
 }
 
 .Korean {
-    font-family: 'Pretendard-SemiBold';
+    /* font-family: 'Pretendard-SemiBold'; */
     font-size: 1rem;
-    color: #FF9A23;
-
+    color: black;
     position: absolute;
-    left: 50%; 
-    top: 10%; 
+    left: 54%; 
+    top: 7%; 
     transform: translate(-50%, -50%); 
 }
 
 
 .KoreanFooter { /*글자 수 세주는거랑 번역하기 버튼*/
     position: absolute;
-    bottom: 0; 
+    bottom: 20px; 
     left: 50%; 
     transform: translateX(-50%);
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
     width: 100%; 
-    padding: 0 1rem; 
+    padding: 0 2rem; 
 }
 
 .KoreanLetterNum {
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
-    color: #FF9A23;
+    color: #858585;
 }
 
 .TranslationButton {
@@ -181,8 +191,8 @@ body {
     color: white;
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: none;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e1e1e1;
     border-radius: 0.5rem;
     cursor: pointer;
 }
@@ -199,6 +209,10 @@ textarea[name="TranslationContent"] {
     position: absolute;
     top:60px;
     font-family: 'Pretendard';
+}
+
+textarea[name="TranslationContent"]::placeholder {
+    color: #858585;
 }
 
 
@@ -226,9 +240,9 @@ textarea[name="TranslationContent"] {
 }
 .SignOutput {
     width: 33rem;
-    height: 22rem;
+    height: 30rem;
 
-    border: 2px solid #FFBD6C;
+    border: 3px solid #e1e1e1;
     border-radius: .75rem;
     box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
 
@@ -243,42 +257,43 @@ textarea[name="TranslationContent"] {
     content: "";
     position: absolute; 
     left: 50%;
-    top: 20%;
+    top: 15%;
     width: 100%;
-    border-bottom: 1px solid #FFBD6C;
+    border-bottom: 3px solid #e1e1e1;
     transform: translateX(-50%) translateY(-50%);
 }
 
 .SignOutput::before {
     content: "";
     position: absolute;
-    top: 20%; 
+    top: 15%; 
     left: 0;
     width: 100%;
-    height: 80%; 
+    height: 85%; 
     background-color: #FFEBD3;
     z-index: -1; 
 }
 
 .SignOutput .SignFlag {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%; 
-    background-color: #FF9A23; 
+    background-color: white; 
+    border: 1px solid black;
     position: absolute;
-    left: 40%; 
-    top: 10%; 
+    left: 45%; 
+    top: 7%; 
     transform: translate(-50%, -50%); 
 }
 
 .Sign {
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
-    color: #FF9A23;
+    color: black;
 
     position: absolute;
-    left: 50%; 
-    top: 10%; 
+    left: 54%; 
+    top: 7%; 
     transform: translate(-50%, -50%); 
 }
 
@@ -290,14 +305,14 @@ textarea[name="TranslationContent"] {
 
   .GIfButton {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 20px;
+    right: 30px;
     background-color: #FF9A23;
     color: white;
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: none;
+    padding: 0.9rem 1rem;
+    border: 1px solid #e1e1e1;
     border-radius: 0.5rem;
     cursor: pointer;
 }
