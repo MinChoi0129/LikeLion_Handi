@@ -50,7 +50,7 @@ class Lecture(models.Model):
     length = models.IntegerField()
     media_entry = models.ManyToManyField(MediaEntry)
     lecture_img = models.ImageField(
-        upload_to="lecture/", blank=True, null=True)
+        upload_to="lectures/", blank=True, null=True)
     description = models.TextField()
 
     def __str__(self):

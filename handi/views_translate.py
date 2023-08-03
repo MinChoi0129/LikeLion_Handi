@@ -46,7 +46,7 @@ class Translator(RetrieveAPIView):
         random_file_name = str(random.randint(1000, 9999))
 
         path_out = \
-            BASE_PATH + "\\static\\video\\translate\\" \
+            BASE_PATH + "\\media\\translate\\" \
             + random_file_name + '.mp4'
 
         convertImagesIntoMP4(paths, path_out)
