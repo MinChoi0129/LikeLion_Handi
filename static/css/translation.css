@@ -299,8 +299,8 @@ textarea[name="TranslationContent"]::placeholder {
 
 .SignGif {
     position: absolute; 
-    top: 150px; 
-    left: 100px; 
+    top: 100px; 
+    left: 35px; 
   }
 
   .GIfBtn {
