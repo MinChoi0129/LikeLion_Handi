@@ -186,7 +186,7 @@ body {
     color: #858585;
 }
 
-.TranslationButton {
+.TranslationBtn {
     background-color: #FF9A23;
     color: white;
     font-family: 'Pretendard-SemiBold';
@@ -303,7 +303,7 @@ textarea[name="TranslationContent"]::placeholder {
     left: 100px; 
   }
 
-  .GIfButton {
+  .GIfBtn {
     position: absolute;
     bottom: 20px;
     right: 30px;
