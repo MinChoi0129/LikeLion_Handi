@@ -364,7 +364,7 @@ body {
       top: 0;
       width: 12.4rem;
     }
-    .LevelNum {
+    /* .LevelNum {
       color: #000000;
       font-family: Inter, 'Source Sans Pro';
       font-size: 3.5rem;
@@ -376,7 +376,7 @@ body {
       top: 0;
       white-space: nowrap;
       width: 6.4rem;
-    }
+    } */
   }
 
   /* 시간바 */
