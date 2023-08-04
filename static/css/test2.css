@@ -51,7 +51,7 @@ html {
     font-size : 16px;
 }
 section {
-		width: 70rem;
+		width: 35rem;
 		margin: 0 auto;
 }
 
@@ -59,34 +59,29 @@ section {
     font-size: 30px;
     font-weight: bolder;
     text-align: center;
-    margin: 30px;
+    margin: 80px 30px 30px 30px;
 }
 
 .id, .password {
-    border: 1px solid #858585;
+    border: 1px solid #E1E1E1;
     color: #858585;
-    padding: 10px 10px 10px 15px;
-    margin: 10px;
+    padding: 11px 11px 11px 15px;
+    margin: 5px;
     border-radius: 7px;
-    font-size: 13px;
+    font-weight: lighter;
+    font-size: 14px;
+    width: 540px;
 }
-
-
 
 .login {
     display: flex;
-}
-
-.LoginBox {
-    border: 1px solid black;
-    width: 17px;
-    height: 17px;
-    margin-left: 10px;
+    color: #858585;
+    margin-left: 5px;
 }
 
 .LoginText {
-    font-size: 13px;
-    margin-left: 5px;
+    font-size: 11px;
+    margin-top: 2.5px;
 }
 
 .LoginBtn {
@@ -98,13 +93,14 @@ section {
     margin: 20px 10px 10px 10px;
     font-weight: bolder;
     text-align: center;
+    width: 540px;
 }
 
 .text {
+    margin-left: 190px;
     display: flex;
-    text-align: center;
     color: #878787;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .join {
@@ -116,11 +112,14 @@ section {
 }
 
 .length {
-    border: 1px solid #878787;
+    border: 1px solid #cecece;
+    width: 1px;
+    height: 17px;
 }
 
 .line {
     display: flex;
+    margin-top: 10px;
 }
 
 .line1, .line2 {
@@ -137,29 +136,53 @@ section {
 .google {
     border: 1px solid #858585;
     color: #858585;
-    padding: 10px 10px 10px 15px;
-    margin: 15px;
+    padding: 9px;
+    margin: 7px;
     border-radius: 7px;
     font-size: 13px;
-    text-align: center;
+    width: 540px;
+    background-color: white;
 }
 
 .naver {
     border: 1px solid #03C75A;
     color: #858585;
-    padding: 10px 10px 10px 15px;
-    margin: 15px;
+    padding: 10px;
+    margin: 7px;
     border-radius: 7px;
     font-size: 13px;
-    text-align: center;
+    width: 540px;
+    background-color: white;
 }
 
 .kakao {
     border: 1px solid #FFD231;
     color: #858585;
-    padding: 10px 10px 10px 15px;
-    margin: 15px;
+    padding: 10px;
+    margin: 7px;
     border-radius: 7px;
     font-size: 13px;
-    text-align: center;
+    width: 540px;
+    background-color: white;
+}
+
+.GoogleLogo {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 355px;
+}
+
+.NaverLogo {
+    width: 16px;
+    height: 17px;
+    position: absolute;
+    left: 355px;
+}
+
+.KakaoLogo {
+    width: 19px;
+    height: 18px;
+    position: absolute;
+    left: 354px;
 }
