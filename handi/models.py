@@ -18,7 +18,10 @@ class User(AbstractUser):
 
 
 class MediaEntry(models.Model):
-    media_entry = models.JSONField()
+    name = models.CharField(max_length=30)
+    video_url = models.CharField(max_length=30)
+    image_url = models.CharField(max_length=30)
+    data = models.JSONField(default=dict, blank=True)
 
 
 class Lecture(models.Model):

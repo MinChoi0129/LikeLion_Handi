@@ -28,6 +28,11 @@ class MediaEntrySerializer(serializers.ModelSerializer):
         model = MediaEntry
         fields = "__all__"
 
+    def create(self, validated_data):
+        mediaentry = super(MediaEntrySerializer, self).create(validated_data)
+        mediaentry.save()
+        return mediaentry
+
 
 class LectureManagerSerializer(serializers.ModelSerializer):
     class Meta:
