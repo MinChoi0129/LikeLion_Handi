@@ -1,5 +1,5 @@
-django==4.2.3
-djangorestframework==3.14.0
+django
+djangorestframework
 pillow
 jamo
 opencv-python

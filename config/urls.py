@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from handi import views_page
 
 urlpatterns = [
+    path("", views_page.main),
+    path("login/", views_page.login),
+    path("signup/", views_page.signup),
     path("admin/", admin.site.urls),
     path("", include("handi.urls")),
 ]
