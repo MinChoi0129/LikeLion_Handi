@@ -151,6 +151,11 @@ body {
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
     color: #fff;
+
+    animation: BtnDown .3s ease-in-out 1 normal forwards;
+}
+.FirstSection .TranslateBtn:hover {
+    animation: BtnUp .3s ease-in-out 1 normal forwards;
 }
 .FirstSection .StudyBtnBox {
     width: 150px;
@@ -159,6 +164,10 @@ body {
     background: linear-gradient(to right, #FFEA8D, #FFBD6D);
     padding: 2px;
     border-radius: 12px;
+    animation: BtnDown .2s ease-in-out 1 normal forwards;
+}
+.FirstSection .StudyBtnBox:hover {
+    animation: BtnUp .2s ease-in-out 1 normal forwards;
 }
 .FirstSection .StudyBtn {
     width: 146px;
@@ -171,6 +180,30 @@ body {
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
     color: #FF9A23;
+}
+@keyframes BtnUp {
+    0%{
+        position: relative;
+        top:0px;
+        left:0px;
+    }
+    100%{
+        position: relative;
+        top: -4px;
+        left: -4px;
+    }
+}
+@keyframes BtnDown {
+    0%{
+        position: relative;
+        top:-4px;
+        left:-4px;
+    }
+    100%{
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
 }
 .fa-arrow-down {
     font-size: 25px;
@@ -193,6 +226,10 @@ body {
 .SecondSection {
     background-color: #FFF;
     height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    position: relative;
 }
 .SecondSection .TextWrap{
     width: 75rem;
@@ -223,10 +260,17 @@ body {
     text-align: end;
 
     width: fit-content;
-    margin: 0 auto;
+
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 8s linear infinite;
+}
+.SecondSection .ImgWrap:hover {
+    animation-play-state: paused;
 }
 .SecondSection .ImgWrap .ImgBox {
-    width: 250px;
+    width: 240px;
     height: 340px;
 
     position: relative;
@@ -241,12 +285,12 @@ body {
     transform: scale(1.02);
 }
 
-.SecondSection .ImgBox:nth-child(2), .SecondSection .ImgBox:nth-child(4){
+.ImgBox:nth-child(2), .ImgBox:nth-child(4), .ImgBox:nth-child(6),.ImgBox:nth-child(8), .ImgBox:nth-child(10), .ImgBox:nth-child(12){
     position: relative;
     top: 2rem;
 }
 .SecondSection .ImgBox img {
-    width: 250px;
+    width: 240px;
     height: 340px;
     
     border-radius: 25px;
@@ -258,4 +302,9 @@ body {
     font-family: 'Pretendard-Regular';
     font-size: 0.9rem;
     color: #fff;
+}
+/* 슬라이더 */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-43.4%); }
 }

@@ -187,26 +187,48 @@ body {
 }
 
 /*연습하기 버튼*/
-section .PracticeBtnBox {
+section .PracticeBtn {
     width: 124px;
     height: 44px;
+    position: relative;
+
     display: inline-block;
     background: linear-gradient(to right, #FFEA8D, #FFBD6D);
-    padding: 2px;
-    border-radius: 12px;
 
+    border: none;
+    border-radius: 10px;
+
+    margin-top: 1rem;
     float: right;
-    margin-top: 2rem;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.05rem;
+    color: #fff;
 }
-section .PracticeBtn {
-    width: 120.5px;
-    height: 40.5px;
-    background: #fff;
-    /* padding: 10px; */
+section .PracticeBtn:after {
+    opacity: 0;
+    content: "연습하기";
+    position: absolute;
+    left:0;right: 0;top:0;bottom:0;
+    width: 124px;
+    height: 44px;
+    background: linear-gradient(to right, #ffeea0, #ffc986);
+
+    transition: all .2s ease-in-out;
+
     border: none;
     border-radius: 10px;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
-    color: #FFBD6C;
+    font-size: 1.05rem;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+}
+.PracticeBtn:hover::after {
+    opacity: 1;
 }
