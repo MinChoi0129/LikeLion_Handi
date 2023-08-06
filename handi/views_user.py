@@ -44,7 +44,7 @@ class Signup(ListCreateAPIView):
     serializer_class = UserSerializer
 
 
-# CREATE a User or Get All Users
+# Get All Users
 class UserList(ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

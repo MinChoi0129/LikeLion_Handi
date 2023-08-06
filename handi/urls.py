@@ -17,11 +17,9 @@ urlpatterns = [
     path("api/users/rank/<pk>/", UserRank.as_view()),
     path("api/lectures/", LectureList.as_view()),
     path("api/lecture/<pk>/", LectureDetail.as_view()),
-    path("api/MakeMediaData/", MakeMediaData.as_view()),
+    path("api/mediaentries/", MediaEntryList.as_view()),
     path("api/mediaentry/<pk>/", MediaEntryDetail.as_view()),
-    path("api/mediaentrys/", MediaEntryList.as_view()),
     path("api/lecturemanager/<user_id>/", LectureManagerList.as_view()),
-    path("api/lecturemanager/<user_id>/<lecture_id>/",
-         LectureManagerDetail.as_view()),
+    path("api/lecturemanager/<user_id>/<lecture_id>/", LectureManagerDetail.as_view()),
     path("api/lecturemanager-update/<pk>/", LectureManagerUpdate.as_view()),
 ]
