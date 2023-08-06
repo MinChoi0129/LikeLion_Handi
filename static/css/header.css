@@ -1,81 +1,88 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 
 /*헤더*/
 header {
-    position: fixed;
-    left:0; top:0;
-    background-color: transparent;
-    /* backdrop-filter: blur(10px); */
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  /* backdrop-filter: blur(10px); */
 
-    width: 100%;
-    height: 60px;
+  width: 100%;
+  height: 60px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    z-index: 99999;
+  z-index: 99999;
 }
 header nav {
-    padding-right: 10rem;
+  padding-right: 10rem;
 }
 header li {
-    font-family: 'Pretendard-Medium';
-    font-size: 1.025rem;
+  font-family: "Pretendard-Medium";
+  font-size: 1.025rem;
 
-    margin: 0 2rem;
+  margin: 0 2rem;
 
-    transition: all .2s ease-in-out;
-    cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 header li:hover {
-    color: #FF9A23;
+  color: #ff9a23;
 }
 header .SignUpBtn {
-    font-family: 'Pretendard-Regular';
-    font-size: 1rem;
-    letter-spacing :0.5px;
+  font-family: "Pretendard-Regular";
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 
-    width: 110px;
-    height: 40px;
+  width: 110px;
+  height: 40px;
 
-    background-color: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 
-    border:none;
-    border-radius: 15px;
-    box-shadow: 0 0 8px 0px rgba(255, 154, 35,0.25);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 8px 0px rgba(255, 154, 35, 0.25);
 
-    margin-right: 2.5rem;
+  margin-right: 2.5rem;
 
-    color:#FF9A23;
+  color: #ff9a23;
 }

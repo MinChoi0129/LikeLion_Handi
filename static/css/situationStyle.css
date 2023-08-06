@@ -1,192 +1,201 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main, div {
-    margin: 0;
-    padding: 0;
+body,
+main,
+div {
+  margin: 0;
+  padding: 0;
 }
-ol, ul,li {
-	list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section {
-    width: 75rem;
-    margin: auto;
+  width: 75rem;
+  margin: auto;
 
-    margin-top: 5.5rem;
+  margin-top: 5.5rem;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
-
 
 /*챕터제목*/
 .ChapterTitle {
-    font-family: 'Pretendard-Bold';
-    font-size: 2rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2rem;
 
-    width: fit-content;
-    margin: 1.5rem auto;
+  width: fit-content;
+  margin: 1.5rem auto;
 }
 
 /*섹션*/
 .StudyWrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 
-    margin: 0 2rem;
+  margin: 0 2rem;
 }
 
 /*수형영상*/
 .StudyWrap .StudyVideo {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 
 .StudyVideo .VideoTitle {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.25rem;
+  color: #ff9a23;
 
-    margin-bottom: .825rem  ;
+  margin-bottom: 0.825rem;
 }
 
 .StudyVideo .Video {
-    width: 33rem;
-    height: 22rem;
+  width: 33rem;
+  height: 22rem;
 
-    border: 2px solid #FFBD6C;
-    border-radius: 1rem;
+  border: 2px solid #ffbd6c;
+  border-radius: 1rem;
 }
 /*일상대화*/
 .StudyWrap .StudyInfoWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
 }
 .StudyInfoWrap .StudySentence {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 .StudySentence .SentenceTitle {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.25rem;
+  color: #ff9a23;
 
-    margin-bottom: .825rem;
+  margin-bottom: 0.825rem;
 }
 .StudySentence .Sentence {
-    width: 28rem;
-    height: 3.5rem;
+  width: 28rem;
+  height: 3.5rem;
 
-    border: 2px solid #FFBD6C;
-    border-radius: .75rem;
-    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+  border: 2px solid #ffbd6c;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 5px 0px rgba(255, 154, 35, 0.25);
 
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
 }
 .Sentence p {
-    margin: 1.25rem;
-    padding: 0;
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+  margin: 1.25rem;
+  padding: 0;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.5rem;
 }
 /*수형설명*/
 .StudyInfoWrap .StudyInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 .StudyInfo .InfoTitle {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.25rem;
+  color: #ff9a23;
 
-    margin-bottom: .825rem;
+  margin-bottom: 0.825rem;
 }
 .StudyInfo .InfoBox {
-    width: 28rem;
-    height: fit-content;
+  width: 28rem;
+  height: fit-content;
 
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 .InfoBox .InfoWord {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.25rem;
 
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 .InfoBox .InfoMeaning {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
-    color: #505050;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1rem;
+  color: #505050;
 
-    margin:.3rem 0;
-    padding-left: .5rem;
-    margin-bottom: 1rem;
-    text-align: start;
+  margin: 0.3rem 0;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: start;
 }
 
 /*연습하기 버튼*/
