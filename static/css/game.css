@@ -420,10 +420,10 @@ body {
       border-radius: 5.4rem;
       box-sizing: border-box;
       height: 2rem;
-      left: 9rem;
+      left: 6.5rem;
       position: absolute;
       top: 5.5rem;
-      width: 73rem;
+      width: 75rem;
       border: 2px solid #ffbd6c;
     }
     .TimeBar {
@@ -501,16 +501,18 @@ body {
   display: none;
 }
 
+
 .modalContent{
   background-color:white;
-  padding:50px 100px;
+  padding:10px 100px;
   text-align: center;
   position: relative;
-  border-radius: 5px;
+  border-radius: 20px;
   /* width: 60%; */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
 
+  
  
   /* background-color:red;
   
@@ -523,5 +525,18 @@ body {
 }
 
 .Inform{
-  margin:0;
+  margin:20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.YesBtn,
+.NoBtn {
+  font-size: 20px; /* 버튼 폰트 크기 조절 */
+  font-weight: 600; /* 버튼 폰트 굵기 조절 */
+  padding: 10px 20px; /* 버튼 내부 여백 조절 */
+  margin: 59px; /* 버튼 간격 조절 */
+  cursor: pointer;
+  border: none;
+  background-color: white;
 }
