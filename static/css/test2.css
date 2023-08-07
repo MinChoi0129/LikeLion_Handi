@@ -1,175 +1,188 @@
 @font-face {
-  font-weight: 300;
-  font-family: "Pretendard-Light";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
-    format("woff");
+    font-weight: 300;
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
 }
 @font-face {
-  font-weight: 400;
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
 }
 @font-face {
-  font-weight: 500;
-  font-family: "Pretendard-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
-    format("woff");
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
 }
 @font-face {
-  font-weight: 600;
-  font-family: "Pretendard-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
-    format("woff");
+    font-weight: 600;
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
 }
 @font-face {
-  font-weight: 700;
-  font-family: "Pretendard-Bold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
-    format("woff");
+    font-weight: 700;
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
 }
 @font-face {
-  font-weight: 800;
-  font-family: "Pretendard-ExtraBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
-    format("woff");
+    font-weight: 800;
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
 }
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-body,
-main,
-div {
-  margin: 0;
-  padding: 0;
+body, main, div {
+    margin: 0;
+    padding: 0;
 }
-ol,
-ul,
-li {
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
+ol, ul, li {
+		list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin:0;
 }
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 html {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
+    margin:0;
+    padding:0;
+    font-size : 16px;
 }
 section {
-  width: 70rem;
-  margin: 0 auto;
+		width: 35rem;
+		margin: 0 auto;
 }
 
 .logo {
-  font-size: 30px;
-  font-weight: bolder;
-  text-align: center;
-  margin: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 80px 30px 30px 30px;
 }
 
-.id,
-.password {
-  border: 1px solid #858585;
-  color: #858585;
-  padding: 10px 10px 10px 15px;
-  margin: 10px;
-  border-radius: 7px;
-  font-size: 13px;
+.id, .password {
+    border: 1px solid #E1E1E1;
+    color: #858585;
+    padding: 11px 11px 11px 15px;
+    margin: 5px;
+    border-radius: 7px;
+    font-weight: lighter;
+    font-size: 14px;
+    width: 540px;
 }
 
 .login {
-  display: flex;
-}
-
-.LoginBox {
-  border: 1px solid black;
-  width: 17px;
-  height: 17px;
-  margin-left: 10px;
+    display: flex;
+    color: #858585;
+    margin-left: 5px;
 }
 
 .LoginText {
-  font-size: 13px;
-  margin-left: 5px;
+    font-size: 11px;
+    margin-top: 2.5px;
 }
 
 .LoginBtn {
-  border: 1px solid #ff9a23;
-  background-color: #ff9a23;
-  color: white;
-  border-radius: 7px;
-  padding: 10px;
-  margin: 20px 10px 10px 10px;
-  font-weight: bolder;
-  text-align: center;
+    border: 1px solid #FF9A23;
+    background-color: #FF9A23;
+    color: white;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 20px 10px 10px 10px;
+    font-weight: bolder;
+    text-align: center;
+    width: 540px;
 }
 
 .text {
-  display: flex;
-  text-align: center;
-  color: #878787;
-  font-size: 13px;
+    margin-left: 190px;
+    display: flex;
+    color: #878787;
+    font-size: 12px;
 }
 
 .join {
-  margin-right: 9px;
+    margin-right: 9px;
 }
 
 .search {
-  margin-left: 8px;
+    margin-left: 8px;
 }
 
 .length {
-  border: 1px solid #878787;
+    border: 1px solid #cecece;
+    width: 1px;
+    height: 17px;
 }
 
 .line {
-  display: flex;
+    display: flex;
+    margin-top: 10px;
 }
 
-.line1,
-.line2 {
-  border: 1px solid #878787;
-  height: 1px;
-  width: 700px;
-  margin: 12px;
+.line1, .line2 {
+    border: 1px solid #878787;
+    height: 1px;
+    width: 700px;
+    margin: 12px;
 }
 
 .or {
-  color: #878787;
+    color: #878787;
 }
 
 .google {
-  border: 1px solid #858585;
-  color: #858585;
-  padding: 10px 10px 10px 15px;
-  margin: 15px;
-  border-radius: 7px;
-  font-size: 13px;
-  text-align: center;
+    border: 1px solid #858585;
+    color: #858585;
+    padding: 9px;
+    margin: 7px;
+    border-radius: 7px;
+    font-size: 13px;
+    width: 540px;
+    background-color: white;
 }
 
 .naver {
-  border: 1px solid #03c75a;
-  color: #858585;
-  padding: 10px 10px 10px 15px;
-  margin: 15px;
-  border-radius: 7px;
-  font-size: 13px;
-  text-align: center;
+    border: 1px solid #03C75A;
+    color: #858585;
+    padding: 10px;
+    margin: 7px;
+    border-radius: 7px;
+    font-size: 13px;
+    width: 540px;
+    background-color: white;
 }
 
 .kakao {
-  border: 1px solid #ffd231;
-  color: #858585;
-  padding: 10px 10px 10px 15px;
-  margin: 15px;
-  border-radius: 7px;
-  font-size: 13px;
-  text-align: center;
+    border: 1px solid #FFD231;
+    color: #858585;
+    padding: 10px;
+    margin: 7px;
+    border-radius: 7px;
+    font-size: 13px;
+    width: 540px;
+    background-color: white;
+}
+
+.GoogleLogo {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 355px;
+}
+
+.NaverLogo {
+    width: 16px;
+    height: 17px;
+    position: absolute;
+    left: 355px;
+}
+
+.KakaoLogo {
+    width: 19px;
+    height: 18px;
+    position: absolute;
+    left: 354px;
 }

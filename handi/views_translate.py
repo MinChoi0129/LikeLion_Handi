@@ -1,5 +1,4 @@
 import os
-import cv2
 import random
 from jamo import h2j, j2hcj
 from rest_framework.generics import *
@@ -58,8 +57,6 @@ all_jamo_list = [
     "ㅟ",
     "ㅢ",
 ]
-BASE_PATH = os.path.dirname(os.path.abspath(__file__))
-BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
 
 
 def getSeparatedJaMoList(raw_string: str):
@@ -67,6 +64,8 @@ def getSeparatedJaMoList(raw_string: str):
 
 
 def getPathsFromFileNames(jamos: list):
+    BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+    BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
     return [
         os.path.join(
             BASE_PATH,
@@ -82,6 +81,8 @@ def getPathsFromFileNames(jamos: list):
 
 
 def convertImagesIntoVideo(paths, pathOut, fps=2):
+    import cv2
+
     frame_array = []
     for _, path in enumerate(paths):
         img = cv2.imread(path)
@@ -97,6 +98,9 @@ def convertImagesIntoVideo(paths, pathOut, fps=2):
 
 class Translator(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
+        BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+        BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
+        print(BASE_PATH)
         pure_jamo_list = getSeparatedJaMoList(request.query_params["sentence"])
         image_file_paths = getPathsFromFileNames(pure_jamo_list)
 
@@ -107,4 +111,4 @@ class Translator(RetrieveAPIView):
 
         convertImagesIntoVideo(image_file_paths, video_path_out)
 
-        return JsonResponse({"video_url": "CDN 경로 제공"})
+        return JsonResponse({"video_url": video_path_out})

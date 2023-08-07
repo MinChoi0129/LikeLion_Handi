@@ -19,8 +19,9 @@ class User(AbstractUser):
 
 class MediaEntry(models.Model):
     name = models.CharField(max_length=30)
-    video_url = models.CharField(max_length=30)
-    image_url = models.CharField(max_length=30)
+    entry_type = models.CharField(max_length=10, blank=True, null=True)
+    video_url = models.CharField(max_length=100)
+    image_url = models.CharField(max_length=100)
     data = models.JSONField(default=dict, blank=True)
 
 

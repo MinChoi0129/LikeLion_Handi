@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/LikeLion_Handi/static/css/text3.css" />
-    <script
-      src="https://kit.fontawesome.com/32afc995e9.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <section>
-        <div class="logo">Handi</div>
-        <div class="IdBox">
-          <div class="id">
-            아이디를 입력하시오.
-            <div class="check">중복확인</div>
-          </div>
-        </div>
-        <div class="PasswordBox1">
-          <div class="password">
-            비밀번호를 입력하시오. <i class="fas fa-lock"></i>
-          </div>
-        </div>
-        <div class="PasswordBox2">
-          <div class="password2">
-            비밀번호를 재확인하시오. <i class="fas fa-lock"></i>
-          </div>
-        </div>
-        <div class="name">이름을 입력하시오.</div>
-        <div class="PhoneBox">
-          <div class="PhoneNumber">
-            전화번호를 입력하시오.
-            <div class="msg">인증하기</div>
-          </div>
-        </div>
-        <div class="NumberBox">
-          <div class="number">
-            인증 번호를 입력하시오.
-            <div class="NumberCheck">확인</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="join">회원가입</div>
-      </section>
-    </main>
-    <footer></footer>
-  </body>
+    <link rel="stylesheet" href="/LikeLion_Handi/static/css/text3.css">
+    <link rel="stylesheet" href="/LikeLion_Handi/static/css/header.css">
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+<body>
+    <header>
+        <div class="Logo"></div>
+		<nav>
+			<ol>
+				<li>홈</li>
+				<li>번역하기</li>
+				<li>학습하기</li>
+				<li>게임하기</li>
+				<li>Contact</li>
+			</ol>
+		</nav>
+		<button class="SignUpBtn">SIGN UP</button>
+	</header>
+	<main>
+		<section>
+            <div class="logo">Handi</div>
+            <div class="IdBox">
+                <input class="id" value="아이디를 입력하시오." id="id" name="id" autocomplete="off">
+                <button class="check" id="check" name="check" autocomplete="off">중복확인</div>
+            </div>
+            <div class="PasswordBox1">
+                <input type="text" class="password" value="비밀번호를 입력하시오." id="password" name="password" autocomplete="off">
+            </div>
+            <div class="PasswordBox2">
+                <input type="text" class="password2" value="비밀번호를 재확인하시오." id="password2" name="password2" autocomplete="off">
+            </div>
+            <input type="text" class="name" value="이름을 입력하시오." id="name" name="name" autocomplete="off">
+            <div class="PhoneBox">
+                <input type="tel" class="PhoneNumber" value="전화번호를 입력하시오." id="phoneNumber" name="phoneNumber" autocomplete="off">
+                <button class="msg">인증하기</button>
+            </div>
+            <div class="NumberBox">
+                <input type="text" class="number" value="인증 번호를 입력하시오." id="number" name="number" autocomplete="off">
+                <button class="NumberCheck">확인</button>
+            </div>
+		</section>
+		<section>
+            <button class="join" id="join" name="join" autocomplete="off">회원가입</button>
+		</section>
+	</main>
+	<footer>
+	</footer>
+</body>
 </html>

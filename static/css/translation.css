@@ -1,434 +1,318 @@
 @font-face {
-  font-weight: 300;
-  font-family: "Pretendard-Light";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
-    format("woff");
+    font-weight: 300;
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
 }
 @font-face {
-  font-weight: 400;
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
 }
 @font-face {
-  font-weight: 500;
-  font-family: "Pretendard-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
-    format("woff");
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
 }
 @font-face {
-  font-weight: 600;
-  font-family: "Pretendard-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
-    format("woff");
+    font-weight: 600;
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
 }
 @font-face {
-  font-weight: 700;
-  font-family: "Pretendard-Bold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
-    format("woff");
+    font-weight: 700;
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
 }
 @font-face {
-  font-weight: 800;
-  font-family: "Pretendard-ExtraBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
-    format("woff");
+    font-weight: 800;
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
 }
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-body,
-main,
-div {
-  margin: 0;
-  padding: 0;
+body, main, div {
+    margin: 0;
+    padding: 0;
 }
-ol,
-ul,
-li {
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
+ol, ul,li {
+	list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin:0;
 }
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 html {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
+    margin:0;
+    padding:0;
+    font-size : 16px;
+}
+main {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 section {
-  width: 70rem;
-  margin: 0 auto;
+    width: 75rem;
+    margin: auto;
+
+    margin-top: 5.5rem;
+}
+button {
+    cursor: pointer;
+}
+body {
+    overflow-x: hidden;
 }
 
-.TranslationMain {
-  background-color: #ffffff;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding-bottom: 13.8rem;
-  position: relative;
-  width: 100%;
-}
 
-.TopBar {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-shrink: 0;
-  height: 11rem;
-  margin-bottom: 6.1rem;
-  padding: 2.5rem 10.6rem 2.5rem 9.2rem;
-  width: 100%;
-
-  .Logo {
-    color: #000000;
-    flex-shrink: 0;
-    font-family: Pretendard, "Source Sans Pro";
-    font-size: 3.6rem;
-    font-weight: 700;
-    line-height: 1.2575;
-    margin: 0.2rem 24.8rem 0rem 0rem;
-    white-space: nowrap;
-  }
-  .MenuBar {
-    flex-shrink: 0;
-    height: calc(100% - 2.4rem);
-    margin: 1.3rem 38.1rem 1.1rem 0rem;
-    width: 83.6rem;
-
-    .MenuBarContext {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      width: 83.4rem;
-
-      .MenuHome {
-        color: #000000;
-        flex-shrink: 0;
-        font-family: Pretendard, "Source Sans Pro";
-        font-size: 2.8rem;
-        font-weight: 500;
-        line-height: 1.2575;
-        margin-right: 12.2rem;
-        white-space: nowrap;
-      }
-      .MenuTranslation {
-        color: #ff9923;
-        flex-shrink: 0;
-        font-family: Pretendard, "Source Sans Pro";
-        font-size: 2.8rem;
-        font-weight: 500;
-        line-height: 1.2575;
-        margin-right: 13.3rem;
-        white-space: nowrap;
-      }
-      .MenuLearn {
-        color: #000000;
-        flex-shrink: 0;
-        font-family: Pretendard, "Source Sans Pro";
-        font-size: 2.8rem;
-        font-weight: 500;
-        line-height: 1.2575;
-        margin-right: 13.3rem;
-        white-space: nowrap;
-      }
-      .MenuGame {
-        color: #000000;
-        flex-shrink: 0;
-        font-family: Pretendard, "Source Sans Pro";
-        font-size: 2.8rem;
-        font-weight: 500;
-        line-height: 1.2575;
-        margin-right: 13.3rem;
-        white-space: nowrap;
-      }
-      .MenuContact {
-        color: #000000;
-        flex-shrink: 0;
-        font-family: Pretendard, "Source Sans Pro";
-        font-size: 2.8rem;
-        font-weight: 500;
-        line-height: 1.2575;
-        white-space: nowrap;
-      }
-    }
-  }
-  .SignUpButton {
-    align-items: center;
-    backdrop-filter: blur(0.5rem);
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 1.5rem;
-    box-shadow: 0 0 1.2rem rgba(255, 170, 72, 0.25);
-    color: #ff9923;
-    display: flex;
-    flex-shrink: 0;
-    font-family: Pretendard, "Source Sans Pro";
-    font-size: 2.2rem;
-    font-weight: 500;
-    height: 100%;
-    justify-content: center;
-    line-height: 1.2575;
-    white-space: nowrap;
-    width: 17rem;
-  }
-}
-.ExplainTitle {
-  color: #000000;
-  flex-shrink: 0;
-  font-family: Pretendard, "Source Sans Pro";
-  font-size: 5.6rem;
-  font-weight: 600;
-  line-height: 1.2575;
-  margin: 0rem 0rem 0.9rem 16.8rem;
-  white-space: nowrap;
-}
-.ExplainBody {
-  color: #858585;
-  flex-shrink: 0;
-  font-family: Pretendard, "Source Sans Pro";
-  font-size: 2.8rem;
-  font-weight: 500;
-  line-height: 1.2575;
-  margin: 0rem 0rem 6.3rem 16.8rem;
-  white-space: nowrap;
-}
-
-.Translation {
-  align-items: center;
-  display: flex;
-  flex-shrink: 0;
-  height: 59.2rem;
-  margin: 0rem 12.4rem 0rem 16.5rem;
-  width: calc(100% - 28.9rem);
-
-  .TranslationKorean {
-    background-color: #ffffff;
-    border: solid 0.3rem #e1e1e1;
-    border-radius: 1rem;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    height: 100%;
-    margin-right: 7.1rem;
-    padding: 1.6rem 0rem 3.1rem 0rem;
-    width: 78rem;
-
-    .TranslationKoreanHead {
-      align-items: center;
-      display: flex;
-      height: 5.1rem;
-      margin: 0rem 31.9rem 3.1rem 4.9rem;
-      width: calc(100% - 36.8rem);
-
-      .KoreanHead {
-        align-items: center;
-        box-sizing: border-box;
-        display: flex;
-        flex-shrink: 0;
-        height: 100%;
-        padding: 0.6rem 0rem 0.2rem 26.2rem;
-
-        .KoreanFlag {
-          background-image: url("");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 100% 100%;
-          border: solid 0.1rem #000000;
-          border-radius: 2.15rem;
-          box-sizing: border-box;
-          flex-shrink: 0;
-          height: 4.3rem;
-          margin-right: 1rem;
-          width: 4.3rem;
-        }
-        .Korean {
-          color: #000000;
-          flex-shrink: 0;
-          font-family: Inter, "Source Sans Pro";
-          font-size: 2.4rem;
-          font-weight: 400;
-          line-height: 1.2125;
-          margin: 0.1rem 3rem 0rem 0rem;
-          white-space: nowrap;
-        }
-        .KoreanFlagImage {
-          flex-shrink: 0;
-          height: 2.3rem;
-          margin-bottom: 0.6rem;
-          object-fit: contain;
-          vertical-align: top;
-          width: 2.3rem;
-        }
-      }
-      /* .line-9-3js {
-            flex-shrink: 0;
-            height: 5.1rem;
-            margin-right: 41.2rem;
-            object-fit: contain;
-            vertical-align: top;
-            width: 0;
-          } */
-    }
-    .KoreanDivisionLine {
-      background-color: #e1e1e1;
-      height: 0.3rem;
-      margin-bottom: 1.7rem;
-      width: 100%;
-    }
-    .item--pu3 {
-      color: #858585;
-      font-family: Inter, "Source Sans Pro";
-      font-size: 2.8rem;
-      font-weight: 400;
-      line-height: 1.2125;
-      margin: 0rem 0rem 34.1rem 4.6rem;
-      white-space: nowrap;
-    }
-    .KoreanFooter {
-      align-items: center;
-      display: flex;
-      height: 6.8rem;
-      margin: 0rem 3.2rem 0rem 4.2rem;
-      width: calc(100% - 7.4rem);
-
-      .KoreanLetterNum {
-        color: #858585;
-        flex-shrink: 0;
-        font-family: Inter, "Source Sans Pro";
-        font-size: 2.8rem;
-        font-weight: 400;
-        line-height: 1.2125;
-        margin: 0.6rem 50.5rem 0rem 0rem;
-        white-space: nowrap;
-      }
-      .TranslationButton {
-        align-items: center;
-        background-color: #ff9923;
-        border: solid 0.1rem #e1e1e1;
-        border-radius: 1rem;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        flex-shrink: 0;
-        font-family: Inter, "Source Sans Pro";
-        font-size: 2.4rem;
-        font-weight: 600;
-        height: 100%;
-        justify-content: center;
-        line-height: 1.2125;
-        white-space: nowrap;
-        width: 13.8rem;
-      }
-    }
-  }
-  .TranslationSign {
-    align-items: center;
-    background-color: #ffffff;
-    border: solid 0.3rem #e1e1e1;
-    border-radius: 1rem;
-    box-sizing: border-box;
+/*챕터제목*/
+.ChapterExplain {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    height: 100%;
-    padding: 1.5rem 0rem 0.1rem 0rem;
-    width: 78rem;
+    justify-content: space-around;
+    margin: 0 2rem;
+    margin-left: 3.5rem; 
+    font-family: 'Pretendard-SemiBold';
+}
 
-    .SignHead {
-      align-items: center;
-      display: flex;
-      flex-shrink: 0;
-      margin: 0rem 35.7rem 2.2rem 34.1rem;
-      width: calc(100% - 69.8rem);
+.ChapterExplain .ChapterTitle {
+    display: flex;
+    flex-direction: column;
+    /* align-items: baseline; */
+    font-size: 2.7rem;
+}
 
-      .SignFlag {
-        background-image: url("/api/try-prod-ap-southeast-1-first-cluster/projects/WbBqCvP6GAWwYdP4XowuXP/files/image/0114cff9571fd389a4c3ea336b752520a66a7f7a");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border: solid 0.1rem #000000;
-        border-radius: 2.15rem;
-        box-sizing: border-box;
-        flex-shrink: 0;
-        height: 4.3rem;
-        margin-right: 1rem;
-        width: 4.3rem;
-      }
-      .Sign {
-        color: #000000;
-        flex-shrink: 0;
-        font-family: Inter, "Source Sans Pro";
-        font-size: 2.4rem;
-        font-weight: 400;
-        line-height: 1.2125;
-        margin-top: 0.1rem;
-        white-space: nowrap;
-      }
-    }
-    .SignBody {
-      align-items: flex-end;
-      background-color: #ffebd3;
-      border: solid 0.3rem #e1e1e1;
-      border-radius: 0 0 1rem 1rem;
-      box-sizing: border-box;
-      display: flex;
-      flex-shrink: 0;
-      padding: 4.2rem 2.8rem 3rem 7.9rem;
-      width: 100%;
+.ChapterContent {
+    margin-top: -25px; 
+    color: #858585; 
+    font-family: 'Pretendard-SemiBold';
+}
 
-      .SignGif {
-        background-color: #d9d9d9;
-        box-sizing: border-box;
-        flex-shrink: 0;
-        margin: 0rem 7rem 1.4rem 0rem;
-        padding: 1.6rem 3.9rem 0.9rem 4rem;
 
-        .SignGifImage {
-          height: 40rem;
-          object-fit: cover;
-          vertical-align: top;
-          width: 34.9rem;
-        }
-      }
-      .GIfButton {
-        align-items: center;
-        background-color: #ff9923;
-        border: solid 0.1rem #e1e1e1;
-        border-radius: 1rem;
-        box-sizing: border-box;
-        color: #ffffff;
-        display: flex;
-        flex-shrink: 0;
-        font-family: Inter, "Source Sans Pro";
-        font-size: 2.4rem;
-        font-weight: 600;
-        height: 6.8rem;
-        justify-content: center;
-        line-height: 1.2125;
-        white-space: nowrap;
-        width: 17.5rem;
-      }
-    }
+
+
+/*한국어 섹션*/
+.KoreanWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    margin: 0 2rem;
+    margin-top:50px;
+}
+
+
+.KoreanWrap .KoreanInput { /*번역 할 내용 입력 */
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.KoreanInput {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.25rem;
+    color: #FF9A23;
+    position: relative;
+    margin-bottom: .825rem  ;
+}
+
+.KoreanInput {
+    width: 33rem;
+    height: 30rem;
+
+    border: 3px solid #e1e1e1;
+    border-radius: 1rem;
+    position: relative;
+}
+
+
+.KoreanInput::after { /* 가운데에 수평선 추가 */
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    width: 100%; 
+    border-bottom: 3px solid #e1e1e1;
+    transform: translateX(-50%) translateY(-50%); 
+}
+
+.KoreanInput .KoreanFlag {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    /* background-image: url('..\static\image\translation\koreanflag.png'); */
+    background-size: cover; 
+    border: 1px solid black;
+    position: absolute;
+    left: 44%; 
+    top: 7%; 
+    transform: translate(-50%, -50%); 
+}
+
+.Korean {
+    /* font-family: 'Pretendard-SemiBold'; */
+    font-size: 1rem;
+    color: black;
+    position: absolute;
+    left: 54%; 
+    top: 7%; 
+    transform: translate(-50%, -50%); 
+}
+
+
+.KoreanFooter { /*글자 수 세주는거랑 번역하기 버튼*/
+    position: absolute;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 0 2rem; 
+}
+
+.KoreanLetterNum {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+    color: #858585;
+}
+
+.TranslationBtn {
+    background-color: #FF9A23;
+    color: white;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+textarea[name="TranslationContent"] {
+    width: 32rem;
+    height: 200px; 
+    border: none;
+    font-size: 20px;
+    padding: 40px;
+    resize: none;
+    overflow-y: hidden; 
+    outline: none;
+    position: absolute;
+    top:60px;
+    font-family: 'Pretendard';
+}
+
+textarea[name="TranslationContent"]::placeholder {
+    color: #858585;
+}
+
+
+
+
+
+/*수어 섹션*/
+.KoreanWrap .SignWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.SignWrap .SignOutput {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.SignOutput {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.25rem;
+    color: #FF9A23;
+
+    margin-bottom: .825rem;
+}
+.SignOutput {
+    width: 33rem;
+    height: 30rem;
+
+    border: 3px solid #e1e1e1;
+    border-radius: .75rem;
+    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    position: relative;
+}
+
+
+.SignOutput::after { /*수평선*/
+    content: "";
+    position: absolute; 
+    left: 50%;
+    top: 15%;
+    width: 100%;
+    border-bottom: 3px solid #e1e1e1;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.SignOutput::before {
+    content: "";
+    position: absolute;
+    top: 15%; 
+    left: 0;
+    width: 100%;
+    height: 85%; 
+    background-color: #FFEBD3;
+    z-index: -1; 
+}
+
+.SignOutput .SignFlag {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    background-color: white; 
+    border: 1px solid black;
+    position: absolute;
+    left: 45%; 
+    top: 7%; 
+    transform: translate(-50%, -50%); 
+}
+
+.Sign {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+    color: black;
+
+    position: absolute;
+    left: 54%; 
+    top: 7%; 
+    transform: translate(-50%, -50%); 
+}
+
+.SignGif {
+    position: absolute; 
+    top: 100px; 
+    left: 35px; 
   }
-}
 
-textarea[name="KoreanTranslation"] {
-  width: 75rem;
-  height: 600px;
-  border: none;
-  font-size: 50px;
-  padding: 40px;
-  resize: none;
-  overflow-y: hidden; /* 수직 스크롤바 없애기 */
-  outline: none;
-}
-
-.GIfButton,
-.TranslationButton {
-  cursor: pointer;
+  .GIfBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    background-color: #FF9A23;
+    color: white;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
