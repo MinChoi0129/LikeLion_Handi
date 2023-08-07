@@ -111,4 +111,6 @@ class Translator(RetrieveAPIView):
 
         convertImagesIntoVideo(image_file_paths, video_path_out)
 
-        return JsonResponse({"video_url": video_path_out})
+        return JsonResponse(
+            {"video_url": os.path.join("media", "translate", random_file_name) + ".mp4"}
+        )
