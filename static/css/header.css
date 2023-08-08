@@ -60,7 +60,7 @@ header li {
 header li:hover {
     color: #FF9A23;
 }
-header .SignUpBtn {
+header .SignInBtn {
     font-family: 'Pretendard-Regular';
     font-size: 1rem;
     letter-spacing :0.5px;
