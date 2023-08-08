@@ -24,6 +24,8 @@ class MediaEntry(models.Model):
     image_url = models.CharField(max_length=100)
     data = models.JSONField(default=dict, blank=True)
 
+    def __str__(self):
+        return self.name
 
 class Lecture(models.Model):
     id = models.AutoField(primary_key=True)
@@ -49,5 +51,5 @@ class LectureManager(models.Model):
     percentage = models.FloatField(default=0)
     time = models.DateTimeField(auto_now=True, null=True)
 
-    def __str__(self):
-        return self.user
+    # def __str__(self):
+    #     return self.user.username
