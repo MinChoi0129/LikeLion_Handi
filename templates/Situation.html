@@ -10,7 +10,10 @@
 </head>
 <body>
 	<header>
-        <div class="Logo"></div>
+        <div class="Logo">
+			<img class="lo01" src="/static/image/logo/logo1.svg">
+			<!-- <img class='lo02' src="/static/image/logo/logo2.svg"> -->
+		</div>
 		<nav>
 			<ol>
 				<li>홈</li>
@@ -41,16 +44,19 @@
                         <div class="Number">3</div>
                     </div>
                     <div class="SelectBox">
-                        <input type="radio" id="select" name="sentenceSelect">
-                        <label for="select">
+                        <input type="radio" id="select1" name="sentenceSelect">
+                        <label for="select1">
+                            <div class="CheckBack"></div>
                             <video></video>
                         </label>
-                        <input type="radio" id="select" name="sentenceSelect">
-                        <label for="select">
+                        <input type="radio" id="select2" name="sentenceSelect">
+                        <label for="select2">
+                            <div class="CheckBack"></div>
                             <video></video>
                         </label>
-                        <input type="radio" id="select" name="sentenceSelect">
-                        <label for="select">
+                        <input type="radio" id="select3" name="sentenceSelect">
+                        <label for="select3">
+                            <div class="CheckBack"></div>
                             <video></video>
                         </label>
                     </div>
@@ -63,7 +69,15 @@
                 <button class="StopBtn">학습 종료</button>
             </div>
 		</section>
-	</main>
+        <!-- modal -->
+        <div class="StopModal">
+            <p class="ModalText">학습 종료 시 처음부터 학습이 시작됩니다.<br/>학습을 종료하시겠습니까?</p>
+            <div class="BtnBox">
+                <button class="YesBtn">예</button>
+                <button class="NoBtn">아니오</button>
+            </div>
+        </div>
+    </main>
 	<footer>
 	</footer>
 </body>

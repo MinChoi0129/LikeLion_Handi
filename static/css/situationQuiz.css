@@ -82,9 +82,229 @@ body {
 }
 
 /*진행바*/
+.StageBarWrap {
+    width: fit-content;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+}
+.StageBar {
+    width: 14rem;
+    height: 0.5rem;
+
+    margin: 0.25rem .225rem;
+    border-radius: 25px;
+
+    background-color: #E1E1E1;
+}
+.StageBar.active {
+    background-color: #FFBD6C;
+}
 
 /*문제*/
+.QuizBox {
+    width: 35rem;
+    height: 3rem;
 
+    margin: 1.5rem auto;
+    border-radius: 15px;
+    
+    background-color: #FFBD6C;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.QuizBox .QuizSentence {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.25rem;
+
+    color: #fff;
+}
+
+/*번호*/
+.SelectWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.SelectNumber {
+    width: 1067.25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 1.5rem;
+    margin-bottom: 1.05rem;
+}
+.SelectNumber .Number {
+    width: 2rem;
+    height: 2rem;
+    background-color: #FFBD6C;
+
+    font-family: 'Pretendard-Medium';
+    font-size: 1.25rem;
+    color:#fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    margin: 0 1rem;
+}
 /*선택지*/
+.SelectBox {
+    width: fit-content;
+    margin: 0 auto;
+}
+.SelectBox input[type=radio] {
+    display:none;
+}
+.SelectBox input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 12rem;
+    width: 20rem;
+    border: 2px solid #FFBD6C;
+    border-radius: 15px;
+    background-color: #E1E1E1;
+
+    margin: 0 1rem;
+}
+.SelectBox video {
+    border-radius: 15px;
+    height: 12rem;
+    width: 20rem;
+
+    margin:0;
+    padding:0;
+}
+.SelectBox label {
+    position: relative;
+}
+.SelectBox .CheckBack {
+    display:none;
+    height: 188.5px;
+    width: 316.5px;
+    border-radius: 13px;
+    background-color: rgba(255,255,255,.5);
+
+    position: absolute;
+    left:0; top:0;
+}
+.SelectBox input[type=radio]:checked + label .CheckBack{
+    display:inline-block;
+}
 
 /*버튼*/
+.RetryBtnBox {
+    width: 124px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+    padding: 2px;
+    border-radius: 12px;
+
+    float: left;
+
+    margin-top: 3rem;
+}
+.RetryBtn {
+    width: 120px;
+    height: 41px;
+    background: #fff;
+    /* padding: 10px; */
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+    color: #FF9A23;
+}
+.StopBtnBox {
+    width: 124px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+    padding: 2px;
+    border-radius: 12px;
+    float: right;
+
+    margin-top: 3rem;
+}
+.StopBtn {
+    width: 120px;
+    height: 40px;
+    background: #fff;
+    /* padding: 10px; */
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+    color: #FF9A23;
+}
+
+/*모달*/
+.StopModal {
+    position: absolute;
+    width: 35rem;
+    height: 18rem;
+
+    background-color: #fff;
+    border: 2px solid #FF9A23;
+    border-radius: 25px;
+
+    font-family: 'Pretendard-SemiBold';
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.StopModal .ModalText {
+    font-size: 1.5rem;
+    text-align: center;
+
+    margin: 0;
+    margin-bottom:1rem;
+}
+.StopModal .BtnBox {
+    margin-top: 1rem;
+}
+.StopModal .YesBtn {
+    width: 6.25rem;
+    height: 2.25rem;
+
+    border:none;
+    border-radius: 10px;
+    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: .9rem;
+    color: #fff;
+
+    margin: 0 1.5rem;
+}
+.StopModal .NoBtn {
+    width: 6.25rem;
+    height: 2.25rem;
+
+    border:none;
+    border-radius: 10px;
+    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: .9rem;
+    color: #fff;
+
+    margin: 0 1.5rem;
+}

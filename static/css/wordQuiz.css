@@ -28,67 +28,55 @@
     font-family: 'Pretendard-ExtraBold';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
 }
-
-/*헤더*/
-header {
-    position: fixed;
-    left:0; top:0;
-    background-color: transparent;
-    /* backdrop-filter: blur(10px); */
-
+* {
+    box-sizing: border-box;
+}
+body, main, div {
+    margin: 0;
+    padding: 0;
+}
+ol, ul,li {
+	list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin:0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    margin:0;
+    padding:0;
+    font-size : 16px;
+}
+main {
+    display: block;
     width: 100%;
-    height: 60px;
+    height: 100%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
-    z-index: 99999;
 }
-header nav {
-    padding-right: 10rem;
+section {
+    width: 75rem;
+    margin: auto;
+
+    margin-top: 5.5rem;
 }
-header li {
-    font-family: 'Pretendard-Medium';
-    font-size: 1.025rem;
-
-    margin: 0 2rem;
-
-    transition: all .2s ease-in-out;
+button {
     cursor: pointer;
 }
-header li:hover {
-    color: #FF9A23;
-}
-header .SignUpBtn {
-    font-family: 'Pretendard-Regular';
-    font-size: 1rem;
-    letter-spacing :0.5px;
-
-    width: 110px;
-    height: 40px;
-
-    background-color: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
-
-    border:none;
-    border-radius: 15px;
-    box-shadow: 0 0 8px 0px rgba(255, 154, 35,0.25);
-
-    margin-right: 2.5rem;
-
-    color:#FF9A23;
+body {
+    overflow-x: hidden;
 }
 
-/*로고*/
-.Logo {
-    margin-left: 4.25rem;
-}
-.Logo .lo01 {
-    width: 2.5rem;
-    height: auto;
-}
-.Logo .lo02 {
-    width: 4.2rem;
-    height: auto;
+/*챕터제목*/
+.ChapterTitle {
+    font-family: 'Pretendard-Bold';
+    font-size: 2rem;
+
+    width: fit-content;
+    margin: 1.5rem auto;
 }

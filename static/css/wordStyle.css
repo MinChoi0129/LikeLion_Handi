@@ -1,0 +1,151 @@
+@font-face {
+    font-weight: 300;
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+}
+@font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+@font-face {
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+}
+@font-face {
+    font-weight: 600;
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-weight: 700;
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+}
+@font-face {
+    font-weight: 800;
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+}
+* {
+    box-sizing: border-box;
+}
+body, main, div {
+    margin: 0;
+    padding: 0;
+}
+ol, ul,li {
+	list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin:0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    margin:0;
+    padding:0;
+    font-size : 16px;
+}
+main {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    width: 75rem;
+    margin: auto;
+
+    margin-top: 5.5rem;
+}
+button {
+    cursor: pointer;
+}
+body {
+    overflow-x: hidden;
+}
+
+/*챕터제목*/
+.ChapterTitle {
+    font-family: 'Pretendard-Bold';
+    font-size: 2.5rem;
+
+    width: fit-content;
+    margin: 1.5rem auto;
+    margin-bottom: 0.5rem;
+}
+/*문제수*/
+.WordCount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.5rem;
+}
+.WordCount p {
+    margin:0;
+}
+
+/*문제 슬라이더*/
+.StudySlider {
+    margin-top: 2rem;
+}
+.StudySlider .StudyWrap {
+    width: 60rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.StudyWrap .StudyVideo{
+    width: 25rem;
+    height: 25rem;
+    
+    border-radius: 1rem;
+
+    box-shadow: 0 0 10px 0 #dedede;
+}
+.StudyVideo .Video {
+    width: 25rem;
+    height: 25rem;
+    
+    border-radius: 1rem;
+}
+.StudySlider .StudyInfoWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.StudyInfoWrap .StudyWord {
+    width: 18rem;
+    height: 11rem;
+    border-radius: 1rem;
+
+    box-shadow: 0 0 10px 0 #dedede;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.StudyWord p {
+    font-family: 'Pretendard-Bold';
+    font-size: 4rem;
+
+    margin:0;
+}
+.StudyInfoWrap .StudyImg {
+    width: 18rem;
+    height: 11rem;
+    border-radius: 1rem;
+
+    box-shadow: 0 0 10px 0 #dedede;
+}
