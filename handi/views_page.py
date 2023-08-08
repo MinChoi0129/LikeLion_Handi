@@ -6,8 +6,8 @@ def main(request):
 
 
 def login(request):
-    return render(request, "index2.html")
+    return render(request, "login.html")
 
 
 def signup(request):
-    return render(request, "index3.html")
+    return render(request, "signup.html")
