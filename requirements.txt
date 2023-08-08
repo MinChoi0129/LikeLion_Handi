@@ -3,3 +3,4 @@ djangorestframework
 pillow
 jamo
 opencv-python
+django-cors-headers
