@@ -1,3 +1,6 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +30,10 @@
 		<section>
 			<div class="logo">Handi</div>
 			<div class="IdBox">
-				<input type="text" class="id" id="id" name="id" autocomplete="off" value="아이디를 입력하시오.">
+				<input type="text" class="id" id="id" name="id" autocomplete="off" placeholder="아이디를 입력하시오.">
 			</div>
 			<div class="PasswordBox">
-				<input type="text" class="password" id="password" name="password" autocomplete="off" value="비밀번호를 입력하시오.">
+				<input type="text" class="password" id="password" name="password" autocomplete="off" placeholder="비밀번호를 입력하시오.">
 			</div>
 			<div class="login">
 				<input type="checkbox" class="CheckBox" id="checkBox" name="checkBox" autocomplete="off" >
@@ -38,7 +41,7 @@
 			</div>
 			<button class="LoginBtn" id="loginBtn" name="loginBtn" autocomplete="off" >로그인</button>
 			<div class="text">
-				<div class="join">회원가입</div>
+				<a href="{% url 'signup_view_name' %}" class="join">회원가입</a>
 				<div class="length"></div>
 				<div class="search">아이디/비밀번호 찾기</div>
 			</div>
@@ -60,3 +63,4 @@
 	</footer>
 </body>
 </html>
+{% endblock %}

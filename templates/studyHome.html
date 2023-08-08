@@ -1,3 +1,6 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -256,62 +259,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="category1">
-				<div class="title">카테고리</div>
-				<div class="section">
-					<div class="box15">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="/LikeLion_Handi/static/image/login/first.png" alt="apple">
-						<div class="sub">수어도 한걸음부터 - 첫만남편</div>
-						<div class="ing">
-							<div class="count">총 12개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box16">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="/LikeLion_Handi/static/image/login/hospital.png" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box17">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="/LikeLion_Handi/static/image/login/hospital.png" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box18">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="/LikeLion_Handi/static/image/login/hospital.png" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box19">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="/LikeLion_Handi/static/image/login/hospital.png" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-				</div>
-			</div>
 		</section>
 	</main>
 	<footer>
@@ -334,8 +281,7 @@
             var newPosition = currentLeft - 100; // 각 박스의 width(170px) + margin-right(17px)만큼 오른쪽으로 이동
             section.style.left = newPosition + 'px';
         }
-
-		
     </script>
 </body>
 </html>
+{% endblock %}
