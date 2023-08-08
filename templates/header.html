@@ -1,15 +1,29 @@
-<header>
-    <div class="Logo">
-        <img class='lo02' src="/static/image/logo/logo2.svg">
-    </div>
-    <nav>
-        <ol>
-            <li>홈</li>
-            <li>번역하기</li>
-            <li>학습하기</li>
-            <li>게임하기</li>
-            <li>Contact</li>
-        </ol>
-    </nav>
-    <button class="SignUpBtn">SIGN UP</button>
-</header>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="Logo">
+            <img class='lo02' src="{% static 'image/logo/logo2.svg' %}">
+        </div>
+        <nav>
+            <ol>
+                <li>홈</li>
+                <li>번역하기</li>
+                <li>학습하기</li>
+                <li>게임하기</li>
+                <li>Contact</li>
+            </ol>
+        </nav>
+        <button class="SignUpBtn">SIGN UP</button>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
