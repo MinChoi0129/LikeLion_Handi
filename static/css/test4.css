@@ -64,7 +64,7 @@ section {
     width: 150px;
     height: 50px;
     margin: 7px;
-    background-color: #FFBD6C;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
     border: 0px;
     color: white;
     font-size: 15px;
@@ -73,8 +73,11 @@ section {
 .search {
     width: 660px;
     height: 52px;
-    padding: 15px;
-    border: 1px solid #FFBD6C;
+    padding: 1px;
+    border: 1px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to right, #FFEA8D, #FFBD6C);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     color: #E1E1E1;
     border-radius: 10px;
     font-size: 15px;
@@ -95,10 +98,6 @@ section {
 
 .title, .box1, .box3, .box15 {
     margin-left: 150px;
-}
-
-.box19 {
-    margin-bottom: 100px;
 }
 
 .title {
@@ -159,11 +158,97 @@ section {
     background-color: #d9d9d9;
 }
 
-.section1:hover {
-    border: 1px solid black;
-    border-radius: 50px;
-    background-color: #858585;
-    width: 100px;
-    height: 100px;
+.category1 {
+    margin-bottom: 50px;
 }
 
+.left {
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 140px;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+    border-radius: 100%;
+    color: white;
+    background-color: #858585b3;
+    font-size: 20px;
+}
+  
+
+.right {
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 1100px;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+    border-radius: 100%;
+    color: white;
+    background-color: #858585b3;
+    font-size: 20px;
+}
+
+/* box8, box9, ...에 대한 초기 투명도를 설정합니다 */
+.box13, .box14, .btn {
+    opacity: 0;
+}
+
+.btn {
+    position: absolute;
+    z-index: 10;
+}
+
+
+/* section1 요소에 hover 할 때에만 box13, box14, 그리고 btn을 보여줍니다 */
+.section1:hover .box13, .section1:hover .box14, .section1:hover .btn {
+    display: block;
+    opacity: 1; /* 초기 투명도를 0으로 설정합니다 */
+    transition: opacity 0.3s ease; /* 투명도에 부드러운 트랜지션을 추가합니다 */
+}
+
+/* box8의 위치를 고정합니다 */
+.box8 {
+    position: absolute;
+    left: 195px; /* 이 값을 원하는 위치로 조정하세요 */
+}
+
+.box9 {
+    position: absolute;
+    left: 382px; /* 이 값을 원하는 위치로 조정하세요 */
+}
+
+.box10 {
+    position: absolute;
+    left: 569px; /* 이 값을 원하는 위치로 조정하세요 */
+}
+
+.box11 {
+    position: absolute;
+    left: 756px; /* 이 값을 원하는 위치로 조정하세요 */
+}
+
+.box12 {
+    position: absolute;
+    left: 943px; /* 이 값을 원하는 위치로 조정하세요 */
+}
+
+.box13 {
+    position: absolute;
+    left: 8px;
+}
+
+.box14 {
+    position: absolute;
+    left: 1130px; /* 이 값을 원하는 위치로 조정하세요 */
+}
+
+.section1 {
+    position: absolute;
+    left: 7.5px;
+    transition: left 0.7s ease;
+}
+
+.daily {
+    margin-top: 215px;
+}
