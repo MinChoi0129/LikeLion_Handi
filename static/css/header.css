@@ -28,7 +28,16 @@
     font-family: 'Pretendard-ExtraBold';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
 }
-
+ol, ul,li {
+	list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin:0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
 /*헤더*/
 header {
     position: fixed;
@@ -60,7 +69,7 @@ header li {
 header li:hover {
     color: #FF9A23;
 }
-header .SignUpBtn {
+header .SignInBtn {
     font-family: 'Pretendard-Regular';
     font-size: 1rem;
     letter-spacing :0.5px;

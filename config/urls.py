@@ -22,6 +22,8 @@ urlpatterns = [
     path("", views_page.main),
     path("login/", views_page.login),
     path("signup/", views_page.signup),
+    path("translate/", views_page.translate),
+    path("study/", views_page.study),
     path("admin/", admin.site.urls),
     path("", include("handi.urls")),
 ]

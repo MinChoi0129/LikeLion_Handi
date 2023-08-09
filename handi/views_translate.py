@@ -1,4 +1,4 @@
-import os
+import os, numpy as np
 import random
 from jamo import h2j, j2hcj
 from rest_framework.generics import *
@@ -80,16 +80,32 @@ def getPathsFromFileNames(jamos: list):
     ]
 
 
-def convertImagesIntoVideo(paths, pathOut, fps=2):
+def convertImagesIntoVideo(paths, pathOut, fps=1):
     import cv2
 
     frame_array = []
+    new_size = (940, 940)
     for _, path in enumerate(paths):
         img = cv2.imread(path)
         height, width, _ = img.shape
-        size = (width, height)
-        frame_array.append(img)
-    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"mp4v"), fps, size)
+
+        ash = new_size[1] / height
+        asw = new_size[0] / width
+        if asw < ash:
+            sizeas = (int(width * asw), int(height * asw))
+        else:
+            sizeas = (int(width * ash), int(height * ash))
+
+        img = cv2.resize(img, dsize=sizeas)
+        base_pic = np.zeros((new_size[1], new_size[0], 3), np.uint8)
+        base_pic[
+            int(new_size[1] / 2 - sizeas[1] / 2) : int(new_size[1] / 2 + sizeas[1] / 2),
+            int(new_size[0] / 2 - sizeas[0] / 2) : int(new_size[0] / 2 + sizeas[0] / 2),
+            :,
+        ] = img
+
+        frame_array.append(base_pic)
+    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"mp4v"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])
     cv2.destroyAllWindows()
