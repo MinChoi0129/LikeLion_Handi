@@ -60,6 +60,11 @@ section {
     font-weight: bolder;
     text-align: center;
     margin: 80px 30px 30px 30px;
+    font-family: 'Pretendard-ExtraBold';
+}
+
+input:focus {
+    outline: 1px solid #FF9A23;
 }
 
 .id, .PhoneNumber, .number {
@@ -71,6 +76,7 @@ section {
     font-weight: lighter;
     font-size: 14px;
     width: 470px;
+    font-family: 'Pretendard-Regular';
 }
 
 .password, .password2, .name {
@@ -82,6 +88,7 @@ section {
     font-weight: lighter;
     font-size: 14px;
     width: 540px;
+    font-family: 'Pretendard-Regular';
 }
 
 .join {
@@ -95,6 +102,7 @@ section {
     margin: 20px 8px 8px 8px;
     border-radius: 7px;
     width: 540px;
+    font-family: 'Pretendard-Regular';
 }
 
 .check, .msg, .NumberCheck {
@@ -102,13 +110,15 @@ section {
     border-radius: 7px;
     background-color: #FF9A23;
     color: white;
-    width: 60px;
+    width: 65px;
     height: 40px;
     font-size: 11px;
     text-align: center;
     margin-top: 5px;
+    font-family: 'Pretendard-Regular';
 }
 
 .IdBox, .PhoneBox, .NumberBox {
     display: flex;
+    font-family: 'Pretendard-Regular';
 }

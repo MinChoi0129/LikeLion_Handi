@@ -5,31 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/LikeLion_Handi/static/css/header.css">
-    <link rel="stylesheet" href="/LikeLion_Handi/static/css/test4.css">
+    <link rel="stylesheet" href="{% static 'css/studyHome.css' %}">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 	<script src="/LikeLion_Handi/static/js/test4.js"></script>
 </head>
 <body style="overflow-x: hidden">
-    <header>
-        <div class="Logo"></div>
-		<nav>
-			<ol>
-				<li>홈</li>
-				<li>번역하기</li>
-				<li>학습하기</li>
-				<li>게임하기</li>
-				<li>Contact</li>
-			</ol>
-		</nav>
-		<button class="SignUpBtn">SIGN UP</button>
-	</header>
 	<main>
 		<section>
             <div class="gory">
-                <button class="category"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;카테고리</button>
-                <input type="text" class="search" id="search" name="search" autocomplete="off" value="    검색어를 입력하시오.">
+                <div class="category">
+					<div class="menu"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;카테고리</div>
+					<ul>
+						<a href="#">인간</a>
+						<a href="#">식생활</a>
+						<a href="#">사회생활</a>
+						<a href="#">지명</a>
+						<a href="#">문화</a>
+						<a href="#">자연</a>
+						<a href="#">개념</a>
+					</ul>
+				</div>
+                <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="    검색어를 입력하시오.">
             </div>
 		</section>
 		<section>
