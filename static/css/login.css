@@ -57,9 +57,9 @@ section {
 
 .logo {
     font-size: 30px;
-    font-weight: bolder;
     text-align: center;
     margin: 80px 30px 30px 30px;
+    font-family: 'Pretendard-ExtraBold';
 }
 
 .id, .password {
@@ -71,17 +71,26 @@ section {
     font-weight: lighter;
     font-size: 14px;
     width: 540px;
+    font-family: 'Pretendard-Regular';
 }
 
 .login {
     display: flex;
     color: #858585;
     margin-left: 5px;
+    font-family: 'Pretendard-Medium';
+}
+
+input:focus {
+    outline: 1px solid #FF9A23;
 }
 
 .LoginText {
     font-size: 11px;
     margin-top: 2.5px;
+
+    font-family: 'Pretendard-Regular';
+    color: #858585;
 }
 
 .LoginBtn {
@@ -90,25 +99,23 @@ section {
     color: white;
     border-radius: 7px;
     padding: 10px;
-    margin: 20px 10px 10px 10px;
+    margin: 7px 10px 10px 10px;
     font-weight: bolder;
     text-align: center;
     width: 540px;
+    font-family: 'Pretendard-Regular';
 }
 
 .text {
-    margin-left: 190px;
+    margin-left: 210px;
     display: flex;
     color: #878787;
-    font-size: 12px;
+    font-size: 10px;
+    font-family: 'Pretendard-Regular';
 }
 
 .join {
-    margin-right: 9px;
-}
-
-.search {
-    margin-left: 8px;
+    color: #FF9A23;
 }
 
 .length {
@@ -126,11 +133,13 @@ section {
     border: 1px solid #878787;
     height: 1px;
     width: 700px;
-    margin: 12px;
+    margin: 8px;
 }
 
 .or {
     color: #878787;
+    font-family: 'Pretendard-Regular';
+    font-size: 13px;
 }
 
 .google {
@@ -142,6 +151,7 @@ section {
     font-size: 13px;
     width: 540px;
     background-color: white;
+    font-family: 'Pretendard-Regular';
 }
 
 .naver {
@@ -153,6 +163,7 @@ section {
     font-size: 13px;
     width: 540px;
     background-color: white;
+    font-family: 'Pretendard-Regular';
 }
 
 .kakao {
@@ -164,6 +175,7 @@ section {
     font-size: 13px;
     width: 540px;
     background-color: white;
+    font-family: 'Pretendard-Regular';
 }
 
 .GoogleLogo {

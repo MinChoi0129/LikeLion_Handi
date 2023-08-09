@@ -5,25 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-	<link rel="stylesheet" href="/static/css/test2.css">
-	<link rel="stylesheet" href="/static/css/header.css">
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
-    <header>
-		<div class="Logo"></div>
-		<nav>
-			<ol>
-				<li>홈</li>
-				<li>번역하기</li>
-				<li>학습하기</li>
-				<li>게임하기</li>
-				<li>Contact</li>
-			</ol>
-		</nav>
-		<button class="SignUpBtn">SIGN UP</button>
-	</header>
 	<main>
 		<section>
 			<div class="logo">Handi</div>
@@ -39,9 +25,9 @@
 			</div>
 			<button class="LoginBtn" id="loginBtn" name="loginBtn" autocomplete="off" >로그인</button>
 			<div class="text">
-				<a href="{% url 'signup_view_name' %}" class="join">회원가입</a>
-				<div class="length"></div>
-				<div class="search">아이디/비밀번호 찾기</div>
+				<div class="q">아직 회원이 아니신가요?</div>
+				&nbsp;
+				<a href="/signup" class="join">회원가입</a>
 			</div>
 		</section>
 		<section>
@@ -52,9 +38,9 @@
 			</div>
 		</section>
 		<section>
-			<button class="google" id="google" name="google" autocomplete="off"><img class="GoogleLogo" src="/LikeLion_Handi/static/image/login/google.png" alt="google"> 구글 계정으로 로그인</button>
-			<button class="naver" id="naver" name="naver" autocomplete="off"><img class="NaverLogo" src="/LikeLion_Handi/static/image/login/naver.png" alt="naver"> 네이버 계정으로 로그인</button>
-			<button class="kakao" id="kakao" name="kakao" autocomplete="off"><img class="KakaoLogo" src="/LikeLion_Handi/static/image/login/kakao.png" alt="kakao"> 카카오 계정으로 로그인</button>
+			<button class="google" id="google" name="google" autocomplete="off"><img class="GoogleLogo" src="{% static 'image/login/google.png' %}" alt="google"> 구글 계정으로 로그인</button>
+			<button class="naver" id="naver" name="naver" autocomplete="off"><img class="NaverLogo" src="{% static 'image/login/naver.png' %}" alt="naver"> 네이버 계정으로 로그인</button>
+			<button class="kakao" id="kakao" name="kakao" autocomplete="off"><img class="KakaoLogo" src="{% static 'image/login/kakao.png' %}" alt="kakao"> 카카오 계정으로 로그인</button>
 		</section>
 	</main>
 	<footer>
