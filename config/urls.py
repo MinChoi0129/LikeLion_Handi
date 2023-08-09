@@ -19,11 +19,12 @@ from django.urls import path, include
 from handi import views_page
 
 urlpatterns = [
-    path("", views_page.main),
-    path("login/", views_page.login),
-    path("signup/", views_page.signup),
-    path("translate/", views_page.translate),
-    path("study/", views_page.study),
+    path("", views_page.main, name='main'),
+    path("login/", views_page.login, name='login'),
+    path("signup/", views_page.signup, name='signup'),
+    path("translate/", views_page.translate, name='translate'),
+    path("study/", views_page.study, name='study'),
     path("admin/", admin.site.urls),
     path("", include("handi.urls")),
+    path('accounts/', include('allauth.urls'))
 ]
