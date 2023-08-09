@@ -5,3 +5,4 @@ jamo
 opencv-python
 django-cors-headers
 allauth
+numpy
