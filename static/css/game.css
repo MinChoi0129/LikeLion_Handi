@@ -30,13 +30,14 @@
 }
 * {
   box-sizing: border-box;
+  
 }
 body, main, div {
   margin: 0;
   padding: 0;
 }
 ol, ul,li {
-list-style: none;
+ list-style: none;
   display: inline-block;
   padding: 0;
   margin:0;
@@ -541,5 +542,118 @@ body {
   background-color: white;
 }
 
+/* 카드 게임 */
+/* 카드게임 */
+.CardWarp img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.wrap__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.card__inner {
+  width: 700px;
+  height: 700px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  width: 100%;
+  height: 100%;
+ 
+}
+.cards li {
+  /* width: calc(100% / 4 - 20px); */
+  width:200px;
+  /* height: calc(100% / 4 - 20px); */
+  height: 250px;
+  border: 1px solid #ccc;
+  perspective: 1000px;
+  transform-style: preserve-4d;
+  position: relative;  
+  border-radius: 10px; 
+}
+.cards li .view {
+  position: absolute;
+  background:rgba(0, 0, 255, 0.2);
+  /* padding: 10%; */
+  transition: transform 0.5s linear;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 10px;
+}
+.cards li .view.front {
+  z-index: 10;
+  
+  transform: rotateY(0deg);
+}
+.cards li .view.back {
+  transform: rotateY(180deg);
+}
+.cards li.flip .view.front {
+  transform: rotateY(-180deg);
+}
+.cards li.flip .view.back {
+  transform: rotateY(0deg);
+}
+.cards li.shake {
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0% {transform: translateX(0);}
+  20% {transform: translateX(-13px);}
+  40% {transform: translateX(13px);}
+  60% {transform: translateX(-8px);}
+  80% {transform: translateX(8px);}
+  100% {transform: translateX(0);}
+}
+
+.card__inner{
+  background-color: #ffffff;
+  border: solid 2.5px #e1e1e1;
+  border-radius: 2.3rem;
+  box-sizing: border-box;
+  height: 41rem;
+  left: 0rem;
+  position: absolute;
+  top: -0.2rem;
+  width: 66rem;
+}
+
+.wrap__card {
+  position: relative;
+  top: 1px; /* 위로 10px 이동 (값을 조절하여 원하는 만큼 이동시킬 수 있습니다) */
+  left: -1px; /* 왼쪽으로 10px 이동 (값을 조절하여 원하는 만큼 이동시킬 수 있습니다) */
+  width: 66rem;
+  /* background-color: blue; */
+  height: 41rem;
+  border-radius: 2.3rem;
+}
+
+.cards li .view img {
+  border-radius: 10px; /* 원하는 둥글기 정도로 조정하세요 */
+}
 
 
+.view.front img {
+  width: 100%; /* 이미지를 부모 요소의 가로 너비에 맞게 조정 */
+  height: 100%; /* 가로 너비에 따라 세로 비율을 자동 조정 */
+}
+
+.view.back img {
+  width: 100%; /* 이미지를 부모 요소의 가로 너비에 맞게 조정 */
+  height: 100%; /* 가로 너비에 따라 세로 비율을 자동 조정 */
+}
