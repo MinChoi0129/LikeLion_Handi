@@ -68,6 +68,7 @@ section {
     border: 0px;
     color: white;
     font-size: 15px;
+    font-family: 'Pretendard-SemiBold';
 }
 
 .search {
@@ -81,6 +82,7 @@ section {
     color: #E1E1E1;
     border-radius: 10px;
     font-size: 15px;
+    font-family: 'Pretendard-Medium';
 }
 
 .section, .section1 {
@@ -102,8 +104,8 @@ section {
 
 .title {
     margin-top: 40px;
-    font-weight: bolder;
     font-size: 17px;
+    font-family: 'Pretendard-Bold';
 }
 
 .img {
@@ -124,29 +126,37 @@ section {
     position: absolute;
     margin-left: 7px;
     margin-top: 6px;
+    font-family: 'Pretendard-Regular';
 }
 
 .sub {
     font-weight: bolder;
     margin-top: 5px;
     margin-left: 12px;
+    font-family: 'Pretendard-Bold';
 }
 
 .ing {
     display: flex;
     font-size: 13px;
     margin-top: 13px;
+    font-family: 'Pretendard-Regular';
 }
 
 .ing2 {
     display: flex;
     font-size: 13px;
     margin-top: 35px;
+    font-family: 'Pretendard-Regular';
 }
 
 .count {
     margin-left: 12px;
     margin-right: 75px;
+}
+
+input:focus {
+    outline: 1px solid #FF9A23;
 }
 
 .bar {
@@ -173,6 +183,7 @@ section {
     color: white;
     background-color: #858585b3;
     font-size: 20px;
+    font-family: 'Pretendard-Regular';
 }
   
 
@@ -187,6 +198,7 @@ section {
     color: white;
     background-color: #858585b3;
     font-size: 20px;
+    font-family: 'Pretendard-Regular';
 }
 
 /* box8, box9, ...에 대한 초기 투명도를 설정합니다 */
