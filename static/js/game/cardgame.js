@@ -1,4 +1,4 @@
-const cards =document.querySelectorAll(".cards li");
+const cards =document.querySelectorAll(".Cards li");
 
         let cardOne, cardTwo; // 선택한 카드
         let disableDeck = false;
@@ -15,12 +15,13 @@ const cards =document.querySelectorAll(".cards li");
                 cardTwo =clickedCard;
                 disableDeck = true;
 
-                let cardOneImg = cardOne.querySelector(".back img").src;
-                let cardTwoImg = cardTwo.querySelector(".back img").src;
+                let cardOneImg = cardOne.querySelector(".Back img").src;
+                let cardTwoImg = cardTwo.querySelector(".Back img").src;
 
                 matchCards(cardOneImg, cardTwoImg);
             }
         }
+        
         //두개의 이미지 비교하기
         function matchCards(img1, img2){
             if(img1 == img2){

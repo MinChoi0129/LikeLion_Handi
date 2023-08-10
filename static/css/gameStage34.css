@@ -572,9 +572,9 @@ body {
 }
 .Cards li {
   /* width: calc(100% / 4 - 20px); */
-  width:200px;
+  width:150px;
   /* height: calc(100% / 4 - 20px); */
-  height: 250px;
+  height: 180px;
   border: 1px solid #ccc;
   perspective: 1000px;
   transform-style: preserve-4d;
