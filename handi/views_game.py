@@ -7,7 +7,7 @@ from random import shuffle
 
 class Game(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
-        media_entries = MediaEntry.objects.all()
+        media_entries = list(MediaEntry.objects.all())
         shuffle(media_entries)
         media_entries = media_entries[:39]
 

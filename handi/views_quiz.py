@@ -8,7 +8,9 @@ from collections import deque
 
 class Quiz(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
-        mediaenties = Lecture.objects.get(id=kwargs["lecture_id"]).media_entries.all()
+        mediaenties = list(
+            Lecture.objects.get(id=kwargs["lecture_id"]).media_entries.all()
+        )
         shuffle(mediaenties)
         n = len(mediaenties)
 
@@ -55,8 +57,8 @@ class Quiz(RetrieveAPIView):
 
         return Response(
             {
-                "jamo_quiz_list": mediaenties_for_type_A_quiz,
-                "word_quiz_list": mediaenties_for_type_B_quiz,
+                "jamo_quiz_list": type_A_quizzes,
+                "word_quiz_list": type_B_quizzes,
             },
             status=status.HTTP_200_OK,
         )
