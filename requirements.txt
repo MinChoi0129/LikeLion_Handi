@@ -4,3 +4,4 @@ pillow
 jamo
 opencv-python
 django-cors-headers
+numpy
