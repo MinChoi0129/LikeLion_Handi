@@ -27,6 +27,7 @@ class MediaEntry(models.Model):
     def __str__(self):
         return self.name
 
+
 class Lecture(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, blank=True, null=True)
@@ -35,7 +36,7 @@ class Lecture(models.Model):
     theme_category = models.CharField(max_length=15, blank=True, null=True)
     level = models.IntegerField()
     length = models.IntegerField()
-    media_entry = models.ManyToManyField(MediaEntry)
+    media_entries = models.ManyToManyField(MediaEntry)
     lecture_img = models.ImageField(upload_to="lectures/", blank=True, null=True)
     description = models.TextField()
 

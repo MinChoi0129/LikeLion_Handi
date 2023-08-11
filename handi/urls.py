@@ -4,8 +4,12 @@ from .views_lecture import *
 from .views_lecture_manager import *
 from .views_user import *
 from .views_mediaentry import *
+from .views_game import *
+from .views_quiz import *
 
 urlpatterns = [
+    path("api/game/", Game.as_view()),
+    path("api/quiz/<lecture_id>/", Quiz.as_view()),
     path("api/translate/", Translator.as_view()),
     path("api/login/", Login.as_view()),
     path("api/logout/", Logout.as_view()),

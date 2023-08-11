@@ -116,7 +116,6 @@ class Translator(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         BASE_PATH = os.path.dirname(os.path.abspath(__file__))
         BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
-        print(BASE_PATH)
         pure_jamo_list = getSeparatedJaMoList(request.query_params["sentence"])
         image_file_paths = getPathsFromFileNames(pure_jamo_list)
 
