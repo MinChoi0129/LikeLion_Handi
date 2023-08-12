@@ -46,7 +46,7 @@ header {
     /* backdrop-filter: blur(10px); */
 
     width: 100%;
-    height: 60px;
+    height: 100px;
 
     display: flex;
     justify-content: space-between;
@@ -59,9 +59,9 @@ header nav {
 }
 header li {
     font-family: 'Pretendard-Medium';
-    font-size: 1.025rem;
+    font-size: 1.15rem;
 
-    margin: 0 2rem;
+    margin: 0 2.5rem;
 
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -71,11 +71,11 @@ header li:hover {
 }
 header .SignInBtn {
     font-family: 'Pretendard-Regular';
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing :0.5px;
 
-    width: 110px;
-    height: 40px;
+    width: 120px;
+    height: 45px;
 
     background-color: rgba(255,255,255,0.5);
     backdrop-filter: blur(10px);
@@ -84,7 +84,7 @@ header .SignInBtn {
     border-radius: 15px;
     box-shadow: 0 0 8px 0px rgba(255, 154, 35,0.25);
 
-    margin-right: 2.5rem;
+    margin-right: 3.25rem;
 
     color:#FF9A23;
 }
@@ -93,11 +93,7 @@ header .SignInBtn {
 .Logo {
     margin-left: 4.25rem;
 }
-.Logo .lo01 {
-    width: 2.5rem;
-    height: auto;
-}
 .Logo .lo02 {
-    width: 4.2rem;
+    width: 4.75rem;
     height: auto;
 }
