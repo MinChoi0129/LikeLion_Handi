@@ -1,66 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>핸디</title>
-	<link rel="stylesheet" href="../static/css/translation.css">
-    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/translation.css" />
+    <link rel="stylesheet" href="../static/css/header.css" />
     <script src="..\static\js\translation.js"></script>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-</head>
-<body>
-	<header>
-        <div class="Logo"></div>
-		<nav>
-			<ol>
-				<li><a href="index.html">홈</a></li>
-				<li><a href="translation.html">번역하기</a></li>
-				<li><a href="">학습하기</a></li>
-				<li><a href="game.html">게임하기</a></li>
-				<li><a href="">Contact</a></li>
-			</ol>
-		</nav>
-		<button class="SignUpBtn">SIGN UP</button>
-	</header>
-	<main>
-		<section>
-            <div class="ChapterExplain">
-                <h1 class="ChapterTitle">지화로 번역해보기</h1>
-                <p class="ChapterContent">번역 방법 뭐 설명같은거</p>
+    <script
+      src="https://kit.fontawesome.com/32afc995e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="Logo"></div>
+      <nav>
+        <ol>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="translation.html">번역하기</a></li>
+          <li><a href="">학습하기</a></li>
+          <li><a href="game.html">게임하기</a></li>
+          <li><a href="">Contact</a></li>
+        </ol>
+      </nav>
+      <button class="SignUpBtn">SIGN UP</button>
+    </header>
+    <main>
+      <section>
+        <div class="ChapterExplain">
+          <h1 class="ChapterTitle">지화로 번역해보기</h1>
+          <p class="ChapterContent">번역 방법 뭐 설명같은거</p>
+        </div>
+
+        <div class="KoreanWrap">
+          <div class="KoreanInput">
+            <div>
+              <img
+                src="..\static\image\translation\koreanflag.png"
+                class="KoreanFlag"
+              />
             </div>
-            
-            <div class="KoreanWrap">
-                <div class="KoreanInput">
-                        <div ><img src="..\static\image\translation\koreanflag.png" class="KoreanFlag"></div>
-                        <span class="Korean">한국어</span>
-                        <div class="TranslationContent">
-                            <form>
-                                <textarea name="TranslationContent" oninput="updateLetterCount(this.value)" placeholder="번역할 내용을 입력하세요."></textarea>
-                            </form>
-                        </div>
-                    <div class="KoreanFooter">
-                        <p class="KoreanLetterNum">
-                            <span class="ChangeLetterNum"></span>
-                            / 50
-                        </p>
-                        <button type="submit" class="TranslationBtn">번역하기</button>
-                    </div>
-                </div>
-                <div class="SignWrap">
-                    <div class="SignOutput">
-                        <div><img src="..\static\image\translation\Sign.png" class="SignFlag"></div>
-                        <span class="Sign">수어</span>
-                        <div class="SignGif">
-                            <img src="..\static\image\translation\Sign.png" alt="수어" width="300px" height="350px">
-                        </div>
-                        <button type="submit" class="GIfBtn">gif로 저장하기</button> 
-                    </div>
-                </div>   
+            <span class="Korean">한국어</span>
+            <div class="TranslationContent">
+              <form>
+                <textarea
+                  name="TranslationContent"
+                  oninput="updateLetterCount(this.value)"
+                  placeholder="번역할 내용을 입력하세요."
+                ></textarea>
+              </form>
             </div>
-		</section>
-	</main>
-	<footer>
-	</footer>
-</body>
+            <div class="KoreanFooter">
+              <p class="KoreanLetterNum">
+                <span class="ChangeLetterNum"></span>
+                / 50
+              </p>
+              <button type="submit" class="TranslationBtn">번역하기</button>
+            </div>
+          </div>
+          <div class="SignWrap">
+            <div class="SignOutput">
+              <div>
+                <img
+                  src="..\static\image\translation\Sign.png"
+                  class="SignFlag"
+                />
+              </div>
+              <span class="Sign">수어</span>
+              <div class="SignGif">
+                <img
+                  src="..\static\image\translation\Sign.png"
+                  alt="수어"
+                  width="300px"
+                  height="350px"
+                />
+              </div>
+              <button type="submit" class="GIfBtn">gif로 저장하기</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>

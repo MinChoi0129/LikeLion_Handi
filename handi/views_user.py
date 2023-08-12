@@ -91,5 +91,22 @@ class UserRank(RetrieveAPIView):
             json_dumps_params={"ensure_ascii": False},
         )
 
+    def patch(self, request, *args, **kwargs):
+        me = User.objects.get(id=kwargs["pk"])
+
+        old_score = me.game_score
+        request_score = request.data["score"]
+        new_score = max(old_score, request_score)
+        me.game_score = new_score
+        me.save()
+
+        status_code = None
+        if new_score == old_score:
+            status_code = status.HTTP_304_NOT_MODIFIED
+        else:
+            status_code = status.HTTP_202_ACCEPTED
+
+        return Response({"name": me.name, "game_score": new_score}, status=status_code)
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
