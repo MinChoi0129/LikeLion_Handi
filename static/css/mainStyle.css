@@ -69,8 +69,8 @@ body {
 
 /*배경*/
 .Circle1 {
-    width: 30rem;
-    height: 30rem;
+    width: 35rem;
+    height: 35rem;
 
     border-radius: 50%;
 
@@ -81,8 +81,8 @@ body {
     right:-5rem; top:-18rem;
 }
 .Circle2 {
-    width: 18rem;
-    height: 18rem;
+    width: 25rem;
+    height: 25rem;
 
     border-radius: 50%;
 
@@ -93,8 +93,8 @@ body {
     right:35%; top:8rem;
 }
 .Circle3 {
-    width: 8rem;
-    height: 8rem;
+    width: 10rem;
+    height: 10rem;
 
     border-radius: 50%;
 
@@ -102,7 +102,7 @@ body {
     mix-blend-mode: overlay;
 
     position: absolute;
-    right:8%; top:48%;
+    right:15rem; top:22rem;
 }
 /*첫 섹션*/
 .FirstSection{
@@ -112,28 +112,30 @@ body {
     position: relative;
 }
 .SectionWrap {
-    width: 75rem;
+    width: 85rem;
     margin: auto;
 
     display: flex;
     justify-content: space-between;
 }
 .SectionWrap img {
-    width: 35rem;
-    margin-top: 5rem;
+    width: 42rem;
+    margin-right: 0;
+    margin-top: 7rem;
     z-index: 1;
 }
 .FirstSection .TextWrap {
     margin: auto 0;
+    padding-top: 2rem;
 }
 .FirstSection .TextWrap .SubText {
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #858585;
 }
 .FirstSection .TextWrap h1 {
     font-family: 'Pretendard-ExtraBold';
-    font-size: 3.5rem;
+    font-size: 4.25rem;
     margin: 1rem 0;
     margin-bottom: 2.2rem;
 }
@@ -149,7 +151,7 @@ body {
     margin-right: 2rem;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #fff;
 
     animation: BtnDown .3s ease-in-out 1 normal forwards;
@@ -178,7 +180,7 @@ body {
     border-radius: 10px;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #FF9A23;
 }
 @keyframes BtnUp {
@@ -208,7 +210,7 @@ body {
 .fa-arrow-down {
     font-size: 25px;
     position: absolute;
-    left: 50%; bottom:2.5rem;
+    left: 50%; bottom:3rem;
     cursor: pointer;
     
     animation: arrow-down ease 2s infinite;
@@ -232,10 +234,10 @@ body {
     position: relative;
 }
 .SecondSection .TextWrap{
-    width: 75rem;
+    width: 85rem;
     margin: 0 auto;
 
-    padding-top: 6rem;
+    padding-top: 9rem;
 
     margin-bottom: 2rem;
 
@@ -243,18 +245,19 @@ body {
 }
 .SecondSection .TextWrap h2 {
     font-family: 'Pretendard-Bold';
-    font-size: 2rem;
+    font-size: 2.75rem;
     margin:0;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1rem;
 }
 .SecondSection .TextWrap .SubText {
     font-family: 'Pretendard-Medium';
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     color: #858585;
-    line-height: 1.75rem;
+    line-height: 2.25rem;
     margin-left: 1rem;
 }
 .SecondSection .ImgWrap {
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
     text-align: end;
@@ -264,18 +267,18 @@ body {
     position: absolute;
     white-space: nowrap;
     will-change: transform;
-    animation: marquee 8s linear infinite;
+    animation: marquee 15s linear infinite;
 }
 .SecondSection .ImgWrap:hover {
     animation-play-state: paused;
 }
 .SecondSection .ImgWrap .ImgBox {
-    width: 240px;
-    height: 340px;
+    width: 300px;
+    height: 425px;
 
     position: relative;
 
-    border-radius: 25px;
+    border-radius: 20px;
 
     margin: 0.75rem;
     
@@ -290,10 +293,10 @@ body {
     top: 2rem;
 }
 .SecondSection .ImgBox img {
-    width: 240px;
-    height: 340px;
+    width: 300px;
+    height: 425px;
     
-    border-radius: 25px;
+    border-radius: 20px;
 }
 .SecondSection .ImgBox .point {
     position: absolute;
