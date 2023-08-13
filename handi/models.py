@@ -4,7 +4,7 @@ import requests
 
 class User(AbstractUser):
     name = models.CharField(max_length=10)
-    game_score = models.IntegerField(default=0)
+    game_score = models.IntegerField(default=0, blank=True, null=True)
     phone_number = models.CharField(max_length=15)
     profile_img = models.TextField(default=requests.get("https://source.boringavatars.com/beam?square=True").text)
 
