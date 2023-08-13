@@ -6,14 +6,22 @@
     <title>핸디</title>
 	<link rel="stylesheet" href="../static/css/wordStyle.css">
     <link rel="stylesheet" href="../static/css/header.css">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <div class="Logo"></div>
+		<nav>
+			<ol>
+				<li>홈</li>
+				<li>번역하기</li>
+				<li>학습하기</li>
+				<li>게임하기</li>
+				<li>Contact</li>
+			</ol>
+		</nav>
+		<button class="SignInBtn">SIGN IN</button>
+	</header>
 	<main>
 		<section>
             <h2 class="ChapterTitle">과일/채소</h2>
@@ -23,45 +31,45 @@
                 <p class="AllCount">21</p>
             </div>
             <div class="StudySlider">
-                <div class="StudyWrap">
-                    <div class="StudyVideo">
-                        <video class='Video' src=""></video>
-                    </div>
-                    <div class="StudyInfoWrap">
-                        <div class="StudyWord">
-                            <p>키위</p>
+                <i class="fa-solid fa-angle-left" id="PrevBtn"></i>
+                <div class="SliderContainer">
+                    <div class="StudyWrap">
+                        <div class="StudyVideo">
+                            <video class='Video' src=""></video>
                         </div>
-                        <img class="StudyImg" src="" alt="키위"/>
+                        <div class="StudyInfoWrap">
+                            <div class="StudyWord">
+                                <p>키위</p>
+                            </div>
+                            <img class="StudyImg" src="" alt="키위"/>
+                        </div>
+                    </div>
+                    <div class="StudyWrap">
+                        <div class="StudyVideo">
+                            <video class="Video" src=""></video>
+                        </div>
+                        <div class="StudyInfoWrap">
+                            <div class="StudyWord">
+                                <p>참외</p>
+                            </div>
+                            <img class="StudyImg" src="" alt="참외"/>
+                        </div>
+                    </div>
+                    <div class="StudyWrap">
+                        <div class="StudyVideo">
+                            <video class="Video" src=""></video>
+                        </div>
+                        <div class="StudyInfoWrap">
+                            <div class="StudyWord">
+                                <p>사과</p>
+                            </div>
+                            <img class="StudyImg" src="" alt="사과"/>
+                        </div>
                     </div>
                 </div>
-                <div class="StudyWrap">
-                    <div class="StudyVideo">
-                        <video class="Video" src=""></video>
-                    </div>
-                    <div class="StudyInfoWrap">
-                        <div class="StudyWord">
-                            <p>참외</p>
-                        </div>
-                        <img class="StudyImg" src="" alt="참외"/>
-                    </div>
-                </div>
-                <div class="StudyWrap">
-                    <div class="StudyVideo">
-                        <video class="Video" src=""></video>
-                    </div>
-                    <div class="StudyInfoWrap">
-                        <div class="StudyWord">
-                            <p>사과</p>
-                        </div>
-                        <img class="StudyImg" src="" alt="사과"/>
-                    </div>
-                </div>
+                <i class="fa-solid fa-angle-right" ID="NextBtn"></i>
             </div>
 
-            <div class="BtnWrap">
-                <button class="PrevBtn"></button>
-                <button class="NextBtn"></button>
-            </div>
             <div class="StopBtnBox">
                 <button class="StopBtn">학습 종료</button>
             </div>

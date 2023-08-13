@@ -145,49 +145,34 @@ body {
     justify-content: center;
     align-items: center;
 }
-.QuizBox {
-    width: 28rem;
-    height: 28rem;
-
-    border-radius: 1rem;
-
-    margin: 2rem;
-    margin-right: 3rem;
-
-    box-shadow: 0 0 10px 0 #dedede;
-}
-.QuizBox video{
-    width: 28rem;
-    height: 28rem;
-
-    border-radius: 1rem;
-}
 .SelectBox {
-    margin-left: 1rem;
+    margin-top: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .SelectBox input[type=radio] {
     display:none;
 }
+.SelectBox label img {
+    height: 14rem;
+    width: 16rem;
+    border-radius: 15px;
+    border: none;
+}
 .SelectBox input[type=radio] + label{
     display: inline-block;
     cursor: pointer;
-    height: 12rem;
-    width: 18rem;
+    height: 14rem;
+    width: 16rem;
     box-shadow: 0 0 10px 0 #dedede;
     border-radius: 15px;
     background-color: #fff;
 
-    margin: 1rem 1rem;
+    margin: 1rem 2rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.SelectBox span {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 4rem;
 }
 .SelectBox input[type=radio]:checked + label{
     display: inline-block;

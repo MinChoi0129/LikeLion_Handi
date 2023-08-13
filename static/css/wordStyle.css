@@ -60,10 +60,13 @@ main {
     align-items: center;
 }
 section {
-    width: 75rem;
+    width: 85rem;
+    height: 50rem;
     margin: auto;
 
-    margin-top: 5.5rem;
+    margin-top: 6.5rem;
+
+    position: relative;
 }
 button {
     cursor: pointer;
@@ -74,8 +77,8 @@ body {
 
 /*챕터제목*/
 .ChapterTitle {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.5rem;
+    font-family: 'Pretendard-ExtraBold';
+    font-size: 2.75rem;
 
     width: fit-content;
     margin: 1.5rem auto;
@@ -89,7 +92,7 @@ body {
     align-items: center;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 .WordCount p {
     margin:0;
@@ -97,26 +100,46 @@ body {
 
 /*문제 슬라이더*/
 .StudySlider {
-    margin-top: 2rem;
+    margin-top: 0;
+    height: 35rem;
+    width: 100%;
+
+    padding: 0 5rem;
+
+    display: flex;
+    align-items: center;
+}
+.StudySlider .SliderContainer {
+    height: 100%;
+    width: 70rem;
+
+    display: flex;
+    overflow: hidden;
+
 }
 .StudySlider .StudyWrap {
-    width: 60rem;
+    width: 70rem;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
+    margin: 2rem;
+    padding: 0 5rem;
 }
 .StudyWrap .StudyVideo{
-    width: 25rem;
-    height: 25rem;
+    width: 32rem;
+    height: 32rem;
     
     border-radius: 1rem;
+
+    margin-right: 2rem;
 
     box-shadow: 0 0 10px 0 #dedede;
 }
 .StudyVideo .Video {
-    width: 25rem;
-    height: 25rem;
+    width: 32rem;
+    height: 32rem;
     
     border-radius: 1rem;
 }
@@ -124,10 +147,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 2rem;
 }
 .StudyInfoWrap .StudyWord {
-    width: 18rem;
-    height: 11rem;
+    width: 25rem;
+    height: 14rem;
     border-radius: 1rem;
 
     box-shadow: 0 0 10px 0 #dedede;
@@ -143,9 +167,61 @@ body {
     margin:0;
 }
 .StudyInfoWrap .StudyImg {
-    width: 18rem;
-    height: 11rem;
+    width: 25rem;
+    height: 14rem;
     border-radius: 1rem;
 
     box-shadow: 0 0 10px 0 #dedede;
+}
+/*버튼*/
+.StudySlider i {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+
+    border-radius: 50%;
+    background-color: #dedede;
+    color:#fff;
+
+    text-align: center;
+    line-height: 50px;
+
+    font-size: 1.75rem;
+
+    cursor: pointer;
+}
+i#PrevBtn {
+    left:2rem;
+}
+i#NextBtn {
+    right:2rem;
+}
+
+/*종료버튼*/
+.StopBtnBox {
+    width: 140px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+    padding: 2px;
+    border-radius: 12px;
+
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.StopBtn {
+    width: 136px;
+    height: 46px;
+    background: #fff;
+    /* padding: 10px; */
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.15rem;
+    color: #FF9A23;
 }
