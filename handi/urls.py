@@ -8,8 +8,6 @@ from .views_game import *
 from .views_quiz import *
 
 urlpatterns = [
-    path("api/game/", Game.as_view()),
-    path("api/quiz/<lecture_id>/", Quiz.as_view()),
     path("api/translate/", Translator.as_view()),
     path("api/login/", Login.as_view()),
     path("api/logout/", Logout.as_view()),
@@ -21,9 +19,11 @@ urlpatterns = [
     path("api/users/rank/<pk>/", UserRank.as_view()),
     path("api/lectures/", LectureList.as_view()),
     path("api/lecture/<pk>/", LectureDetail.as_view()),
-    path("api/mediaentries/", MediaEntryList.as_view()),
-    path("api/mediaentry/<pk>/", MediaEntryDetail.as_view()),
     path("api/lecturemanager/<user_id>/", LectureManagerList.as_view()),
     path("api/lecturemanager/<user_id>/<lecture_id>/", LectureManagerDetail.as_view()),
     path("api/lecturemanager-update/<pk>/", LectureManagerUpdate.as_view()),
+    path("api/mediaentries/", MediaEntryList.as_view()),
+    path("api/mediaentry/<pk>/", MediaEntryDetail.as_view()),
+    path("api/game/", Game.as_view()),
+    path("api/quiz/<lecture_id>/", Quiz.as_view()),
 ]
