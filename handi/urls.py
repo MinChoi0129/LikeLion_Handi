@@ -6,7 +6,6 @@ from .views_user import *
 from .views_mediaentry import *
 from .views_game import *
 from .views_quiz import *
-
 urlpatterns = [
     path("api/game/", Game.as_view()),
     path("api/quiz/<lecture_id>/", Quiz.as_view()),
@@ -16,6 +15,7 @@ urlpatterns = [
     path("api/signup/", Signup.as_view()),
     path("api/users/", UserList.as_view()),
     path("api/user/<pk>/", UserDetail.as_view()),
+    path("api/user/userinfo/", UserInformation.as_view()),
     path("api/user/update/<pk>/", UserUpdate.as_view()),
     path("api/user/delete/<pk>/", UserDelete.as_view()),
     path("api/users/rank/<pk>/", UserRank.as_view()),
