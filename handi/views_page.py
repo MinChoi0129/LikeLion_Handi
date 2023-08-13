@@ -12,8 +12,10 @@ def login(request):
 def signup(request):
     return render(request, "signup.html")
 
+
 def translate(request):
     return render(request, "translation.html")
+
 
 def study(request):
     return render(request, "studyHome.html")
