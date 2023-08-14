@@ -6,6 +6,7 @@ from .views_user import *
 from .views_mediaentry import *
 from .views_game import *
 from .views_quiz import *
+
 urlpatterns = [
     path("api/translate/", Translator.as_view()),
     path("api/login/", Login.as_view()),

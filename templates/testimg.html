@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" id="image" alt="">
+    <script>
+        let mediaentry_number = '1'
+        fetch('http://localhost:8000/api/mediaentry/' + mediaentry_number)
+        .then((response) => {
+            return response.json()
+            })
+        .then((결과) => {
+            let image_url = 결과.image_url
+            console.log(image_url)
+            let idx = image_url.indexOf('/')
+            let type = image_url.substring(0, idx)
+            let other = image_url.substring(idx + 1, image_url.length)
+            console.log(type, other)
+            document.getElementById('image').setAttribute('src', `{% ${type} ${other} %}`)
+        })
+    </script>
+</body>
+</html>
