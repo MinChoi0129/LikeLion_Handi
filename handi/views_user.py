@@ -3,10 +3,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import *
+from rest_framework.permissions import IsAuthenticated
 from .models import User
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate, login, logout
-
 
 class Login(APIView):
     def post(self, request):
@@ -43,7 +43,11 @@ class Signup(ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
+class UserInformation(RetrieveAPIView):
+    def get(self, request):
+        print(request)
+        return Response(self.data, status=status.HTTP_200_OK)
+    
 # Get All Users
 class UserList(ListCreateAPIView):
     queryset = User.objects.all()
