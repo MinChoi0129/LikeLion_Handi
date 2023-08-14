@@ -1,20 +1,11 @@
-//scrollevent
-const sr = ScrollReveal({
-    reset: true,
-    distance: '60px',
-    duration: 1500,
-    delay: 100
-});
+// 맞은개수/틀린개수
 
-const success = document.querySelector('.Success');
-sr.reveal(success, { delay: 600, origin: 'bottom' });
+// 퍼센트 계산
 
-//chartevent
+// chartevent
 const chart = document.querySelector(".ChartBar");
 let totalMinwon = chart.dataset.percent;
 chart.style.background = `conic-gradient(#FFBD6D 0% ${totalMinwon}%, #FFEA8D ${totalMinwon}% 100%)`;
-
-console.log(chart.style.background);
 
 let t4 = 0
 const chartAnimation = setInterval(() => {
@@ -23,4 +14,8 @@ const chartAnimation = setInterval(() => {
     t4++ >= totalMinwon && clearInterval(chartAnimation)
 }, 15)
 
-//buttonevent
+// 틀린 퀴즈 목록 설정
+
+// 버튼 구현
+
+//ajax 백엔드 연결

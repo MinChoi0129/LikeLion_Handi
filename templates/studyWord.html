@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../static/css/wordStyle.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="/static/js/studyWord.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,24 +23,25 @@
 		</nav>
 		<button class="SignInBtn">SIGN IN</button>
 	</header>
+    <div class="Back"></div>
 	<main>
 		<section>
             <h2 class="ChapterTitle">과일/채소</h2>
             <div class="WordCount">
-                <p class="CurrentCount">1</p>
+                <p class="CurrentCount"></p>
                 /
                 <p class="AllCount">21</p>
             </div>
             <div class="StudySlider">
-                <i class="fa-solid fa-angle-left" id="PrevBtn"></i>
-                <div class="SliderContainer">
+                <i class="fa-solid fa-angle-left button" id="PrevBtn"></i>
+                <div class="SliderContainer" id="SliderContainer">
                     <div class="StudyWrap">
                         <div class="StudyVideo">
                             <video class='Video' src=""></video>
                         </div>
                         <div class="StudyInfoWrap">
                             <div class="StudyWord">
-                                <p>키위</p>
+                                <p class="Word">키위</p>
                             </div>
                             <img class="StudyImg" src="" alt="키위"/>
                         </div>
@@ -50,7 +52,7 @@
                         </div>
                         <div class="StudyInfoWrap">
                             <div class="StudyWord">
-                                <p>참외</p>
+                                <p class="Word">참외</p>
                             </div>
                             <img class="StudyImg" src="" alt="참외"/>
                         </div>
@@ -61,19 +63,38 @@
                         </div>
                         <div class="StudyInfoWrap">
                             <div class="StudyWord">
-                                <p>사과</p>
+                                <p class="Word">사과</p>
                             </div>
                             <img class="StudyImg" src="" alt="사과"/>
                         </div>
                     </div>
+                    <div class="StudyWrap">
+                        <div class="StudyVideo">
+                            <video class="Video" src=""></video>
+                        </div>
+                        <div class="StudyInfoWrap">
+                            <div class="StudyWord">
+                                <p class="Word">배</p>
+                            </div>
+                            <img class="StudyImg" src="" alt="배"/>
+                        </div>
+                    </div>
                 </div>
-                <i class="fa-solid fa-angle-right" ID="NextBtn"></i>
+                <i class="fa-solid fa-angle-right button" ID="NextBtn"></i>
             </div>
-
+            <button class="QuizBtn">퀴즈풀러가기</button>
             <div class="StopBtnBox">
                 <button class="StopBtn">학습 종료</button>
             </div>
 		</section>
+        <!-- modal -->
+        <div class="StopModal">
+            <p class="ModalText">학습 종료 시 처음부터 학습이 시작됩니다.<br/>학습을 종료하시겠습니까?</p>
+            <div class="BtnBox">
+                <button class="YesBtn">예</button>
+                <button class="NoBtn">아니오</button>
+            </div>
+        </div>
 	</main>
 	<footer>
 	</footer>
