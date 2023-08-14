@@ -60,10 +60,10 @@ main {
     align-items: center;
 }
 section {
-    width: 75rem;
+    width: 85rem;
     margin: auto;
 
-    margin-top: 5.5rem;
+    margin-top: 7.5rem;
 }
 button {
     cursor: pointer;
@@ -76,18 +76,20 @@ body {
 /*챕터제목*/
 .ChapterTitle {
     font-family: 'Pretendard-Bold';
-    font-size: 2rem;
+    font-size: 2.5rem;
 
     width: fit-content;
-    margin: 1.5rem auto;
+    margin: 2rem auto;
+
+    margin-bottom: 3rem;
 }
 
 /*문제*/
 .SentenceBox {
-    width: 40rem;
-    height: 3.5rem;
+    width: 45rem;
+    height:4rem;
 
-    margin: 2rem auto;
+    margin: 3.25rem auto;
     border-radius: 15px;
     border: 2px solid #FFBD6C;
 
@@ -101,13 +103,13 @@ body {
 }
 .SentenceBox p {
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 /*그래프차트*/
 .ChartBar {
-    width: 225px;
-    padding-bottom: 225px;;
+    width: 275px;
+    padding-bottom: 275px;
     margin: 0 auto;
     border-radius: 50%;
     position: relative;
@@ -130,7 +132,7 @@ body {
     align-items: center;
     content: attr(data-percent)'%';
     margin: auto;
-    font-size: 2.25rem;
+    font-size: 2.5rem;
 
     font-family: 'Pretendard-Bold';
 }
@@ -138,7 +140,7 @@ body {
 /*텍스트*/
 .Success {
     font-family: 'Pretendard-Bold';
-    font-size: 2rem;
+    font-size: 2.5rem;
     color:#505050;
 
     text-align: center;
@@ -152,8 +154,8 @@ body {
     justify-content: space-between;
 }
 .BtnWrap .RetryBtn {
-    width: 135px;
-    height: 44px;
+    width: 145px;
+    height: 48px;
     position: relative;
 
     display: inline-block;
@@ -165,12 +167,12 @@ body {
     margin: 0 2rem;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: #fff;
 }
 .BtnWrap .NextBtn {
-    width: 160px;
-    height: 44px;
+    width: 170px;
+    height: 48px;
     position: relative;
 
     display: inline-block;
@@ -181,7 +183,7 @@ body {
     margin: 0 2rem;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: #fff;
 }
 
@@ -191,8 +193,8 @@ body {
     content: "다시 학습하기";
     position: absolute;
     left:0;right: 0;top:0;bottom:0;
-    width: 135px;
-    height: 44px;
+    width: 145px;
+    height: 48px;
 
     display: inline-block;
     background: linear-gradient(to right, #ffeea0, #ffc986);
@@ -201,7 +203,7 @@ body {
     border-radius: 10px;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: #fff;
 
     transition: all .2s ease-in-out;
@@ -217,8 +219,8 @@ body {
     content: "다음 문장 학습하기";
     position: absolute;
     left:0;right: 0;top:0;bottom:0;
-    width: 160px;
-    height: 44px;
+    width: 170px;
+    height: 48px;
 
     display: inline-block;
     background: linear-gradient(to right, #ffeea0, #ffc986);
@@ -227,7 +229,7 @@ body {
     border-radius: 10px;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: #fff;
 
     transition: all .2s ease-in-out;

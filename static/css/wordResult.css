@@ -84,114 +84,85 @@ body {
     margin: 1.5rem auto;
     margin-bottom: 0.5rem;
 }
-
-/*문제수*/
-.TestCount {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-
-    font-family: 'Pretendard-SemiBold';
+.ChapterResult {
+    font-family: 'Pretendard-Bold';
     font-size: 2rem;
-
-    margin-right: 8rem;
-    margin-bottom: 1rem;
-}
-.TestCount p span{
-    margin:0;
-
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.3rem;
-}
-.TestCount p {
-    margin:0;
-}
-
-/*진행바*/
-.StageBarWrap {
     width: fit-content;
-
-    margin: 0 auto;
-}
-.StageBarWrap .BackStageBar {
-    width: 70rem;
-    height:1.4rem ;
-
-    position: relative;
-
-    background-color: #fff;
-    border: 1px solid #FFBD6C;
-    border-radius: 25px;
-}
-.StageBarWrap .StageBar{
-    position: absolute;
-    top:-1px; left:-1px;
-
-    width: 60rem;
-    height:1.4rem ;
-
-    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-    border-radius: 25px;
+    margin:0;
+    margin: 1rem auto;
 }
 
-/*선택지*/
-.QuizWrap {
-    width: fit-content;
-    margin: 0.6rem auto;
+.ResultWrap {
+    margin-top: 3rem;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
-.QuizBox {
-    width: 28rem;
-    height: 28rem;
 
-    border-radius: 1rem;
-
-    margin: 2rem;
-    margin-right: 3rem;
-
-    box-shadow: 0 0 10px 0 #dedede;
+/*그래프차트*/
+.ChartBar {
+    width: 375px;
+    padding-bottom: 375px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    transition: background .3s ease-in-out;
+    background: conic-gradient(#FFBD6D 0% 72%, #FFEA8D 72% 100%);
 }
-.QuizBox video{
-    width: 28rem;
-    height: 28rem;
-
-    border-radius: 1rem;
-}
-.SelectBox {
-    margin-left: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.SelectBox input[type=radio] {
-    display:none;
-}
-.SelectBox input[type=radio] + label{
-    display: inline-block;
-    cursor: pointer;
-    height: 12rem;
-    width: 18rem;
-    box-shadow: 0 0 10px 0 #dedede;
-    border-radius: 15px;
-    background-color: #fff;
-
-    margin: 1rem 1rem;
-
+.ChartBar::before {
+    color: #505050;
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    content: attr(data-percent)'%';
+    margin: auto;
+    font-size: 3.75rem;
+
+    font-family: 'Pretendard-Bold';
 }
-.SelectBox span {
+
+/*틀린 퀴즈 목록*/
+.FailedWordBox {
+    width: 40rem;
+    height: 30rem;
+
+    box-shadow: 0 0 10px 0 #dedede;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.FailedWordBox h3 {
+    font-family: 'Pretendard-Bold';
+    font-size: 2rem;
+}
+.FailedWordBox .FailedWordWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.FailedWordWrap .FailedWord {
+    width: 9rem;
+    height: 3.5rem;
+
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 #FFBD6D;
+
+    margin: 1.25rem;
+
     font-family: 'Pretendard-SemiBold';
-    font-size: 4rem;
-}
-.SelectBox input[type=radio]:checked + label{
-    display: inline-block;
-    box-shadow: 0 0 10px 0 #FFBD6C;
+    font-size: 1.5rem;
 
     display: flex;
     justify-content: center;
@@ -199,22 +170,30 @@ body {
 }
 
 /*버튼*/
-.StopBtnBox {
-    width: 140px;
-    height: 50px;
+.BtnWrap {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 3rem;
+}
+.BtnWrap .HomtBtnBox {
+    width: 145px;
+    height: 48px;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #FFEA8D, #FFBD6C);
     padding: 2px;
     border-radius: 12px;
-
-    margin: 0 auto;
-    margin-top: 2rem;
 }
-.StopBtn {
-    width: 136px;
-    height: 46px;
+.HomtBtnBox .HomeBtn {
+    width: 141px;
+    height: 44px;
     background: #fff;
     /* padding: 10px; */
     border: none;
@@ -223,4 +202,21 @@ body {
     font-family: 'Pretendard-SemiBold';
     font-size: 1.15rem;
     color: #FF9A23;
+}
+.ReviewBtn {
+    width: 145px;
+    height: 48px;
+    position: relative;
+
+    display: inline-block;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
+
+    border: none;
+    border-radius: 10px;
+
+    margin: 0 2rem;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.15rem;
+    color: #fff;
 }

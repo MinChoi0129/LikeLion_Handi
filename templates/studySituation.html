@@ -1,19 +1,20 @@
+<!-- {% extends 'header.html' %}
+{% load static %}
+{% block content %} -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>핸디</title>
-	<link rel="stylesheet" href="../static/css/situationStyle.css">
-    <link rel="stylesheet" href="../static/css/header.css">
+	<link rel="stylesheet" href="/static/css/situationStyle.css">
+    <link rel="stylesheet" href="/static/css/header.css">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/situation.js' %}" defer></script>
 </head>
 <body>
-	<header>
-        <div class="Logo">
-			<img class="lo01" src="/static/image/logo/logo1.svg">
-			<!-- <img class='lo02' src="/static/image/logo/logo2.svg"> -->
-		</div>
+    <header>
+        <div class="Logo"></div>
 		<nav>
 			<ol>
 				<li>홈</li>
@@ -23,7 +24,7 @@
 				<li>Contact</li>
 			</ol>
 		</nav>
-		<button class="SignUpBtn">SIGN UP</button>
+		<button class="SignInBtn">SIGN IN</button>
 	</header>
 	<main>
 		<section>
@@ -65,4 +66,4 @@
 	<footer>
 	</footer>
 </body>
-</html>
+<!-- {% endblock %} -->
