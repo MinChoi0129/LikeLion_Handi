@@ -2,6 +2,12 @@ from django.shortcuts import render
 
 
 def main(request):
+    if request.user.is_authenticated:
+        if not request.user.name:
+            users = request.user
+            users.name = request.user.username
+            users.save()
+        return render(request, "index.html")
     return render(request, "index.html")
 
 
