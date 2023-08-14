@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../static/css/wordQuiz.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="/static/js/testWord.js" defer></script>
 </head>
 <body>
 	<header>
@@ -22,7 +23,18 @@
 		</nav>
 		<button class="SignUpBtn">SIGN UP</button>
 	</header>
+    <div class="Back"></div>
 	<main>
+        <!-- modal -->
+        <div class="StartModal">
+            <p class="ModalText">퀴즈 풀이를 시작합니다.</p>
+            <div class="BtnBox">
+                <button class="StartBtn">시작</button>
+                <div class="NoBtnBox">
+                    <button class="NoBtn">안 할래요</button>
+                </div>
+            </div>
+        </div>
 		<section>
             <h2 class="ChapterTitle">과일/채소</h2>
             <div class="TestCount">
