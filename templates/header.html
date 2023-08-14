@@ -21,7 +21,11 @@
                 <li>Contact</li>
             </ol>
         </nav>
-        <button class="SignInBtn"><a href="/login">SIGN IN</a></button>
+        {% if user.is_authenticated %}
+        <a href = "/accounts/logout"><button class="SignInBtn">LOGOUT</button></a>
+        {% else %}
+        <a href="{% url 'login' %}"><button class="SignInBtn">SIGN IN</button></a>
+        {% endif %}
     </header>
     {% block content %}
     {% endblock %}
