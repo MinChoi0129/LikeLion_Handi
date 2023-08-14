@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>핸디</title>
-	<link rel="stylesheet" href="../static/css/game.css">
+	<link rel="stylesheet" href="{% static 'css/game.css' %}">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/game/modal.js' %}" defer></script>
+    <script src="{% static 'js/game/timebar.js' %}" defer></script>
+    <script src="{% static 'js/game/cardgame.js' %}" defer></script>
 </head>
 <body>
 	<header>
@@ -96,66 +99,66 @@
                                 </li> -->
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\cat.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/cat.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\finger.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/finger.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\love.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/love.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\kakao.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/kakao.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\kakao.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/kakao.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\love.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/love.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\finger.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/finger.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                                 <li>
                                     <div class="View Front">
-                                        <img src="..\static\image\main2.png" alt="symbol-of-spades.png">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
                                     </div>
                                     <div class="View Back">
-                                        <img src="..\static\image\login\cat.png" alt="cupcake.png">
+                                        <img src="{% static 'image/login/cat.png' %}" alt="cupcake.png">
                                     </div>
                                 </li>
                             </ul>
@@ -209,8 +212,5 @@
 	</main>
 	<footer>
 	</footer>
-    <script src="..\static\js\game\modal.js"></script>
-    <script src="..\static\js\game\timebar.js"></script>
-    <script src="..\static\js\game\cardgame.js"></script>
 </body>
-</html>
+{% endblock %}
