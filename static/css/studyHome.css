@@ -121,18 +121,22 @@ li {
 .search {
     width: 600px;
     height: 52px;
-    padding: 1px;
-    border: 1px solid transparent;
+    padding: 0;
     position: relative;
     left: 60px;
-    background-image: linear-gradient(white, white), linear-gradient(to right, #FFEA8D, #FFBD6C);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    color: #E1E1E1;
-    border-radius: 10px;
     font-size: 15px;
     font-family: 'Pretendard-Medium';
-}
+  
+    border-radius: 10px; /* 라운딩 반경 설정 */
+    overflow: hidden; /* 내부를 라운딩 처리 */
+
+    border: none;
+    padding: 15px;
+  
+    /* 그라데이션 테두리를 box-shadow를 사용하여 시뮬레이트 */
+    box-shadow: 0 0 0 1px #FFBD6C inset, 0 0 0 1px #FFEA8D inset;
+  }
+
 
 .section, .section1 {
     position: relative;
