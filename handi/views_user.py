@@ -8,6 +8,7 @@ from .models import User
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate, login, logout
 
+
 class Login(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -37,17 +38,24 @@ class Signup(ListCreateAPIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            response_data = {
+                "username": serializer.data["username"],
+                "name": serializer.data["name"],
+                "phone_number": serializer.data["phone_number"],
+            }
+            return Response(response_data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
 class UserInformation(RetrieveAPIView):
     def get(self, request):
         print(request)
         return Response(self.data, status=status.HTTP_200_OK)
-    
+
+
 # Get All Users
 class UserList(ListCreateAPIView):
     queryset = User.objects.all()
@@ -68,6 +76,11 @@ class UserUpdate(UpdateAPIView):
 
 # DELETE User
 class UserDelete(DestroyAPIView):
+    def delete(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.delete()
+        return Response({"success": True}, status=status.HTTP_204_NO_CONTENT)
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -99,7 +112,7 @@ class UserRank(RetrieveAPIView):
         me = User.objects.get(id=kwargs["pk"])
 
         old_score = me.game_score
-        request_score = request.data["score"]
+        request_score = int(request.data["score"])
         new_score = max(old_score, request_score)
         me.game_score = new_score
         me.save()
