@@ -50,6 +50,15 @@ class Signup(ListCreateAPIView):
     serializer_class = UserSerializer
 
 
+class SignUpCheck(RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        username = request.data["username"]
+        for user in User.objects.all():
+            if user.username == username:
+                return Response({"available": False}, status=status.HTTP_409_CONFLICT)
+        return Response({"available": True}, status=status.HTTP_200_OK)
+
+
 class UserInformation(RetrieveAPIView):
     def get(self, request):
         print(request)
