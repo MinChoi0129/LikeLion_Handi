@@ -25,30 +25,31 @@ class LectureList(ListCreateAPIView):
 # READ Lecture
 class LectureDetail(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
-        media_entry_opened_list = []
-        for lecture in Lecture.objects.all():
-            form = {
-                "id": lecture.id,
-                "name": lecture.name,
-                "main_category": lecture.main_category,
-                "sub_category": lecture.sub_category,
-                "theme_category": lecture.theme_category,
-                "level": lecture.level,
-                "length": lecture.length,
-                "lecture_img": lecture.lecture_img.url,
-                "description": lecture.description,
-                "media_entries": [
-                    {
-                        "name": media_entry.name,
-                        "video_url": media_entry.video_url,
-                        "image_url": media_entry.image_url,
-                        "data": media_entry.data,
-                    }
-                    for media_entry in lecture.media_entries.all()
-                ],
-            }
-            media_entry_opened_list.append(form)
-        return Response(media_entry_opened_list, status.HTTP_200_OK)
+        lecture = Lecture.objects.get(id=kwargs["pk"])
+        form = {
+            "id": lecture.id,
+            "name": lecture.name,
+            "main_category": lecture.main_category,
+            "sub_category": lecture.sub_category,
+            "theme_category": lecture.theme_category,
+            "level": lecture.level,
+            "length": lecture.length,
+            "lecture_img": lecture.lecture_img.url,
+            "description": lecture.description,
+            "media_entries": [],
+        }
+
+        for media_entry in lecture.media_entries.all():
+            form["media_entries"].append(
+                {
+                    "name": media_entry.name,
+                    "entry_type": media_entry.entry_type,
+                    "video_url": media_entry.video_url,
+                    "image_url": media_entry.image_url,
+                    "data": media_entry.data,
+                }
+            )
+        return Response(form, status.HTTP_200_OK)
 
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer
