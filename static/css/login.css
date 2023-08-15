@@ -191,8 +191,8 @@ input:focus {
 }
 
 .NaverLogo {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     top: 50%; left:1rem;
     transform: translateY(-50%);

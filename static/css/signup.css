@@ -98,7 +98,7 @@ input:focus {
     background-color: #FF9A23;
     color: white;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
     padding: 12px;
     margin: 20px 8px 8px 8px;

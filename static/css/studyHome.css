@@ -332,5 +332,5 @@ input:focus {
 
 .king:hover .btn {
     opacity: 1;
-    transition: 0.5s ease;
+    transition: 0.4s ease;
 }
