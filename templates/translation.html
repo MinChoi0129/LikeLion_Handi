@@ -38,10 +38,14 @@
                 </div>
                 <div class="SignWrap">
                     <div class="SignOutput">
-                        <div><img src="{% static 'image/translation/Sign.png' %}" class="SignFlag"></div>
+                        <div>
+                            <img src="{% static 'image/translation/Sign.png' %}" class="SignFlag"></div>
                         <span class="Sign">수어</span>
                         <div class="SignGif">
-                            <img src="{% static 'image/translation/Sign.png' %}" alt="수어" width="300px" height="350px">
+                            <video controls width="300" height="350">
+                                <source id="videoSource" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <form method="post" action="https://127.0.0.1:8000/api/translate">
                             <input type="hidden" value="download" name="mode">
@@ -50,48 +54,6 @@
                     </div>
                 </div>   
             </div>
-
-                        <button type="submit" class="GIfBtn">gif로 저장하기</button> 
-                    </div>
-                </div>   
-            </div>
-
-		</section>
-	</main>
-	<footer>
-	</footer>
-</body>
-
-{% endblock %}
-            <div class="KoreanFooter">
-              <p class="KoreanLetterNum">
-                <span class="ChangeLetterNum"></span>
-                / 50
-              </p>
-              <button type="submit" class="TranslationBtn">번역하기</button>
-            </div>
-          </div>
-          <div class="SignWrap">
-            <div class="SignOutput">
-              <div>
-                <img
-                  src="..\static\image\translation\Sign.png"
-                  class="SignFlag"
-                />
-              </div>
-              <span class="Sign">수어</span>
-              <div class="SignGif">
-                <img
-                  src="..\static\image\translation\Sign.png"
-                  alt="수어"
-                  width="300px"
-                  height="350px"
-                />
-              </div>
-              <button type="submit" class="GIfBtn">gif로 저장하기</button>
-            </div>
-          </div>
-        </div>
       </section>
     </main>
   </body>
