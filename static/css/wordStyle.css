@@ -73,7 +73,6 @@ button {
 }
 body {
     overflow-x: hidden;
-    position: relative;
 }
 
 /*챕터제목*/
@@ -328,7 +327,7 @@ i#NextBtn {
 
     border:none;
     border-radius: 10px;
-    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
 
     font-family: 'Pretendard-SemiBold';
     font-size: .9rem;
@@ -342,7 +341,7 @@ i#NextBtn {
 
     border:none;
     border-radius: 10px;
-    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
 
     font-family: 'Pretendard-SemiBold';
     font-size: .9rem;

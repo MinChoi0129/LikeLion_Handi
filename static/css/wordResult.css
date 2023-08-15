@@ -179,7 +179,7 @@ body {
 
     margin-top: 3rem;
 }
-.BtnWrap .HomtBtnBox {
+.BtnWrap .HomeBtnBox {
     width: 145px;
     height: 48px;
     position: relative;
@@ -191,7 +191,7 @@ body {
     padding: 2px;
     border-radius: 12px;
 }
-.HomtBtnBox .HomeBtn {
+.HomeBtnBox .HomeBtn {
     width: 141px;
     height: 44px;
     background: #fff;
