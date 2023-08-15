@@ -1,5 +1,3 @@
-//ajax 백엔드 연결
-
 // 변수설정
 const ChapterTitle = document.querySelector('.ChapterTitle');
 const CurrentCount = document.querySelector('.CurrentCount');
@@ -15,8 +13,6 @@ const StartModal = document.querySelector('.StartModal');
 const StartBtn = document.querySelector('.StartBtn');
 const NoBtn = document.querySelector('.NoStartBtnBox');
 
-console.log(StartModal);
-
 StartBtn.addEventListener("click", ()=>{
     Back.style.display = "none";
     StartModal.style.display = "none";
@@ -28,8 +24,6 @@ NoBtn.addEventListener("click", ()=> {
 // 정답&오답 클릭시
 
 // 진행바
-
-// 숫자 변경
 
 // 그만풀기 버튼
 const StopModal = document.querySelector('.StopModal');
@@ -47,3 +41,22 @@ No.addEventListener("click", ()=> {
     StopModal.style.display = "none";
     Back.style.display = "none";
 })
+
+//ajax 백엔드 연결
+fetch('http://localhost:8000/api/lecture/1')
+	.then((response) => {
+        if (!response.ok){
+            throw new Error('400아니면500에러남')
+        }
+		return response.json()
+		})
+	.then((data) => {
+        console.log(data);
+        const count = `${data.length}`;
+        AllCount.innerHTML = count;
+        const title = data.description;
+        ChapterTitle.innerHTML = title;
+    })
+    .catch(()=>{
+        console.log('에러남')
+    })
