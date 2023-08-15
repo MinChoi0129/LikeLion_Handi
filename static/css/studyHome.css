@@ -88,10 +88,10 @@ li {
     font-family: 'Pretendard-Regular';
     transition: 1s;
     width: 150px;
-    height: 236px;
+    height: 245px;
     position: absolute;
-    left: 200px;
-    top: -100px;
+    left: 352px;
+    top: -70px;
     transition: 0.7s;
     z-index: 1;
 }
@@ -99,7 +99,7 @@ li {
 .WhiteBox {
     position: absolute;
     top: -5px;
-    left: 200px;
+    left: 352px;
     width: 150px;
     height: 130px;
     border: 1px solid white;
