@@ -218,7 +218,13 @@ textarea[name="sentence"]::placeholder {
     color: #858585;
 }
 
-
+main {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+}
+html,body {
+    width: 100%;
+}
 
 
 

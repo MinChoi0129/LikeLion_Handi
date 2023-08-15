@@ -2,7 +2,7 @@ import os, numpy as np
 import random
 from jamo import h2j, j2hcj
 from rest_framework.generics import *
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
 
 all_jamo_list = [
     "ㄱ",
