@@ -81,6 +81,12 @@ li {
     z-index: 3;
 }
 
+.SearchBtn {
+    position: relative;
+    left: 330px;
+    top: -37px;
+}
+
 .list {
     color: #bababa;
     background-color: #fafafa;
@@ -90,7 +96,7 @@ li {
     width: 150px;
     height: 245px;
     position: absolute;
-    left: 352px;
+    left: 361px;
     top: -70px;
     transition: 0.7s;
     z-index: 1;
@@ -99,7 +105,7 @@ li {
 .WhiteBox {
     position: absolute;
     top: -5px;
-    left: 352px;
+    left: 361px;
     width: 150px;
     height: 130px;
     border: 1px solid white;

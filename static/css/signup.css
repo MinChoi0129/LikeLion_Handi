@@ -70,24 +70,26 @@ input:focus {
 .id, .PhoneNumber, .number {
     border: 1px solid #E1E1E1;
     color: #858585;
-    padding: 11px;
+    padding: 13px;
     margin: 6px;
     border-radius: 7px;
     font-weight: lighter;
     font-size: 14px;
-    width: 470px;
+    width: 535px;
+    height: 45px;
     font-family: 'Pretendard-Regular';
 }
 
 .password, .password2, .name {
     border: 1px solid #E1E1E1;
     color: #858585;
-    padding: 11px;
+    padding: 13px;
     margin: 6px;
     border-radius: 7px;
     font-weight: lighter;
     font-size: 14px;
-    width: 540px;
+    width: 600px;
+    height: 45px;
     font-family: 'Pretendard-Regular';
 }
 
@@ -101,7 +103,8 @@ input:focus {
     padding: 12px;
     margin: 20px 8px 8px 8px;
     border-radius: 7px;
-    width: 540px;
+    width: 600px;
+    height: 45px;
     font-family: 'Pretendard-Regular';
 }
 
@@ -110,15 +113,23 @@ input:focus {
     border-radius: 7px;
     background-color: #FF9A23;
     color: white;
-    width: 65px;
-    height: 40px;
+    width: 60px;
+    height: 43px;
     font-size: 11px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 6px;
     font-family: 'Pretendard-Regular';
 }
 
 .IdBox, .PhoneBox, .NumberBox {
+    width: fit-content;
     display: flex;
-    font-family: 'Pretendard-Regular';
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+html,body {
+    width: 100%;
 }
