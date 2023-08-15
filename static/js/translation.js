@@ -15,3 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
       letterNumElement.textContent = currentLength;
     }
   }
+
+
+  fetch('http://localhost:8000/api/translate/<video_url>')
+	.then((response) => {
+		return response.json()
+		})
+	.then((결과) => {
+		console.log(결과[0].["username"])
+		console.log(결과[0].username)
+	})
