@@ -57,7 +57,7 @@ header {
 header nav {
     padding-right: 10rem;
 }
-header li {
+header li a{
     font-family: 'Pretendard-Medium';
     font-size: 1.15rem;
 
@@ -65,9 +65,37 @@ header li {
 
     transition: all .2s ease-in-out;
     cursor: pointer;
+    position: relative;
+    padding: 0 10px;
 }
-header li:hover {
+header li a:after {
+    content: "";
+    position: absolute;
+    background-color: #FF9A23;
+    height: 3px;
+    width:0;
+    left:0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+header li a:hover:after {
+    width: 100%;
+}
+header li a:hover {
+    color:#FF9A23;
+}
+header li a.active {
     color: #FF9A23;
+}
+header li a.active::after {
+    content: "";
+    position: absolute;
+    background-color: #FF9A23;
+    height: 3px;
+    width:100%;
+    left:0;
+    bottom: -10px;
+    transition: 0.3s;
 }
 header .SignInBtn {
     font-family: 'Pretendard-Regular';
