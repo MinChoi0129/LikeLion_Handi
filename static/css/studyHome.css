@@ -78,12 +78,14 @@ li {
     color: white;
     font-size: 15px;
     z-index: 3;
+    cursor: pointer;
 }
 
 .SearchBtn {
     position: relative;
     left: 330px;
     top: -37px;
+    cursor: pointer;
 }
 
 .list {
@@ -99,6 +101,7 @@ li {
     top: -102px;
     transition: 0.7s;
     z-index: 1;
+    cursor: pointer;
 }
 
 .WhiteBox {
@@ -148,6 +151,7 @@ li {
     width: 170px;
     height: 165px;
     margin-right: 17px;
+    cursor: pointer;
 }
 
 .title, .box1, .box3, .box15 {
@@ -300,6 +304,7 @@ input:focus {
     left: calc(100% + 50px);
     left: 90px;
     top: 15px;
+    cursor: pointer;
 }
   
 
@@ -314,6 +319,7 @@ input:focus {
     font-size: 17px;
     left: 1090px;
     top: 15px;
+    cursor: pointer;
 }
 
 .btn {
