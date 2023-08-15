@@ -343,3 +343,6 @@ input:focus {
 .Sc1 {
     padding-top: 2rem;
 }
+::-webkit-scrollbar {
+    display: none;
+}
