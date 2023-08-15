@@ -1,37 +1,45 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/lectureCategory.css' %}">
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/lectureCategory.js' %}"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/lectureCategory.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var lecture_id = "{{lecture_id}}";
+  </script>
+  <script src="{% static 'js/lectureCategory.js' %}"></script>
 </head>
 <body>
-	<main class="main">
-		<section>
-            <img class="apple1" src="{% static 'image/login/apple.png' %}" alt="apple">
-            <div class="box20">
-                <div class="title1">수어도 한걸음부터 - 과일편</div>
-                <div class="ing1">
-                    <div class="count1">총 30개</div>
-                    <div class="bar1"></div>
-                </div>
-                <div class="btn1">
-                    <button class="study">학습하기</button>
-                    <button class="game">게임하기</button>
-                </div>
-            </div>
-		</section>
-		<section class="section">
-            <div class="box21">
-                <div class="a">a: 안녕. 만나서 반가워.</div>
-                <div class="b">b: 나도 안녕.</div>
-                <div class="c">c: 내 이름은 000이야.</div>
-            </div>
-		</section>
-	</main>
+  <main class="main">
+    <section>
+      <img
+        class="apple1"
+        src="{% static 'image/login/apple.png' %}"
+        alt="apple"
+      />
+      <div class="box20">
+        <div class="title1">수어도 한걸음부터 - 과일편</div>
+        <div class="ing1">
+          <div class="count1">총 30개</div>
+          <div class="bar1"></div>
+        </div>
+        <div class="btn1">
+          <button class="study">학습하기</button>
+          <button class="game">게임하기</button>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="box21">
+        <div class="a">a: 안녕. 만나서 반가워.</div>
+        <div class="b">b: 나도 안녕.</div>
+        <div class="c">c: 내 이름은 000이야.</div>
+      </div>
+    </section>
+  </main>
 </body>
 {% endblock %}

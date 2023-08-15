@@ -1,0 +1,649 @@
+@font-face {
+    font-weight: 300;
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+}
+@font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+@font-face {
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+}
+@font-face {
+    font-weight: 600;
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-weight: 700;
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+}
+@font-face {
+    font-weight: 800;
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+}
+* {
+  box-sizing: border-box;
+  
+}
+body, main, div {
+  margin: 0;
+  padding: 0;
+}
+ol, ul,li {
+ list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin:0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  margin:0;
+  padding:0;
+  font-size : 16px;
+}
+main {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ffebd3 -0%, rgba(225, 225, 225, 0) 100%);
+  background-color: #ffffff;
+  
+}
+section {
+  width: 105rem;
+  margin: auto;
+
+  margin-top: 5.5rem;
+}
+button {
+  cursor: pointer;
+}
+body {
+  overflow-x: hidden;
+  overflow: hidden; /* 페이지 스크롤 막기 */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 게임 전체 화면*/
+.GameWrap {
+  /* background: linear-gradient(180deg, #ffebd3 -0%, rgba(225, 225, 225, 0) 100%);
+  background-color: #ffffff; */
+  height: 108rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  /* 카드 wrap */
+  .CardWrap {
+    background-color: #ffffff;
+    border: solid 2.5px #e1e1e1;
+    border-radius: 2.3rem;
+    box-sizing: border-box;
+    height: 41rem;
+    left: 19.5rem;
+    position: absolute;
+    top: 3rem;
+    width: 66rem;
+  }
+
+  /* 프로필 및 점수 정보*/
+  .Profile {
+    background-color: #ffbd6c;
+    border-radius: 1rem;
+    height: 15rem;
+    left: 3.9rem;
+    position: absolute;
+    top: 15.9rem;
+    width: 12.9rem;
+  }
+  .Scoreboard {
+    background-color: #ffbd6c;
+    border-radius: 1rem;
+    height: 21rem;
+    left: 87.5rem;
+    position: absolute;
+    top: 12rem;
+    width: 14rem;
+  }
+  .HighestScore {
+    color: #ffffff;
+    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-size: 1.7rem;
+    font-weight: 800;
+    height: 5.1rem;
+    left: 90.8rem;
+    line-height: 1.2575;
+    position: absolute;
+    top: 22.3rem;
+    white-space: nowrap;
+    width: 9.7rem;
+  }
+
+  .CurrentScore {
+    color: white;
+    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-size: 1.7rem;
+    font-weight: 800;
+    height: 5.1rem;
+    left: 90.8rem;
+    line-height: 1.2575;
+    position: absolute;
+    top: 12rem;
+    white-space: nowrap;
+    width: 11.3rem;
+  }
+
+  .CurrentScoreNum {
+    color: #ffffff;
+    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-size: 3rem;
+    font-weight: 800;
+    height: 8.1rem;
+    left: 93.8rem;
+    line-height: 1.2575;
+    position: absolute;
+    top: 13.5rem;
+    white-space: nowrap;
+    width: 3.5rem;
+  }
+  .HighestScoreNum {
+    color: #ffffff;
+    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-size: 3rem;
+    font-weight: 800;
+    height: 8.1rem;
+    left: 92rem;
+    line-height: 1.2575;
+    position: absolute;
+    top: 24rem;
+    white-space: nowrap;
+    width: 10.4rem;
+  }
+
+  /* 카드 */
+  /* .CardGroup {
+    align-items: center;
+    column-gap: 6rem;
+    display: flex;
+    height: 35rem;
+    left: 22.5rem;
+    position: absolute;
+    top: 6rem;
+    width: 60rem;
+
+    .FirstRowCards {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      height: 100%;
+
+      .FirstCard {
+        flex-shrink: 0;
+        height: 16rem;
+        margin-bottom: 3rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: 0.2rem;
+        border-radius: 0.4rem;
+      }
+      .FifthCard {
+        flex-shrink: 0;
+        height: 16rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        border-radius: 0.4rem;
+      }
+    }
+    .SecondRowCards {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      height: 100%;
+
+      .SecondCard{
+        flex-shrink: 0;
+        height: 16rem;
+        margin-bottom: 3rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: -2rem;
+        border-radius: 0.4rem;
+      }
+      .SixthCard {
+        flex-shrink: 0;
+        height: 16rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: -2rem;
+        border-radius: 0.4rem;
+      }
+    }
+    .ThirdRowCards {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      height: 100%;
+
+      .ThirdCard {
+        flex-shrink: 0;
+        height: 16rem;
+        margin-bottom: 3rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: -2rem;
+        border-radius: 0.4rem;
+      }
+      .SeventhCard {
+        flex-shrink: 0;
+        height: 16rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: -2rem;
+        border-radius: 0.4rem;
+      }
+    }
+    .FourthRowCards {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      height: 100%;
+
+      .FourthCard{
+        flex-shrink: 0;
+        height: 16rem;
+        margin-bottom: 3rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: -2.1rem;
+        border-radius: 0.4rem;
+      }
+      .EighthCard {
+        flex-shrink: 0;
+        height: 16rem;
+        object-fit: contain;
+        vertical-align: top;
+        width: 12rem;
+        margin-left: -2.1rem;
+        border-radius: 0.4rem;
+      }
+    }
+  } */
+
+  /* 프로필 정보*/
+  .Nickname {
+    align-items: center;
+    background-color: #ffffff;
+    border: solid 2px #e1e1e1;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-size: 18px;
+    font-weight: 800;
+    height: 4rem;
+    justify-content: center;
+    left: 3.8rem;
+    line-height: 1.2575;
+    position: absolute;
+    top: 28.5rem;
+    white-space: nowrap;
+    width: 13rem;
+  }
+  .Userimage {
+    border-radius: 2rem;
+    height: 10.6rem;
+    left: 4.9rem;
+    object-fit: cover;
+    position: absolute;
+    top: 16.9rem;
+    vertical-align: top;
+    width: 11rem;
+  }
+
+  /* 게임 제목 (카드 뒤집기) */
+  .GameTitleWrap {
+    height: 12.8rem;
+    left: 6.6rem;
+    position: absolute;
+    top: 0rem;
+    width: 15.7rem;
+    /* background-color: red; */
+
+    .TitleCard{
+      color: #000000;
+      font-family: Pretendard Variable, 'Source Sans Pro';
+      font-size: 4rem;
+      font-weight: 800;
+      height: 8.1rem;
+      left: -40px;
+      line-height: 1.2575;
+      position: absolute;
+      top: -70px;
+      white-space: nowrap;
+      width: 8.7rem;
+      /* background-color: blue; */
+    }
+    .TitleFlip {
+      color: #000000;
+      font-family: Pretendard Variable, 'Source Sans Pro';
+      font-size: 2rem;
+      font-weight: 800;
+      height: 3.1rem;
+      left: 2rem;
+      line-height: 1.2575;
+      position: absolute;
+      top: 2rem;
+      white-space: nowrap;
+      width: 8.7rem;
+      /* background-color: yellow; */
+    }
+  }
+
+  /* 프로필 - 레벨 몇인지 */
+  .LevelWrap {
+    border-radius: 3.3rem;
+    height: 2.5rem;
+    left: 7.4rem;
+    position: absolute;
+    top: 14.8rem;
+    width: 6rem;
+    /* background-color: red; */
+
+    .LevelBackground {
+      background-color: #ffffff;
+      border: solid 0.1rem #e1e1e1;
+      border-radius: 3.3rem;
+      box-sizing: border-box;
+      height: 2.5rem;
+      left: -2.rem;
+      position: absolute;
+      top: -0.1rem;
+      width: 6rem;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    /* .LevelNum {
+      color: #000000;
+      font-family: Inter, 'Source Sans Pro';
+      font-size: 3.5rem;
+      font-weight: 600;
+      height: 4.3rem;
+      left: 3rem;
+      line-height: 1.2125;
+      position: absolute;
+      top: 0;
+      white-space: nowrap;
+      width: 6.4rem;
+    } */
+  }
+
+  /* 시간바 */
+  .TimeWrap {
+    height: 10rem;
+    left: 4rem;
+    position: absolute;
+    top: 42rem;
+    width: 95rem;
+    /* background-color: red; */
+
+    .TimeBarBackground {
+      background-color: #ffffff;
+      border-radius: 5.4rem;
+      box-sizing: border-box;
+      height: 2rem;
+      left: 6.5rem;
+      position: absolute;
+      top: 5.5rem;
+      width: 75rem;
+      border: 2px solid #ffbd6c;
+    }
+    .TimeBar {
+      background: linear-gradient(293.69deg, #ffbd6c -23.66%, #ffea8d 84.75%);
+      border-radius: 5.4rem;
+      height: 2em;
+      left: 6.5rem;
+      position: absolute;
+      top: 5.5rem;
+      width: 70rem;
+    }
+    .RemainTime {
+      align-items: center;
+      background-color: #ffffff;
+      border: solid 2px #ffea8d;
+      border-radius: 9rem;
+      box-sizing: border-box;
+      color: #000000;
+      display: flex;
+      font-family: Inter, 'Source Sans Pro';
+      font-size: 4.5rem;
+      font-weight: 580;
+      height: 9rem;
+      justify-content: center;
+      left: -0.2rem;
+      line-height: 1.2125;
+      position: absolute;
+      top: -0.8rem;
+      white-space: nowrap;
+      width: 9rem;
+    }
+  }
+
+
+  /* 홈버튼 */
+  .HomeBtn {
+    background: linear-gradient(293.69deg, #ffbd6c 15.25%, #ffea8d 84.75%);
+    border-radius: 0.7rem;
+    height: 3.5rem;
+    left: 90rem;
+    position: absolute;
+    top: 46rem;
+    width: 10rem;
+    color: #ffffff;
+    font-family: Pretendard, 'Source Sans Pro';
+    font-weight: 600;
+    font-size: 18px;
+    border: none; 
+  }
+}
+
+/* 모달창 */
+.modal{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: fixed;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+
+.modalOverlay{
+  background-color: rgba(0, 0, 0, 0.6);
+  width:100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.modalContent{
+  background-color:white;
+  padding:10px 100px;
+  text-align: center;
+  position: relative;
+  border-radius: 20px;
+  /* width: 60%; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+
+  
+ 
+  /* background-color:red;
+  
+
+  position:relative;
+  width:586px;
+  height: 734px;
+
+  border-radius: 75px; */
+}
+
+.Inform{
+  margin:20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.YesBtn,
+.NoBtn {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 59px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+/* 카드게임 */
+.CardWarp img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.WrapCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.CardInner {
+  width: 700px;
+  height: 700px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+}
+.Cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  width: 100%;
+  height: 100%;
+ 
+}
+.Cards li {
+  /* width: calc(100% / 4 - 20px); */
+  width:150px;
+  /* height: calc(100% / 4 - 20px); */
+  height: 180px;
+  border: 1px solid #ccc;
+  perspective: 1000px;
+  transform-style: preserve-4d;
+  position: relative;  
+  border-radius: 10px; 
+}
+.Cards li .View {
+  position: absolute;
+  background:rgba(0, 0, 255, 0.2);
+  /* padding: 10%; */
+  transition: transform 0.5s linear;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 10px;
+}
+.Cards li .View.Front {
+  z-index: 10;
+  
+  transform: rotateY(0deg);
+}
+.Cards li .View.Back {
+  transform: rotateY(180deg);
+}
+.Cards li.flip .View.Front {
+  transform: rotateY(-180deg);
+}
+.Cards li.flip .View.Back {
+  transform: rotateY(0deg);
+}
+.Cards li.shake {
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0% {transform: translateX(0);}
+  20% {transform: translateX(-13px);}
+  40% {transform: translateX(13px);}
+  60% {transform: translateX(-8px);}
+  80% {transform: translateX(8px);}
+  100% {transform: translateX(0);}
+}
+
+.CardInner{
+  background-color: #ffffff;
+  border: solid 2.5px #e1e1e1;
+  border-radius: 2.3rem;
+  box-sizing: border-box;
+  height: 41rem;
+  left: 0rem;
+  position: absolute;
+  top: -0.2rem;
+  width: 66rem;
+}
+
+.WrapCard {
+  position: relative;
+  top: 1px; 
+  left: -1px; 
+  width: 66rem;
+  height: 41rem;
+  border-radius: 2.3rem;
+}
+
+.Cards li .View img {
+  border-radius: 10px;
+  width: 100%; 
+  height: 100%; 
+}
+
+
