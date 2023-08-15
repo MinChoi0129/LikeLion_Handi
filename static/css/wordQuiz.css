@@ -128,7 +128,7 @@ body {
     position: absolute;
     top:-1px; left:-1px;
 
-    width: 60rem;
+    width: 0%;
     height:1.4rem ;
 
     background: linear-gradient(to right, #FFEA8D, #FFBD6C);
@@ -227,7 +227,7 @@ body {
 
 /*모달*/
 .Back {
-    display: none;
+    display: block;
     position: absolute;
     top:0; left:0;
     width: 100%;
@@ -280,7 +280,7 @@ body {
 
     margin: 0 1.5rem;
 }
-.StartModal .NoBtnBox {
+.StartModal .NoStartBtnBox {
     width: 9rem;
     height: 3.25rem;
     display: flex;
@@ -292,7 +292,7 @@ body {
 
     margin: 0 1.5rem;
 }
-.StartModal .NoBtn{
+.StartModal .NoStartBtn{
     width: 8.8rem;
     height: 3.05rem;
     background: #fff;
@@ -303,4 +303,60 @@ body {
     font-family: 'Pretendard-SemiBold';
     font-size: 1.25rem;
     color: #FF9A23;
+}
+.StopModal {
+    position: absolute;
+    width: 35rem;
+    height: 18rem;
+
+    background-color: #fff;
+    border: 2px solid #FF9A23;
+    border-radius: 25px;
+
+    font-family: 'Pretendard-SemiBold';
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.StopModal .ModalText {
+    font-size: 1.5rem;
+    text-align: center;
+
+    margin: 0;
+    margin-bottom:1rem;
+}
+.StopModal .BtnBox {
+    margin-top: 1rem;
+}
+.StopModal .YesBtn {
+    width: 6.25rem;
+    height: 2.25rem;
+
+    border:none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: .9rem;
+    color: #fff;
+
+    margin: 0 1.5rem;
+}
+.StopModal .NoBtn {
+    width: 6.25rem;
+    height: 2.25rem;
+
+    border:none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: .9rem;
+    color: #fff;
+
+    margin: 0 1.5rem;
 }

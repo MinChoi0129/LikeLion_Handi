@@ -5,7 +5,6 @@ const ChapterTitle = document.querySelector('.ChapterTitle');
 const CurrentCount = document.querySelector('.CurrentCount');
 const AllCount = document.querySelector('.AllCount');
 const StageBar = document.querySelector('.StageBar');
-const QuizVideo = document.querySelector('.QuizBox').querySelector('video');
 const SelectBox = document.querySelector('.SelectBox');
 const StopBtn = document.querySelector('.StopBtnBox');
 

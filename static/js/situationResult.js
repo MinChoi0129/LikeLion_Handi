@@ -4,7 +4,6 @@
 
 // 퍼센트 계산
 
-
 // chartevent
 const chart = document.querySelector(".ChartBar");
 let totalMinwon = chart.dataset.percent;
@@ -17,11 +16,6 @@ const chartAnimation = setInterval(() => {
     t4++ >= totalMinwon && clearInterval(chartAnimation)
 }, 15)
 
-// 틀린 퀴즈 목록 설정
-
 // 버튼 구현
-const HomeBtn = document.querySelector('.HomeBtn');
-
-HomeBtn.addEventListener("click", ()=> {
-    location.replace("");
-})
+// 다시학습하기 -> 학습한 문장
+// 다음 문장 학습하기 -> 그다음 문장

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../static/css/signQuiz.css">
     <link rel="stylesheet" href="../static/css/header.css">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="../static/js/testSign.js" defer></script>
 </head>
 <body>
 	<header>
@@ -22,11 +23,22 @@
 		</nav>
 		<button class="SignUpBtn">SIGN UP</button>
 	</header>
+    <div class="Back"></div>
 	<main>
+        <!-- modal -->
+        <div class="StartModal">
+            <p class="ModalText">퀴즈 풀이를 시작합니다.</p>
+            <div class="BtnBox">
+                <button class="StartBtn">시작</button>
+                <div class="NoStartBtnBox">
+                    <button class="NoStartBtn">안 할래요</button>
+                </div>
+            </div>
+        </div>
 		<section>
             <h2 class="ChapterTitle">기역(ㄱ)</h2>
             <div class="TestCount">
-                <p class="CurrentCount">1</p>
+                <p class="CurrentCount"></p>
                 /
                 <p class="AllCount">19<span>문제</span></p>
             </div>
@@ -55,6 +67,14 @@
                 <button class="StopBtn">그만 풀기</button>
             </div>
 		</section>
+        <!-- modal -->
+        <div class="StopModal">
+            <p class="ModalText">퀴즈를 그만두시겠습니까?</p>
+            <div class="BtnBox">
+                <button class="YesBtn">예</button>
+                <button class="NoBtn">아니오</button>
+            </div>
+        </div>
 	</main>
 	<footer>
 	</footer>
