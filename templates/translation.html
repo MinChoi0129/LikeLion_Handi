@@ -1,73 +1,61 @@
 {% extends 'header.html' %}
 {% load static %}
 {% block content %}
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>핸디</title>
-  <link rel="stylesheet" href="{% static 'css/translation.css' %}" />
-  <script src="..\static\js\translation.js"></script>
-  <script
-    src="https://kit.fontawesome.com/32afc995e9.js"
-    crossorigin="anonymous"
-  ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>핸디</title>
+    <link rel="stylesheet" href="{% static 'css/translation.css' %}" />
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/translation.js' %}" defer></script>
 </head>
 <body>
-  <main>
-    <section>
-      <div class="ChapterExplain">
-        <h1 class="ChapterTitle">지화로 번역해보기</h1>
-        <p class="ChapterContent">번역 방법 뭐 설명같은거</p>
-      </div>
-
-      <div class="KoreanWrap">
-        <div class="KoreanInput">
-          <div>
-            <img
-              src="{% static 'image\translation\koreanflag.png' %}"
-              class="KoreanFlag"
-            />
-          </div>
-          <span class="Korean">한국어</span>
-          <div class="TranslationContent">
-            <form>
-              <textarea
-                name="TranslationContent"
-                oninput="updateLetterCount(this.value)"
-                placeholder="번역할 내용을 입력하세요."
-              ></textarea>
-            </form>
-          </div>
-          <div class="KoreanFooter">
-            <p class="KoreanLetterNum">
-              <span class="ChangeLetterNum"></span>
-              / 50
-            </p>
-            <button type="submit" class="TranslationBtn">번역하기</button>
-          </div>
-        </div>
-        <div class="SignWrap">
-          <div class="SignOutput">
-            <div>
-              <img
-                src="{% static 'image\translation\Sign.png' %}"
-                class="SignFlag"
-              />
+	<main>
+		<section>
+            <div class="ChapterExplain">
+                <h1 class="ChapterTitle">지화로 번역해보기</h1>
+                <p class="ChapterContent">번역 방법 뭐 설명같은거</p>
             </div>
-            <span class="Sign">수어</span>
-            <div class="SignGif">
-              <img
-                src="{% static 'image\translation\Sign.png' %}"
-                alt="수어"
-                width="300px"
-                height="350px"
-              />
+            
+            <div class="KoreanWrap">
+                <div class="KoreanInput">
+                        <div ><img src="{% static 'image/translation/koreanflag.png' %}" class="KoreanFlag"></div>
+                        <span class="Korean">한국어</span>
+                        <div class="TranslationContent">
+                            <form method="post" action="https://127.0.0.1:8000/api/translate">
+                                <textarea name="sentence" oninput="updateLetterCount(this.value)" placeholder="번역할 내용을 입력하세요."></textarea>
+                                <input type="hidden" value="watch" name="mode">
+                                <button type="submit" class="TranslationBtn">번역하기</button>
+                            </form>
+                        </div>
+                    <div class="KoreanFooter">
+                        <p class="KoreanLetterNum">
+                            <span class="ChangeLetterNum"></span>
+                            / 50
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="SignWrap">
+                    <div class="SignOutput">
+                        <div>
+                            <img src="{% static 'image/translation/Sign.png' %}" class="SignFlag"></div>
+                        <span class="Sign">수어</span>
+                        <div class="SignGif">
+                            <video controls width="300" height="350">
+                                <source id="videoSource" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <form method="post" action="https://127.0.0.1:8000/api/translate">
+                            <input type="hidden" value="download" name="mode">
+                            <button type="submit" class="GIfBtn">gif로 저장하기</button> 
+                        </form>
+                    </div>
+                </div>   
             </div>
-            <button type="submit" class="GIfBtn">gif로 저장하기</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
+</html>
 {% endblock %}

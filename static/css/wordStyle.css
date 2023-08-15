@@ -102,33 +102,29 @@ body {
 .StudySlider {
     margin-top: 0;
     height: 35rem;
-    width: 85rem;
+    width: 100%;
 
     padding: 0 5rem;
 
     display: flex;
     align-items: center;
-    overflow: hidden;
-    justify-content: center;
 }
 .StudySlider .SliderContainer {
     height: 100%;
-    width: 100%;
+    width: 70rem;
 
     display: flex;
-    
-    padding: 0 3rem;
-    
-    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+
 }
 .StudySlider .StudyWrap {
-    width: 75rem;
+    width: 70rem;
     height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
-    margin: 2rem auto;
+    margin: 2rem;
     padding: 0 5rem;
 }
 .StudyWrap .StudyVideo{
@@ -195,7 +191,6 @@ body {
     font-size: 1.75rem;
 
     cursor: pointer;
-    z-index: 100;
 }
 i#PrevBtn {
     left:2rem;
@@ -229,123 +224,4 @@ i#NextBtn {
     font-family: 'Pretendard-SemiBold';
     font-size: 1.15rem;
     color: #FF9A23;
-}
-.QuizBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -2rem;
-
-    width: 145px;
-    height: 48px;
-
-    display: none;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
-
-    border: none;
-    border-radius: 10px;
-
-    margin: 0 2rem;
-
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #fff;
-
-    z-index: 999;
-}
-.QuizBtn:after {
-    opacity: 0;
-    content: "퀴즈풀러가기";
-    position: absolute;
-    left:0;right: 0;top:0;bottom:0;
-    width: 145px;
-    height: 48px;
-    background: linear-gradient(to right, #ffeea0, #ffc986);
-
-    transition: all .2s ease-in-out;
-
-    border: none;
-    border-radius: 10px;
-
-    font-family: 'Pretendard-SemiBold';
-    font-size:1.15rem;
-    color: #fff;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
-}
-.QuizBtn:hover::after {
-    opacity: 1;
-}
-
-/*모달*/
-.Back {
-    display: none;
-    position: absolute;
-    top:0; left:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(5px);
-
-    z-index: 110;
-}
-.StopModal {
-    position: absolute;
-    width: 35rem;
-    height: 18rem;
-
-    background-color: #fff;
-    border: 2px solid #FF9A23;
-    border-radius: 25px;
-
-    font-family: 'Pretendard-SemiBold';
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 999;
-}
-
-.StopModal .ModalText {
-    font-size: 1.5rem;
-    text-align: center;
-
-    margin: 0;
-    margin-bottom:1rem;
-}
-.StopModal .BtnBox {
-    margin-top: 1rem;
-}
-.StopModal .YesBtn {
-    width: 6.25rem;
-    height: 2.25rem;
-
-    border:none;
-    border-radius: 10px;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-
-    font-family: 'Pretendard-SemiBold';
-    font-size: .9rem;
-    color: #fff;
-
-    margin: 0 1.5rem;
-}
-.StopModal .NoBtn {
-    width: 6.25rem;
-    height: 2.25rem;
-
-    border:none;
-    border-radius: 10px;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-
-    font-family: 'Pretendard-SemiBold';
-    font-size: .9rem;
-    color: #fff;
-
-    margin: 0 1.5rem;
 }

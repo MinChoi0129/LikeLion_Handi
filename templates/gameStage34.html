@@ -1,0 +1,232 @@
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핸디</title>
+	<link rel="stylesheet" href="../static/css/gameStage34.css">
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+	</header>
+	<main>
+                                 <!-- 모달창 -->
+                                 <div class="modal hidden" >
+                                    <div class="modalOverlay"></div> <!-- 모달창의 배경색 -->
+                                    <div class="modalContent">
+                                        <p class="Inform">지금 나가게 되면 랭킹에 적용되지 않습니다.</p>
+                                        <p class="Inform">그래도 홈으로 가시겠습니까?</p>
+                                        <button class="YesBtn">네</button>
+                                        <button class="NoBtn" id="NoBtn">아니요</button>
+                                    </div>
+                                </div>
+		<section>
+
+
+
+            <div class="GameWrap">
+                <div class="CardWrap">
+                    <div class="WrapCard">
+                        <div class="CardInner">
+                            <ul class="Cards">
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/apple.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/goole.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/hospital.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/soccer.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/romantic.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/romantic.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/soccer.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/hospital.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/goole.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/apple.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/cat.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/finger.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/love.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/kakao.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/kakao.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/love.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/finger.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="View Front">
+                                        <img src="{% static 'image/main2.png' %}" alt="symbol-of-spades.png">
+                                    </div>
+                                    <div class="View Back">
+                                        <img src="{% static 'image/login/cat.png' %}" alt="cupcake.png">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="Profile"></div>
+                <div class="Scoreboard"></div>
+                <p class="CurrentScore">현재 점수</p>
+                <p class="HighestScore">최고점수</p>
+                <p class="CurrentScoreNum">0</p>
+                <p class="HighestScoreNum">420</p>
+                <!-- <div class="CardGroup">
+                    <div class="FirstRowCards">
+                        <img class="FirstCard" src="..\static\image\cardgame\example.png" />
+                        <img class="FifthCard" src="..\static\image\cardgame\example.png" width="8.7rem" height="8.1rem"/>
+                    </div>
+                    <div class="SecondRowCards">
+                        <img class="SecondCard" src="..\static\image\cardgame\example.png"/>
+                        <img class="SixthCard" src="..\static\image\cardgame\example.png" />
+                    </div>
+                    <div class="ThirdRowCards">
+                        <img class="ThirdCard" src="..\static\image\cardgame\example.png"/>
+                        <img class="SeventhCard" src="..\static\image\cardgame\example.png"/>
+                    </div>
+                    <div class="FourthRowCards">
+                        <img class="FourthCard" src="..\static\image\cardgame\example.png"/>
+                        <img class="EighthCard" src="..\static\image\cardgame\example.png"/>
+                    </div>
+                </div> -->
+                <div class="Nickname">맛있는 착한돼지</div>
+                <img class="Userimage" src=""/>
+                <div class="GameTitleWrap">
+                    <p class="TitleCard">카드</p>
+                    <p class="TitleFlip">뒤집기</p>
+                </div>
+                <div class="LevelWrap">
+                    <div class="LevelBackground">Lv 1</div>
+                    <!-- <p class="LevelNum">Lv 1</p> -->
+                </div>
+                <div class="TimeWrap">
+                    <div class="TimeBarBackground"></div>
+                    <div class="TimeBar"></div>
+                    <div class="RemainTime">60</div>
+                </div>
+                <button type="button" class="HomeBtn" id="open">홈으로</button> 
+                <button type="button" class="Test" id="test">테스트</button> 
+            </div>
+		</section>
+	</main>
+	<footer>
+	</footer>
+    <script src="..\static\js\game\modal.js"></script>
+    <script src="..\static\js\game\timebar.js"></script>
+    <script src="..\static\js\game\cardgame.js"></script>
+</body>
+{% endblock %}

@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import *
-from rest_framework.permissions import IsAuthenticated
 from .models import User
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate, login, logout
@@ -38,31 +37,11 @@ class Signup(ListCreateAPIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            response_data = {
-                "username": serializer.data["username"],
-                "name": serializer.data["name"],
-                "phone_number": serializer.data["phone_number"],
-            }
-            return Response(response_data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-
-class SignUpCheck(RetrieveAPIView):
-    def get(self, request, *args, **kwargs):
-        username = request.data["username"]
-        for user in User.objects.all():
-            if user.username == username:
-                return Response({"available": False}, status=status.HTTP_409_CONFLICT)
-        return Response({"available": True}, status=status.HTTP_200_OK)
-
-
-class UserInformation(RetrieveAPIView):
-    def get(self, request):
-        print(request)
-        return Response(self.data, status=status.HTTP_200_OK)
 
 
 # Get All Users
@@ -85,11 +64,6 @@ class UserUpdate(UpdateAPIView):
 
 # DELETE User
 class UserDelete(DestroyAPIView):
-    def delete(self, request, *args, **kwargs):
-        instance = self.get_object()
-        instance.delete()
-        return Response({"success": True}, status=status.HTTP_204_NO_CONTENT)
-
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -121,7 +95,7 @@ class UserRank(RetrieveAPIView):
         me = User.objects.get(id=kwargs["pk"])
 
         old_score = me.game_score
-        request_score = int(request.data["score"])
+        request_score = request.data["score"]
         new_score = max(old_score, request_score)
         me.game_score = new_score
         me.save()
