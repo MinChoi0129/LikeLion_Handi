@@ -69,7 +69,7 @@ li {
     font-family: 'Pretendard-SemiBold';
     width: 150px;
     height: 50px;
-    padding-top: 15px;
+    padding-top: 16px;
     position: relative;
     top: 51px;
     left: 115px;
@@ -93,18 +93,18 @@ li {
     font-family: 'Pretendard-Regular';
     transition: 1s;
     width: 150px;
-    height: 245px;
+    height: 247px;
     position: absolute;
-    left: 361px;
-    top: -70px;
+    left: 520px;
+    top: -102px;
     transition: 0.7s;
     z-index: 1;
 }
 
 .WhiteBox {
     position: absolute;
-    top: -5px;
-    left: 361px;
+    top: 10px;
+    left: 520px;
     width: 150px;
     height: 130px;
     border: 1px solid white;
@@ -127,14 +127,10 @@ li {
 .search {
     width: 600px;
     height: 52px;
-    padding: 1px;
-    border: 1px solid transparent;
+    padding: 15px;
+    border: 1px solid #FF9A23;
     position: relative;
     left: 60px;
-    background-image: linear-gradient(white, white), linear-gradient(to right, #FFEA8D, #FFBD6C);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    color: #E1E1E1;
     border-radius: 10px;
     font-size: 15px;
     font-family: 'Pretendard-Medium';
@@ -303,6 +299,7 @@ input:focus {
     font-size: 17px;
     left: calc(100% + 50px);
     left: 90px;
+    top: 15px;
 }
   
 
@@ -316,6 +313,7 @@ input:focus {
     background-color: #dbdbdb;
     font-size: 17px;
     left: 1090px;
+    top: 15px;
 }
 
 .btn {

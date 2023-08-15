@@ -59,7 +59,7 @@ section {
     font-size: 30px;
     font-weight: bolder;
     text-align: center;
-    margin: 80px 30px 30px 30px;
+    margin: 100px 30px 30px 60px;
     font-family: 'Pretendard-ExtraBold';
 }
 
@@ -106,6 +106,7 @@ input:focus {
     width: 600px;
     height: 45px;
     font-family: 'Pretendard-Regular';
+    cursor: pointer;
 }
 
 .check, .msg, .NumberCheck {
@@ -119,6 +120,7 @@ input:focus {
     text-align: center;
     margin-top: 6px;
     font-family: 'Pretendard-Regular';
+    cursor: pointer;
 }
 
 .IdBox, .PhoneBox, .NumberBox {
