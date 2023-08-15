@@ -54,11 +54,10 @@ section {
 		width: 35rem;
 		margin: 0 auto;
 }
-
 .logo {
     font-size: 30px;
     text-align: center;
-    margin: 80px 30px 30px 30px;
+    margin: 100px 30px 30px 70px;
     font-family: 'Pretendard-ExtraBold';
 }
 
@@ -101,6 +100,7 @@ input:focus {
     border-radius: 7px;
     padding: 10px;
     margin: 7px 10px 10px 10px;
+    font-size: 15px;
     font-weight: bolder;
     text-align: center;
     width: 600px;
@@ -120,37 +120,34 @@ input:focus {
     color: #FF9A23;
 }
 
-.length {
-    border: 1px solid #cecece;
-    width: 1px;
-    height: 17px;
-}
-
 .line {
-    display: flex;
+    width: fit-content;
+    margin : 0 auto;
     margin-top: 10px;
+    display: flex;
 }
 
 .line1, .line2 {
-    border: 1px solid #878787;
+    border: 1px solid #858585;
+    width: 285px;
     height: 1px;
-    width: 1000px;
     margin: 8px;
 }
 
 .or {
-    color: #878787;
+    color: #858585;
     font-family: 'Pretendard-Regular';
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .google {
+    position: relative;
     border: 1px solid #858585;
     color: #858585;
     padding: 9px;
     margin: 7px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 14px;
     width: 600px;
     height: 45px;
     background-color: white;
@@ -158,48 +155,61 @@ input:focus {
 }
 
 .naver {
+    position: relative;
     border: 1px solid #03C75A;
-    color: #858585;
+    color: white;
     padding: 10px;
     margin: 7px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 14px;
     width: 600px;
     height: 45px;
-    background-color: white;
+    background-color: #03c75a;
     font-family: 'Pretendard-Regular';
 }
 
 .kakao {
-    border: 1px solid #FFD231;
-    color: #858585;
+    position: relative;
+    border: 1px solid #F9E000;
+    color: white;
     padding: 10px;
     margin: 7px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 14px;
     width: 600px;
     height: 45px;
-    background-color: white;
+    background-color: #F9E000;
     font-family: 'Pretendard-Regular';
 }
 
 .GoogleLogo {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     position: absolute;
-    left: 400px;
+    top: 50%; left:1.4rem;
+    transform: translateY(-50%);
 }
 
 .NaverLogo {
-    width: 16px;
-    height: 17px;
+    width: 32px;
+    height: 32px;
     position: absolute;
-    left: 400px;
+    top: 50%; left:1rem;
+    transform: translateY(-50%);
 }
 
 .KakaoLogo {
-    width: 19px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     position: absolute;
-    left: 400px;
+    top: 50%; left: 1.2rem;
+    transform: translateY(-50%);
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+html,body {
+    width: 100%;
 }
