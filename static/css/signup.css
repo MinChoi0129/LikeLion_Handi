@@ -74,9 +74,9 @@ input:focus {
     margin: 6px;
     border-radius: 7px;
     font-weight: lighter;
-    font-size: 14px;
-    width: 535px;
-    height: 45px;
+    font-size: 17px;
+    width: 660px;
+    height: 53px;
     font-family: 'Pretendard-Regular';
 }
 
@@ -87,9 +87,9 @@ input:focus {
     margin: 6px;
     border-radius: 7px;
     font-weight: lighter;
-    font-size: 14px;
-    width: 600px;
-    height: 45px;
+    font-size: 17px;
+    width: 730px;
+    height: 53px;
     font-family: 'Pretendard-Regular';
 }
 
@@ -98,13 +98,13 @@ input:focus {
     background-color: #FF9A23;
     color: white;
     font-weight: bolder;
-    font-size: 1rem;
     text-align: center;
     padding: 12px;
     margin: 20px 8px 8px 8px;
     border-radius: 7px;
-    width: 600px;
-    height: 45px;
+    font-size: 18px;
+    width: 700px;
+    height: 53px;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
 }

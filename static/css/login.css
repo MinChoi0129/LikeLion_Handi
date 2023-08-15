@@ -68,9 +68,9 @@ section {
     margin: 5px;
     border-radius: 7px;
     font-weight: lighter;
-    font-size: 14px;
-    width: 600px;
-    height: 45px;
+    font-size: 16px;
+    width: 700px;
+    height: 53px;
     font-family: 'Pretendard-Regular';
 }
 
@@ -100,11 +100,11 @@ input:focus {
     border-radius: 7px;
     padding: 10px;
     margin: 7px 10px 10px 10px;
-    font-size: 15px;
     font-weight: bolder;
     text-align: center;
-    width: 600px;
-    height: 45px;
+    font-size: 17px;
+    width: 700px;
+    height: 53px;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
 }
@@ -113,7 +113,7 @@ input:focus {
     margin-left: 235px;
     display: flex;
     color: #878787;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Pretendard-Regular';
 }
 
@@ -131,7 +131,7 @@ input:focus {
 
 .line1, .line2 {
     border: 1px solid #858585;
-    width: 285px;
+    width: 335px;
     height: 1px;
     margin: 8px;
 }
@@ -149,9 +149,9 @@ input:focus {
     padding: 9px;
     margin: 7px;
     border-radius: 7px;
-    font-size: 14px;
-    width: 600px;
-    height: 45px;
+    font-size: 16px;
+    width: 700px;
+    height: 53px;
     background-color: white;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
@@ -164,9 +164,9 @@ input:focus {
     padding: 10px;
     margin: 7px;
     border-radius: 7px;
-    font-size: 14px;
-    width: 600px;
-    height: 45px;
+    font-size: 16px;
+    width: 700px;
+    height: 53px;
     background-color: #03c75a;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
@@ -179,9 +179,9 @@ input:focus {
     padding: 10px;
     margin: 7px;
     border-radius: 7px;
-    font-size: 14px;
-    width: 600px;
-    height: 45px;
+    font-size: 16px;
+    width: 700px;
+    height: 53px;
     background-color: #F9E000;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
