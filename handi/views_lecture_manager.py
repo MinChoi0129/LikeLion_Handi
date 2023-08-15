@@ -7,7 +7,7 @@ from .serializers import LectureManagerSerializer
 # Create a LectureManager or Get All LectureManagers
 class LectureManagerList(ListCreateAPIView):
     def get(self, request, *args, **kwargs):
-        lectureManager = LectureManager.objects.filter(user=kwargs["user_id"]).order_by(
+        lectureManager = LectureManager.objects.filter(user=request.data["user"]).order_by(
             "-time"
         )
         serializer = LectureManagerSerializer(lectureManager, many=True)
@@ -20,9 +20,7 @@ class LectureManagerList(ListCreateAPIView):
 # READ LectureManager
 class LectureManagerDetail(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
-        lectureManager = LectureManager.objects.filter(
-            user=kwargs["user_id"], lecture=kwargs["lecture_id"]
-        )
+        lectureManager = LectureManager.objects.filter(user=request.data["user"], lecture=request.data["lecture"])
         serializer = LectureManagerSerializer(lectureManager, many=True)
         return Response(serializer.data)
 
