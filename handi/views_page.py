@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 def main(request):
     if request.user.is_authenticated:
         if not request.user.name:
@@ -10,10 +9,8 @@ def main(request):
         return render(request, "index.html")
     return render(request, "index.html")
 
-
 def login(request):
     return render(request, "login.html")
-
 
 def signup(request):
     return render(request, "signup.html")
