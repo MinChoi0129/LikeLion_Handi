@@ -56,8 +56,7 @@ fetch(URL)
                 // 카드 뒷면에 단어, video url 넣어주기 (아닌건 block 처리)
                 if (shuffled_data[i][1] == "word") {
                     const now_card = await cards[i];
-                    console.log(now_card.querySelector(".View.Back .VideoContent"));
-                    let videoContentElement = now_card.querySelector(".View.Back .VideoContent")
+                    let videoContentElement = await now_card.querySelector(".View.Back .VideoContent")
                     if (videoContentElement !== null) {
                       videoContentElement.style.display = "none";
                       now_card.querySelector(".View.Back .TextContent p").textContent = shuffled_data[i][0];
@@ -65,7 +64,7 @@ fetch(URL)
                 }
                 else {
                     const now_card = await cards[i];
-                    let textContentElement = now_card.querySelector(".View.Back .TextContent")
+                    let textContentElement = await now_card.querySelector(".View.Back .TextContent")
                     if (textContentElement !== null) {
                       textContentElement.style.display = "none";
                     now_card.querySelector(".View.Back .VideoContent video").src = shuffled_data[i][0];
@@ -90,7 +89,7 @@ fetch(URL)
             disableDeck = true;
 
             let cardOneImg
-            // cardOne.querySelector(".Back img").src;
+            now_card.querySelector(".View.Back .VideoContent video").src = shuffled_data[i][0];
             let cardTwoImg 
             // cardTwo.querySelector(".Back img").src;
 
