@@ -316,3 +316,6 @@ body {
     to { transform: translateX(-43.4%); }
 }
 
+header {
+    background-color: transparent;
+}
