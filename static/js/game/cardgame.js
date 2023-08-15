@@ -1,12 +1,14 @@
 // fetch("http://localhost:8000/api/game")
 //  .then((request)) -> document.getElementsByClassName("Userimage")[0].src =
-// const userImageElement = document.querySelector(".Userimage");
+const userImageElement = document.querySelector(".Userimage");
+
 // // 추후 User.profile_img로 변경
-// const svgText =
-//   '<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#F0AB3D"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-5 -5) rotate(129 18 18) scale(1)" fill="#C20D90" rx="36"></rect><g transform="translate(-1 -6) rotate(-9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#FFFFFF" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>';
-// const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
-//   svgText
-// )}`;
+const svgText =
+  '<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#F0AB3D"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-5 -5) rotate(129 18 18) scale(1)" fill="#C20D90" rx="36"></rect><g transform="translate(-1 -6) rotate(-9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#FFFFFF" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>';
+const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+  svgText
+  )}`;
+userImageElement.setAttribute("src", dataUrl);
 
 // 구현해야 할 점
 // 1. 카드 뒷면에 Text or Video data를 넣어주기
@@ -17,7 +19,6 @@
 // 6. 모든 카드가 맞으면 다음 스테이지로 전환
 // 7. 초가 끝나면 모달창으로 결과 보여주기
 
-userImageElement.setAttribute("src", dataUrl);
 const URL = "http://localhost:8000/api/game";
 fetch(URL)
     .then((response) => {
@@ -42,36 +43,43 @@ fetch(URL)
               [array[i], array[j]] = [array[j], array[i]]; // Swap elements
             }
             return array;
-          }
-        function randomCardPosition() {
+        }
+        async function randomCardPosition() { 
             let all_data = [];
             for (let i = 0; i < meta_data.length; i++) {
                 all_data.push([meta_data[i][0], "word"]);
                 all_data.push([meta_data[i][1], "video"]);
             }
             shuffled_data = shuffleArray(all_data)
+            console.log(shuffled_data);
             for (let i = 0; i < shuffled_data.length; i++) {
                 // 카드 뒷면에 단어, video url 넣어주기 (아닌건 block 처리)
                 if (shuffled_data[i][1] == "word") {
-                    const now_card = cards[i];
-                    now_card.querySelector(".View Back .VideoContent").style.display = "none";
-                    now_card.querySelector(".View Back .TextContent").textContent = shuffled_data[i][0];
+                    const now_card = await cards[i];
+                    console.log(now_card.querySelector(".View.Back .VideoContent"));
+                    let videoContentElement = now_card.querySelector(".View.Back .VideoContent")
+                    if (videoContentElement !== null) {
+                      videoContentElement.style.display = "none";
+                      now_card.querySelector(".View.Back .TextContent p").textContent = shuffled_data[i][0];
+                    }
                 }
                 else {
-                    const now_card = cards[i];
-                    now_card.querySelector(".View Back .TextContent").style.display = "none";
-                    now_card.querySelector(".View Back .VideoContent").src = shuffled_data[i][0];
+                    const now_card = await cards[i];
+                    let textContentElement = now_card.querySelector(".View.Back .TextContent")
+                    if (textContentElement !== null) {
+                      textContentElement.style.display = "none";
+                    now_card.querySelector(".View.Back .VideoContent video").src = shuffled_data[i][0];
+                    }
                 }
             }
-        }
+          } 
         randomCardPosition();
         
         let cardOne, cardTwo; // 선택한 카드
         let disableDeck = false;
 
-        function flipCard(e) {
-          let clickedCard = e.target;
-          console.log(clickedCard);
+        async function flipCard(e) {
+          let clickedCard = await e.target;
           if (clickedCard !== cardOne && !disableDeck) {
             clickedCard.classList.add("flip");
 
@@ -81,8 +89,10 @@ fetch(URL)
             cardTwo = clickedCard;
             disableDeck = true;
 
-            // let cardOneImg = cardOne.querySelector(".Back img").src;
-            // let cardTwoImg = cardTwo.querySelector(".Back img").src;
+            let cardOneImg
+            // cardOne.querySelector(".Back img").src;
+            let cardTwoImg 
+            // cardTwo.querySelector(".Back img").src;
 
             matchCards(cardOneImg, cardTwoImg);
           }
@@ -90,12 +100,12 @@ fetch(URL)
 
         //두개의 이미지 비교하기
         function matchCards(img1, img2) {
-          if (img1 == img2) {
-            cardOne.removeEventListener("click", flipCard);
-            cardTwo.removeEventListener("click", flipCard);
-            cardOne = cardTwo = "";
-            return (disableDeck = false);
-          } else {
+          // if (img1 == img2) {
+          //   cardOne.removeEventListener("click", flipCard);
+          //   cardTwo.removeEventListener("click", flipCard);
+          //   cardOne = cardTwo = "";
+          //   return (disableDeck = false);
+          // } else {
             //틀린 이미지 애니메이션 효과 주기
             setTimeout(() => {
               cardOne.classList.add("shake");
@@ -108,7 +118,7 @@ fetch(URL)
               cardOne = cardTwo = "";
               return (disableDeck = false);
             }, 1200);
-          }
+          // }
         }
 
         cards.forEach((card) => {

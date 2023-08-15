@@ -26,6 +26,7 @@ urlpatterns = [
     path("study/", views_page.study),
     path("game/", views_page.game),
     path("admin/", admin.site.urls),
+    path("situation/", views_page.situation),
     path("", include("handi.urls")),
     path('accounts/', include('allauth.urls'))
 ]
