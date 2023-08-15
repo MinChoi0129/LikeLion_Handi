@@ -113,7 +113,7 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
 
 
 class Translator(RetrieveAPIView):
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         BASE_PATH = os.path.dirname(os.path.abspath(__file__))
         BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
 
