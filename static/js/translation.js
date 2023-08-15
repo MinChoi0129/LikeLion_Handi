@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxLength = 50;
     const currentLength = text.length;
     const letterNumElement = document.querySelector('.ChangeLetterNum');
-    const textareaElement = document.querySelector('textarea[name="TranslationContent"]');
+    const textareaElement = document.querySelector('textarea[name="sentence"]');
   
     if (currentLength > maxLength) {
       letterNumElement.textContent = maxLength;
@@ -15,3 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
       letterNumElement.textContent = currentLength;
     }
   }
+
+
+  fetch('http://localhost:8000/api/translate')
+  .then((response) => {
+      return response.json();
+  })
+  .then((result) => {
+      const videoUrl = result["video_url"];
+      const videoSource = document.getElementById("videoSource");
+      videoSource.src = videoUrl;
+  })

@@ -21,18 +21,18 @@ class Quiz(RetrieveAPIView):
 
         for mediaentry in mediaenties_for_type_A_quiz:
             answer_name = mediaentry.name
-            answer_video_url = mediaentry.video_url
+            answer_image_url = mediaentry.image_url
 
             wrong_answer_video_urls = []
             for _ in range(5):
                 wrong_answer = mediaenties_for_type_B_quiz.popleft()
-                wrong_answer_video_urls.append(wrong_answer.video_url)
+                wrong_answer_image_urls.append(wrong_answer.image_url)
                 mediaenties_for_type_B_quiz.append(wrong_answer)
 
             type_A_quizzes.append(
                 {
                     "name": answer_name,
-                    "image_urls": [answer_video_url] + wrong_answer_video_urls,
+                    "image_urls": [answer_image_url] + wrong_answer_image_urls,
                     # 프론트측에서 urls shuffle 해줘야함. 백엔드에서 정답은 무조건 0번 인덱스
                 }
             )
@@ -57,8 +57,8 @@ class Quiz(RetrieveAPIView):
 
         return Response(
             {
-                "type_A_quizzes": type_A_quizzes,
-                "type_B_quizzes": type_B_quizzes,
+                "jamo_quiz_list": type_A_quizzes,
+                "word_quiz_list": type_B_quizzes,
             },
             status=status.HTTP_200_OK,
         )

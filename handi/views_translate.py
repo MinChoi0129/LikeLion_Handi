@@ -2,7 +2,7 @@ import os, numpy as np
 import random
 from jamo import h2j, j2hcj
 from rest_framework.generics import *
-from django.http import JsonResponse, FileResponse
+from django.http import JsonResponse
 
 all_jamo_list = [
     "ㄱ",
@@ -113,7 +113,7 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
 
 
 class Translator(RetrieveAPIView):
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         BASE_PATH = os.path.dirname(os.path.abspath(__file__))
         BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
 
