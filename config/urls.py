@@ -51,7 +51,6 @@ urlpatterns = [
     ),
     path("game/", views_page.game, name="game"),
     path("admin/", admin.site.urls),
-    path("situation/", views_page.situation),
     path("", include("handi.urls")),
     path("accounts/", include("allauth.urls")),
 ]
