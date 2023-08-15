@@ -36,7 +36,7 @@ body, main, div {
     padding: 0;
 }
 ol, ul,li {
-	list-style: none;
+   list-style: none;
     display: inline-block;
     padding: 0;
     margin:0;
@@ -195,9 +195,12 @@ body {
     border: 1px solid #e1e1e1;
     border-radius: 0.5rem;
     cursor: pointer;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
 }
 
-textarea[name="TranslationContent"] {
+textarea[name="sentence"] {
     width: 32rem;
     height: 200px; 
     border: none;
@@ -211,11 +214,17 @@ textarea[name="TranslationContent"] {
     font-family: 'Pretendard';
 }
 
-textarea[name="TranslationContent"]::placeholder {
+textarea[name="sentence"]::placeholder {
     color: #858585;
 }
 
-
+main {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+}
+html,body {
+    width: 100%;
+}
 
 
 
@@ -306,7 +315,7 @@ textarea[name="TranslationContent"]::placeholder {
   .GIfBtn {
     position: absolute;
     bottom: 20px;
-    right: 30px;
+    right: 25px;
     background-color: #FF9A23;
     color: white;
     font-family: 'Pretendard-SemiBold';
@@ -316,3 +325,13 @@ textarea[name="TranslationContent"]::placeholder {
     border-radius: 0.5rem;
     cursor: pointer;
 }
+
+/* 번역하기 버튼이 클릭이 안돼서 */
+.TranslationContent {
+    z-index: 2;
+}
+
+.KoreanFooter {
+    z-index: 1;
+}
+
