@@ -24,7 +24,7 @@ class Quiz(RetrieveAPIView):
             answer_video_url = mediaentry.video_url
 
             wrong_answer_video_urls = []
-            for _ in range(4):
+            for _ in range(5):
                 wrong_answer = mediaenties_for_type_B_quiz.popleft()
                 wrong_answer_video_urls.append(wrong_answer.video_url)
                 mediaenties_for_type_B_quiz.append(wrong_answer)
