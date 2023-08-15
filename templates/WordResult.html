@@ -1,29 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>핸디</title>
-    <link rel="stylesheet" href="../static/css/wordResult.css">
-    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="{% static 'css/wordResult.css' %}">
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="../static/js/result.js" defer></script>
+    <script src="{% static 'js/result.js' %}" defer></script>
 </head>
 <body>
-	<header>
-        <div class="Logo"></div>
-		<nav>
-			<ol>
-				<li>홈</li>
-				<li>번역하기</li>
-				<li>학습하기</li>
-				<li>게임하기</li>
-				<li>Contact</li>
-			</ol>
-		</nav>
-		<button class="SignUpBtn">SIGN UP</button>
-	</header>
 	<main>
 		<section>
             <h2 class="ChapterTitle">과일/채소</h2>
@@ -53,4 +40,4 @@
 	<footer>
 	</footer>
 </body>
-</html>
+{% endblock %}

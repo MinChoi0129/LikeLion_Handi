@@ -23,6 +23,7 @@ let intervalid;
 
 // 숫자변경
 CurrentCount.innerHTML = CurrentIndex+1;
+
 // 첫번째 단어& 마지막 단어 버튼
 if(CurrentIndex == '0') {
     PrevBtn.style.display = "none";
@@ -35,7 +36,6 @@ const slideWord = () => {
 
     CurrentCount.innerHTML = CurrentIndex+1;
 
-    console.log(CurrentIndex);
     if(CurrentIndex == '0') {
         PrevBtn.style.display = "none";
     } else {
@@ -58,6 +58,25 @@ const updateClick=(e) => {
 
 Btn.forEach((button) => button.addEventListener("click", updateClick));
 
+//ajax 백엔드 연결
+fetch('http://localhost:8000/api/lecture/1')
+	.then((response) => {
+        if (!response.ok){
+            throw new Error('400아니면500에러남')
+        }
+		return response.json()
+		})
+	.then((data) => {
+        console.log(data);
+        const count = `${data.length}`;
+        AllCount.innerHTML = count;
+        const title = data.description;
+        ChapterTitle.innerHTML = title;
+    })
+    .catch(()=>{
+        console.log('에러남')
+    })
+
 // 학습종료시 모달
 const StopModal = document.querySelector('.StopModal');
 const Yes = document.querySelector('.YesBtn');
@@ -75,5 +94,3 @@ No.addEventListener("click", ()=> {
     StopModal.style.display = "none"
     Back.style.display = "none";
 })
-
-//ajax 백엔드 연결
