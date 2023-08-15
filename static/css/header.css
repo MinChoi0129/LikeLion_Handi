@@ -42,11 +42,11 @@ a {
 header {
     position: fixed;
     left:0; top:0;
-    background-color: #fff;
+    background-color: transparent;
     /* backdrop-filter: blur(10px); */
 
     width: 100%;
-    height: 85px;
+    height: 100px;
 
     display: flex;
     justify-content: space-between;
@@ -57,7 +57,7 @@ header {
 header nav {
     padding-right: 10rem;
 }
-header li a{
+header li {
     font-family: 'Pretendard-Medium';
     font-size: 1.15rem;
 
@@ -65,37 +65,9 @@ header li a{
 
     transition: all .2s ease-in-out;
     cursor: pointer;
-    position: relative;
-    padding: 0 10px;
 }
-header li a:after {
-    content: "";
-    position: absolute;
-    background-color: #FF9A23;
-    height: 3px;
-    width:0;
-    left:0;
-    bottom: -10px;
-    transition: 0.3s;
-}
-header li a:hover:after {
-    width: 100%;
-}
-header li a:hover {
-    color:#FF9A23;
-}
-header li a.active {
+header li:hover {
     color: #FF9A23;
-}
-header li a.active::after {
-    content: "";
-    position: absolute;
-    background-color: #FF9A23;
-    height: 3px;
-    width:100%;
-    left:0;
-    bottom: -10px;
-    transition: 0.3s;
 }
 header .SignInBtn {
     font-family: 'Pretendard-Regular';
@@ -124,48 +96,4 @@ header .SignInBtn {
 .Logo .lo02 {
     width: 4.75rem;
     height: auto;
-}
-/*푸터*/
-footer {
-    position : relative;
-    background-color: #1e1e1e;
-    width: 100%;
-    height: 70px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between
-}
-
-footer .FooterBox {
-    margin: 0 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-footer img {
-    width: 2.25rem;
-    height: auto;
-
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
-footer .Made {
-    font-family: 'Pretendard-Medium';
-    font-size: 0.9rem;
-    line-height: 22px;
-    color: #858585;
-}
-footer .SnsIconBox {
-    margin-right: 2rem;
-    display: flex;
-}
-footer i {
-    font-size: 1.75rem;
-    color: #858585;
-
-    margin: .5rem;
-    cursor: pointer;
 }

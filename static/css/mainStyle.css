@@ -62,10 +62,6 @@ button {
 body {
     overflow-x: hidden;
     -ms-overflow-style: none;
-    height : auto;
-    min-height: 100%;
-    /* padding-bottom: 75px; */
-
 }
 ::-webkit-scrollbar {
     display: none;
@@ -314,8 +310,4 @@ body {
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-43.4%); }
-}
-
-header {
-    background-color: transparent;
 }
