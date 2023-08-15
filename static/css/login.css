@@ -79,7 +79,6 @@ section {
     color: #858585;
     margin-left: 5px;
     font-family: 'Pretendard-Medium';
-    cursor: pointer;
 }
 
 input:focus {
@@ -107,6 +106,7 @@ input:focus {
     width: 600px;
     height: 45px;
     font-family: 'Pretendard-Regular';
+    cursor: pointer;
 }
 
 .text {
