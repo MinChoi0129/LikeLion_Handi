@@ -96,4 +96,48 @@ header .SignInBtn {
 .Logo .lo02 {
     width: 4.75rem;
     height: auto;
+
+/*푸터*/
+footer {
+    position : relative;
+    background-color: #1e1e1e;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+}
+
+footer .FooterBox {
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer img {
+    width: 2.25rem;
+    height: auto;
+
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+footer .Made {
+    font-family: 'Pretendard-Medium';
+    font-size: 0.9rem;
+    line-height: 23px;
+    color: #858585;
+}
+footer .SnsIconBox {
+    margin-right: 2rem;
+    display: flex;
+}
+footer i {
+    font-size: 1.75rem;
+    color: #858585;
+
+    margin: .5rem;
+    cursor: pointer;
 }
