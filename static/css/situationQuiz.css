@@ -60,10 +60,10 @@ main {
     align-items: center;
 }
 section {
-    width: 75rem;
+    width: 85rem;
     margin: auto;
 
-    margin-top: 5.5rem;
+    margin-top: 7.5rem;
 }
 button {
     cursor: pointer;
@@ -75,10 +75,12 @@ body {
 /*챕터제목*/
 .ChapterTitle {
     font-family: 'Pretendard-Bold';
-    font-size: 2rem;
+    font-size: 2.5rem;
 
     width: fit-content;
-    margin: 1.5rem auto;
+    margin: 2rem auto;
+
+    margin-bottom: 1.25rem;
 }
 
 /*진행바*/
@@ -90,7 +92,7 @@ body {
     flex-direction: row;
 }
 .StageBar {
-    width: 14rem;
+    width: 20rem;
     height: 0.5rem;
 
     margin: 0.25rem .225rem;
@@ -103,9 +105,17 @@ body {
 }
 
 /*문제*/
+.QuizInfo {
+    font-family: 'Pretendard-Medium';
+    font-size: 1.3rem;
+    color:#858585;
+    text-align: center;
+
+    margin-bottom: 1.25rem;
+}
 .QuizBox {
-    width: 35rem;
-    height: 3rem;
+    width: 40rem;
+    height: 3.75rem;
 
     margin: 1.5rem auto;
     border-radius: 15px;
@@ -118,7 +128,7 @@ body {
 }
 .QuizBox .QuizSentence {
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 
     color: #fff;
 }
@@ -130,7 +140,7 @@ body {
     align-items: center;
 }
 .SelectNumber {
-    width: 1067.25px;
+    width:1307.25px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -166,8 +176,8 @@ body {
 .SelectBox input[type=radio]+label{
     display: inline-block;
     cursor: pointer;
-    height: 12rem;
-    width: 20rem;
+    height: 16rem;
+    width: 25rem;
     border: 2px solid #FFBD6C;
     border-radius: 15px;
     background-color: #E1E1E1;
@@ -176,8 +186,8 @@ body {
 }
 .SelectBox video {
     border-radius: 15px;
-    height: 12rem;
-    width: 20rem;
+    height: 16rem;
+    width: 25rem;
 
     margin:0;
     padding:0;
@@ -187,8 +197,8 @@ body {
 }
 .SelectBox .CheckBack {
     display:none;
-    height: 188.5px;
-    width: 316.5px;
+    height: 15.75rem;
+    width: 24.75rem;
     border-radius: 13px;
     background-color: rgba(255,255,255,.5);
 
@@ -201,8 +211,8 @@ body {
 
 /*버튼*/
 .RetryBtnBox {
-    width: 124px;
-    height: 44px;
+    width: 145px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,20 +225,20 @@ body {
     margin-top: 3rem;
 }
 .RetryBtn {
-    width: 120px;
-    height: 41px;
+    width: 144px;
+    height: 44px;
     background: #fff;
     /* padding: 10px; */
     border: none;
     border-radius: 10px;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: #FF9A23;
 }
 .StopBtnBox {
-    width: 124px;
-    height: 44px;
+    width: 145px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,15 +251,15 @@ body {
     margin-top: 3rem;
 }
 .StopBtn {
-    width: 120px;
-    height: 40px;
+    width: 144px;
+    height: 44px;
     background: #fff;
     /* padding: 10px; */
     border: none;
     border-radius: 10px;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
+    font-size: 1.15rem;
     color: #FF9A23;
 }
 

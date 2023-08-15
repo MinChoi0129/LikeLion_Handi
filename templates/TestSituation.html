@@ -1,17 +1,17 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>핸디</title>
-    <link rel="stylesheet" href="{% static 'css/situationQuiz.css' %}">
+    <link rel="stylesheet" href="../static/css/situationQuiz.css">
     <link rel="stylesheet" href="../static/css/header.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header>
-        <div class="Logo">
+		<div class="Logo">
 			<img class="lo01" src="/static/image/logo/logo1.svg">
 			<!-- <img class='lo02' src="/static/image/logo/logo2.svg"> -->
 		</div>
@@ -29,10 +29,12 @@
 	<main>
 		<section>
             <h2 class="ChapterTitle">수어로 친구 사귀기 - 첫만남 편</h2>
+            <div class="QuizInfo">
+                빈칸에 알맞는 단어의 수어영상을 선택해주세요.
+            </div>
             <div class="QuizWrap">
                 <div class="StageBarWrap">
                     <div class="StageBar active"></div>
-                    <div class="StageBar"></div>
                     <div class="StageBar"></div>
                 </div>
                 <div class="QuizBox">
@@ -82,4 +84,4 @@
 	<footer>
 	</footer>
 </body>
-{% endblock %}
+</html>
