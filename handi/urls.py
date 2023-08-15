@@ -27,4 +27,5 @@ urlpatterns = [
     path("api/mediaentry/<pk>/", MediaEntryDetail.as_view()),
     path("api/game/", Game.as_view()),
     path("api/quiz/<lecture_id>/", Quiz.as_view()),
+    path("api/signup/checkid/", SignUpCheck.as_view()),
 ]

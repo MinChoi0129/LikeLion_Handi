@@ -57,8 +57,8 @@ class Quiz(RetrieveAPIView):
 
         return Response(
             {
-                "jamo_quiz_list": type_A_quizzes,
-                "word_quiz_list": type_B_quizzes,
+                "type_A_quizzes": type_A_quizzes,
+                "type_B_quizzes": type_B_quizzes,
             },
             status=status.HTTP_200_OK,
         )
