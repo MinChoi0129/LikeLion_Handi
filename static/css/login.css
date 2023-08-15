@@ -79,6 +79,7 @@ section {
     color: #858585;
     margin-left: 5px;
     font-family: 'Pretendard-Medium';
+    cursor: pointer;
 }
 
 input:focus {
@@ -118,6 +119,7 @@ input:focus {
 
 .join {
     color: #FF9A23;
+    cursor: pointer;
 }
 
 .line {
@@ -152,6 +154,7 @@ input:focus {
     height: 45px;
     background-color: white;
     font-family: 'Pretendard-Regular';
+    cursor: pointer;
 }
 
 .naver {
@@ -166,11 +169,12 @@ input:focus {
     height: 45px;
     background-color: #03c75a;
     font-family: 'Pretendard-Regular';
+    cursor: pointer;
 }
 
 .kakao {
     position: relative;
-    border: 1px solid #F9E000;
+    border: 1px solid #FEE500;
     color: white;
     padding: 10px;
     margin: 7px;
@@ -180,6 +184,7 @@ input:focus {
     height: 45px;
     background-color: #F9E000;
     font-family: 'Pretendard-Regular';
+    cursor: pointer;
 }
 
 .GoogleLogo {
@@ -188,6 +193,7 @@ input:focus {
     position: absolute;
     top: 50%; left:1.4rem;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 
 .NaverLogo {
@@ -196,6 +202,7 @@ input:focus {
     position: absolute;
     top: 50%; left:1rem;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 
 .KakaoLogo {
@@ -204,6 +211,7 @@ input:focus {
     position: absolute;
     top: 50%; left: 1.2rem;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 
 main {
