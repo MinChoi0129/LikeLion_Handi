@@ -60,22 +60,26 @@ main {
     align-items: center;
 }
 section {
-    width: 75rem;
+    width: 85rem;
+    height: 50rem;
     margin: auto;
 
-    margin-top: 5.5rem;
+    margin-top: 6.5rem;
+
+    position: relative;
 }
 button {
     cursor: pointer;
 }
 body {
     overflow-x: hidden;
+    position: relative;
 }
 
 /*챕터제목*/
 .ChapterTitle {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.5rem;
+    font-family: 'Pretendard-ExtraBold';
+    font-size: 2.75rem;
 
     width: fit-content;
     margin: 1.5rem auto;
@@ -89,7 +93,7 @@ body {
     align-items: center;
 
     font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 .WordCount p {
     margin:0;
@@ -97,26 +101,50 @@ body {
 
 /*문제 슬라이더*/
 .StudySlider {
-    margin-top: 2rem;
+    margin-top: 0;
+    height: 35rem;
+    width: 85rem;
+
+    padding: 0 5rem;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+.StudySlider .SliderContainer {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    
+    padding: 0 3rem;
+    
+    transition: all 0.3s ease-in-out;
 }
 .StudySlider .StudyWrap {
-    width: 60rem;
+    width: 75rem;
+    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
+    margin: 2rem auto;
+    padding: 0 5rem;
 }
 .StudyWrap .StudyVideo{
-    width: 25rem;
-    height: 25rem;
+    width: 32rem;
+    height: 32rem;
     
     border-radius: 1rem;
+
+    margin-right: 2rem;
 
     box-shadow: 0 0 10px 0 #dedede;
 }
 .StudyVideo .Video {
-    width: 25rem;
-    height: 25rem;
+    width: 32rem;
+    height: 32rem;
     
     border-radius: 1rem;
 }
@@ -124,10 +152,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 2rem;
 }
 .StudyInfoWrap .StudyWord {
-    width: 18rem;
-    height: 11rem;
+    width: 25rem;
+    height: 14rem;
     border-radius: 1rem;
 
     box-shadow: 0 0 10px 0 #dedede;
@@ -143,9 +172,181 @@ body {
     margin:0;
 }
 .StudyInfoWrap .StudyImg {
-    width: 18rem;
-    height: 11rem;
+    width: 25rem;
+    height: 14rem;
     border-radius: 1rem;
 
     box-shadow: 0 0 10px 0 #dedede;
+}
+/*버튼*/
+.StudySlider i {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+
+    border-radius: 50%;
+    background-color: #dedede;
+    color:#fff;
+
+    text-align: center;
+    line-height: 50px;
+
+    font-size: 1.75rem;
+
+    cursor: pointer;
+    z-index: 100;
+}
+i#PrevBtn {
+    left:2rem;
+}
+i#NextBtn {
+    right:2rem;
+}
+
+/*종료버튼*/
+.StopBtnBox {
+    width: 140px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+    padding: 2px;
+    border-radius: 12px;
+
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.StopBtn {
+    width: 136px;
+    height: 46px;
+    background: #fff;
+    /* padding: 10px; */
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.15rem;
+    color: #FF9A23;
+}
+.QuizBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -2rem;
+
+    width: 145px;
+    height: 48px;
+
+    display: none;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
+
+    border: none;
+    border-radius: 10px;
+
+    margin: 0 2rem;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.15rem;
+    color: #fff;
+
+    z-index: 999;
+}
+.QuizBtn:after {
+    opacity: 0;
+    content: "퀴즈풀러가기";
+    position: absolute;
+    left:0;right: 0;top:0;bottom:0;
+    width: 145px;
+    height: 48px;
+    background: linear-gradient(to right, #ffeea0, #ffc986);
+
+    transition: all .2s ease-in-out;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size:1.15rem;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+}
+.QuizBtn:hover::after {
+    opacity: 1;
+}
+
+/*모달*/
+.Back {
+    display: none;
+    position: absolute;
+    top:0; left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+
+    z-index: 110;
+}
+.StopModal {
+    position: absolute;
+    width: 35rem;
+    height: 18rem;
+
+    background-color: #fff;
+    border: 2px solid #FF9A23;
+    border-radius: 25px;
+
+    font-family: 'Pretendard-SemiBold';
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.StopModal .ModalText {
+    font-size: 1.5rem;
+    text-align: center;
+
+    margin: 0;
+    margin-bottom:1rem;
+}
+.StopModal .BtnBox {
+    margin-top: 1rem;
+}
+.StopModal .YesBtn {
+    width: 6.25rem;
+    height: 2.25rem;
+
+    border:none;
+    border-radius: 10px;
+    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: .9rem;
+    color: #fff;
+
+    margin: 0 1.5rem;
+}
+.StopModal .NoBtn {
+    width: 6.25rem;
+    height: 2.25rem;
+
+    border:none;
+    border-radius: 10px;
+    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: .9rem;
+    color: #fff;
+
+    margin: 0 1.5rem;
 }
