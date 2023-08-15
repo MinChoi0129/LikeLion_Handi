@@ -7,7 +7,7 @@
       "program": "${workspaceFolder}/manage.py",
       "args": ["runserver"],
       "django": true,
-      "justMyCode": false
+      "justMyCode": true
     }
   ]
 }

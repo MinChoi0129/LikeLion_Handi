@@ -438,7 +438,7 @@
         "model":"handi.lecture",
         "pk":30,
         "fields":{
-            "description": "도시이빈다",
+            "description": "도시입니다",
             "id": 30,
             "lecture_img": "lectures/business-5475283_1280.jpg",
             "length": 1,
@@ -507,6 +507,81 @@
             "name": "회사",
             "sub_category": "회사",
             "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":35,
+        "fields":{
+            "description": "가게에서 계산하기",
+            "id": 35,
+            "lecture_img": "lectures/shop.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "",
+            "name": "실전 수어 대화 - 가게에서 계산하기",
+            "sub_category": "",
+            "theme_category": "실전 수어 대화"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":36,
+        "fields":{
+            "description": "대중교통 이용하기",
+            "id": 36,
+            "lecture_img": "lectures/taxi.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "",
+            "name": "실전 수어 대화 - 대중교통 이용하기",
+            "sub_category": "",
+            "theme_category": "실전 수어 대화"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":37,
+        "fields":{
+            "description": "수어로 대화하기",
+            "id": 37,
+            "lecture_img": "lectures/hello.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "",
+            "name": "실전 수어 대화 - 수어로 대화하기",
+            "sub_category": "",
+            "theme_category": "실전 수어 대화"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":38,
+        "fields":{
+            "description": "지하철 시설 이용하기",
+            "id": 38,
+            "lecture_img": "lectures/subway.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "",
+            "name": "실전 수어 대화 - 지하철 시설 이용하기",
+            "sub_category": "",
+            "theme_category": "실전 수어 대화"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":39,
+        "fields":{
+            "description": "지하철 타기",
+            "id": 39,
+            "lecture_img": "lectures/gettime.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "",
+            "name": "실전 수어 대화 - 지하철 타기",
+            "sub_category": "",
+            "theme_category": "실전 수어 대화"
         }
     }
 ]

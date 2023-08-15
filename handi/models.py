@@ -1,12 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-import requests
+import os
+
+
+def renameImagePath(instance, filename):
+    upload_to = "profiles"
+    ext = filename.split(".")[-1]
+    filename = "{}.{}".format(instance.username, ext)
+    return os.path.join(upload_to, filename)
+
 
 class User(AbstractUser):
     name = models.CharField(max_length=10)
-    game_score = models.IntegerField(default=0, blank=True, null=True)
+    game_score = models.IntegerField(default=0)
     phone_number = models.CharField(max_length=15)
-    profile_img = models.TextField(default=requests.get("https://source.boringavatars.com/beam?square=True").text)
+    profile_img = models.ImageField(upload_to=renameImagePath, blank=True, null=True)
+
 
 class MediaEntry(models.Model):
     name = models.CharField(max_length=30)

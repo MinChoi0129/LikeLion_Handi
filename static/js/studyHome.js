@@ -1,4 +1,4 @@
-fetch('http://localhost:8000/api/lecture/<pk>/')
+fetch('http://localhost:8000/api/lecture/<pk>')
 	.then((response) => {
 		return response.json()
 		})

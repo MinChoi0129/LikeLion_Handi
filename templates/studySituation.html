@@ -1,15 +1,31 @@
-{% extends 'header.html' %}
+<!-- {% extends 'header.html' %}
 {% load static %}
-{% block content %}
+{% block content %} -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>핸디</title>
-	<link rel="stylesheet" href="{% static 'css/situationStyle.css' %}">
+	<link rel="stylesheet" href="/static/css/situationStyle.css">
+    <link rel="stylesheet" href="/static/css/header.css">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/studysituation.js' %}" defer></script>
+    <script src="{% static 'js/situation.js' %}" defer></script>
 </head>
 <body>
+    <header>
+        <div class="Logo"></div>
+		<nav>
+			<ol>
+				<li>홈</li>
+				<li>번역하기</li>
+				<li>학습하기</li>
+				<li>게임하기</li>
+				<li>Contact</li>
+			</ol>
+		</nav>
+		<button class="SignInBtn">SIGN IN</button>
+	</header>
 	<main>
 		<section>
             <h2 class="ChapterTitle">수어로 친구 사귀기 - 첫만남 편</h2>
@@ -48,4 +64,4 @@
 		</section>
 	</main>
 </body>
-{% endblock %}
+<!-- {% endblock %} -->
