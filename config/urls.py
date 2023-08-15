@@ -33,6 +33,22 @@ urlpatterns = [
         views_page.studySentence,
         name="studySentence",
     ),
+    path("lecture/<int:lecture_id>/quiz/word/", views_page.quizWord, name="quizWord"),
+    path(
+        "lecture/<int:lecture_id>/quiz/sentence/",
+        views_page.quizSentence,
+        name="quizSentence",
+    ),
+    path(
+        "lecture/<int:lecture_id>/result/word/",
+        views_page.wordResult,
+        name="wordResult",
+    ),
+    path(
+        "lecture/<int:lecture_id>/result/sentence/",
+        views_page.sentenceResult,
+        name="sentenceResult",
+    ),
     path("game/", views_page.game, name="game"),
     path("admin/", admin.site.urls),
     path("", include("handi.urls")),
