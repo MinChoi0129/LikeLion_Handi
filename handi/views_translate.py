@@ -2,7 +2,7 @@ import os, numpy as np
 import random
 from jamo import h2j, j2hcj
 from rest_framework.generics import *
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
 
 all_jamo_list = [
     "ㄱ",
@@ -113,19 +113,32 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
 
 
 class Translator(RetrieveAPIView):
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         BASE_PATH = os.path.dirname(os.path.abspath(__file__))
         BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
         pure_jamo_list = getSeparatedJaMoList(request.data["sentence"])
         image_file_paths = getPathsFromFileNames(pure_jamo_list)
 
         random_file_name = str(random.randint(1000000, 9999999))
-        video_path_out = (
+
+        video_rel_url = os.path.join("media", "translate", random_file_name) + ".mp4"
+        video_abs_url = (
             os.path.join(BASE_PATH, "media", "translate", random_file_name) + ".mp4"
         )
 
-        convertImagesIntoVideo(image_file_paths, video_path_out)
+        convertImagesIntoVideo(image_file_paths, video_abs_url)
 
-        return JsonResponse(
-            {"video_url": os.path.join("media", "translate", random_file_name) + ".mp4"}
-        )
+        mode = request.data["mode"]
+
+        if mode == "download":
+            return FileResponse(
+                open(video_abs_url, "rb"),
+                content_type="video/mp4",
+                as_attachment=True,
+            )
+
+        elif mode == "watch":
+            return JsonResponse({"video_url": video_rel_url})
+
+        else:
+            return JsonResponse({{"success": False}})

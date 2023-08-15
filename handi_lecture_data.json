@@ -1,0 +1,512 @@
+[
+    {
+        "model":"handi.lecture",
+        "pk":1,
+        "fields":{
+            "description": "가족관련",
+            "id": 1,
+            "lecture_img": "lectures/family-2610205_1280.jpg",
+            "length": 17,
+            "level": 1,
+            "main_category": "인간",
+            "name": "가족1",
+            "sub_category": "가족",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":2,
+        "fields":{
+            "description": "가족2",
+            "id": 2,
+            "lecture_img": "lectures/pexels-fauxels-3184193.jpg",
+            "length": 18,
+            "level": 1,
+            "main_category": "인간",
+            "name": "가족2",
+            "sub_category": "가족",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":3,
+        "fields":{
+            "description": "가족3",
+            "id": 3,
+            "lecture_img": "lectures/pexels-craig-adderley-1835926.jpg",
+            "length": 13,
+            "level": 1,
+            "main_category": "인간",
+            "name": "가족결혼",
+            "sub_category": "가족",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":4,
+        "fields":{
+            "description": "감정입니다",
+            "id": 4,
+            "lecture_img": "lectures/smiley-2979107_1280.jpg",
+            "length": 12,
+            "level": 1,
+            "main_category": "인간",
+            "name": "감정",
+            "sub_category": "감정",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":5,
+        "fields":{
+            "description": "결혼입니다",
+            "id": 5,
+            "lecture_img": "lectures/wedding-2595862_1280.jpg",
+            "length": 18,
+            "level": 1,
+            "main_category": "문화",
+            "name": "결혼",
+            "sub_category": "결혼",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":6,
+        "fields":{
+            "description": "경제입니다",
+            "id": 6,
+            "lecture_img": "lectures/money-2696228_1280.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "사회생활",
+            "name": "경제",
+            "sub_category": "경제",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":7,
+        "fields":{
+            "description": "기념일입니다",
+            "id": 7,
+            "lecture_img": "lectures/daniel-bernard-qjsmpf0aO48-unsplash.jpg",
+            "length": 6,
+            "level": 1,
+            "main_category": "문화",
+            "name": "기념일",
+            "sub_category": "기념일",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":8,
+        "fields":{
+            "description": "과일채소입니다",
+            "id": 8,
+            "lecture_img": "lectures/apples-g42bfa8d31_1280.jpg",
+            "length": 5,
+            "level": 1,
+            "main_category": "자연",
+            "name": "수어도 한걸음부터 - 과일채소편",
+            "sub_category": "과일채소",
+            "theme_category": "카테고리"
+            }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":9,
+        "fields":{
+            "description": "나라입니다",
+            "id": 9,
+            "lecture_img": "lectures/the-globe-609225_1280.jpg",
+            "length": 30,
+            "level": 1,
+            "main_category": "지명",
+            "name": "나라",
+            "sub_category": "나라",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":10,
+        "fields":{
+            "description": "대학교입니다",
+            "id": 10,
+            "lecture_img": "lectures/people-2562626_1280.jpg",
+            "length": 9,
+            "level": 1,
+            "main_category": "지명",
+            "name": "대학교",
+            "sub_category": "대학교",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":11,
+        "fields":{
+            "description": "동물입니다",
+            "id": 11,
+            "lecture_img": "lectures/cat-ge649a4efb_1280.jpg",
+            "length": 10,
+            "level": 1,
+            "main_category": "자연",
+            "name": "수어도 한걸음부터 - 동물편",
+            "sub_category": "동물",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":12,
+        "fields":{
+            "description": "표현입니다",
+            "id": 12,
+            "lecture_img": "lectures/jamie-street-hBzrr6m6-pc-unsplash.jpg",
+            "length": 7,
+            "level": 1,
+            "main_category": "문화",
+            "name": "로맨틱한 표현",
+            "sub_category": "로맨틱표현",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":13,
+        "fields":{
+            "description": "몸입니다",
+            "id": 13,
+            "lecture_img": "lectures/marina-vitale-t809JJ6r9KA-unsplash.jpg",
+            "length": 18,
+            "level": 1,
+            "main_category": "인간",
+            "name": "몸",
+            "sub_category": "몸",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":14,
+        "fields":{
+            "description": "법입니다",
+            "id": 14,
+            "lecture_img": "lectures/justice-2060093_1280.jpg",
+            "length": 9,
+            "level": 1,
+            "main_category": "문화",
+            "name": "법",
+            "sub_category": "법",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":15,
+        "fields":{
+            "description": "사자성어입니다",
+            "id": 15,
+            "lecture_img": "lectures/china-2542574_1280.jpg",
+            "length": 15,
+            "level": 1,
+            "main_category": "개념",
+            "name": "사자성어",
+            "sub_category": "사자성어",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":16,
+        "fields":{
+            "description": "색입니다",
+            "id": 16,
+            "lecture_img": "lectures/pencils-452238_1280.jpg",
+            "length": 13,
+            "level": 1,
+            "main_category": "개념",
+            "name": "색",
+            "sub_category": "색",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":17,
+        "fields":{
+            "description": "술입니다",
+            "id": 17,
+            "lecture_img": "lectures/ash-edmonds-fsI-_MRsic0-unsplash.jpg",
+            "length": 5,
+            "level": 1,
+            "main_category": "식생활",
+            "name": "술",
+            "sub_category": "술",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":18,
+        "fields":{
+            "description": "숫자입니다",
+            "id": 18,
+            "lecture_img": "lectures/numbers-gaca222666_640.jpg",
+            "length": 32,
+            "level": 1,
+            "main_category": "개념",
+            "name": "수어도 한걸음부터 - 숫자편",
+            "sub_category": "숫자",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":19,
+        "fields":{
+            "description": "스포츠전반입니다",
+            "id": 19,
+            "lecture_img": "lectures/football-67701_1280.jpg",
+            "length": 13,
+            "level": 1,
+            "main_category": "문화",
+            "name": "스포츠전반",
+            "sub_category": "스포츠전반",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":20,
+        "fields":{
+            "description": "소프츠경기입니다",
+            "id": 20,
+            "lecture_img": "lectures/vienna-reyes-qCrKTET_09o-unsplash.jpg",
+            "length": 10,
+            "level": 1,
+            "main_category": "문화",
+            "name": "스포츠종류",
+            "sub_category": "스포츠종류",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":21,
+        "fields":{
+            "description": "식물입니다",
+            "id": 21,
+            "lecture_img": "lectures/flowers-276014_1280.jpg",
+            "length": 10,
+            "level": 1,
+            "main_category": "자연",
+            "name": "식물",
+            "sub_category": "식물",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":22,
+        "fields":{
+            "description": "옷입니다",
+            "id": 22,
+            "lecture_img": "lectures/clothesline-804812_1280.jpg",
+            "length": 9,
+            "level": 1,
+            "main_category": "문화",
+            "name": "옷",
+            "sub_category": "옷",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":23,
+        "fields":{
+            "description": "요일입니다",
+            "id": 23,
+            "lecture_img": "lectures/calendar-1990453_1280.jpg",
+            "length": 5,
+            "level": 1,
+            "main_category": "개념",
+            "name": "요일",
+            "sub_category": "요일",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":24,
+        "fields":{
+            "description": "음료입니다",
+            "id": 24,
+            "lecture_img": "lectures/drinks-2578446_1280.jpg",
+            "length": 9,
+            "level": 1,
+            "main_category": "식생활",
+            "name": "음료",
+            "sub_category": "음료",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":25,
+        "fields":{
+            "description": "음식이빈다",
+            "id": 25,
+            "lecture_img": "lectures/food-712665_1280.jpg",
+            "length": 16,
+            "level": 1,
+            "main_category": "식생활",
+            "name": "음식",
+            "sub_category": "음식",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":26,
+        "fields":{
+            "description": "병원 전반입니다",
+            "id": 26,
+            "lecture_img": "lectures/medic-gde9648439_640.jpg",
+            "length": 20,
+            "level": 1,
+            "main_category": "문화",
+            "name": "병원에서 사용하는 기초 수어 - 전반",
+            "sub_category": "병원",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":27,
+            "fields":{
+            "description": "병명입니다",
+            "id": 27,
+            "lecture_img": "lectures/medic-gde9648439_640_A0x3Uea.jpg",
+            "length": 18,
+            "level": 1,
+            "main_category": "문화",
+            "name": "병원에서 사용하는 기초 수어 - 병명",
+            "sub_category": "병명",
+            "theme_category": "카테고리"
+            }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":28,
+        "fields":{
+            "description": "자연물입니다",
+            "id": 28,
+            "lecture_img": "lectures/forest-1072828_1280.jpg",
+            "length": 18,
+            "level": 1,
+            "main_category": "자연",
+            "name": "자연",
+            "sub_category": "자연",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":29,
+        "fields":{
+            "description": "장소입니다",
+            "id": 29,
+            "lecture_img": "lectures/munich-1572429_1280.jpg",
+            "length": 18,
+            "level": 1,
+            "main_category": "지명",
+            "name": "장소",
+            "sub_category": "장소",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":30,
+        "fields":{
+            "description": "도시이빈다",
+            "id": 30,
+            "lecture_img": "lectures/business-5475283_1280.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "지명",
+            "name": "도시",
+            "sub_category": "도시",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":31,
+        "fields":{
+            "description": "서울입니다",
+            "id": 31,
+            "lecture_img": "lectures/korea-7366036_1280.jpg",
+            "length": 1,
+            "level": 1,
+            "main_category": "지명",
+            "name": "서울",
+            "sub_category": "서울",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":32,
+        "fields":{
+            "description": "직업입니다",
+            "id": 32,
+            "lecture_img": "lectures/artist-2578454_1280.jpg",
+            "length": 16,
+            "level": 1,
+            "main_category": "사회생활",
+            "name": "직업",
+            "sub_category": "직업",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":33,
+        "fields":{
+            "description": "학교입니다",
+            "id": 33,
+            "lecture_img": "lectures/classroom-2093744_1280.jpg",
+            "length": 21,
+            "level": 1,
+            "main_category": "사회생활",
+            "name": "학교",
+            "sub_category": "학교",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":34,
+        "fields":{
+            "description": "회사입니다",
+            "id": 34,
+            "lecture_img": "lectures/job-5382501_1280.jpg",
+            "length": 19,
+            "level": 1,
+            "main_category": "사회생활",
+            "name": "회사",
+            "sub_category": "회사",
+            "theme_category": "카테고리"
+        }
+    }
+]
