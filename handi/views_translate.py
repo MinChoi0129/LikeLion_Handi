@@ -105,7 +105,7 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
         ] = img
 
         frame_array.append(base_pic)
-    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"mp4v"), fps, new_size)
+    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"H264"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])
     cv2.destroyAllWindows()
