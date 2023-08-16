@@ -36,7 +36,7 @@
               oninput="updateLetterCount(this.value)"
               placeholder="번역할 내용을 입력하세요."
             ></textarea>
-            <input type="hidden" value="watch" name="mode" />
+            <input id="mode" type="hidden" value="watch" name="mode" />
             <button class="TranslationBtn" onclick="trans()">번역하기</button>
           </div>
           <div class="KoreanFooter">
@@ -58,10 +58,8 @@
             <div class="SignGif">
               <video
                 id="videoSource"
-                src="/media/translate/7176006.mp4"
                 width="300px"
                 height="350px"
-                controls="controls"
                 autoplay="autoplay"
                 muted="muted"
                 loop="loop"
@@ -69,7 +67,7 @@
             </div>
             <form method="post" action="http://127.0.0.1:8000/api/translate/">
               <input type="hidden" value="download" name="mode" />
-              <button type="submit" class="GIfBtn">gif로 저장하기</button>
+              <button type="submit" class="GIfBtn">저장하기</button>
             </form>
           </div>
         </div>

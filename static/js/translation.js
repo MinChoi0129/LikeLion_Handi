@@ -1,22 +1,24 @@
 function trans() {
   let sentence = document.getElementById("sentence").value;
+  let mode = document.getElementById("mode").value;
+
   fetch("http://127.0.0.1:8000/api/translate/", {
     method: "POST",
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: JSON.stringify({
-      video_url: "media/translate/7176006.mp4",
-      mode: "download",
+    body: new URLSearchParams({
+      sentence: sentence,
+      mode: mode,
     }),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      response.json();
+    })
     .then((result) => {
-      const videoUrl = result["video_url"];
-      const videoSource = document.getElementById("videoSource");
-      console.log(videoSource.src);
-      console.log(videoUrl);
+      // const videoUrl = result["video_url"];
+      console.log(result);
     });
 }
 

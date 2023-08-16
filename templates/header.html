@@ -34,7 +34,7 @@
       const menuLength = menuItem.length;
       for (let i = 0; i < menuLength; i++) {
         let menuLocation = menuItem[i].href.split("/");
-        console.log(menuLocation[3]);
+        // console.log(menuLocation[3]);
         if (menuLocation[3].includes(currentLocation)) {
           menuItem[i].className = "active";
         }
