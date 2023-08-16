@@ -12,8 +12,18 @@ userImageElement.setAttribute("src", dataUrl);
 let start = 0;
 let end = 4;
 let nextstage = 8;
+let level = document.querySelector(".LevelBackground").innerHTML;
 const cards = document.querySelectorAll(".Cards li");
-
+function stageChange() {
+  if (start == end) {
+    end = nextstage;
+    level = "Lv" + (parseInt(level[3]) + 1);
+    setTimeout(() => {
+      cards.forEach((card) => {card.classList.remove("flip");});
+      randomCardPosition(URL_data);
+    }, 1500);
+  }
+}
 // 구현해야 할 점
 // 1. 카드 뒷면에 Text or Video data를 넣어주기
 // 2. 카드 뒤집은 다음 video면 1.5초간 재생
@@ -123,6 +133,38 @@ function randomCardPosition(meta_data) {
   }
 }
 
+function randomCardPosition(meta_data) {
+  // 두가지로 분류, 양쪽을 통해 확인할 것임
+  for (let i = 0; i < meta_data.length; i++) {
+    check_Attr[meta_data[i][0]] = meta_data[i][1];
+    check_Attr[meta_data[i][1]] = meta_data[i][0];
+  }
+  let all_data = [];
+  for (let i = start; i < end; i++) {
+    all_data.push([meta_data[i][0], "word"]);
+    all_data.push([meta_data[i][1], "video"]);
+  }
+  shuffled_data = shuffleArray(all_data);
+  console.log(shuffled_data);
+  for (let i = 0; i < cards.length; i++) {
+    // 카드 뒷면에 단어, video url 넣어주기 (아닌건 block 처리)
+    if (shuffled_data[i][1] == "word") {
+      let now_card = cards[i];
+      now_card.querySelector(".View.Back .VideoContent").style.display = "none";
+      now_card.querySelector(".View.Back .TextContent p").textContent =
+        shuffled_data[i][0];
+      now_card.querySelector(".View.Back .TextContent").style.display =
+        "inline";
+    } else {
+      let now_card = cards[i];
+      now_card.querySelector(".View.Back .TextContent").style.display = "none";
+      now_card.querySelector(".View.Back .VideoContent video").src =
+        shuffled_data[i][0];
+      now_card.querySelector(".View.Back .VideoContent").style.display =
+        "inline";
+    }
+  }
+}
 let cardOne, cardTwo; // 선택한 카드
 let disableDeck = false;
 //두개의 이미지 비교하기
@@ -133,6 +175,8 @@ function matchCards(Attr1, Attr2) {
     cardOne.removeEventListener("click", flipCard);
     cardTwo.removeEventListener("click", flipCard);
     cardOne = cardTwo = "";
+    start+=1;
+    stageChange();
     return (disableDeck = false);
   } else {
   // 틀린 이미지 애니메이션 효과 주기
@@ -151,6 +195,10 @@ function matchCards(Attr1, Attr2) {
 function getCard() {
   return cards;
 }
+URL_data = []
+function loadMatadata(meta_data){
+  URL_data = meta_data
+}
 const URL = "http://localhost:8000/api/game";
 fetch(URL)
   .then((response) => {
@@ -162,6 +210,7 @@ fetch(URL)
   .then((meta_data) => {
 
     // 랜덤으로 카드 배치
+    loadMatadata(meta_data);
     randomCardPosition(meta_data);
   });
 
