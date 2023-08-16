@@ -145,6 +145,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+.QuizVer2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .QuizBox {
     width: 28rem;
     height: 28rem;
@@ -162,15 +167,43 @@ body {
 
     border-radius: 1rem;
 }
-.SelectBox {
+#ver1 {
+    margin-top: 1rem;
+    text-align: center;
+}
+#ver1 input[type=radio] {
+    display:none;
+}
+#ver1 label img {
+    height: 14rem;
+    width: 16rem;
+    border-radius: 15px;
+    border: none;
+}
+#ver1 input[type=radio] + label{
+    display: inline-block;
+    cursor: pointer;
+    height: 14rem;
+    width: 16rem;
+    box-shadow: 0 0 10px 0 #dedede;
+    border-radius: 15px;
+    background-color: #fff;
+
+    margin: 1rem 2rem;
+}
+#ver1 input[type=radio]:checked + label{
+    display: inline-block;
+    box-shadow: 0 0 10px 0 #FFBD6C;
+}
+#ver2 {
     margin-left: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.SelectBox input[type=radio] {
+#ver2 input[type=radio] {
     display:none;
 }
-.SelectBox input[type=radio] + label{
+#ver2 input[type=radio] + label{
     display: inline-block;
     cursor: pointer;
     height: 12rem;
@@ -185,11 +218,11 @@ body {
     justify-content: center;
     align-items: center;
 }
-.SelectBox span {
+#ver2 span {
     font-family: 'Pretendard-SemiBold';
     font-size: 4rem;
 }
-.SelectBox input[type=radio]:checked + label{
+#ver2 input[type=radio]:checked + label{
     display: inline-block;
     box-shadow: 0 0 10px 0 #FFBD6C;
 
@@ -210,7 +243,7 @@ body {
     border-radius: 12px;
 
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 1.25rem;
 }
 .StopBtn {
     width: 136px;

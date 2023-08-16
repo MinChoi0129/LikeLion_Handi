@@ -19,16 +19,13 @@ const StopBtnBox = document.querySelector(".StopBtnBox");
 //ajax 백엔드 연결
 fetch("http://localhost:8000/api/lecture/" + Id + "/")
   .then((response) => {
-    // if (!response.ok) {
-    //   throw new Error("400아니면500에러남");
-    // }
     return response.json();
   })
   .then((data) => {
     console.log(data);
     const count = `${data.length}`;
     AllCount.innerHTML = count;
-    const title = data.sub_category;    ;
+    const title = data.sub_category;
     ChapterTitle.innerHTML = title;
     for (let i = 0; i< data.length; i++) {
       let imgSrc = data.media_entries[i].image_url.slice(7);
@@ -46,7 +43,6 @@ fetch("http://localhost:8000/api/lecture/" + Id + "/")
       SliderContainer.insertAdjacentHTML('beforeend', wrap);
     }
     // 단어슬라이더
-
     var CurrentIndex = 0;
 
     // 숫자변경
