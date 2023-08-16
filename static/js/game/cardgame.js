@@ -10,8 +10,10 @@ const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
 )}`;
 userImageElement.setAttribute("src", dataUrl);
 let start = 0;
-let end = 4; 
+let end = 4;
 let nextstage = 8;
+const cards = document.querySelectorAll(".Cards li");
+
 // 구현해야 할 점
 // 1. 카드 뒷면에 Text or Video data를 넣어주기
 // 2. 카드 뒤집은 다음 video면 1.5초간 재생
@@ -30,14 +32,54 @@ function flipCard(e) {
     }
     cardTwo = clickedCard;
     disableDeck = true;
-
-    let cardOneImg;
-    now_card.querySelector(".View.Back .VideoContent video").src =
-      shuffled_data[i][0];
-    let cardTwoImg;
-    // cardTwo.querySelector(".Back img").src;
-
-    matchCards(cardOneImg, cardTwoImg);
+    //cardOne과 cardTwo의 속성확인
+    if (
+      cardOne.querySelector(".View.Back .VideoContent").style.display == "none"
+    ) {
+      cardOneType = "word";
+    } else {
+      cardOneType = "video";
+    }
+    if (
+      cardTwo.querySelector(".View.Back .VideoContent").style.display == "none"
+    ) {
+      cardTwoType = "word";
+    } else {
+      cardTwoType = "video";
+    }
+    if (cardOneType !== cardTwoType) {
+      if (cardOneType == "word") {
+        cardOneAttr = cardOne.querySelector(
+          ".View.Back .TextContent p"
+        ).textContent;
+      } else {
+        cardOneAttr = cardOne.querySelector(
+          ".View.Back .VideoContent video"
+        ).src;
+      }
+      if (cardTwoType == "word") {
+        cardTwoAttr = cardTwo.querySelector(
+          ".View.Back .TextContent p"
+        ).textContent;
+      } else {
+        cardTwoAttr = cardTwo.querySelector(
+          ".View.Back .VideoContent video"
+        ).src;
+      }
+      matchCards(cardOneAttr, cardTwoAttr);
+    }
+    else{
+      setTimeout(() => {
+        cardOne.classList.add("shake");
+        cardTwo.classList.add("shake");
+      }, 400);
+      setTimeout(() => {
+        cardOne.classList.remove("shake", "flip");
+        cardTwo.classList.remove("shake", "flip");
+        cardOne = cardTwo = "";
+        return (disableDeck = false);
+      }, 1200);
+    }
   }
 }
 function shuffleArray(array) {
@@ -47,54 +89,68 @@ function shuffleArray(array) {
   }
   return array;
 }
+let check_Attr = {};
 function randomCardPosition(meta_data) {
-  let all_data = [];
+  // 두가지로 분류, 양쪽을 통해 확인할 것임
   for (let i = 0; i < meta_data.length; i++) {
+    check_Attr[meta_data[i][0]] = meta_data[i][1];
+    check_Attr[meta_data[i][1]] = meta_data[i][0];
+  }
+  let all_data = [];
+  for (let i = start; i < end; i++) {
     all_data.push([meta_data[i][0], "word"]);
     all_data.push([meta_data[i][1], "video"]);
   }
   shuffled_data = shuffleArray(all_data);
   console.log(shuffled_data);
-  for (let i = start; i < end; i++) {
+  for (let i = 0; i < cards.length; i++) {
     // 카드 뒷면에 단어, video url 넣어주기 (아닌건 block 처리)
     if (shuffled_data[i][1] == "word") {
       let now_card = cards[i];
       now_card.querySelector(".View.Back .VideoContent").style.display = "none";
       now_card.querySelector(".View.Back .TextContent p").textContent =
         shuffled_data[i][0];
+      now_card.querySelector(".View.Back .TextContent").style.display =
+        "inline";
     } else {
       let now_card = cards[i];
       now_card.querySelector(".View.Back .TextContent").style.display = "none";
       now_card.querySelector(".View.Back .VideoContent video").src =
         shuffled_data[i][0];
+      now_card.querySelector(".View.Back .VideoContent").style.display =
+        "inline";
     }
   }
 }
+
 let cardOne, cardTwo; // 선택한 카드
 let disableDeck = false;
 //두개의 이미지 비교하기
-function matchCards(img1, img2) {
-  // if (img1 == img2) {
-  //   cardOne.removeEventListener("click", flipCard);
-  //   cardTwo.removeEventListener("click", flipCard);
-  //   cardOne = cardTwo = "";
-  //   return (disableDeck = false);
-  // } else {
-  //틀린 이미지 애니메이션 효과 주기
+function matchCards(Attr1, Attr2) {
+  console.log(Attr1, Attr2);
+  console.log(check_Attr[Attr1], check_Attr[Attr2]);
+  if (check_Attr[Attr1] == Attr2 && check_Attr[Attr2] == Attr1) {
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    return (disableDeck = false);
+  } else {
+  // 틀린 이미지 애니메이션 효과 주기
   setTimeout(() => {
     cardOne.classList.add("shake");
     cardTwo.classList.add("shake");
   }, 400);
-
   setTimeout(() => {
     cardOne.classList.remove("shake", "flip");
     cardTwo.classList.remove("shake", "flip");
     cardOne = cardTwo = "";
     return (disableDeck = false);
-  }, 1200);
-  // }
+  }, 1500);
+  }
 }
-function getCard() {document.querySelectorAll(".Cards li")}
+function getCard() {
+  return cards;
+}
 const URL = "http://localhost:8000/api/game";
 fetch(URL)
   .then((response) => {
@@ -104,17 +160,11 @@ fetch(URL)
     return response["game_data"];
   })
   .then((meta_data) => {
-    let word_to_video_check = {};
-    let video_to_word_check = {};
-    const cards = getCard()
-    // 두가지로 분류, 양쪽을 통해 확인할 것임
-    for (let i = 0; i < meta_data.length; i++) {
-      word_to_video_check[meta_data[i][0]] = meta_data[i][1];
-      video_to_word_check[meta_data[i][1]] = meta_data[i][0];
-    }
+
     // 랜덤으로 카드 배치
     randomCardPosition(meta_data);
-    cards.forEach((card) => {
-      card.addEventListener("click", flipCard);
-    });
   });
+
+cards.forEach((card) => {
+  card.addEventListener("click", flipCard);
+});
