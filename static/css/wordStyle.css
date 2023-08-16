@@ -64,7 +64,7 @@ section {
     height: 50rem;
     margin: auto;
 
-    margin-top: 6.5rem;
+    margin-top: 5.3rem;
 
     position: relative;
 }
@@ -155,6 +155,7 @@ body {
     height: 32rem;
     
     border-radius: 1rem;
+    object-fit: cover; 
 }
 .StudySlider .StudyInfoWrap {
     display: flex;
@@ -183,6 +184,8 @@ body {
     width: 25rem;
     height: 14rem;
     border-radius: 1rem;
+
+    object-fit: cover;
 
     box-shadow: 0 0 10px 0 #dedede;
 }
@@ -260,7 +263,7 @@ i#NextBtn {
     font-size: 1.15rem;
     color: #fff;
 
-    z-index: 999;
+    z-index: 100;
 }
 .QuizBtn:after {
     opacity: 0;
