@@ -9,19 +9,39 @@ const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
   svgText
 )}`;
 userImageElement.setAttribute("src", dataUrl);
+let currentScoreNum = document.querySelector(".CurrentScoreNum");
+let highestScoreNum = document.querySelector(".HighestScoreNum");
+function getScore() {
+  currentScoreNum.innerHTML = `${parseInt(currentScoreNum.innerHTML) + stage * 10}`;
+}
 let start = 0;
 let end = 4;
-let nextstage = 8;
+let nextstageScore = 8;
+let stage = 1;
 let level = document.querySelector(".LevelBackground").innerHTML;
-const cards = document.querySelectorAll(".Cards li");
+let cards = document.querySelectorAll(".Cards li");
 function stageChange() {
+  console.log(start, end);
   if (start == end) {
-    end = nextstage;
+    end = nextstageScore;
+    stage+=1;
+    if (stage < 4) {
+      nextstageScore += 4;
+    }
+    else{
+      nextstageScore += 9;
+    }
     level = "Lv" + (parseInt(level[3]) + 1);
+    cards.forEach((card) => {card.classList.remove("flip");});
+    randomCardPosition(URL_data);
+    cards.forEach((card) => {card.classList.add("flip");});
     setTimeout(() => {
-      cards.forEach((card) => {card.classList.remove("flip");});
-      randomCardPosition(URL_data);
-    }, 1500);
+        cards.forEach((card) => {card.classList.remove("flip");});
+        startGameTimer();
+      }, 6000);
+    cards.forEach((card) => {
+      card.addEventListener("click", flipCard);
+    });
   }
 }
 // 구현해야 할 점
@@ -33,6 +53,7 @@ function stageChange() {
 // 6. 모든 카드가 맞으면 다음 스테이지로 전환
 // 7. 초가 끝나면 모달창으로 결과 보여주기
 function flipCard(e) {
+  console.log(e.target);
   let clickedCard = e.target;
   if (clickedCard !== cardOne && !disableDeck) {
     clickedCard.classList.add("flip");
@@ -133,45 +154,14 @@ function randomCardPosition(meta_data) {
   }
 }
 
-function randomCardPosition(meta_data) {
-  // 두가지로 분류, 양쪽을 통해 확인할 것임
-  for (let i = 0; i < meta_data.length; i++) {
-    check_Attr[meta_data[i][0]] = meta_data[i][1];
-    check_Attr[meta_data[i][1]] = meta_data[i][0];
-  }
-  let all_data = [];
-  for (let i = start; i < end; i++) {
-    all_data.push([meta_data[i][0], "word"]);
-    all_data.push([meta_data[i][1], "video"]);
-  }
-  shuffled_data = shuffleArray(all_data);
-  console.log(shuffled_data);
-  for (let i = 0; i < cards.length; i++) {
-    // 카드 뒷면에 단어, video url 넣어주기 (아닌건 block 처리)
-    if (shuffled_data[i][1] == "word") {
-      let now_card = cards[i];
-      now_card.querySelector(".View.Back .VideoContent").style.display = "none";
-      now_card.querySelector(".View.Back .TextContent p").textContent =
-        shuffled_data[i][0];
-      now_card.querySelector(".View.Back .TextContent").style.display =
-        "inline";
-    } else {
-      let now_card = cards[i];
-      now_card.querySelector(".View.Back .TextContent").style.display = "none";
-      now_card.querySelector(".View.Back .VideoContent video").src =
-        shuffled_data[i][0];
-      now_card.querySelector(".View.Back .VideoContent").style.display =
-        "inline";
-    }
-  }
-}
+
 let cardOne, cardTwo; // 선택한 카드
 let disableDeck = false;
 //두개의 이미지 비교하기
 function matchCards(Attr1, Attr2) {
-  console.log(Attr1, Attr2);
   console.log(check_Attr[Attr1], check_Attr[Attr2]);
   if (check_Attr[Attr1] == Attr2 && check_Attr[Attr2] == Attr1) {
+    getScore()
     cardOne.removeEventListener("click", flipCard);
     cardTwo.removeEventListener("click", flipCard);
     cardOne = cardTwo = "";
@@ -208,12 +198,16 @@ fetch(URL)
     return response["game_data"];
   })
   .then((meta_data) => {
-
     // 랜덤으로 카드 배치
     loadMatadata(meta_data);
     randomCardPosition(meta_data);
   });
-
+// 카드 6초간 보여주기
+  cards.forEach((card) => {card.classList.add("flip");});
+setTimeout(() => {
+    cards.forEach((card) => {card.classList.remove("flip");});
+    startGameTimer();
+  }, 5000);
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
