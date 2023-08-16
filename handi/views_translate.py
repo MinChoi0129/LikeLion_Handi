@@ -119,7 +119,7 @@ class Translator(RetrieveAPIView):
 
         if request.data["mode"] == "download":
             video_url = request.data["video_url"]
-            video_abs_url = os.path.join(BASE_PATH, video_url)
+            video_abs_url = BASE_PATH + video_url
             return FileResponse(
                 open(video_abs_url, "rb"),
                 content_type="video/mp4",
