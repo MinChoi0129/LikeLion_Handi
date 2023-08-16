@@ -3,11 +3,10 @@ const remainTime = document.querySelector(".RemainTime");
 
 let timeLeft = 60;
 let timerInterval;
-let isRedBackground = false; 
-
+let minusTime = 75/60;
 function updateTimeBar() {
-  const fullWidth = 131.8; 
-  const remainingWidth = (timeLeft / 60) * fullWidth; 
+  const fullWidth = 75; 
+  const remainingWidth = fullWidth - ((60-timeLeft) * minusTime); 
   timeBar.style.width = `${remainingWidth}rem`;
 }
 
@@ -17,17 +16,14 @@ function updateTimer() {
     remainTime.textContent = timeLeft;
     updateTimeBar();
 
-    if (timeLeft === 10) {
+    if (timeLeft <= 10 && timeLeft % 2 === 0) {
       remainTime.style.backgroundColor = "red";
-      isRedBackground = true;
-    }
-
-    if (timeLeft > 10 && isRedBackground) {
+    } else {
       remainTime.style.backgroundColor = "white";
-      isRedBackground = false; 
     }
   } else {
     clearInterval(timerInterval);
+    endGame();
   }
 }
 
@@ -35,7 +31,3 @@ function startGameTimer() {
   timerInterval = setInterval(updateTimer, 1000); 
 }
 
-const yesBtn = document.querySelector(".Test");
-yesBtn.addEventListener("click", () => {
-  startGameTimer();
-});
