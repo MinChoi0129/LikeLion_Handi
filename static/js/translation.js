@@ -38,7 +38,12 @@ function save() {
     }),
   })
     .then((response) => {
-      return response.json();
+      return response.blob();
     })
-    .then((result) => {});
+    .then((data) => {
+      var a = document.createElement("a");
+      a.href = window.URL.createObjectURL(data);
+      a.download = "translation_result";
+      a.click();
+    });
 }
