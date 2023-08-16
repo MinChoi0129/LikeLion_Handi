@@ -17,16 +17,46 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from handi import views_page
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    path("", views_page.main),
-    path("login/", views_page.login),
-    path("signup/", views_page.signup),
-    path("translate/", views_page.translate),
-    path("study/", views_page.study),
-    path("game/", views_page.game),
+    path("", views_page.main, name="main"),
+    path("test/", views_page.test, name="test"),
+    path("login/", views_page.login, name="login"),
+    path("signup/", views_page.signup, name="signup"),
+    path("translate/", views_page.translate, name="translate"),
+    path("lecture/", views_page.lecture, name="lecture"),
+    path("lecture/<int:lecture_id>/", views_page.inLecture, name="inLecture"),
+    path(
+        "lecture/<int:lecture_id>/study/word/", views_page.studyWord, name="studyWord"
+    ),
+    path(
+        "lecture/<int:lecture_id>/study/sentence/",
+        views_page.studySentence,
+        name="studySentence",
+    ),
+    path("lecture/<int:lecture_id>/quiz/word/", views_page.quizWord, name="quizWord"),
+    path(
+        "lecture/<int:lecture_id>/quiz/sentence/",
+        views_page.quizSentence,
+        name="quizSentence",
+    ),
+    path(
+        "lecture/<int:lecture_id>/result/word/",
+        views_page.wordResult,
+        name="wordResult",
+    ),
+    path(
+        "lecture/<int:lecture_id>/result/sentence/",
+        views_page.sentenceResult,
+        name="sentenceResult",
+    ),
+    path("game/", views_page.game, name="game"),
     path("admin/", admin.site.urls),
-    path("situation/", views_page.situation),
     path("", include("handi.urls")),
-    path('accounts/', include('allauth.urls'))
+    path("accounts/", include("allauth.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

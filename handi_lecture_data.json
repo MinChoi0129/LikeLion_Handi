@@ -529,8 +529,13 @@
         "pk":36,
         "fields":{
             "description": "대중교통 이용하기",
+<<<<<<< Updated upstream
             "id": 36,
             "lecture_img": "lectures/taxi.jpg",
+=======
+            "id": 35,
+            "lecture_img": "lectures/subway.jpg",
+>>>>>>> Stashed changes
             "length": 1,
             "level": 1,
             "main_category": "",
@@ -538,6 +543,7 @@
             "sub_category": "",
             "theme_category": "실전 수어 대화"
         }
+<<<<<<< Updated upstream
     },
     {
         "model":"handi.lecture",
@@ -583,5 +589,7 @@
             "sub_category": "",
             "theme_category": "실전 수어 대화"
         }
+=======
+>>>>>>> Stashed changes
     }
 ]

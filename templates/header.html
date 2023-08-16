@@ -29,11 +29,13 @@
     </header>
 
     <script type="text/javascript">
-      const currentLocation = location.href;
+      const currentLocation = location.href.split("/")[3];
       const menuItem = document.querySelector("ol").querySelectorAll("a");
       const menuLength = menuItem.length;
       for (let i = 0; i < menuLength; i++) {
-        if (menuItem[i].href === currentLocation) {
+        let menuLocation = menuItem[i].href.split("/");
+        // console.log(menuLocation[3]);
+        if (menuLocation[3].includes(currentLocation)) {
           menuItem[i].className = "active";
         }
       }

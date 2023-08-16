@@ -1,17 +1,49 @@
-document.addEventListener('DOMContentLoaded', function() {
-    updateLetterCount('');
-  });
-  
-  function updateLetterCount(text) {
-    const maxLength = 50;
-    const currentLength = text.length;
-    const letterNumElement = document.querySelector('.ChangeLetterNum');
-    const textareaElement = document.querySelector('textarea[name="TranslationContent"]');
-  
-    if (currentLength > maxLength) {
-      letterNumElement.textContent = maxLength;
-      textareaElement.value = text.slice(0, maxLength);
-    } else {
-      letterNumElement.textContent = currentLength;
-    }
-  }
+function trans() {
+  let sentence = document.getElementById("sentence").value;
+  let mode = document.getElementById("mode_watch").value;
+
+  fetch("http://127.0.0.1:8000/api/translate/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      sentence: sentence,
+      mode: mode,
+    }),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      const videoUrl = result["video_url"];
+      document
+        .getElementById("videoSource")
+        .setAttribute("src", "/" + videoUrl);
+    });
+}
+
+function save() {
+  let video_url = document.getElementById("videoSource").getAttribute("src");
+  let mode = document.getElementById("mode_save").value;
+
+  fetch("http://127.0.0.1:8000/api/translate/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      video_url: video_url,
+      mode: mode,
+    }),
+  })
+    .then((response) => {
+      return response.blob();
+    })
+    .then((data) => {
+      var a = document.createElement("a");
+      a.href = window.URL.createObjectURL(data);
+      a.download = "translation_result";
+      a.click();
+    });
+}

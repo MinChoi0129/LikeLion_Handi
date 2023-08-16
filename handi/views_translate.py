@@ -97,7 +97,9 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
             sizeas = (int(width * ash), int(height * ash))
 
         img = cv2.resize(img, dsize=sizeas)
-        base_pic = np.zeros((new_size[1], new_size[0], 3), np.uint8)
+        base_pic = [[(255, 255, 255)] * new_size[1] for _ in range(new_size[0])]
+        base_pic = np.array(base_pic, np.uint8)
+
         base_pic[
             int(new_size[1] / 2 - sizeas[1] / 2) : int(new_size[1] / 2 + sizeas[1] / 2),
             int(new_size[0] / 2 - sizeas[0] / 2) : int(new_size[0] / 2 + sizeas[0] / 2),
@@ -105,7 +107,7 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
         ] = img
 
         frame_array.append(base_pic)
-    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"mp4v"), fps, new_size)
+    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"H264"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])
     cv2.destroyAllWindows()
@@ -116,29 +118,29 @@ class Translator(RetrieveAPIView):
     def post(self, request, *args, **kwargs):
         BASE_PATH = os.path.dirname(os.path.abspath(__file__))
         BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
-        pure_jamo_list = getSeparatedJaMoList(request.data["sentence"])
-        image_file_paths = getPathsFromFileNames(pure_jamo_list)
 
-        random_file_name = str(random.randint(1000000, 9999999))
-
-        video_rel_url = os.path.join("media", "translate", random_file_name) + ".mp4"
-        video_abs_url = (
-            os.path.join(BASE_PATH, "media", "translate", random_file_name) + ".mp4"
-        )
-
-        convertImagesIntoVideo(image_file_paths, video_abs_url)
-
-        mode = request.data["mode"]
-
-        if mode == "download":
+        if request.data["mode"] == "download":
+            video_url = request.data["video_url"]
+            video_abs_url = BASE_PATH + video_url
             return FileResponse(
                 open(video_abs_url, "rb"),
                 content_type="video/mp4",
                 as_attachment=True,
             )
+        elif request.data["mode"] == "watch":
+            pure_jamo_list = getSeparatedJaMoList(request.data["sentence"])
+            image_file_paths = getPathsFromFileNames(pure_jamo_list)
 
-        elif mode == "watch":
+            random_file_name = str(random.randint(1000000, 9999999))
+
+            video_rel_url = (
+                os.path.join("media", "translate", random_file_name) + ".mp4"
+            )
+            video_abs_url = (
+                os.path.join(BASE_PATH, "media", "translate", random_file_name) + ".mp4"
+            )
+
+            convertImagesIntoVideo(image_file_paths, video_abs_url)
             return JsonResponse({"video_url": video_rel_url})
-
         else:
             return JsonResponse({{"success": False}})
