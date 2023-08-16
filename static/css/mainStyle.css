@@ -52,6 +52,10 @@ html {
 }
 main {
     width: 100%;
+    min-height: calc(100vh - 150px);
+}
+html,body {
+    width: 100%;
 }
 section {
     width: 100%;

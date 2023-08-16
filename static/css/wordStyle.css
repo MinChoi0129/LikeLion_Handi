@@ -64,7 +64,7 @@ section {
     height: 50rem;
     margin: auto;
 
-    margin-top: 6.5rem;
+    margin-top: 5.3rem;
 
     position: relative;
 }
@@ -116,6 +116,7 @@ body {
     width: 100%;
 
     display: flex;
+    justify-content: flex-start;
     
     padding: 0 3rem;
     
@@ -128,8 +129,16 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
-    margin: 2rem auto;
+    margin: 2rem 0;
     padding: 0 5rem;
+
+    flex: 0 0 auto;
+}
+.StudySlider .StudyWrap:first-child {
+    margin-left: calc((100% - 75rem)/2);
+}
+.StudySlider .StudyWrap:last-child {
+    margin-right: calc((100% - 75rem)/2);
 }
 .StudyWrap .StudyVideo{
     width: 32rem;
@@ -146,6 +155,7 @@ body {
     height: 32rem;
     
     border-radius: 1rem;
+    object-fit: cover; 
 }
 .StudySlider .StudyInfoWrap {
     display: flex;
@@ -174,6 +184,8 @@ body {
     width: 25rem;
     height: 14rem;
     border-radius: 1rem;
+
+    object-fit: cover;
 
     box-shadow: 0 0 10px 0 #dedede;
 }
@@ -234,7 +246,7 @@ i#NextBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: -2rem;
+    right: -4rem;
 
     width: 145px;
     height: 48px;
@@ -251,7 +263,7 @@ i#NextBtn {
     font-size: 1.15rem;
     color: #fff;
 
-    z-index: 999;
+    z-index: 100;
 }
 .QuizBtn:after {
     opacity: 0;
