@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/studyHome.css' %}">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-	<script src="{% static 'js/studyHome.js' %}"></script>
+	<script src="{% static 'js/studyHome.js' %}" defer></script>
 </head>
 <body style="overflow-x: hidden">
 	<main>
@@ -43,8 +43,8 @@
 		<section class="Sc2">
 			<div class="learning">
 				<div class="title">진행하고 있는 학습</div>
-				<div class="section">
-					<div class="box1" onclick="goToLectureCategory()">
+				<div class="section1">
+					<!-- <div class="box1">
 						<div class="difficulty">난이도 하</div> 
 						<img class="img" src="{% static 'image/login/apple.png' %}" alt="apple">
 						<div class="sub">수어도 한걸음부터 - 과일편</div>
@@ -65,14 +65,14 @@
 						</div>
 						<div class="bar"></div>
 						<div class="bar3"></div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			
 			<div class="popular">
 				<div class="title">주간 인기 모음</div>
-				<div class="section">
-					<div class="box3">
+				<div class="section2">
+					<!-- <div class="box3">
 						<div class="difficulty">난이도 상</div>
 						<img class="img" src="{% static 'image/login/soccer.png' %}" alt="apple">
 						<div class="sub">축구 해설 수어로 보기</div>
@@ -121,8 +121,8 @@
 							<div class="percent">0%</div>
 						</div>
 						<div class="bar"></div>
-					</div>
-				</div>
+					</div> -->
+				</div> 
 			</div>
 
 			<div class="king">
@@ -131,8 +131,8 @@
 					<button class="right"><i class="fas fa-chevron-right"></i></button>
 				</div>
 				<div class="title">수어 왕초보</div>
-				<div class="section1">
-						<li class="box13">
+				<div class="section3">
+						<!-- <li class="box13">
 							<div class="difficulty">난이도 하</div>
 							<img class="img" src="{% static 'image/login/finger.png' %}" alt="apple">
 							<div class="sub">수어도 한걸음부터 - 자기소개편</div>
@@ -141,8 +141,11 @@
 								<div class="percent">0%</div>
 							</div>
 							<div class="bar"></div>
-						</li>
-						<li class="box8">
+						</li> -->
+
+
+			
+						<!-- <li class="box8">
 							<div class="difficulty">난이도 하</div>
 							<img class="img" src="{% static 'image/login/number.png' %}" alt="apple">
 							<div class="sub">수어도 한걸음부터 - 숫자편</div>
@@ -201,7 +204,7 @@
 								<div class="percent">0%</div>
 							</div>
 							<div class="bar"></div>
-						</li>
+						</li> -->
 				</div>
 
 				<div class="BtnBox">
@@ -212,8 +215,8 @@
 
 			<div class="daily">
 				<div class="title">일상 회화 모음</div>
-				<div class="section">
-					<div class="box15">
+				<div class="section4">
+					<!-- <div class="box15">
 						<div class="difficulty">난이도 하</div>
 						<img class="img" src="{% static 'image/login/first.png' %}" alt="apple">
 						<div class="sub">수어도 한걸음부터 - 첫만남편</div>
@@ -262,9 +265,9 @@
 							<div class="percent">0%</div>
 						</div>
 						<div class="bar"></div>
-					</div>
+					</div> -->
 				</div>
-			</div>
+			</div> 
 		</section>
 	</main>
 	<script>

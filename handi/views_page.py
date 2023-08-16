@@ -22,7 +22,7 @@ def translate(request):
 
 
 def lecture(request):
-    return render(request, "studyHome.html")
+    return render(request, "studyHome2.html")
 
 
 def inLecture(request, lecture_id):
