@@ -1,25 +1,24 @@
 /* 모달창 구현 */
-const openButton = document.getElementById("open");
-const modal = document.querySelector(".modal");
+const modal = document.querySelector(".resultmodal");
 const overlay = modal.querySelector(".modalOverlay");
-const closeBtn = document.querySelector("#NoBtn");
+const more_btn = modal.querySelector(".moreBtn");
+const rankhome_btn = modal.querySelector(".rankHomeBtn");
+const high_score = modal.querySelector(".highestScoreTitle");
+const my_score = modal.querySelector(".myScoreTitle");
 
-const openModal = () => {
+function endGame(score) {
   modal.classList.remove("hidden");
+  console.log(score)
+    // 유저 최고 점수 기록
+  //  high_score.innerHTML = high_score.innerHTML + "점";
+  my_score.innerHTML = my_score.innerHTML + score + "점";
 };
 
-const closeModal = () => {
-  modal.classList.add("hidden");
+function restartGame() {
+    //게임 재시작 코드
+}
+function rankHome() {
+    //홈으로 가는 코드
 };
-
-
-overlay.addEventListener("click", closeModal);
-closeBtn.addEventListener("click", closeModal);
-openButton.addEventListener("click", openModal);
-
-
-/* '예' 클릭 시 메인 페이지 이동 */
-const yesButton = document.querySelector(".YesBtn");
-yesButton.addEventListener("click", () => {
-    window.location.href = "index.html";
-});
+more_btn.addEventListener("click", restartGame);
+rankhome_btn.addEventListener("click", rankHome);

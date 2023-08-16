@@ -79,7 +79,9 @@ overflow: hidden; /* 페이지 스크롤 막기 */
 margin: 0;
 padding: 0;
 }
-
+.View.Front img {
+  object-fit: contain;
+}
 
 /* 게임 전체 화면*/
 .GameWrap {
@@ -180,7 +182,9 @@ width: 100%;
 .VideoContent video {
   width: 12rem;
   height: 16rem;
+  object-fit: cover;
 }
+
 
 /* 프로필 정보*/
 .Nickname {
@@ -321,6 +325,7 @@ width: 100%;
     top: 5.5rem;
     width: 75rem;
   }
+
   .RemainTime {
     align-items: center;
     background-color: #ffffff;
@@ -362,7 +367,7 @@ width: 100%;
 }
 
 /* 모달창 */
-.modal{
+.quitmodal{
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 position: fixed;
 top:50%;
@@ -375,6 +380,20 @@ align-items:center;
 transform: translate(-50%, -50%);
 z-index: 99999;
 }
+
+.resultmodal{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: fixed;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  }
 
 .modalOverlay{
 background-color: rgba(0, 0, 0, 0.6);
@@ -462,7 +481,7 @@ border-radius: 10px;
 }
 .Cards li .View {
 position: absolute;
-background:rgba(0, 0, 255, 0.2);
+background:rgba(255, 255, 222, 1);
 /* padding: 10%; */
 transition: transform 0.5s linear;
 backface-visibility: hidden;

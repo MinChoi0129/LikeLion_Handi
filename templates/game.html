@@ -8,9 +8,9 @@
     src="https://kit.fontawesome.com/32afc995e9.js"
     crossorigin="anonymous"
   ></script>
-  <script src="{% static 'js/game/quitmodal.js' %}" defer></script>
-  <script src="{% static 'js/game/resultmodal.js' %}" defer></script>
   <script src="{% static 'js/game/timebar.js' %}" defer></script>
+  <script src="{% static 'js/game/resultmodal.js' %}" defer></script>
+  <script src="{% static 'js/game/quitmodal.js' %}" defer></script>
   <script src="{% static 'js/game/cardgame.js' %}" defer></script>
   <script src="{% static 'js/game/ajax.js' %}" defer></script>
 </head>
@@ -18,7 +18,7 @@
   <header></header>
   <main>
     <!-- 모달창 -->
-    <div class="modal hidden">
+    <div class="quitmodal hidden">
       <div class="modalOverlay"></div>
       <!-- 모달창의 배경색 -->
       <div class="modalContent">
@@ -30,17 +30,15 @@
     </div>
 
     <!-- 순위모달창 -->
-    <!-- <div class="modal">
-      <div class="modalOverlay hidden"></div> -->
-    <!-- 모달창의 배경색 -->
-    <!-- <div class="modalRankContent">
+    <div class="resultmodal hidden">
+      <div class="modalOverlay"></div>
+      <!-- 모달창의 배경색 -->
+      <div class="modalRankContent">
         <div class="myHighestScore">
           <span class="highestScoreTitle">내 최고 점수 : </span>
-          <span>600</span>
         </div>
         <div class="myScore">
           <span class="myScoreTitle">내 점수 : </span>
-          <span>0</span>
         </div>
         <div class="myRank">
           <span class="myRankTitle">랭킹 : </span>
@@ -50,7 +48,7 @@
         <button class="moreBtn">한번 더하기</button>
         <button class="rankHomeBtn">홈으로</button>
       </div>
-    </div> -->
+    </div>
 
     <section>
       <div class="GameWrap">
@@ -60,7 +58,10 @@
               <ul class="Cards">
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -73,7 +74,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -86,7 +90,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -99,7 +106,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -112,7 +122,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -125,7 +138,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -138,7 +154,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                    <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image 
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -151,7 +170,10 @@
                 </li>
                 <li>
                   <div class="View Front">
-                     <image src="{% static 'image/cardgame/example.png' %}" alt="" />
+                    <image
+                      src="{% static 'image/logo/logo.png' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
@@ -188,7 +210,7 @@
           <div class="TimeBar"></div>
           <div class="RemainTime">60</div>
         </div>
-        <button type="button" class="HomeBtn" id="open">홈으로</button>
+        <button type="button" class="HomeBtn" id="quitopen">홈으로</button>
         <button type="button" class="Test" id="test">테스트</button>
       </div>
     </section>
