@@ -165,20 +165,23 @@ body {
     width: 28rem;
     height: 28rem;
 
+    object-fit: cover;
     border-radius: 1rem;
 }
 #ver1 {
     margin-top: 1rem;
     text-align: center;
+    width: 70rem;
 }
 #ver1 input[type=radio] {
     display:none;
 }
-#ver1 label img {
+#ver1 label video {
     height: 14rem;
     width: 16rem;
     border-radius: 15px;
     border: none;
+    object-fit: cover;
 }
 #ver1 input[type=radio] + label{
     display: inline-block;
@@ -266,7 +269,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
-    backdrop-filter: blur(5px);
 
     z-index: 110;
 }
