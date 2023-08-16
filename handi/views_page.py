@@ -5,6 +5,10 @@ def main(request):
     return render(request, "index.html")
 
 
+def test(request):
+    return render(request, "test.html")
+
+
 def login(request):
     return render(request, "login.html")
 

@@ -8,8 +8,8 @@
     src="https://kit.fontawesome.com/32afc995e9.js"
     crossorigin="anonymous"
   ></script>
-  <script src="{% static 'js/translate_count.js' %}"></script>
-  <script src="{% static 'js/translation.js' %}"></script>
+  <script src="{% static 'js/translate_count.js' %}" defer></script>
+  <script src="{% static 'js/translation.js' %}" defer></script>
 </head>
 
 <body>
@@ -56,10 +56,16 @@
             </div>
             <span class="Sign">수어</span>
             <div class="SignGif">
-              <video controls width="300" height="350">
-                <source id="videoSource" type="video/mp4" src="{ % static
-                'media/translate/2039951.mp4.url}"
-              </video>
+              <video
+                id="videoSource"
+                src="/media/translate/7176006.mp4"
+                width="300px"
+                height="350px"
+                controls="controls"
+                autoplay="autoplay"
+                muted="muted"
+                loop="loop"
+              ></video>
             </div>
             <form method="post" action="http://127.0.0.1:8000/api/translate/">
               <input type="hidden" value="download" name="mode" />
