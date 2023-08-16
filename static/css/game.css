@@ -178,11 +178,29 @@ width: 100%;
   white-space: nowrap;
   width: 10.4rem;
 }
+.View.Back {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.TextContent p{
+  font-family: Pretendard Variable, 'Source Sans Pro';
+  font-size: 2rem;
+  font-variant: bold;
+  align-items: center;
+  font-weight: 600;
+}
 
+
+.VideoContent {
+  overflow:hidden;
+  margin:0 auto;
+}
 .VideoContent video {
-  width: 12rem;
-  height: 16rem;
-  object-fit: cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius: 1rem;
 }
 
 
@@ -490,12 +508,14 @@ height: 100%;
 user-select: none;
 pointer-events: none;
 border-radius: 10px;
+background: cover;
 }
 .Cards li .View.Front {
 z-index: 10;
 
 transform: rotateY(0deg);
 }
+
 .Cards li .View.Back {
 transform: rotateY(180deg);
 }
