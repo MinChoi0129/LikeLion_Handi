@@ -64,7 +64,7 @@ const updateClick = (e) => {
 Btn.forEach((button) => button.addEventListener("click", updateClick));
 
 //ajax 백엔드 연결
-fetch("http://localhost:8000/api/lecture/1")
+fetch("http://localhost:8000/api/lecture/" + Id + "/")
   .then((response) => {
     if (!response.ok) {
       throw new Error("400아니면500에러남");

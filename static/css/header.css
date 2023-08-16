@@ -38,6 +38,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
+button {
+    cursor: pointer;
+}
 /*헤더*/
 header {
     position: fixed;

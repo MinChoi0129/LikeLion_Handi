@@ -116,6 +116,7 @@ body {
     width: 100%;
 
     display: flex;
+    justify-content: flex-start;
     
     padding: 0 3rem;
     
@@ -128,8 +129,16 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
-    margin: 2rem auto;
+    margin: 2rem 0;
     padding: 0 5rem;
+
+    flex: 0 0 auto;
+}
+.StudySlider .StudyWrap:first-child {
+    margin-left: calc((100% - 75rem)/2);
+}
+.StudySlider .StudyWrap:last-child {
+    margin-right: calc((100% - 75rem)/2);
 }
 .StudyWrap .StudyVideo{
     width: 32rem;
@@ -234,7 +243,7 @@ i#NextBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: -2rem;
+    right: -4rem;
 
     width: 145px;
     height: 48px;
