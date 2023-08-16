@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from handi import views_page
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("", views_page.main, name="main"),
+    path("test/", views_page.test, name="test"),
     path("login/", views_page.login, name="login"),
     path("signup/", views_page.signup, name="signup"),
     path("translate/", views_page.translate, name="translate"),
@@ -54,3 +57,6 @@ urlpatterns = [
     path("", include("handi.urls")),
     path("accounts/", include("allauth.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

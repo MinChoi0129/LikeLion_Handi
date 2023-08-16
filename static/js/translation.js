@@ -1,31 +1,49 @@
 function trans() {
   let sentence = document.getElementById("sentence").value;
+  let mode = document.getElementById("mode_watch").value;
+
   fetch("http://127.0.0.1:8000/api/translate/", {
     method: "POST",
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: JSON.stringify({
-      video_url: "media/translate/1955920.mp4",
-      mode: "download",
+    body: new URLSearchParams({
+      sentence: sentence,
+      mode: mode,
     }),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .then((result) => {
       const videoUrl = result["video_url"];
-      const videoSource = document.getElementById("videoSource");
-      console.log(videoSource.src);
-      console.log(videoUrl);
+      document
+        .getElementById("videoSource")
+        .setAttribute("src", "/" + videoUrl);
     });
 }
 
-// fetch("http://localhost:8000/api/translate")
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((result) => {
-//     const videoUrl = result["video_url"];
-//     const videoSource = document.getElementById("videoSource");
-//     videoSource.src = videoUrl;
-//   });
+function save() {
+  let video_url = document.getElementById("videoSource").getAttribute("src");
+  let mode = document.getElementById("mode_save").value;
+
+  fetch("http://127.0.0.1:8000/api/translate/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      video_url: video_url,
+      mode: mode,
+    }),
+  })
+    .then((response) => {
+      return response.blob();
+    })
+    .then((data) => {
+      var a = document.createElement("a");
+      a.href = window.URL.createObjectURL(data);
+      a.download = "translation_result";
+      a.click();
+    });
+}

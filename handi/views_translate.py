@@ -105,7 +105,7 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
         ] = img
 
         frame_array.append(base_pic)
-    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"mp4v"), fps, new_size)
+    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"H264"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])
     cv2.destroyAllWindows()
@@ -119,7 +119,7 @@ class Translator(RetrieveAPIView):
 
         if request.data["mode"] == "download":
             video_url = request.data["video_url"]
-            video_abs_url = os.path.join(BASE_PATH, video_url)
+            video_abs_url = BASE_PATH + video_url
             return FileResponse(
                 open(video_abs_url, "rb"),
                 content_type="video/mp4",
