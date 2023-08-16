@@ -97,7 +97,9 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
             sizeas = (int(width * ash), int(height * ash))
 
         img = cv2.resize(img, dsize=sizeas)
-        base_pic = np.zeros((new_size[1], new_size[0], 3), np.uint8)
+        base_pic = [[(255, 255, 255)] * new_size[1] for _ in range(new_size[0])]
+        base_pic = np.array(base_pic, np.uint8)
+
         base_pic[
             int(new_size[1] / 2 - sizeas[1] / 2) : int(new_size[1] / 2 + sizeas[1] / 2),
             int(new_size[0] / 2 - sizeas[0] / 2) : int(new_size[0] / 2 + sizeas[0] / 2),
