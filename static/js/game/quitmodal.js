@@ -1,4 +1,3 @@
-/* 모달창 구현 */
 const openButton = document.getElementById("quitopen");
 const modal = document.querySelector(".quitmodal");
 const overlay = modal.querySelector(".modalOverlay");

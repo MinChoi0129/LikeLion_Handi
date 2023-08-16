@@ -1,4 +1,3 @@
-/* 모달창 구현 */
 const modal = document.querySelector(".resultmodal");
 const overlay = modal.querySelector(".modalOverlay");
 const more_btn = modal.querySelector(".moreBtn");

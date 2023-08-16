@@ -3,6 +3,13 @@
 const userImageElement = document.querySelector(".Userimage");
 // 유저 이미지, 이름 수정
 // // 추후 User.profile_img로 변경
+fetch ("http://localhost:8000/api/user/") 
+  .then((response) => {
+  return response.json()
+  })
+  .then((response) => {
+  console.log(response)
+  })
 const svgText =
   '<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#F0AB3D"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-5 -5) rotate(129 18 18) scale(1)" fill="#C20D90" rx="36"></rect><g transform="translate(-1 -6) rotate(-9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#FFFFFF" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>';
 const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
