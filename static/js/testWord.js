@@ -3,9 +3,9 @@ const ChapterTitle = document.querySelector('.ChapterTitle');
 const CurrentCount = document.querySelector('.CurrentCount');
 const AllCount = document.querySelector('.AllCount');
 const StageBar = document.querySelector('.StageBar');
-// const QuizVideo = document.querySelector('.QuizBox').querySelector('video');
-const SelectBox = document.querySelector('.SelectBox');
+const QuizWrap = document.querySelector('.QuizWrap');
 const StopBtn = document.querySelector('.StopBtnBox');
+
 
 // 퀴즈 시작 전 모달
 const Back = document.querySelector('.Back');
@@ -21,6 +21,9 @@ NoBtn.addEventListener("click", ()=> {
     //전 페이지로 이동
 })
 
+function QuizRight() {
+
+}
 // 진행바
 
 // 그만풀기 버튼
@@ -33,37 +36,164 @@ StopBtn.addEventListener("click", () => {
     Back.style.display = "block";
 })
 Yes.addEventListener("click", ()=> {
-    //전페이지
+    location.replace("http://localhost:8000/lecture/" + Id + "/")
 })
 No.addEventListener("click", ()=> {
     StopModal.style.display = "none";
     Back.style.display = "none";
 })
 
-//ajax 백엔드 연결
 
-fetch("http://localhost:8000/api/lecture/" + Id + "/")
+
+//ajax 백엔드 연결
+// function settingQuiz()
+    fetch('http://localhost:8000/api/quiz/' + Id + "/")
 	.then((response) => {
 		return response.json()
 		})
 	.then((data) => {
         const title = data.sub_category;
         const count = data.length;
-        ChapterTitle.innerHTML = title;
         AllCount.innerHTML = count;
-        var CurrentIndex = 0;
+        // 선다나누기 
+        const typeA = `<div class="QuizVer1">
+        <div class="SelectBox" id="ver1">
+        <input type="radio" id="select1" name="wordSelect">
+        <label for="select1"><video src="" muted autoplay loop></video></label>
+        <input type="radio" id="select2" name="wordSelect">
+        <label for="select2"><video src="" muted autoplay loop></video></label>
+        <input type="radio" id="select3" name="wordSelect">
+        <label for="select3"><video src="" muted autoplay loop></video></label>
+        <input type="radio" id="select4" name="wordSelect">
+        <label for="select4"><video src="" muted autoplay loop></video></label>
+        <input type="radio" id="select5" name="wordSelect">
+        <label for="select5"><video src="" muted autoplay loop></video></label>
+        </div>
+        </div>`;
+        const typeB = `<div class="QuizBox">
+                    </div>
+                    <div class="SelectBox" id="ver2">
+                    </div>`
 
-        for (let i = 0; i < data.length; i++) {
-            CurrentCount.innerHTML = CurrentIndex + 1;
+        console.log(data);
 
+        //변수세팅
+        let CurrentIndex = 0; //현재문제수
+        var wrong_choices = []; //틀린문제배열
+        
+        var answer_url; //정답url
+        QuizWrap.insertAdjacentHTML('beforeend', typeA);
+        const QuizSelects = Array.from(document.querySelectorAll('video'));
+        const QuizLabels = document.querySelectorAll('label');
+        
+        function shuffle(array) {
+            array.sort(() => Math.random() - 0.5);
+        }
+        //정답검사함수
+        const QuizAnswer = (event) => {
+            if(event.target.src == answer_url) {
+                //초록띄우기
+            } else {
+                wrong_choices.push(data.type_A_quizzes[CurrentIndex].name);
+                
+            }
+            CurrentIndex++;
+
+            FillSrc(CurrentIndex); 
+            console.log(wrong_choices);
         }
 
-        fetch('http://localhost:8000/api/quiz/' + Id + "/")
-            .then((response) => {
-                return response.json()
-                })
-            .then((data) => {
-                console.log(data);
-                
-            })
+        //초기세팅
+        function FillSrc(CurrentIndex) {
+            CurrentCount.innerHTML = CurrentIndex+1;
+            ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`
+            answer_url = data.type_A_quizzes[CurrentIndex].image_urls[0]; //정답url초기화
+            shuffle(QuizSelects)
+            for(let i=0; i<5; i++) {
+                QuizSelects[i].setAttribute("src", data.type_A_quizzes[CurrentIndex].image_urls[i]);
+                // QuizLabels[i].setAttribute('onclick', QuizAnswer());
+                QuizLabels[i].addEventListener("click", QuizAnswer)
+            }
+            
+        }
+
+        FillSrc(CurrentIndex);
+        // if (CurrentIndex+1 <= Math.floor(data.type_A_quizzes.length / 2)) {
+            
+            
+        //     console.log(QuizSelects);
+        //     //제목넣기
+        //     ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[QuizIndex].name}`;
+
+        //     // QuizSelects.forEach((right)=>{
+        //     //     right.addEventListener("click", ()=>{
+        //     //         //정답오답기록 + 정답이면 초록/ 오답이면 빨강 + 오답기록 함수1
+        //     //         //진행바 이동함수
+        //     //         //1초 뒤 다음문제 currentindex +1 되고 나서 원래 selectbox 없애고 settingQuiz()
+        //     //         CurrentIndex++;
+        //     //         UpdateQuiz(CurrentIndex);
+        //     //     })
+        //     // })
+        // } else if (index+1 > Math.floor(data.type_A_quizzes.length / 2)){
+        //     ChapterTitle.innerHTML = title;
+        //     QuizWrap.insertAdjacentHTML('beforeend', typeB);
+        //     // //for문 돌리고   
+        //     let quiz_four = `<video src="${data.type_B_quizzes[QuizIndex].video_url}" muted autoplay loop></video>`;
+        //     document.querySelector('.QuizBox').insertAdjacentHTML('beforeend',quiz_four);
+        //     for(let i =0; i < 5; i++){
+        //         let select_four = `
+        //             <input type="radio" id="select${i+1}" name="wordSelect">
+        //             <label for="select${i+1}"><span>${data.type_B_quizzes[QuizIndex].names[i]}</span></label>
+        //         `;
+
+        //         console.log(select_four);
+        //         document.querySelector('#ver2').insertAdjacentHTML('beforeend', select_four);
+        //     }
+        // }
+        // function UpdateQuiz(index) {
+        //     console.log(index+1 <= Math.floor(data.type_A_quizzes.length / 2));
+        //     if (index+1 <= Math.floor(data.type_A_quizzes.length / 2)) {
+        //         ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[QuizIndex].name}`;
+        //         QuizWrap.insertAdjacentHTML('beforeend', typeA);
+        //         console.log(QuizWrap.innerHTML);
+        //         for(let i =0; i < 5; i++ ){
+        //             let select_five = `
+        //             <input type="radio" id="select${i+1}" name="wordSelect">
+        //             <label for="select${i+1}"><video src="${data.type_A_quizzes[QuizIndex].image_urls[i]}" muted autoplay loop></video></label>
+        //             `;
+        //             document.querySelector('#ver1').insertAdjacentHTML('beforeend', select_five);
+        //         }
+        //         const QuizSelects = document.querySelectorAll('label');
+        //         console.log(QuizSelects);
+        //         QuizSelects.forEach((right)=>{
+        //             right.addEventListener("click", ()=>{
+        //                 //정답오답기록 + 정답이면 초록/ 오답이면 빨강 + 오답기록 함수1
+        //                 //진행바 이동함수
+        //                 //1초 뒤 다음문제 currentindex +1 되고 나서 원래 selectbox 없애고 settingQuiz()
+        //                 CurrentIndex++;
+        //                 UpdateQuiz(CurrentIndex);
+        //             })
+        //         })
+        //     } else if (index+1 > Math.floor(data.type_A_quizzes.length / 2)){
+        //         ChapterTitle.innerHTML = title;
+        //         QuizWrap.insertAdjacentHTML('beforeend', typeB);
+        //         // //for문 돌리고   
+        //         let quiz_four = `<video src="${data.type_B_quizzes[QuizIndex].video_url}" muted autoplay loop></video>`;
+        //         document.querySelector('.QuizBox').insertAdjacentHTML('beforeend',quiz_four);
+        //         for(let i =0; i < 5; i++){
+        //             let select_four = `
+        //                 <input type="radio" id="select${i+1}" name="wordSelect">
+        //                 <label for="select${i+1}"><span>${data.type_B_quizzes[QuizIndex].names[i]}</span></label>
+        //             `;
+
+        //             console.log(select_four);
+        //             document.querySelector('#ver2').insertAdjacentHTML('beforeend', select_four);
+        //         }
+        //     }
+        // };
+        // UpdateQuiz(CurrentIndex);
     })
+
+
+
+
