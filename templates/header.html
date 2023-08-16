@@ -34,9 +34,15 @@
       const menuLength = menuItem.length;
       for (let i = 0; i < menuLength; i++) {
         let menuLocation = menuItem[i].href.split("/");
+<<<<<<< HEAD
+        if (menuLocation[3] == currentLocation) {
+=======
         // console.log(menuLocation[3]);
         if (menuLocation[3].includes(currentLocation)) {
+>>>>>>> 805eb76b20931e014904b052f1fe6f23ee3ca091
           menuItem[i].className = "active";
+        } else {
+          menuItem[i].classList.replace("active", 'remove');
         }
       }
     </script>

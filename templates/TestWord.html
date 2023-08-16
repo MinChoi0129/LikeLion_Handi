@@ -7,6 +7,9 @@
     <title>핸디</title>
 	<link rel="stylesheet" href="{% static 'css/wordQuiz.css' %}">
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script>
+        var Id = '{{lecture_id}}';
+    </script>
     <script src="{% static 'js/testWord.js' %}" defer></script>
 </head>
 <body>
@@ -35,19 +38,35 @@
                 </div>
             </div>
             <div class="QuizWrap">
-                <div class="QuizBox">
-                    <video src=""></video>
-                </div>
-                <div class="SelectBox">
-                    <input type="radio" id="select1" name="wordSelect">
-                    <label for="select1"><span>키위</span></label>
-                    <input type="radio" id="select2" name="wordSelect">
-                    <label for="select2"><span>배</span></label>
-                    <input type="radio" id="select3" name="wordSelect">
-                    <label for="select3"><span>사과</span></label>
-                    <input type="radio" id="select4" name="wordSelect">
-                    <label for="select4"><span>양파</span></label>
-                </div>
+                <!-- <div class="QuizVer1">
+                    <div class="SelectBox" id="ver1">
+                        <input type="radio" id="select1" name="wordSelect">
+                        <label for="select1"><img src=""/></label>
+                        <input type="radio" id="select2" name="wordSelect">
+                        <label for="select2"><img src=""/></label>
+                        <input type="radio" id="select3" name="wordSelect">
+                        <label for="select3"><img src=""/></label>
+                        <br/>
+                        <input type="radio" id="select4" name="wordSelect">
+                        <label for="select4"><img src=""/></label>
+                        <input type="radio" id="select5" name="wordSelect">
+                        <label for="select5"><img src=""/></label>
+                    </div>
+                </div> -->
+                <div class="QuizVer2">
+                    <div class="QuizBox">
+                        <video src=""></video>
+                    </div>
+                    <div class="SelectBox" id="ver2">
+                        <input type="radio" id="select1" name="wordSelect">
+                        <label for="select1"><span>키위</span></label>
+                        <input type="radio" id="select2" name="wordSelect">
+                        <label for="select2"><span>배</span></label>
+                        <input type="radio" id="select3" name="wordSelect">
+                        <label for="select3"><span>사과</span></label>
+                        <input type="radio" id="select4" name="wordSelect">
+                        <label for="select4"><span>양파</span></label>
+                    </div>
                 </div>
             </div>
             <div class="StopBtnBox">

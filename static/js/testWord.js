@@ -3,7 +3,7 @@ const ChapterTitle = document.querySelector('.ChapterTitle');
 const CurrentCount = document.querySelector('.CurrentCount');
 const AllCount = document.querySelector('.AllCount');
 const StageBar = document.querySelector('.StageBar');
-const QuizVideo = document.querySelector('.QuizBox').querySelector('video');
+// const QuizVideo = document.querySelector('.QuizBox').querySelector('video');
 const SelectBox = document.querySelector('.SelectBox');
 const StopBtn = document.querySelector('.StopBtnBox');
 
@@ -20,8 +20,6 @@ StartBtn.addEventListener("click", ()=>{
 NoBtn.addEventListener("click", ()=> {
     //전 페이지로 이동
 })
-
-// 정답&오답 클릭시
 
 // 진행바
 
@@ -43,20 +41,29 @@ No.addEventListener("click", ()=> {
 })
 
 //ajax 백엔드 연결
-fetch('http://localhost:8000/api/lecture/1')
+
+fetch("http://localhost:8000/api/lecture/" + Id + "/")
 	.then((response) => {
-        if (!response.ok){
-            throw new Error('400아니면500에러남')
-        }
 		return response.json()
 		})
 	.then((data) => {
-        console.log(data);
-        const count = `${data.length}`;
-        AllCount.innerHTML = count;
-        const title = data.description;
+        const title = data.sub_category;
+        const count = data.length;
         ChapterTitle.innerHTML = title;
-    })
-    .catch(()=>{
-        console.log('에러남')
+        AllCount.innerHTML = count;
+        var CurrentIndex = 0;
+
+        for (let i = 0; i < data.length; i++) {
+            CurrentCount.innerHTML = CurrentIndex + 1;
+
+        }
+
+        fetch('http://localhost:8000/api/quiz/' + Id + "/")
+            .then((response) => {
+                return response.json()
+                })
+            .then((data) => {
+                console.log(data);
+                
+            })
     })
