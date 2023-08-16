@@ -11,6 +11,7 @@
   <script src="{% static 'js/game/modal.js' %}" defer></script>
   <script src="{% static 'js/game/timebar.js' %}" defer></script>
   <script src="{% static 'js/game/cardgame.js' %}" defer></script>
+  <script src="{% static 'js/game/ajax.js' %}" defer></script>
 </head>
 <body>
   <header></header>
@@ -26,6 +27,30 @@
         <button class="NoBtn" id="NoBtn">아니요</button>
       </div>
     </div>
+
+    <!-- 순위모달창 -->
+    <!-- <div class="modal">
+      <div class="modalOverlay hidden"></div> -->
+    <!-- 모달창의 배경색 -->
+    <!-- <div class="modalRankContent">
+        <div class="myHighestScore">
+          <span class="highestScoreTitle">내 최고 점수 : </span>
+          <span>600</span>
+        </div>
+        <div class="myScore">
+          <span class="myScoreTitle">내 점수 : </span>
+          <span>0</span>
+        </div>
+        <div class="myRank">
+          <span class="myRankTitle">랭킹 : </span>
+          <span>5</span>
+        </div>
+        <p class="rankInform">그래도 홈으로 가시겠습니까?</p>
+        <button class="moreBtn">한번 더하기</button>
+        <button class="rankHomeBtn">홈으로</button>
+      </div>
+    </div> -->
+
     <section>
       <div class="GameWrap">
         <div class="CardWrap">
@@ -44,11 +69,7 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
@@ -64,11 +85,7 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
@@ -84,11 +101,7 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
@@ -104,11 +117,7 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
@@ -124,11 +133,7 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
@@ -137,7 +142,8 @@
                     <image
                       src="{% static 'image/main2.png' %}"
                       alt="symbol-of-spades.png"
-                      loop autoplay
+                      loop
+                      autoplay
                     />
                   </div>
                   <div class="View Back">
@@ -145,11 +151,7 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
@@ -165,31 +167,20 @@
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
                 <li>
                   <div class="View Front">
-                    <image
-                      src=""
-                      alt="symbol-of-spades.png"
-                    />
+                    <image src="" alt="symbol-of-spades.png" />
                   </div>
                   <div class="View Back">
                     <div class="TextContent">
                       <p>고양이</p>
                     </div>
                     <div class="VideoContent">
-                      <video
-                      src=""
-                      alt="cupcake.png"
-                      loop autoplay
-                      />
+                      <video src="" alt="cupcake.png" loop autoplay />
                     </div>
                   </div>
                 </li>
