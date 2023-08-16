@@ -21,7 +21,10 @@ const chartAnimation = setInterval(() => {
 
 // 버튼 구현
 const HomeBtn = document.querySelector('.HomeBtn');
-
+const ReviewBtn = document.querySelector('.ReviewBtn');
 HomeBtn.addEventListener("click", ()=> {
-    location.replace("");
+    location.replace("http://127.0.0.1:8000/");
+})
+ReviewBtn.addEventListener("click", ()=> {
+    location.replace("http://127.0.0.1:8000/lecture/" + Id + "/study/word");
 })
