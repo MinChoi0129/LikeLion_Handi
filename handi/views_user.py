@@ -51,7 +51,7 @@ class Signup(ListCreateAPIView):
 
 
 class SignUpCheck(RetrieveAPIView):
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         username = request.data["username"]
         for user in User.objects.all():
             if user.username == username:
@@ -73,6 +73,11 @@ class UserList(ListCreateAPIView):
 
 # READ User
 class UserDetail(RetrieveAPIView):
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -100,7 +105,7 @@ class UserRank(RetrieveAPIView):
         all_users = sorted(
             [(user.game_score, user.name) for user in User.objects.all()], reverse=True
         )
-        me = User.objects.get(id=kwargs["pk"])
+        me = request.user
         my_score, my_name = me.game_score, me.name
 
         my_rank = -1
@@ -117,8 +122,13 @@ class UserRank(RetrieveAPIView):
             json_dumps_params={"ensure_ascii": False},
         )
 
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserRankUpdate(UpdateAPIView):
     def patch(self, request, *args, **kwargs):
-        me = User.objects.get(id=kwargs["pk"])
+        me = request.user
 
         old_score = me.game_score
         request_score = int(request.data["score"])
@@ -128,7 +138,7 @@ class UserRank(RetrieveAPIView):
 
         status_code = None
         if new_score == old_score:
-            status_code = status.HTTP_304_NOT_MODIFIED
+            status_code = status.HTTP_202_ACCEPTED
         else:
             status_code = status.HTTP_202_ACCEPTED
 
