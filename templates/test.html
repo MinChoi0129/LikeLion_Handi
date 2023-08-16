@@ -1,5 +1,10 @@
 {% load static %}
 
+<head>
+  <meta id="_csrf" name="_csrf" content="{{csrf.token}}"/>
+  <meta id="_csrf_header" name="_csrf_header" content="{{csrf.headerName}}"/>
+</head>
+
 <h3>video 태그는 속성 설정할때 controls(재생바 필요하면), muted(필수), autoplay(필수), loop(반복재생하려면 필수)</h3>
 
 <div>https 붙은 외부 링크 가져다 쓰기(controls 끈 경우)</div>
@@ -45,5 +50,59 @@
     .then((결과) => {
       title_element.innerHTML = 결과.name; // 이렇게 점 찍으면 값을 빼올 수 있음! ex) 결과.name ex) 결과.media_entries[6].image_url 등
       img_element.src = 결과.lecture_img;
+    });
+
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+      var cookies = document
+        .cookie
+        .split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  fetch('http://127.0.0.1:8000/api/logout/')
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("로그아웃 중")
+      console.log(data)
+    })
+
+  fetch('http://127.0.0.1:8000/api/login/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: new URLSearchParams({username: "lmj2010129", password: "1234"})
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("로그인 정보")
+      console.log(data);
+    });
+
+  var csrftoken = getCookie('csrftoken');
+  console.log(csrftoken);
+  fetch('http://127.0.0.1:8000/api/signup/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'X-CSRF-Token': csrftoken
+    },
+    body: new URLSearchParams({username: "lmjee2010129", password: "1234", name: "민재", phone_number: "010-1234-1234"})
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("새로운 회원 가입")
+      console.log(data);
     });
 </script>
