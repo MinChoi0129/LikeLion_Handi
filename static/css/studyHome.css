@@ -63,6 +63,7 @@ li {
 .gory {
     text-align: center;
     margin: 40px;
+    margin-top: -25px;
 }
 
 .category {
@@ -77,7 +78,7 @@ li {
     border: 0px;
     color: white;
     font-size: 15px;
-    z-index: 3;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -86,6 +87,11 @@ li {
     left: 330px;
     top: -37px;
     cursor: pointer;
+    color: #bababa;
+}
+
+.SearchBtn:hover{
+    color: #FF9A23;
 }
 
 .list {
@@ -96,23 +102,24 @@ li {
     transition: 1s;
     width: 150px;
     height: 247px;
-    position: absolute;
-    left: 520px;
-    top: -102px;
+    position: relative;
+    top: -300px;
+    left: 155px;
     transition: 0.7s;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
 }
 
 .WhiteBox {
-    position: absolute;
-    top: 10px;
-    left: 520px;
-    width: 150px;
-    height: 130px;
+    position: relative;
+    margin-top: -50px;
+    top: 52px;
+    left: 115px;
+    width: 170px;
+    height: 100px;
     border: 1px solid white;
     background-color: white;
-    z-index: 2;
+    z-index: 3;
 }
 
 .person, .eat, .area, .nature, .base {
@@ -337,4 +344,12 @@ input:focus {
 .king:hover .btn {
     opacity: 1;
     transition: 0.4s ease;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.Sc2 {
+    margin-top: -300px;
 }

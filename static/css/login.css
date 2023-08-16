@@ -52,20 +52,22 @@ html {
 }
 section {
 		width: 35rem;
-		margin: 0 auto;
+		margin-left: 36rem;
 }
 .logo {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
-    margin: 100px 30px 30px 70px;
+    margin: 100px 30px 30px 190px;
     font-family: 'Pretendard-ExtraBold';
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .id, .password {
     border: 1px solid #E1E1E1;
     color: #858585;
     padding: 11px 11px 11px 15px;
-    margin: 5px;
+    margin: 6px;
     border-radius: 7px;
     font-weight: lighter;
     font-size: 16px;
@@ -86,7 +88,7 @@ input:focus {
 }
 
 .LoginText {
-    font-size: 11px;
+    font-size: 13px;
     margin-top: 2.5px;
 
     font-family: 'Pretendard-Regular';
@@ -99,18 +101,18 @@ input:focus {
     color: white;
     border-radius: 7px;
     padding: 10px;
-    margin: 7px 10px 10px 10px;
+    margin: 12px 12px 10px 10px;
     font-weight: bolder;
     text-align: center;
     font-size: 17px;
     width: 700px;
-    height: 53px;
+    height: 55px;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
 }
 
 .text {
-    margin-left: 235px;
+    margin-left: 265px; margin-bottom: 25px;
     display: flex;
     color: #878787;
     font-size: 14px;
@@ -125,7 +127,7 @@ input:focus {
 .line {
     width: fit-content;
     margin : 0 auto;
-    margin-top: 10px;
+    margin-top: 10px; margin-bottom: 10px;
     display: flex;
 }
 
@@ -151,7 +153,7 @@ input:focus {
     border-radius: 7px;
     font-size: 16px;
     width: 700px;
-    height: 53px;
+    height: 55px;
     background-color: white;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
@@ -166,7 +168,7 @@ input:focus {
     border-radius: 7px;
     font-size: 16px;
     width: 700px;
-    height: 53px;
+    height: 55px;
     background-color: #03c75a;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
@@ -181,7 +183,7 @@ input:focus {
     border-radius: 7px;
     font-size: 16px;
     width: 700px;
-    height: 53px;
+    height: 55px;
     background-color: #F9E000;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
@@ -220,4 +222,8 @@ main {
 }
 html,body {
     width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

@@ -18,7 +18,7 @@
 		<section class="Sc1">
             <div class="gory">
 				<div class="WhiteBox"></div>
-                <div class="category"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카테고리</div>
+                <div class="category"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;카테고리</div>
                 <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="검색어를 입력하시오.">
 				<div class="SearchBtn"><i class="fas fa-search"></i></div>
             </div>
@@ -54,11 +54,6 @@
 						</div>
 						<div class="bar"></div>
 						<div class="bar2"></div>
-						<script>
-							function goToLectureCategory() {
-								window.location.href = "/api/lecture/<pk>/";
-							}
-						</script>
 					</div>
 					<div class="box2">
 						<div class="difficulty">난이도 하</div>
@@ -303,7 +298,6 @@
 				listContainer.style.transform = 'translateY(233px)';
 			}
 		});
-
     </script>
 </body>
 {% endblock %}

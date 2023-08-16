@@ -52,15 +52,17 @@ html {
 }
 section {
 		width: 35rem;
-		margin: 0 auto;
+		margin-left: 36rem;
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bolder;
     text-align: center;
-    margin: 100px 30px 30px 60px;
+    margin: 100px 30px 30px 200px;
     font-family: 'Pretendard-ExtraBold';
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 input:focus {
@@ -94,8 +96,8 @@ input:focus {
 }
 
 .join {
-    border: 1px solid #FF9A23;
-    background-color: #FF9A23;
+    border: none;
+    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
     color: white;
     font-weight: bolder;
     text-align: center;
@@ -103,20 +105,20 @@ input:focus {
     margin: 20px 8px 8px 8px;
     border-radius: 7px;
     font-size: 18px;
-    width: 700px;
-    height: 53px;
+    width: 730px;
+    height: 60px;
     font-family: 'Pretendard-Regular';
     cursor: pointer;
 }
 
 .check, .msg, .NumberCheck {
-    border: 1px solid #FF9A23;
+    border: 1px solid #FFBD6C;
     border-radius: 7px;
-    background-color: #FF9A23;
+    background-color: #FFBD6C;
     color: white;
     width: 60px;
-    height: 43px;
-    font-size: 11px;
+    height: 53px;
+    font-size: 12px;
     text-align: center;
     margin-top: 6px;
     font-family: 'Pretendard-Regular';
@@ -134,4 +136,8 @@ main {
 }
 html,body {
     width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
