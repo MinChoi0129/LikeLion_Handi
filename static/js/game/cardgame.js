@@ -69,7 +69,6 @@ function randomCardPosition(meta_data) {
         shuffled_data[i][0];
     }
   }
-  return meta_data;
 }
 let cardOne, cardTwo; // 선택한 카드
 let disableDeck = false;
@@ -95,7 +94,7 @@ function matchCards(img1, img2) {
   }, 1200);
   // }
 }
-
+function getCard() {document.querySelectorAll(".Cards li")}
 const URL = "http://localhost:8000/api/game";
 fetch(URL)
   .then((response) => {
@@ -107,14 +106,14 @@ fetch(URL)
   .then((meta_data) => {
     let word_to_video_check = {};
     let video_to_word_check = {};
-    const cards = document.querySelectorAll(".Cards li");
+    const cards = getCard()
     // 두가지로 분류, 양쪽을 통해 확인할 것임
     for (let i = 0; i < meta_data.length; i++) {
       word_to_video_check[meta_data[i][0]] = meta_data[i][1];
       video_to_word_check[meta_data[i][1]] = meta_data[i][0];
     }
     // 랜덤으로 카드 배치
-    meta_data = randomCardPosition(meta_data);
+    randomCardPosition(meta_data);
     cards.forEach((card) => {
       card.addEventListener("click", flipCard);
     });
