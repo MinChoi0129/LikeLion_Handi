@@ -1,3 +1,6 @@
+
+
+
 let currentScoreNum = document.querySelector(".CurrentScoreNum");
 let highestScoreNum = document.querySelector(".HighestScoreNum");
 function getScore() {
@@ -209,3 +212,8 @@ setTimeout(() => {
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
+
+
+
+
+
