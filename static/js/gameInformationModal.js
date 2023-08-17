@@ -15,7 +15,7 @@ const closeModal = () => {
 };
 
 const startGame = () => {
-  window.location.href = "http://127.0.0.1:8000/game/start/"
+  window.open("http://127.0.0.1:8000/game/start/", "_blank");
 }
 
 overlay.addEventListener("click", closeModal);
