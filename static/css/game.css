@@ -127,7 +127,7 @@ width: 100%;
   font-size: 1.7rem;
   font-weight: 800;
   height: 5.1rem;
-  left: 91.3rem;
+  left: 91.6rem;
   line-height: 1.2575;
   position: absolute;
   top: 34rem;
@@ -566,6 +566,7 @@ height: 100%;
       align-items: flex-start;
       position: relative; 
       color: white;
+      padding-top: 3px;
     }
 
     .RankInfo {
@@ -573,23 +574,24 @@ height: 100%;
       justify-content: flex-start;
       align-items: center;
       margin-top: 1px;
-      margin-bottom: 10px; 
+      margin-bottom: 9px; 
       font-size: 18px;
       position: relative;
     }
     
     .RankTitle {
-      font-size: 50px;
-      margin-top: 3px; 
+      font-size: 40px;
+      margin-top: 6px; 
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 3px;
     }
 
  .NumOne,
 .NumTwo,
 .NumThree,
 .NumFour,
-.NumFive {
+.NumFive,
+.MyRankNum {
   margin-left: 17px; 
   margin-top: 10px;
 }
@@ -598,7 +600,8 @@ height: 100%;
 .RankTwoNickname,
 .RankThreeNickname,
 .RankFourNickname,
-.RankFiveNickname {
+.RankFiveNickname,
+.MyNickname {
   margin-left: 10px; 
   margin-top: 10px;
   display: flex;
@@ -610,13 +613,44 @@ height: 100%;
 .RankTwoScore,
 .RankThreeScore,
 .RankFourScore,
-.RankFiveScore {
+.RankFiveScore,
+.MyScore {
   right:0;
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
   position: absolute;
   margin-right: 10px;
-
 }
 
+.NumOne, .RankOneNickname, .RankOneScore{
+  color:#FFF249;
+}
+.NumTwo, .RankTwoNickname, .RankTwoScore{
+  color:#808080;
+}
+.NumThree, .RankThreeNickname, .RankThreeScore{
+  color:#CD7F32;
+}
+.NumFour, .RankFourNickname, .RankFourScore{
+  color:black;
+}
+.NumFive, .RankFiveNickname, .RankFiveScore{
+  color:black;
+}
+
+.MyRank{
+  font-size: 12.5px;
+  color: black;
+  margin-top: 14px;
+  font-weight: 900;
+}
+
+.MyRank .MyScroe{
+  right:0;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  position: absolute;
+  margin-right: 50px;
+}

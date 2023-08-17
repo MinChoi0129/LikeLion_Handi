@@ -203,8 +203,8 @@
         <img class="Userimage" src="" />
         <script>
           userImageElement = document.querySelector(".Userimage");
-          const encodedText = '{{user.profile_img}}';
-          const textarea = document.createElement('textarea');
+          const encodedText = "{{user.profile_img}}";
+          const textarea = document.createElement("textarea");
           textarea.innerHTML = encodedText;
           const decodedText = textarea.value;
           const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
@@ -249,6 +249,11 @@
               <span class="NumFive">5</span>
               <span class="RankFiveNickname">맛있는 착한돼지</span>
               <span class="RankFiveScore">600</span>
+            </div>
+            <div class="RankInfo MyRank">
+              <span class="MyRankNum">4</span>
+              <span class="MyNickname">인생안달다</span>
+              <span class="MyScore">870</span>
             </div>
           </div>
         </div>
