@@ -10,6 +10,7 @@
   ></script>
   <script src="{% static 'js/game/quitmodal.js' %}" defer></script>
   <script src="{% static 'js/game/resultmodal.js' %}" defer></script>
+  <script src="{% static 'js/game/stagemodal.js' %}" defer></script>
   <script src="{% static 'js/game/timebar.js' %}" defer></script>
   <script src="{% static 'js/game/cardgame.js' %}" defer></script>
   {% comment %}
@@ -36,7 +37,7 @@
       <div class="modalContent">
         <p class="Inform">지금 나가게 되면 랭킹에 적용되지 않습니다.</p>
         <p class="Inform">그래도 홈으로 가시겠습니까?</p>
-        <button class="YesBtn">네</button>
+        <a class="yesBtn" href="http://127.0.0.1:8000/game/">네</a>
         <button class="NoBtn" id="NoBtn">아니요</button>
       </div>
     </div>
@@ -59,8 +60,8 @@
           <span>5</span>
         </div>
         <p class="rankInform">그래도 홈으로 가시겠습니까?</p>
-        <button class="moreBtn">한번 더하기</button>
-        <button class="rankHomeBtn">홈으로</button>
+        <a href="http://127.0.0.1:8000/game/start/" class="moreBtn">한번 더하기</a>
+        <a href="http://127.0.0.1:8000/game/" class="rankHomeBtn">홈으로</a>
       </div>
     </div>
 
