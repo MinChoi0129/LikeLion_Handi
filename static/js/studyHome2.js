@@ -1,4 +1,4 @@
-let parent_learning = document.querySelector(".lectureSection")
+///let parent_learning = document.querySelector(".lectureSection")
 const level = {1: "난이도 하", 2: "난이도 중", 3: "난이도 상"}
 
 function goToLectureDetailPage(lecture_id) {

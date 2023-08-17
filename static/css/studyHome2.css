@@ -185,7 +185,7 @@ input:focus {
     box-shadow: 1px 1px 4px #e1e1e1;
     border-radius: 15px;
     width: 170px;
-    height: 165px;
+    height: 175px;
     margin-right: 17px;
     cursor: pointer;
     transition: 0.7s;
@@ -195,7 +195,7 @@ input:focus {
     background-size: cover;
     border-radius: 15px 15px 0px 0px;
     width: 170px;
-    height: 60px;
+    height: 75px;
 }
 
 .lectureName {
@@ -210,7 +210,7 @@ input:focus {
 
 .maxLength, .percent {
     font-size: 13px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: 'Pretendard-Regular';
 }
 
