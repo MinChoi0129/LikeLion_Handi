@@ -21,5 +21,5 @@ openButton.addEventListener("click", openModal);
 /* '예' 클릭 시 메인 페이지 이동 */
 const yesButton = document.querySelector(".YesBtn");
 yesButton.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = "http://127.0.0.1:8000/";
 });
