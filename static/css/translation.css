@@ -155,6 +155,7 @@ body {
     left: 44%; 
     top: 7%; 
     transform: translate(-50%, -50%); 
+    object-fit: cover;
 }
 
 .Korean {
@@ -210,7 +211,7 @@ textarea[name="sentence"] {
     overflow-y: hidden; 
     outline: none;
     position: absolute;
-    top:60px;
+    top:75px;
     font-family: 'Pretendard';
 }
 
@@ -320,7 +321,7 @@ html,body {
     color: white;
     font-family: 'Pretendard-SemiBold';
     font-size: 1rem;
-    padding: 0.9rem 1rem;
+    padding: 0.8rem 1rem;
     border: 1px solid #e1e1e1;
     border-radius: 0.5rem;
     cursor: pointer;
