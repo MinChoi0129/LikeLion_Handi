@@ -20,7 +20,7 @@
   <header></header>
   <main>
     <!-- 모달창 -->
-    <div class="modal hidden">
+    <div class="quitmodal hidden">
       <div class="modalOverlay"></div>
       <!-- 모달창의 배경색 -->
       <div class="modalContent">
@@ -32,10 +32,10 @@
     </div>
 
     <!-- 순위모달창 -->
-    <!-- <div class="modal">
-      <div class="modalOverlay hidden"></div> -->
-    <!-- 모달창의 배경색 -->
-    <!-- <div class="modalRankContent">
+    <div class="resultmodal hidden">
+      <div class="resultModalOverlay"></div>
+      <!-- 모달창의 배경색 -->
+      <div class="modalRankContent">
         <div class="myHighestScore">
           <span class="highestScoreTitle">내 최고 점수 : </span>
           <span>600</span>
@@ -52,7 +52,7 @@
         <button class="moreBtn">한번 더하기</button>
         <button class="rankHomeBtn">홈으로</button>
       </div>
-    </div> -->
+    </div>
 
     <section>
       <div class="GameWrap">
@@ -196,7 +196,7 @@
         <div class="Profile"></div>
         <div class="Scoreboard"></div>
         <p class="CurrentScore">현재 점수</p>
-        <p class="HighestScore">최고점수</p>
+        <p class="HighestScore">최고 점수</p>
         <p class="CurrentScoreNum">0</p>
         <p class="HighestScoreNum">{{user.game_score}}</p>
         <div class="Nickname">{{user.username}}</div>
@@ -217,7 +217,7 @@
           <p class="TitleFlip">뒤집기</p>
         </div>
         <div class="LevelWrap">
-          <div class="LevelBackground">Lv 1</div>
+          <div class="LevelBackground">Stage 1</div>
           <!-- <p class="LevelNum">Lv 1</p> -->
         </div>
 
@@ -263,7 +263,7 @@
           <div class="TimeBar"></div>
           <div class="RemainTime">60</div>
         </div>
-        <button type="button" class="HomeBtn" id="open">홈으로</button>
+        <button type="button" class="HomeBtn" id="quitopen">홈으로</button>
       </div>
     </section>
   </main>
