@@ -563,4 +563,44 @@ height: 100%;
       top: 3.3rem;
       width: 14rem;
       font-family:  'Pretendard-SemiBold';
+      align-items: flex-start;
+      
     }
+
+    .RankTitle {
+      font-size:50px;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    .NumOne,
+    .NumTwo,
+    .NumThree,
+    .NumFour,
+    .NumFive {
+      margin-left: 1rem; /* 원하는 여백 조절 */
+    }
+
+    .NumOne,
+.NumTwo,
+.NumThree,
+.NumFour,
+.NumFive {
+  margin-left: 10px; /* 여백을 제거하여 정렬 */
+}
+
+.RankOneNickname,
+.RankTwoNickname,
+.RankThreeNickname,
+.RankFourNickname,
+.RankFiveNickname {
+  margin-left: 0.5rem; /* 원하는 만큼 오른쪽으로 옮기기 */
+}
+
+.RankOneScore,
+.RankTwoScore,
+.RankThreeScore,
+.RankFourScore,
+.RankFiveScore {
+  margin-left: auto; /* 좌측 여백을 자동으로 설정하여 우측 정렬 */
+}
