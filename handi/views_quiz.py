@@ -49,6 +49,7 @@ class Quiz(RetrieveAPIView):
             type_B_quizzes.append(
                 {
                     "video_url": answer_video_url,
+                    "answer_name": answer_name,
                     "names": [answer_name] + wrong_answer_names,
                     # 프론트측에서 names shuffle 해줘야함. 백엔드에서 정답은 무조건 0번 인덱스
                 }

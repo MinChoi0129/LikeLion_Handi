@@ -9,6 +9,7 @@ providers_media_js %} {% block content %}
     src="https://kit.fontawesome.com/32afc995e9.js"
     crossorigin="anonymous"
   ></script>
+  <script src="{% static 'js/login.js' %}" defer></script>
   <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -32,7 +33,7 @@ providers_media_js %} {% block content %}
       </div>
       <div class="PasswordBox">
         <input
-          type="text"
+          type="password"
           class="password"
           id="password"
           name="password"
@@ -50,7 +51,8 @@ providers_media_js %} {% block content %}
         />
         <div class="LoginText">로그인 유지하기</div>
       </div>
-      <button class="LoginBtn" id="loginBtn" name="loginBtn" autocomplete="off">
+      
+      <button class="LoginBtn" id="loginBtn" name="loginBtn" autocomplete="off" onclick="login()">
         로그인
       </button>
       <div class="text">
