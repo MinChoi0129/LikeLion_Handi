@@ -69,7 +69,7 @@ input:focus {
     outline: 1px solid #FF9A23;
 }
 
-.id, .PhoneNumber, .number {
+.id, .number {
     border: 1px solid #E1E1E1;
     color: #858585;
     padding: 13px;
@@ -82,7 +82,7 @@ input:focus {
     font-family: 'Pretendard-Regular';
 }
 
-.password, .password2, .name {
+.password, .password2, .name, .PhoneNumber {
     border: 1px solid #E1E1E1;
     color: #858585;
     padding: 13px;
