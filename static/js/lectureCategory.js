@@ -12,22 +12,71 @@ fetch("http://localhost:8000/api/lecture/" + inshinjia + "/")
     document.querySelector('.count1').innerHTML = 뭔가["총 " + "length" + "개"]
   });
 
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie != '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) == (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
 
+var csrftoken = getCookie('csrftoken');
 
 // 학습하기
 document.querySelector('.study').addEventListener('click', function() {
   if (inshinjia <= 543) {
-    window.location.href = `http://localhost:8000/lecture/${inshinjia}/study/word/`;
+    fetch("http://127.0.0.1:8000/api/lecturemanager/" + inshinjia + "/", {
+      method: "GET",
+      credentials: 'include',
+      headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+          'X-CSRFToken': csrftoken,
+      },
+      cache: 'no-cache',
+      mode: 'same-origin',
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      console.log(inshinjia)
+      if (data.length==0){
+        fetch("http://127.0.0.1:8000/api/lecturemanagers/", {
+          method: "POST",
+          credentials: 'include',
+          headers: {
+              "Content-Type": 'application/x-www-form-urlencoded',
+              'X-CSRFToken': csrftoken,
+          },
+          cache: 'no-cache',
+          mode: 'same-origin',
+          body: new URLSearchParams({lecture: inshinjia, percentage: 0})
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+        })
+      }
+    })
+
+    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/study/word/`;
   } else {
-    window.location.href = `http://localhost:8000/lecture/${inshinjia}/study/sentence/`;
+    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/study/sentence/`;
   }
 });
 
 // 퀴즈 풀기
 document.querySelector('.game').addEventListener('click', function() {
   if (inshinjia <= 543) {
-    window.location.href = `http://localhost:8000/lecture/${inshinjia}/quiz/word/`;
+    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/quiz/word/`;
   } else {
-    window.location.href = `http://localhost:8000/lecture/${inshinjia}/quiz/sentence/`;
+    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/quiz/sentence/`;
   }
 });
