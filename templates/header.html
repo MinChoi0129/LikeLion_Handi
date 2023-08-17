@@ -34,13 +34,20 @@
       const menuLength = menuItem.length;
       for (let i = 0; i < menuLength; i++) {
         let menuLocation = menuItem[i].href.split("/");
+<<<<<<< HEAD
         // console.log(menuLocation[3]);
         if (menuLocation[3].includes(currentLocation)) {
+=======
+        if (menuLocation[3] == currentLocation) {
+>>>>>>> 2d3338d7f6ba9792c26e5888a740e161efbfe101
           menuItem[i].className = "active";
         } else {
           menuItem[i].classList.replace("active", 'remove');
         }
       }
+    </script>
+    <script>
+      var SERVER_URL = "http://127.0.0.1:8000/"
     </script>
     {% block content %} {% endblock %}
     <footer>

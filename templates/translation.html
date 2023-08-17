@@ -1,59 +1,79 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>핸디</title>
-    <link rel="stylesheet" href="{% static 'css/translation.css' %}"/>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/translate_count.js' %}" defer="defer"></script>
-    <script src="{% static 'js/translation.js' %}" defer="defer"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸디</title>
+  <link rel="stylesheet" href="{% static 'css/translation.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/translate_count.js' %}" defer="defer"></script>
+  <script src="{% static 'js/translation.js' %}" defer="defer"></script>
+</head>
 
-  <body>
-    <main>
-      <section>
-        <div class="ChapterExplain">
-          <h1 class="ChapterTitle">지화로 번역해보기</h1>
-          <p class="ChapterContent">번역 방법 뭐 설명같은거</p>
+<body>
+  <main>
+    <section>
+      <div class="ChapterExplain">
+        <h1 class="ChapterTitle">지화로 번역해보기</h1>
+        <p class="ChapterContent">번역 방법 뭐 설명같은거</p>
+      </div>
+
+      <div class="KoreanWrap">
+        <div class="KoreanInput">
+          <div>
+            <img
+              src="{% static 'image/translation/koreanflag.png' %}"
+              class="KoreanFlag"
+            />
+          </div>
+          <span class="Korean">한국어</span>
+          <div class="TranslationContent">
+            <textarea
+              id="sentence"
+              name="sentence"
+              oninput="updateLetterCount(this.value)"
+              placeholder="번역할 내용을 입력하세요."
+            ></textarea>
+            <input id="mode_watch" type="hidden" value="watch" name="mode" />
+            <button class="TranslationBtn" onclick="trans()">번역하기</button>
+          </div>
+          <div class="KoreanFooter">
+            <p class="KoreanLetterNum">
+              <span class="ChangeLetterNum"></span>
+              / 50
+            </p>
+          </div>
         </div>
-
-        <div class="KoreanWrap">
-          <div class="KoreanInput">
+        <div class="SignWrap">
+          <div class="SignOutput">
             <div>
-              <img src="{% static 'image/translation/koreanflag.png' %}" class="KoreanFlag"/>
+              <img
+                src="{% static 'image/study/consonants_vowels/0.png' %}"
+                class="SignFlag"
+              />
             </div>
-            <span class="Korean">한국어</span>
-            <div class="TranslationContent">
-              <textarea id="sentence" name="sentence" oninput="updateLetterCount(this.value)" placeholder="번역할 내용을 입력하세요."></textarea>
-              <input id="mode_watch" type="hidden" value="watch" name="mode"/>
-              <button class="TranslationBtn" onclick="trans()">번역하기</button>
+            <span class="Sign">수어</span>
+            <div class="SignGif">
+              <video
+                id="videoSource"
+                width="300px"
+                height="350px"
+                autoplay="autoplay"
+                muted="muted"
+                loop="loop"
+              ></video>
             </div>
-            <div class="KoreanFooter">
-              <p class="KoreanLetterNum">
-                <span class="ChangeLetterNum"></span>
-                / 50
-              </p>
-            </div>
-          </div>
-          <div class="SignWrap">
-            <div class="SignOutput">
-              <div>
-                <img src="{% static 'image/translation/Sign.png' %}" class="SignFlag"/>
-              </div>
-              <span class="Sign">수어</span>
-              <div class="SignGif">
-                <video id="videoSource" width="300px" height="350px" autoplay="autoplay" muted="muted" loop="loop"></video>
-              </div>
-              <input id="mode_save" type="hidden" value="download" name="mode"/>
-              <button type="submit" class="GIfBtn" onclick="save()">저장하기</button>
-
-            </div>
+            <input id="mode_save" type="hidden" value="download" name="mode" />
+            <button type="submit" class="GIfBtn" onclick="save()">
+              저장하기
+            </button>
           </div>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+  </main>
+</body>
 {% endblock %}

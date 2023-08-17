@@ -53,6 +53,7 @@ urlpatterns = [
         name="sentenceResult",
     ),
     path("game/", views_page.game, name="game"),
+    path("game/start/", views_page.inGame, name="inGame"),
     path("admin/", admin.site.urls),
     path("", include("handi.urls")),
     path("accounts/", include("allauth.urls")),
