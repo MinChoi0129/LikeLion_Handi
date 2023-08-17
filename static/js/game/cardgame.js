@@ -1,44 +1,39 @@
-// fetch("http://localhost:8000/api/game")
-//  .then((request)) -> document.getElementsByClassName("Userimage")[0].src =
-const userImageElement = document.querySelector(".Userimage");
-
-// // 추후 User.profile_img로 변경
-const svgText =
-  '<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF"></rect></mask><g mask="url(#mask__beam)"><rect width="36" height="36" fill="#F0AB3D"></rect><rect x="0" y="0" width="36" height="36" transform="translate(-5 -5) rotate(129 18 18) scale(1)" fill="#C20D90" rx="36"></rect><g transform="translate(-1 -6) rotate(-9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#FFFFFF" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#FFFFFF"></rect></g></g></svg>';
-const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
-  svgText
-)}`;
-userImageElement.setAttribute("src", dataUrl);
 let currentScoreNum = document.querySelector(".CurrentScoreNum");
 let highestScoreNum = document.querySelector(".HighestScoreNum");
 function getScore() {
-  currentScoreNum.innerHTML = `${parseInt(currentScoreNum.innerHTML) + stage * 10}`;
+  currentScoreNum.innerHTML = `${
+    parseInt(currentScoreNum.innerHTML) + stage * 10
+  }`;
 }
 let start = 0;
 let end = 4;
 let nextstageScore = 8;
 let stage = 1;
-let level = document.querySelector(".LevelBackground").innerHTML;
+let level = document.querySelector(".LevelBackground");
+let now_level = 1;
 let cards = document.querySelectorAll(".Cards li");
 function stageChange() {
   console.log(start, end);
   if (start == end) {
     end = nextstageScore;
-    stage+=1;
-    if (stage < 4) {
-      nextstageScore += 4;
-    }
-    else{
-      nextstageScore += 9;
-    }
-    level = "Lv" + (parseInt(level[3]) + 1);
-    cards.forEach((card) => {card.classList.remove("flip");});
+    stage += 1;
+    nextstageScore += 4;
+    now_level += 1;
+    level.innerHTML = "Stage " + now_level;
+    cards.forEach((card) => {
+      card.classList.remove("flip");
+    });
     randomCardPosition(URL_data);
-    cards.forEach((card) => {card.classList.add("flip");});
+    disableDeck = true;
+    cards.forEach((card) => {
+      card.classList.add("flip");
+    });
     setTimeout(() => {
-        cards.forEach((card) => {card.classList.remove("flip");});
-        startGameTimer();
-      }, 6000);
+      cards.forEach((card) => {
+        card.classList.remove("flip");
+      });
+    }, 5000);
+    disableDeck = false;
     cards.forEach((card) => {
       card.addEventListener("click", flipCard);
     });
@@ -98,8 +93,7 @@ function flipCard(e) {
         ).src;
       }
       matchCards(cardOneAttr, cardTwoAttr);
-    }
-    else{
+    } else {
       setTimeout(() => {
         cardOne.classList.add("shake");
         cardTwo.classList.add("shake");
@@ -154,40 +148,39 @@ function randomCardPosition(meta_data) {
   }
 }
 
-
 let cardOne, cardTwo; // 선택한 카드
 let disableDeck = false;
 //두개의 이미지 비교하기
 function matchCards(Attr1, Attr2) {
   console.log(check_Attr[Attr1], check_Attr[Attr2]);
   if (check_Attr[Attr1] == Attr2 && check_Attr[Attr2] == Attr1) {
-    getScore()
+    getScore();
     cardOne.removeEventListener("click", flipCard);
     cardTwo.removeEventListener("click", flipCard);
     cardOne = cardTwo = "";
-    start+=1;
+    start += 1;
     stageChange();
     return (disableDeck = false);
   } else {
-  // 틀린 이미지 애니메이션 효과 주기
-  setTimeout(() => {
-    cardOne.classList.add("shake");
-    cardTwo.classList.add("shake");
-  }, 400);
-  setTimeout(() => {
-    cardOne.classList.remove("shake", "flip");
-    cardTwo.classList.remove("shake", "flip");
-    cardOne = cardTwo = "";
-    return (disableDeck = false);
-  }, 1500);
+    // 틀린 이미지 애니메이션 효과 주기
+    setTimeout(() => {
+      cardOne.classList.add("shake");
+      cardTwo.classList.add("shake");
+    }, 400);
+    setTimeout(() => {
+      cardOne.classList.remove("shake", "flip");
+      cardTwo.classList.remove("shake", "flip");
+      cardOne = cardTwo = "";
+      return (disableDeck = false);
+    }, 1500);
   }
 }
 function getCard() {
   return cards;
 }
-URL_data = []
-function loadMatadata(meta_data){
-  URL_data = meta_data
+URL_data = [];
+function loadMatadata(meta_data) {
+  URL_data = meta_data;
 }
 const URL = "http://localhost:8000/api/game";
 fetch(URL)
@@ -203,11 +196,17 @@ fetch(URL)
     randomCardPosition(meta_data);
   });
 // 카드 6초간 보여주기
-  cards.forEach((card) => {card.classList.add("flip");});
+disableDeck = true;
+cards.forEach((card) => {
+  card.classList.add("flip");
+});
 setTimeout(() => {
-    cards.forEach((card) => {card.classList.remove("flip");});
-    startGameTimer();
-  }, 5000);
+  cards.forEach((card) => {
+    card.classList.remove("flip");
+  });
+  startGameTimer();
+  disableDeck = false;
+}, 5000);
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
