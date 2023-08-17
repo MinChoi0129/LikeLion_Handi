@@ -59,4 +59,4 @@ def sentenceResult(request, lecture_id):
 
 # 추후 메인 게임 페이지로 변경
 def game(request):
-    return render(request, "gameInformation.html")
+    return render(request, "game.html")
