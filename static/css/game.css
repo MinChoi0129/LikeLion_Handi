@@ -115,63 +115,63 @@ width: 100%;
 .Scoreboard {
   background-color: #ffbd6c;
   border-radius: 1rem;
-  height: 21rem;
+  height: 19rem;
   left: 87.5rem;
   position: absolute;
-  top: 12rem;
+  top: 24.8rem;
   width: 14rem;
 }
 .HighestScore {
   color: #ffffff;
-  font-family: Pretendard Variable, 'Source Sans Pro';
+  font-family:  'Pretendard-SemiBold';
   font-size: 1.7rem;
   font-weight: 800;
   height: 5.1rem;
-  left: 90.8rem;
+  left: 91.3rem;
   line-height: 1.2575;
   position: absolute;
-  top: 22.3rem;
+  top: 34rem;
   white-space: nowrap;
   width: 9.7rem;
 }
 
 .CurrentScore {
   color: white;
-  font-family: Pretendard Variable, 'Source Sans Pro';
+  font-family:  'Pretendard-SemiBold';
   font-size: 1.7rem;
   font-weight: 800;
   height: 5.1rem;
   left: 90.8rem;
   line-height: 1.2575;
   position: absolute;
-  top: 12rem;
+  top: 25.5rem;
   white-space: nowrap;
   width: 11.3rem;
 }
 
 .CurrentScoreNum {
   color: #ffffff;
-  font-family: Pretendard Variable, 'Source Sans Pro';
+  font-family:  'Pretendard-SemiBold';
   font-size: 3rem;
   font-weight: 800;
   height: 8.1rem;
   left: 93.8rem;
   line-height: 1.2575;
   position: absolute;
-  top: 13.5rem;
+  top: 26.5rem;
   white-space: nowrap;
   width: 3.5rem;
 }
 .HighestScoreNum {
   color: #ffffff;
-  font-family: Pretendard Variable, 'Source Sans Pro';
+  font-family:  'Pretendard-SemiBold';
   font-size: 3rem;
   font-weight: 800;
   height: 8.1rem;
   left: 92rem;
   line-height: 1.2575;
   position: absolute;
-  top: 24rem;
+  top: 35rem;
   white-space: nowrap;
   width: 10.4rem;
 }
@@ -197,7 +197,7 @@ width: 100%;
   box-sizing: border-box;
   color: #000000;
   display: flex;
-  font-family: Pretendard Variable, 'Source Sans Pro';
+  font-family:  'Pretendard-SemiBold';
   font-size: 18px;
   font-weight: 800;
   height: 4rem;
@@ -230,7 +230,7 @@ width: 100%;
 
   .TitleCard{
     color: #000000;
-    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-family:  'Pretendard-SemiBold';
     font-size: 4rem;
     font-weight: 800;
     height: 8.1rem;
@@ -244,14 +244,14 @@ width: 100%;
 
   .TitleFlip {
     color: #000000;
-    font-family: Pretendard Variable, 'Source Sans Pro';
+    font-family:  'Pretendard-SemiBold';
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 900;
     height: 3.1rem;
     left: 2rem;
     line-height: 1.2575;
     position: absolute;
-    top: 2rem;
+    top: 1.4rem;
     white-space: nowrap;
     width: 8.7rem;
   }
@@ -550,4 +550,17 @@ height: 100%;
     transform: translate(-50%, -50%);
     font-size: 30px;
     white-space: nowrap;
+    }
+
+
+    /* 랭킹보드 */
+    .LankBoard{
+      background-color: #ffbd6c;
+      border-radius: 1rem;
+      height: 19rem;
+      left: 87.5rem;
+      position: absolute;
+      top: 3.3rem;
+      width: 14rem;
+      font-family:  'Pretendard-SemiBold';
     }
