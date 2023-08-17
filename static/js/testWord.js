@@ -72,26 +72,36 @@ No.addEventListener("click", ()=> {
         </div>
         </div>`;
         const typeB = `<div class="QuizBox">
+                        <video src="" muted autoplay loog></video>
                     </div>
                     <div class="SelectBox" id="ver2">
+                        <input type="radio" id="select1" name="wordSelect">
+                        <label for="select1"></label>
+                        <input type="radio" id="select2" name="wordSelect">
+                        <label for="select2"></label>
+                        <input type="radio" id="select3" name="wordSelect">
+                        <label for="select3"></label>
+                        <input type="radio" id="select4" name="wordSelect">
+                        <label for="select4"></label>
                     </div>`
 
         console.log(data);
 
         //변수세팅
         let CurrentIndex = 0; //현재문제수
+        let index = 0;
         var wrong_choices = []; //틀린문제배열
         
         var answer_url; //정답url
         QuizWrap.insertAdjacentHTML('beforeend', typeA);
         const QuizSelects = Array.from(document.querySelectorAll('video'));
         const QuizLabels = document.querySelectorAll('label');
-        
+
         function shuffle(array) {
             array.sort(() => Math.random() - 0.5);
         }
         //정답검사함수
-        const QuizAnswer = (event) => {
+        const QuizAnswerTypeA = (event) => {
             if(event.target.src == answer_url) {
                 //초록띄우기
             } else {
@@ -103,25 +113,55 @@ No.addEventListener("click", ()=> {
             FillSrc(CurrentIndex); 
             console.log(wrong_choices);
         }
+        const QuizAnswerTypeB = (event, index) => {
+            if(event.target.innerHTML == answer_url) {
+                //초록띄우기
 
+            } else {
+                wrong_choices.push(data.type_B_quizzes[index].answer_name);
+
+            }
+            CurrentIndex++;
+            console.log(CurrentIndex);
+            FillSrc(CurrentIndex); 
+            console.log(wrong_choices);
+        }
         //초기세팅
         function FillSrc(CurrentIndex) {
             CurrentCount.innerHTML = CurrentIndex+1;
             console.log(CurrentIndex);
-            if (CurrentIndex == 8){
-                CurrentIndex = 0;
-                console.log(data.type_B_quizzes[CurrentIndex]);
+            if (CurrentIndex >= Math.floor(data.length/2)){
+                CurrentIndex = CurrentIndex % Math.floor(data.length/2);
+                //TYPEA양식 삭제
+                QuizWrap.innerHTML = "";
+                //typeB양식 넣기
+                QuizWrap.insertAdjacentHTML('beforeend', typeB);
+                console.log(CurrentIndex);
                 ChapterTitle.innerHTML = title;
-                // answer_url = data.type_B_quizzes[CurrentIndex].
+                answer_url = data.type_B_quizzes[CurrentIndex].answer_name;
+                const QuizLabelsTypeB = Array.from(document.querySelectorAll('label'));
+                const QuizVideo = document.querySelector('video');
+                // console.log(QuizLabelsTypeB);
+                shuffle(QuizLabelsTypeB)
+                for(let i = 0; i<4; i++) {
+                    QuizVideo.setAttribute("src", data.type_B_quizzes[CurrentIndex].video_url);
+                    QuizLabelsTypeB[i].innerHTML = `${data.type_B_quizzes[CurrentIndex].names[i]}`;
+                    QuizLabelsTypeB[i].addEventListener("click", (e) => QuizAnswerTypeB(e, CurrentIndex));
+                }
+                
+                //
+                
+            } else {
+                ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`
+                answer_url = data.type_A_quizzes[CurrentIndex].image_urls[0]; //정답url초기화
+                shuffle(QuizSelects)
+                for(let i=0; i<5; i++) {
+                    QuizSelects[i].setAttribute("src", data.type_A_quizzes[CurrentIndex].image_urls[i]);
+                    // QuizLabels[i].setAttribute('onclick', QuizAnswer());
+                    QuizLabels[i].addEventListener("click", QuizAnswerTypeA)
+                }
             }
-            ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`
-            answer_url = data.type_A_quizzes[CurrentIndex].image_urls[0]; //정답url초기화
-            shuffle(QuizSelects)
-            for(let i=0; i<5; i++) {
-                QuizSelects[i].setAttribute("src", data.type_A_quizzes[CurrentIndex].image_urls[i]);
-                // QuizLabels[i].setAttribute('onclick', QuizAnswer());
-                QuizLabels[i].addEventListener("click", QuizAnswer)
-            }
+
             
         }
 

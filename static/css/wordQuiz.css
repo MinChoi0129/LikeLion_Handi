@@ -198,6 +198,11 @@ body {
     display: inline-block;
     box-shadow: 0 0 10px 0 #FFBD6C;
 }
+#ver1 input[type=radio]:checked + label video {
+    box-shadow: 0 0 10px 0 #FFBD6C;
+}
+
+
 #ver2 {
     margin-left: 1rem;
     display: grid;
@@ -220,8 +225,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-#ver2 span {
+
     font-family: 'Pretendard-SemiBold';
     font-size: 4rem;
 }
