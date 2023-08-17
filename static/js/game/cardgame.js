@@ -195,7 +195,7 @@ fetch(URL)
     loadMatadata(meta_data);
     randomCardPosition(meta_data);
   });
-// 카드 6초간 보여주기
+// 카드5초간 보여주기
 disableDeck = true;
 cards.forEach((card) => {
   card.classList.add("flip");
@@ -206,7 +206,7 @@ setTimeout(() => {
   });
   startGameTimer();
   disableDeck = false;
-}, 5000);
+}, 3000);
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
