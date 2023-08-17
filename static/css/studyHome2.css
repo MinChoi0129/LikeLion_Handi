@@ -60,6 +60,15 @@ li {
     list-style: none;
 }
 
+main {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+
+html, body {
+    width: 100%;
+}
+
 .gory {
     text-align: center;
     margin: 40px;
@@ -99,7 +108,7 @@ li {
     background-color: #fafafa;
     font-size: 15px;
     font-family: 'Pretendard-Regular';
-    transition: 1s;
+    transition: 0.5s;
     width: 150px;
     height: 247px;
     position: relative;
@@ -146,26 +155,30 @@ input:focus {
     display: none;
 }
 
-.Sc2 {
-    height: 40rem;
+.lectureSection {
+    height: 47rem;
     display: block;
+    margin-top: -260px; margin-left: 330px; margin-bottom: 50px;
 }
 
 .lecturesList {
     position: relative;
     display: block;
-    height: 20rem;
+    width: 58rem;
+    height: 16rem;
     margin: 0px 150px 0px 150px;
+    overflow: hidden;
 }
 
 .title {
     font-family: 'Pretendard-Bold';
-    font-size: 25px;
+    font-size: 21px;
     margin-bottom: 10px;
 }
 
 .lectures {
     display: flex;
+    transition: 1s;
 }
 
 .lecture {
@@ -175,6 +188,7 @@ input:focus {
     height: 165px;
     margin-right: 17px;
     cursor: pointer;
+    transition: 0.7s;
 }
 
 .lectureImg {
@@ -202,7 +216,7 @@ input:focus {
 
 .maxLength {
     margin-left: 12px;
-    margin-right: 90px;
+    margin-right: 80px;
 }
 
 .processing {
@@ -229,6 +243,52 @@ input:focus {
     font-family: 'Pretendard-Regular';
 }
 
-.Sc2 {
-    margin-top: -260px;
+.left {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 100%;
+
+    color: white;
+    background-color: #dbdbdb;
+
+    font-size: 17px;
+
+    left: calc(100% + 50px); left: 80px;
+    top: -150px;
+
+    cursor: pointer;
 }
+  
+
+.right {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 100%;
+
+    color: white;
+    background-color: #dbdbdb;
+
+    font-size: 17px;
+    left: 1050px;
+    top: -150px;
+
+    cursor: pointer;
+}
+
+/* lecturesList에 overflow: hidden; 처리해서 다음 강의들을 숨김
+   -> 그래서 lecturesList:hover .left랑 .right를 하면
+      left랑 right도 같이 사라짐.. ㅜㅜ  */
+
+/* 수어 왕초보 아래에 의문의 여백이 생김..
+   버튼 넣은 이후로 생겼는데 어떻게 없애야 하는지.. 모르겠습니다.. */
+
+/* title이 2줄일 경우로 위치가 맞춰져 있어서 1줄이면 애매함..
+   근데 1줄일 때에 맞추면 2줄일 때 lecture 밖으로 나감.. */

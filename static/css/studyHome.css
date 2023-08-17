@@ -82,13 +82,11 @@ li {
     cursor: pointer;
 }
 
-.SearchBtn {
-    position: relative;
-    left: 330px;
-    top: -37px;
-    cursor: pointer;
-    color: #bababa;
-}
+
+
+
+
+
 
 .SearchBtn:hover{
     color: #FF9A23;
