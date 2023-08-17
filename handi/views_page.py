@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
-
+from .models import User
+from django.shortcuts import get_object_or_404
 def main(request):
+    print(request.user)
     return render(request, "index.html")
 
 
@@ -63,4 +64,7 @@ def game(request):
 
 
 def inGame(request):
-    return render(request, "game.html")
+    print(request.user.id)
+    user = get_object_or_404(User, pk=request.user.id)
+    print(user.game_score)
+    return render(request, "game.html", {"user": user})

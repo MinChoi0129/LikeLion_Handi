@@ -12,7 +12,9 @@
   <script src="{% static 'js/game/resultmodal.js' %}" defer></script>
   <script src="{% static 'js/game/timebar.js' %}" defer></script>
   <script src="{% static 'js/game/cardgame.js' %}" defer></script>
+  {% comment %}
   <script src="{% static 'js/game/ajax.js' %}" defer></script>
+  {% endcomment %}
 </head>
 <body>
   <header></header>
@@ -196,9 +198,20 @@
         <p class="CurrentScore">현재 점수</p>
         <p class="HighestScore">최고점수</p>
         <p class="CurrentScoreNum">0</p>
-        <p class="HighestScoreNum">420</p>
-        <div class="Nickname">맛있는 착한돼지</div>
+        <p class="HighestScoreNum">{{user.game_score}}</p>
+        <div class="Nickname">{{user.username}}</div>
         <img class="Userimage" src="" />
+        <script>
+          userImageElement = document.querySelector(".Userimage");
+          const encodedText = '{{user.profile_img}}';
+          const textarea = document.createElement('textarea');
+          textarea.innerHTML = encodedText;
+          const decodedText = textarea.value;
+          const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+            decodedText
+          )}`;
+          userImageElement.setAttribute("src", dataUrl);
+        </script>
         <div class="GameTitleWrap">
           <p class="TitleCard">카드</p>
           <p class="TitleFlip">뒤집기</p>
