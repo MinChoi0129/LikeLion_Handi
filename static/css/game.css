@@ -529,6 +529,7 @@ height: 100%;
     font-size: .9rem;
     color: #fff;
     margin: 0 1.5rem;
+    text-align: center;
   }
 
   .resultModalOverlay{
@@ -695,3 +696,8 @@ height: 100%;
   .myHighestScore,.myScore,.myRank{
     padding:10px;
   }
+  
+  .moreBtn,
+.rankHomeBtn,.yesBtn {
+  line-height: 2.25rem;
+}
