@@ -72,150 +72,22 @@ body {
     overflow-x: hidden;
 }
 
-
-/*챕터제목*/
-.ChapterExplain {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 2rem;
-    margin-left: 3.5rem; 
-    font-family: 'Pretendard-SemiBold';
-}
-
-.ChapterExplain .ChapterTitle {
-    display: flex;
-    flex-direction: column;
-    /* align-items: baseline; */
-    font-size: 2.7rem;
-}
-
-.ChapterContent {
-    margin-top: -25px; 
-    color: #858585; 
-    font-family: 'Pretendard-SemiBold';
-}
-
-
-
-
-/*한국어 섹션*/
-.KoreanWrap {
+/* 게임페이지 섹션 */
+.gamePageWrap {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     position: relative;
     margin: 0 2rem;
-    margin-top:50px;
+    margin-top:200px;
 }
 
-
-.KoreanWrap .KoreanInput { /*번역 할 내용 입력 */
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-}
-
-.KoreanInput {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
-    color: #FF9A23;
+.gamePageImage {
+    width: 60rem;
+    height: 30rem;
     position: relative;
     margin-bottom: .825rem  ;
-}
-
-.KoreanInput {
-    width: 33rem;
-    height: 30rem;
-
-    border: 3px solid #e1e1e1;
-    border-radius: 1rem;
-    position: relative;
-}
-
-
-.KoreanInput::after { /* 가운데에 수평선 추가 */
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 15%;
-    width: 100%; 
-    border-bottom: 3px solid #e1e1e1;
-    transform: translateX(-50%) translateY(-50%); 
-}
-
-.KoreanInput .KoreanFlag {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-    /* background-image: url('..\static\image\translation\koreanflag.png'); */
-    background-size: cover; 
-    border: 1px solid black;
-    position: absolute;
-    left: 44%; 
-    top: 7%; 
-    transform: translate(-50%, -50%); 
-}
-
-.Korean {
-    /* font-family: 'Pretendard-SemiBold'; */
-    font-size: 1rem;
-    color: black;
-    position: absolute;
-    left: 54%; 
-    top: 7%; 
-    transform: translate(-50%, -50%); 
-}
-
-
-.KoreanFooter { /*글자 수 세주는거랑 번역하기 버튼*/
-    position: absolute;
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    width: 100%; 
-    padding: 0 2rem; 
-}
-
-.KoreanLetterNum {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
-    color: #858585;
-}
-
-.TranslationBtn {
-    background-color: #FF9A23;
-    color: white;
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-    border: 1px solid #e1e1e1;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-}
-
-textarea[name="sentence"] {
-    width: 32rem;
-    height: 200px; 
-    border: none;
-    font-size: 20px;
-    padding: 40px;
-    resize: none;
-    overflow-y: hidden; 
-    outline: none;
-    position: absolute;
-    top:60px;
-    font-family: 'Pretendard';
-}
-
-textarea[name="sentence"]::placeholder {
-    color: #858585;
+    margin-top: -3rem;
 }
 
 main {
@@ -226,112 +98,130 @@ html,body {
     width: 100%;
 }
 
-
-
-/*수어 섹션*/
-.KoreanWrap .SignWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: space-between;
-}
-.SignWrap .SignOutput {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-}
-.SignOutput {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.25rem;
-    color: #FF9A23;
-
-    margin-bottom: .825rem;
-}
-.SignOutput {
-    width: 33rem;
-    height: 30rem;
-
-    border: 3px solid #e1e1e1;
-    border-radius: .75rem;
-    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
-
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    position: relative;
-}
-
-
-.SignOutput::after { /*수평선*/
-    content: "";
-    position: absolute; 
-    left: 50%;
-    top: 15%;
-    width: 100%;
-    border-bottom: 3px solid #e1e1e1;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.SignOutput::before {
-    content: "";
+/* 게임 제목 (카드 뒤집기) */
+.GameTitleWrap {
+    height: 12.8rem;
+    left: 48%;
     position: absolute;
-    top: 15%; 
-    left: 0;
-    width: 100%;
-    height: 85%; 
-    background-color: #FFEBD3;
-    z-index: -1; 
-}
-
-.SignOutput .SignFlag {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-    background-color: white; 
-    border: 1px solid black;
-    position: absolute;
-    left: 45%; 
-    top: 7%; 
-    transform: translate(-50%, -50%); 
-}
-
-.Sign {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
-    color: black;
-
-    position: absolute;
-    left: 54%; 
-    top: 7%; 
-    transform: translate(-50%, -50%); 
-}
-
-.SignGif {
-    position: absolute; 
-    top: 100px; 
-    left: 35px; 
+    top: 0rem;
+    width: 15.7rem;
+    margin-top: 100px; 
+  
+    .TitleCard{
+      color: #000000;
+      font-family: 'Pretendard-SemiBold';
+      font-size: 4rem;
+      font-weight: 800;
+      height: 8.1rem;
+      left: -40px;
+      line-height: 1.2575;
+      position: absolute;
+      top: -70px;
+      white-space: nowrap;
+      width: 8.7rem;
+    }
+    .TitleFlip {
+      color: #000000;
+      font-family: 'Pretendard-SemiBold';
+      font-size: 2.1rem;
+      font-weight: 1100;
+      height: 3.1rem;
+      left: 2rem;
+      line-height: 1.2575;
+      position: absolute;
+      top: 1.3rem;
+      white-space: nowrap;
+      width: 8.7rem;
+    }
   }
+  
+ .btns{
+    margin-left: 45%; 
+ }
 
-  .GIfBtn {
+ /* 모달창 */
+.modal{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    position: fixed;
+    top:50%;
+    left:50%;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    }
+    
+    .modalOverlay{
+    background-color: rgba(0, 0, 0, 0.6);
+    width:100%;
+    height: 100%;
     position: absolute;
-    bottom: 20px;
-    right: 25px;
-    background-color: #FF9A23;
-    color: white;
+    }
+    
+    .hidden{
+    display: none;
+    }
+    
+    
+    .modalContent{
+    background-color:white;
+    padding:10px 100px;
+    text-align: center;
+    position: relative;
+    border: 2px solid #FF9A23;
+    border-radius: 25px;
     font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid #e1e1e1;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
+    }
+    
+    .Inform{
+    margin:20px;
+    font-size: 1.5rem;
+    }
+    
+    .startBtn {
+      width: 6.25rem;
+      height: 2.25rem;
+    
+      border:none;
+      border-radius: 10px;
+      background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+    
+      font-family: 'Pretendard-SemiBold';
+      font-size: .9rem;
+      color: #fff;
+      margin-left: -6rem;
+      margin-top: 3rem;
+    }
 
-/* 번역하기 버튼이 클릭이 안돼서 */
-.TranslationContent {
-    z-index: 2;
-}
+    .gameExplainBtn{
+        width: 6.25rem;
+        height: 2.25rem;
+      
+        border: 2px solid #FFBD6C;
+        border-radius: 10px;
+        background: white;
+      
+        font-family: 'Pretendard-SemiBold';
+        font-size: .9rem;
+        color: #FF9A23;
+      
+        margin-left: 10rem;
+    }
 
-.KoreanFooter {
-    z-index: 1;
-}
-
+    .closeBtn{
+        width: 6.25rem;
+        height: 2.25rem;
+      
+        border:none;
+        border-radius: 10px;
+        background: linear-gradient(to right, #FFEA8D, #FFBD6C);
+      
+        font-family: 'Pretendard-SemiBold';
+        font-size: .9rem;
+        color: #fff;
+      
+        margin: 0 2rem;
+    }

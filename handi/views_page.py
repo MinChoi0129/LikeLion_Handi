@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
-
+from .models import User
+from django.shortcuts import get_object_or_404
 def main(request):
+    print(request.user)
     return render(request, "index.html")
 
 
@@ -22,7 +23,7 @@ def translate(request):
 
 
 def lecture(request):
-    return render(request, "studyHome.html")
+    return render(request, "studyHome2.html")
 
 
 def inLecture(request, lecture_id):
@@ -59,4 +60,11 @@ def sentenceResult(request, lecture_id):
 
 # 추후 메인 게임 페이지로 변경
 def game(request):
-    return render(request, "game.html")
+    return render(request, "gameInformation.html")
+
+
+def inGame(request):
+    print(request.user.id)
+    user = get_object_or_404(User, pk=request.user.id)
+    print(user.game_score)
+    return render(request, "game.html", {"user": user})
