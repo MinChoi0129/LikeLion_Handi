@@ -3,6 +3,7 @@ const ChapterTitle = document.querySelector('.ChapterTitle');
 const CurrentCount = document.querySelector('.CurrentCount');
 const AllCount = document.querySelector('.AllCount');
 const StageBar = document.querySelector('.StageBar');
+const BackStageBar = document.querySelector('.BackStageBar');
 const QuizWrap = document.querySelector('.QuizWrap');
 const StopBtn = document.querySelector('.StopBtnBox');
 
@@ -25,7 +26,7 @@ NoBtn.addEventListener("click", ()=> {
 function QuizRight() {
 
 }
-// 진행바
+
 
 // 그만풀기 버튼
 const StopModal = document.querySelector('.StopModal');
@@ -92,6 +93,9 @@ No.addEventListener("click", ()=> {
         let index = 0;
         var wrong_choices = []; //틀린문제배열
         
+        // 진행바
+        StageBar.style.width = `${Math.round(CurrentIndex / count * 100)}%`
+
         var answer_url; //정답url
         QuizWrap.insertAdjacentHTML('beforeend', typeA);
         const QuizSelects = Array.from(document.querySelectorAll('video'));
@@ -131,6 +135,7 @@ No.addEventListener("click", ()=> {
             CurrentCount.innerHTML = CurrentIndex+1;
             console.log(CurrentIndex);
             if (CurrentIndex >= Math.floor(data.length/2)){
+                StageBar.style.width = `${Math.round((CurrentIndex+1) / count * 100)}%`;
                 CurrentIndex = CurrentIndex % Math.floor(data.length/2);
                 //TYPEA양식 삭제
                 QuizWrap.innerHTML = "";
@@ -149,10 +154,9 @@ No.addEventListener("click", ()=> {
                     QuizLabelsTypeB[i].addEventListener("click", (e) => QuizAnswerTypeB(e, CurrentIndex));
                 }
                 
-                //
-                
             } else {
-                ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`
+                StageBar.style.width = `${Math.round((CurrentIndex+1) / count * 100)}%`;
+                ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`;
                 answer_url = data.type_A_quizzes[CurrentIndex].image_urls[0]; //정답url초기화
                 shuffle(QuizSelects)
                 for(let i=0; i<5; i++) {
@@ -166,6 +170,13 @@ No.addEventListener("click", ()=> {
         }
 
         FillSrc(CurrentIndex);
+        // if (CurrentIndex+1 == count) {
+            
+        // }
+        //마지막퀴즈 currentIndex+1 == count 일 때, label 클릭시
+        //1) (count - wrong.length) / count * 100 => 정답률
+        //2) wrong배열 보내기
+        //3) location.replace => result주소
     })
 
 

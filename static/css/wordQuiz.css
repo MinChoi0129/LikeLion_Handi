@@ -133,6 +133,8 @@ body {
 
     background: linear-gradient(to right, #FFEA8D, #FFBD6C);
     border-radius: 25px;
+
+    transition: width .2s ease-in-out;
 }
 
 /*선택지*/
