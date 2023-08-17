@@ -43,7 +43,7 @@
     </div>
 
     <!-- 순위모달창 -->
-    <div class="resultmodal hidden">
+    <div class="resultmodal">
       <div class="resultModalOverlay"></div>
       <!-- 모달창의 배경색 -->
       <div class="modalRankContent">
@@ -53,7 +53,7 @@
         </div>
         <div class="myScore">
           <span class="myScoreTitle">내 점수 : </span>
-          <span>0</span>
+          <span></span>
         </div>
         <div class="myRank">
           <span class="myRankTitle">랭킹 : </span>
@@ -228,7 +228,9 @@
           <p class="TitleFlip">뒤집기</p>
         </div>
         <div class="LevelWrap">
-          <div class="LevelBackground">Stage 1</div>
+          <div class="LevelBackground">
+            Stage <span class="StageNum">1</span>
+          </div>
           <!-- <p class="LevelNum">Lv 1</p> -->
         </div>
 
@@ -264,7 +266,7 @@
             <div class="RankInfo MyRank">
               <span class="MyRankNum">4</span>
               <span class="MyNickname">인생안달다</span>
-              <span class="MyScore">870</span>
+              <span class="MyScoreInRank">870</span>
             </div>
           </div>
         </div>
@@ -275,6 +277,14 @@
           <div class="RemainTime">60</div>
         </div>
         <button type="button" class="HomeBtn" id="quitopen">홈으로</button>
+      </div>
+
+      <!-- stage 모달창 -->
+      <div class="stageModal hidden">
+        <div class="stageModalOverlay"></div>
+        <div class="stageModalContent">
+          <p class="stageInform">stage <span class="ModalStageNum">1</span></p>
+        </div>
       </div>
     </section>
   </main>
