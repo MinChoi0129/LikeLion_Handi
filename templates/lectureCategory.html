@@ -11,11 +11,11 @@
   <script>
     var inshinjia = "{{lecture_id}}";
   </script>
-  <script src="{% static 'js/lectureCategory.js' %}"></script>
+  <script src="{% static 'js/lectureCategory.js' %}" defer></script>
 </head>
 <body>
   <main class="main">
-    <section>
+  <section>
       <img
         class="apple1"
         src="{% static 'image/login/apple.png' %}"
@@ -28,8 +28,8 @@
           <div class="bar1"></div>
         </div>
         <div class="btn1">
-          <button class="study">학습하기</button>
-          <button class="game">게임하기</button>
+          <button class="study" onclick="goToStudyPage()">학습하기</button>
+          <button class="game" onclick="goToGamePage()">퀴즈풀기</button>
         </div>
       </div>
     </section>
@@ -40,6 +40,7 @@
         <div class="c">c: 내 이름은 000이야.</div>
       </div>
     </section>
+    
   </main>
 </body>
 {% endblock %}
