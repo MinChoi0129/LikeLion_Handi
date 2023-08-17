@@ -217,7 +217,9 @@
           <p class="TitleFlip">뒤집기</p>
         </div>
         <div class="LevelWrap">
-          <div class="LevelBackground">Stage 1</div>
+          <div class="LevelBackground">
+            Stage <span class="StageNum">1</span>
+          </div>
           <!-- <p class="LevelNum">Lv 1</p> -->
         </div>
 
@@ -264,6 +266,15 @@
           <div class="RemainTime">60</div>
         </div>
         <button type="button" class="HomeBtn" id="quitopen">홈으로</button>
+      </div>
+
+      <!-- stage 모달창 -->
+      <div class="stageModal hidden">
+        <div class="stageModalOverlay"></div>
+        <!-- 모달창의 배경색 -->
+        <div class="stageModalContent">
+          <p class="stageInform">stage <span class="ModalStageNum">1</span></p>
+        </div>
       </div>
     </section>
   </main>
