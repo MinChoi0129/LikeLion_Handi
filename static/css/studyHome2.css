@@ -60,6 +60,15 @@ li {
     list-style: none;
 }
 
+main {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+}
+
+html, body {
+    width: 100%;
+}
+
 .gory {
     text-align: center;
     margin: 40px;
@@ -82,11 +91,13 @@ li {
     cursor: pointer;
 }
 
-
-
-
-
-
+.SearchBtn {
+    position: relative;
+    left: 330px;
+    top: -37px;
+    cursor: pointer;
+    color: #bababa;
+}
 
 .SearchBtn:hover{
     color: #FF9A23;
@@ -97,7 +108,7 @@ li {
     background-color: #fafafa;
     font-size: 15px;
     font-family: 'Pretendard-Regular';
-    transition: 1s;
+    transition: 0.5s;
     width: 150px;
     height: 247px;
     position: relative;
@@ -124,14 +135,6 @@ li {
     margin-left: 13px;
 }
 
-.society {
-    margin-left: 10px;
-}
-
-.culture{
-    margin-left: 7px;
-}
-
 .search {
     width: 600px;
     height: 52px;
@@ -144,35 +147,85 @@ li {
     font-family: 'Pretendard-Medium';
 }
 
-.section1, .section2, .section3, .section4 {
-    position: relative;
-    display: flex;
-    margin-top: 7px;
+input:focus {
+    outline: 1px solid #FF9A23;
 }
 
-.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12, .box13, .box14, .box15, .box16, .box17, .box18, .box19 {
+::-webkit-scrollbar {
+    display: none;
+}
+
+.lectureSection {
+    height: 47rem;
+    display: block;
+    margin-top: -260px; margin-left: 330px; margin-bottom: 50px;
+}
+
+.lecturesList {
+    position: relative;
+    display: block;
+    width: 58rem;
+    height: 16rem;
+    margin: 0px 150px 0px 150px;
+    overflow: hidden;
+}
+
+.title {
+    font-family: 'Pretendard-Bold';
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.lectures {
+    display: flex;
+    transition: 1s;
+}
+
+.lecture {
     box-shadow: 1px 1px 4px #e1e1e1;
     border-radius: 15px;
     width: 170px;
     height: 165px;
     margin-right: 17px;
     cursor: pointer;
+    transition: 0.7s;
 }
 
-.title, .box1, .box3, .box15 {
-    margin-left: 150px;
+.lectureImg {
+    background-size: cover;
+    border-radius: 15px 15px 0px 0px;
+    width: 170px;
+    height: 60px;
 }
 
-.title {
-    margin-top: 40px;
+.lectureName {
+    margin-left: 12px; margin-top: 5px;
     font-size: 17px;
     font-family: 'Pretendard-Bold';
 }
 
-.img {
-    border-radius: 15px 15px 0px 0px;
-    width: 170px;
-    height: 60px;
+.lengthWithPercent {
+    display: flex;
+}
+
+.maxLength, .percent {
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: 'Pretendard-Regular';
+}
+
+.maxLength {
+    margin-left: 12px;
+    margin-right: 80px;
+}
+
+.processing {
+    border-radius: 20px;
+    width: 150px;
+    height: 7px;
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: #d9d9d9;
 }
 
 .difficulty {
@@ -190,164 +243,52 @@ li {
     font-family: 'Pretendard-Regular';
 }
 
-.sub {
-    font-weight: bolder;
-    margin-top: 5px;
-    padding-left: 12px;
-    padding-right: 12px;
-    font-family: 'Pretendard-Bold';
-}
-
-.ing {
-    display: flex;
-    font-size: 13px;
-    margin-top: 13px;
-    font-family: 'Pretendard-Regular';
-}
-
-.ing2 {
-    display: flex;
-    font-size: 13px;
-    margin-top: 35px;
-    font-family: 'Pretendard-Regular';
-}
-
-.count {
-    margin-left: 12px;
-    margin-right: 80px;
-}
-
-input:focus {
-    outline: 1px solid #FF9A23;
-}
-
-.bar {
-    border-radius: 20px;
-    width: 150px;
-    height: 7px;
-    margin-top: 5px;
-    margin-left: 10px;
-    background-color: #d9d9d9;
-}
-
-.bar2 {
-    z-index: 1;
-    border-radius: 20px;
-    width: 105px;
-    height: 7px;
-    margin-top: -7px;
-    margin-left: 10px;
-    background-color: #858585;
-}
-
-.bar3 {
-    z-index: 1;
-    border-radius: 20px;
-    width: 80px;
-    height: 7px;
-    margin-top: -7px;
-    margin-left: 10px;
-    background-color: #858585;
-}
-
-.category1 {
-    margin-bottom: 50px;
-}
-
-.box8 {
-    position: absolute;
-    left: 0px; /* 이 값을 원하는 위치로 조정하세요 */
-}
-
-.box9 {
-    position: absolute;
-    left: 187px; /* 이 값을 원하는 위치로 조정하세요 */
-}
-
-.box10 {
-    position: absolute;
-    left: 374px; /* 이 값을 원하는 위치로 조정하세요 */
-}
-
-.box11 {
-    position: absolute;
-    left: 561px; /* 이 값을 원하는 위치로 조정하세요 */
-}
-
-.box12 {
-    position: absolute;
-    left: 748px; /* 이 값을 원하는 위치로 조정하세요 */
-}
-
-.box13 {
-    position: absolute;
-    left: -187px;
-}
-
-.box14 {
-    position: absolute;
-    left: 935px; /* 이 값을 원하는 위치로 조정하세요 */
-}
-
-.section1 {
-    position: relative;
-    width: 930px;
-    height: 170px;
-    margin-left: 150px;
-    overflow: hidden;
-}
-
 .left {
-    position: absolute;
+    position: relative;
+
     width: 40px;
     height: 40px;
-    border: 0px;
+
+    border: none;
     border-radius: 100%;
+
     color: white;
     background-color: #dbdbdb;
+
     font-size: 17px;
-    left: calc(100% + 50px);
-    left: 90px;
-    top: 15px;
+
+    left: calc(100% + 50px); left: 80px;
+    top: -150px;
+
     cursor: pointer;
 }
   
 
 .right {
-    position: absolute;
+    position: relative;
+
     width: 40px;
     height: 40px;
-    border: 0px;
+
+    border: none;
     border-radius: 100%;
+
     color: white;
     background-color: #dbdbdb;
+
     font-size: 17px;
-    left: 1090px;
-    top: 15px;
+    left: 1050px;
+    top: -150px;
+
     cursor: pointer;
 }
 
-.btn {
-    position: absolute;
-    top: 730px;
-    z-index: 1;
-    transform: translateY(-50%);
-    opacity: 0;
-}
+/* lecturesList에 overflow: hidden; 처리해서 다음 강의들을 숨김
+   -> 그래서 lecturesList:hover .left랑 .right를 하면
+      left랑 right도 같이 사라짐.. ㅜㅜ  */
 
-.box8, .box9, .box10, .box11, .box12, .box13, .box14 {
-    transition: 0.7s; /* 왼쪽 버튼 클릭 시 부드럽게 이동하는 효과 추가 */
-}
+/* 수어 왕초보 아래에 의문의 여백이 생김..
+   버튼 넣은 이후로 생겼는데 어떻게 없애야 하는지.. 모르겠습니다.. */
 
-.king:hover .btn {
-    opacity: 1;
-    transition: 0.4s ease;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-.Sc2 {
-    margin-top: -300px;
-}
+/* title이 2줄일 경우로 위치가 맞춰져 있어서 1줄이면 애매함..
+   근데 1줄일 때에 맞추면 2줄일 때 lecture 밖으로 나감.. */
