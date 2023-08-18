@@ -645,13 +645,13 @@ height: 100%;
   color:#FFF249;
 }
 .NumTwo, .RankTwoNickname, .RankTwoScore{
-  color:#808080;
+  color:white;
 }
 .NumThree, .RankThreeNickname, .RankThreeScore{
   color:#CD7F32;
 }
 .NumFour, .RankFourNickname, .RankFourScore{
-  color:black;
+  color:white;
 }
 .NumFive, .RankFiveNickname, .RankFiveScore{
   color:black;
