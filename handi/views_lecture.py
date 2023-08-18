@@ -49,7 +49,7 @@ class LectureDetail(RetrieveAPIView):
                     "data": media_entry.data,
                 }
             )
-        return Response(form, status.HTTP_200_OK)
+        return Response(form, content_type="charset=utf-8", status=status.HTTP_200_OK)
 
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer

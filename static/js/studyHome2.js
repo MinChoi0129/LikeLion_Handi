@@ -30,12 +30,48 @@ fetch("http://101.101.209.37/api/lectures/")
                 <div class="lectureName">${now_data.name}</div>
                 <div class="lengthWithPercent">
                     <div class="maxLength">총 ${now_data.length}개</div>
-                    <div class="percent">00%</div>
+                    <div class="percent">0%</div>
                 </div>
                 <div class="processing"></div>
-                </div>`;
-      lecture1.innerHTML += text;
-    }
+                </div>`
+        lecture1.innerHTML += text
+        }
+
+
+        for (let i = 10; i < 20; i++) {
+            now_data = data[i]
+        
+        
+        let text = `<div class="lecture">
+                <div class="difficulty">${level[now_data.level]}</div>
+                <img class="lectureImg" src="${now_data.lecture_img}"/>
+                <div class="lectureName">${now_data.name}</div>
+                <div class="lengthWithPercent">
+                    <div class="maxLength">총 ${now_data.length}개</div>
+                    <div class="percent">0%</div>
+                </div>
+                <div class="processing"></div>
+                </div>`
+        lecture2.innerHTML += text
+        }
+
+
+        for (let i = 20; i < 30; i++) {
+            now_data = data[i]
+        
+        let text = `<div class="lecture">
+                <div class="difficulty">${level[now_data.level]}</div>
+                <img class="lectureImg" src="${now_data.lecture_img}"/>
+                <div class="lectureName">${now_data.name}</div>
+                <div class="lengthWithPercent">
+                    <div class="maxLength">총 ${now_data.length}개</div>
+                    <div class="percent">0%</div>
+                </div>
+                <div class="processing"></div>
+                </div>`
+        lecture3.innerHTML += text
+        }
+    
 
     for (let i = 10; i < 20; i++) {
       now_data = data[i];
@@ -71,39 +107,33 @@ fetch("http://101.101.209.37/api/lectures/")
   });
 
 // 버튼 조작
-document.addEventListener("DOMContentLoaded", function () {
-  const leftButton = document.querySelectorAll(".left");
-  const rightButton = document.querySelectorAll(".right");
-  const lecturesContainers = document.querySelectorAll(".lectures");
+document.addEventListener('DOMContentLoaded', function() {
+    const leftButton = document.querySelectorAll('.left');
+    const rightButton = document.querySelectorAll('.right');
+    const lecturesContainers = document.querySelectorAll('.lectures');
 
-  let currentPositions = new Array(lecturesContainers.length);
-  for (let i = 0; i < currentPositions.length; ++i) {
+
+    let currentPositions = new Array(lecturesContainers.length);
+    for (let i = 0; i < currentPositions.length ; ++i) {
     currentPositions[i] = 0;
-  }
+    }
 
-  const lectureWidth = 187; // 각 박스의 너비
+    const lectureWidth = 187; // 각 박스의 너비
 
-  for (let index = 0; index < lecturesContainers.length; index++) {
-    leftButton[index].addEventListener("click", function () {
-      if (currentPositions[index] < 0) {
-        currentPositions[index] += lectureWidth;
-        lecturesContainers[
-          index
-        ].style.transform = `translateX(${currentPositions[index]}px)`;
-      }
-    });
+    for (let index = 0; index < lecturesContainers.length; index++) {
+        leftButton[index].addEventListener('click', function() {
+            if (currentPositions[index] < 0) {
+                currentPositions[index] += lectureWidth;
+                lecturesContainers[index].style.transform = `translateX(${currentPositions[index]}px)`;
+            }
+        });
 
-    rightButton[index].addEventListener("click", function () {
-      const maxPosition = -(
-        lectureWidth *
-        (lecturesContainers[index].children.length - 4)
-      ); // 4개의 박스가 화면에 보일 때까지만 이동
-      if (currentPositions[index] > maxPosition) {
-        currentPositions[index] -= lectureWidth;
-        lecturesContainers[
-          index
-        ].style.transform = `translateX(${currentPositions[index]}px)`;
-      }
-    });
-  }
+        rightButton[index].addEventListener('click', function() {
+            const maxPosition = -(lectureWidth * (lecturesContainers[index].children.length - 4)); // 4개의 박스가 화면에 보일 때까지만 이동
+            if (currentPositions[index] > maxPosition) {
+                currentPositions[index] -= lectureWidth;
+                lecturesContainers[index].style.transform = `translateX(${currentPositions[index]}px)`;
+            }
+        });
+    }
 });

@@ -1,11 +1,29 @@
 // 변수설정
-const ChapterTitle = document.querySelector(".ChapterTitle");
-const CurrentCount = document.querySelector(".CurrentCount");
-const AllCount = document.querySelector(".AllCount");
-const StageBar = document.querySelector(".StageBar");
-const BackStageBar = document.querySelector(".BackStageBar");
-const QuizWrap = document.querySelector(".QuizWrap");
-const StopBtn = document.querySelector(".StopBtnBox");
+const ChapterTitle = document.querySelector('.ChapterTitle');
+const CurrentCount = document.querySelector('.CurrentCount');
+const AllCount = document.querySelector('.AllCount');
+const StageBar = document.querySelector('.StageBar');
+const BackStageBar = document.querySelector('.BackStageBar');
+const QuizWrap = document.querySelector('.QuizWrap');
+const StopBtn = document.querySelector('.StopBtnBox');
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
 
 // 퀴즈 시작 전 모달
 const Back = document.querySelector(".Back");
@@ -78,7 +96,7 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
                     <label for="select3"></label>
                     <input type="radio" id="select4" name="wordSelect">
                     <label for="select4"></label>
-                </div>`;
+                </div>`
 
     console.log(data);
 

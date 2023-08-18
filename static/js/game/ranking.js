@@ -1,24 +1,30 @@
+let RankOneNickname = document.querySelector(".RankOneNickname");
+let RankTwoNickname = document.querySelector(".RankTwoNickname");
+let RankThreeNickname = document.querySelector(".RankThreeNickname");
+let RankFourNickname = document.querySelector(".RankFourNickname");
+let RankFiveNickname = document.querySelector(".RankFiveNickname");
 
+let Ranks = [
+  RankOneNickname,
+  RankTwoNickname,
+  RankThreeNickname,
+  RankFourNickname,
+  RankFiveNickname,
+];
 
-let RankOneNickname = document.querySelector(".RankOneNickname")
-let RankTwoNickname = document.querySelector(".RankTwoNickname")
-let RankThreeNickname = document.querySelector(".RankThreeNickname")
-let RankFourNickname = document.querySelector(".RankFourNickname")
-let RankFiveNickname = document.querySelector(".RankFiveNickname")
+let RankOneScore = document.querySelector(".RankOneScore");
+let RankTwoScore = document.querySelector(".RankTwoScore");
+let RankThreeScore = document.querySelector(".RankThreeScore");
+let RankFourScore = document.querySelector(".RankFourScore");
+let RankFiveScore = document.querySelector(".RankFiveScore");
 
-let Ranks = [RankOneNickname, RankTwoNickname, RankThreeNickname, RankFourNickname, RankFiveNickname]
-
-let RankOneScore = document.querySelector(".RankOneScore")
-let RankTwoScore = document.querySelector(".RankTwoScore")
-let RankThreeScore = document.querySelector(".RankThreeScore")
-let RankFourScore = document.querySelector(".RankFourScore")
-let RankFiveScore = document.querySelector(".RankFiveScore")
-
-let RankScores = [RankOneScore, RankTwoScore, RankThreeScore, RankFourScore, RankFiveScore]
-
-let MyRankNum = document.querySelector(".MyRankNum")
-let MyNickname = document.querySelector(".MyNickname")
-let MyScoreInRank = document.querySelector(".MyScoreInRank")
+let RankScores = [
+  RankOneScore,
+  RankTwoScore,
+  RankThreeScore,
+  RankFourScore,
+  RankFiveScore,
+];
 
 fetch("http://101.101.209.37/api/users/rank/")
 .then((response) => response.json())
@@ -35,6 +41,7 @@ fetch("http://101.101.209.37/api/users/rank/")
     MyNickname.innerHTML = ""
     MyScoreInRank.innerHTML = ""
   }
+})
 let MyRankNum = document.querySelector(".MyRankNum");
 let MyNickname = document.querySelector(".MyNickname");
 let MyScoreInRank = document.querySelector(".MyScoreInRank");
@@ -43,14 +50,21 @@ fetch("http://101.101.209.37/api/users/rank/")
   .then((data) => {
     console.log(data);
 
+    if (data["me"][2] > 5) {
+      MyRankNum.innerHTML = data["me"][2];
+      MyNickname.innerHTML = data["me"][0];
+      MyScoreInRank.innerHTML = data["me"][1];
+    } else {
+      MyRankNum.innerHTML = "";
+      MyNickname.innerHTML = "";
+      MyScoreInRank.innerHTML = "";
+    }
 
-  for (let i=0; i<5; i++) {
-    Ranks[i].innerHTML = data["top_5_users"][i][1]
-    RankScores[i].innerHTML = data["top_5_users"][i][0]
-  }
-
-})
-
+    for (let i = 0; i < 5; i++) {
+      Ranks[i].innerHTML = data["top_5_users"][i][1];
+      RankScores[i].innerHTML = data["top_5_users"][i][0];
+    }
+  });
 
 // <!-- 랭킹보드 -->
 //         <div class="LankBoard">
