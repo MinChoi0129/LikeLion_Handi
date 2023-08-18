@@ -5,7 +5,7 @@ function goToLectureDetailPage(lecture_id) {
 	location.href = location.href + lecture_id
 }
 
-fetch("http://localhost:8000/api/lectures/")
+fetch("http://127.0.0.1:8000/api/lectures/")
     .then((response) => {
 		return response.json();
 	})
@@ -29,7 +29,7 @@ fetch("http://localhost:8000/api/lectures/")
                 <div class="lectureName">${now_data.name}</div>
                 <div class="lengthWithPercent">
                     <div class="maxLength">총 ${now_data.length}개</div>
-                    <div class="percent">00%</div>
+                    <div class="percent"></div>
                 </div>
                 <div class="processing"></div>
                 </div>`
