@@ -1,6 +1,6 @@
 let parent_main = document.querySelector(".main");
 
-fetch("http://localhost:8000/api/lecture/" + inshinjia + "/")
+fetch("http://127.0.0.1:8000/api/lecture/" + inshinjia + "/")
   .then((response) => {
     return response.json();
   })

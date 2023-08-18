@@ -19,7 +19,7 @@ StartBtn.addEventListener("click", ()=>{
 })
 NoBtn.addEventListener("click", ()=> {
     //전 페이지로 이동
-    location.href = "http://localhost:8000/lecture/" + Id + "/";
+    location.href = "http://127.0.0.1:8000/lecture/" + Id + "/";
 })
 
 // 그만풀기 버튼
@@ -32,7 +32,7 @@ StopBtn.addEventListener("click", () => {
     Back.style.display = "block";
 })
 Yes.addEventListener("click", ()=> {
-    location.replace("http://localhost:8000/lecture/" + Id + "/")
+    location.replace("http://127.0.0.1:8000/lecture/" + Id + "/")
 })
 No.addEventListener("click", ()=> {
     StopModal.style.display = "none";
@@ -41,7 +41,7 @@ No.addEventListener("click", ()=> {
 
 
 //ajax 백엔드 연결
-fetch('http://localhost:8000/api/quiz/' + Id + "/")
+fetch('http://127.0.0.1:8000/api/quiz/' + Id + "/")
 .then((response) => {
     return response.json()
     })
@@ -119,7 +119,7 @@ fetch('http://localhost:8000/api/quiz/' + Id + "/")
                 RightPer = Math.round((count - wrong_choices.length) / count * 100);
                 console.log(RightPer);
                 // wrong_choices, RightPer 보내기
-                location.replace("http://localhost:8000/lecture/" + Id + "/result/word");
+                location.replace("http://127.0.0.1:8000/lecture/" + Id + "/result/word");
                 return
             }
         } else {
@@ -128,7 +128,7 @@ fetch('http://localhost:8000/api/quiz/' + Id + "/")
                 RightPer = Math.round((count - wrong_choices.length) / count * 100);
                 console.log(RightPer);
                 // wrong_choices, RightPer 보내기
-                location.replace("http://localhost:8000/lecture/" + Id + "/result/word");
+                location.replace("http://127.0.0.1:8000/lecture/" + Id + "/result/word");
                 return
             }
             
