@@ -1,6 +1,10 @@
 let parent_main = document.querySelector(".main");
 
+<<<<<<< Updated upstream
 fetch("http://localhost:8000/api/lecture/" + inshinjia + "/")
+=======
+fetch("http://101.101.209.37/api/lecture/" + inshinjia + "/")
+>>>>>>> Stashed changes
   .then((response) => {
     return response.json();
   })
@@ -34,7 +38,7 @@ var csrftoken = getCookie("csrftoken");
 // 학습하기
 document.querySelector(".study").addEventListener("click", function () {
   if (inshinjia <= 543) {
-    fetch("http://127.0.0.1:8000/api/lecturemanager/" + inshinjia + "/", {
+    fetch("http://101.101.209.37/api/lecturemanager/" + inshinjia + "/", {
       method: "GET",
       credentials: "include",
       headers: {
@@ -49,7 +53,7 @@ document.querySelector(".study").addEventListener("click", function () {
         console.log(data);
         console.log(inshinjia);
         if (data.length == 0) {
-          fetch("http://127.0.0.1:8000/api/lecturemanagers/", {
+          fetch("http://101.101.209.37/api/lecturemanagers/", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -67,17 +71,17 @@ document.querySelector(".study").addEventListener("click", function () {
         }
       });
 
-    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/study/word/`;
+    window.location.href = `http://101.101.209.37/lecture/${inshinjia}/study/word/`;
   } else {
-    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/study/sentence/`;
+    window.location.href = `http://101.101.209.37/lecture/${inshinjia}/study/sentence/`;
   }
 });
 
 // 퀴즈 풀기
 document.querySelector(".game").addEventListener("click", function () {
   if (inshinjia <= 543) {
-    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/quiz/word/`;
+    window.location.href = `http://101.101.209.37/lecture/${inshinjia}/quiz/word/`;
   } else {
-    window.location.href = `http://127.0.0.1:8000/lecture/${inshinjia}/quiz/sentence/`;
+    window.location.href = `http://101.101.209.37/lecture/${inshinjia}/quiz/sentence/`;
   }
 });

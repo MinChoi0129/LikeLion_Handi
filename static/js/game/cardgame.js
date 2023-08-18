@@ -183,7 +183,11 @@ URL_data = [];
 function loadMatadata(meta_data) {
   URL_data = meta_data;
 }
+<<<<<<< Updated upstream
 const URL = "http://localhost:8000/api/game";
+=======
+const URL = "http://101.101.209.37/api/game";
+>>>>>>> Stashed changes
 fetch(URL)
   .then((response) => {
     return response.json();
@@ -201,7 +205,7 @@ disableDeck = true;
 cards.forEach((card) => {
   card.classList.add("flip");
 });
-openStageModal(now_level)
+openStageModal(now_level);
 setTimeout(() => {
   cards.forEach((card) => {
     card.classList.remove("flip");
@@ -212,8 +216,11 @@ setTimeout(() => {
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
+<<<<<<< Updated upstream
 
 
 
 
 
+=======
+>>>>>>> Stashed changes

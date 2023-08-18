@@ -20,6 +20,7 @@ let MyRankNum = document.querySelector(".MyRankNum")
 let MyNickname = document.querySelector(".MyNickname")
 let MyScoreInRank = document.querySelector(".MyScoreInRank")
 
+<<<<<<< Updated upstream
 fetch("http://127.0.0.1:8000/api/users/rank/")
 .then((response) => response.json())
 .then((data) => {
@@ -35,6 +36,15 @@ fetch("http://127.0.0.1:8000/api/users/rank/")
     MyNickname.innerHTML = ""
     MyScoreInRank.innerHTML = ""
   }
+=======
+let MyRankNum = document.querySelector(".MyRankNum");
+let MyNickname = document.querySelector(".MyNickname");
+let MyScoreInRank = document.querySelector(".MyScoreInRank");
+fetch("http://101.101.209.37/api/users/rank/")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+>>>>>>> Stashed changes
 
 
   for (let i=0; i<5; i++) {

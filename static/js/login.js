@@ -2,7 +2,7 @@ function login() {
   let username = document.getElementById("id").value;
   let password = document.getElementById("password").value;
 
-  fetch("http://127.0.0.1:8000/api/login/", {
+  fetch("http://101.101.209.37/api/login/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -13,6 +13,6 @@ function login() {
     .then((data) => {
       console.log("로그인 정보");
       console.log(data);
-      window.location.href = "http://127.0.0.1:8000/";
+      window.location.href = "http://101.101.209.37/";
     });
 }
