@@ -7,7 +7,7 @@ function goToLectureDetailPage(lecture_id) {
 	location.href = location.href + lecture_id
 }
 
-fetch("http://localhost:8000/api/lectures/")
+fetch("http://127.0.0.1:8000/api/lectures/")
 	.then((response) => {
 		return response.json();
 	})
