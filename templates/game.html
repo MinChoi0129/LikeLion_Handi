@@ -10,47 +10,61 @@
   ></script>
   <script src="{% static 'js/game/quitmodal.js' %}" defer></script>
   <script src="{% static 'js/game/resultmodal.js' %}" defer></script>
+  <script src="{% static 'js/game/stagemodal.js' %}" defer></script>
   <script src="{% static 'js/game/timebar.js' %}" defer></script>
   <script src="{% static 'js/game/cardgame.js' %}" defer></script>
+  {% comment %}
   <script src="{% static 'js/game/ajax.js' %}" defer></script>
+  {% endcomment %}
 </head>
 <body>
   <header></header>
   <main>
+    <!-- stage 모달창 -->
+    <div class="stageModal hidden">
+      <div class="stageModalOverlay"></div>
+      <!-- 모달창의 배경색 -->
+      <div class="stageModalContent">
+        <p class="stageInform">stage <span class="ModalStageNum">1</span></p>
+      </div>
+    </div>
+
     <!-- 모달창 -->
-    <div class="modal hidden">
+    <div class="quitmodal hidden">
       <div class="modalOverlay"></div>
       <!-- 모달창의 배경색 -->
       <div class="modalContent">
         <p class="Inform">지금 나가게 되면 랭킹에 적용되지 않습니다.</p>
         <p class="Inform">그래도 홈으로 가시겠습니까?</p>
-        <button class="YesBtn">네</button>
+        <a class="yesBtn" href="http://127.0.0.1:8000/game/">네</a>
         <button class="NoBtn" id="NoBtn">아니요</button>
       </div>
     </div>
 
     <!-- 순위모달창 -->
-    <!-- <div class="modal">
-      <div class="modalOverlay hidden"></div> -->
-    <!-- 모달창의 배경색 -->
-    <!-- <div class="modalRankContent">
+    <div class="resultmodal hidden">
+      <div class="resultModalOverlay"></div>
+      <!-- 모달창의 배경색 -->
+      <div class="modalRankContent">
         <div class="myHighestScore">
           <span class="highestScoreTitle">내 최고 점수 : </span>
-          <span>600</span>
+          <span>600</span>점
         </div>
         <div class="myScore">
           <span class="myScoreTitle">내 점수 : </span>
-          <span>0</span>
+          <span></span>
         </div>
         <div class="myRank">
           <span class="myRankTitle">랭킹 : </span>
-          <span>5</span>
+          <span>5</span>등
         </div>
         <p class="rankInform">그래도 홈으로 가시겠습니까?</p>
-        <button class="moreBtn">한번 더하기</button>
-        <button class="rankHomeBtn">홈으로</button>
+        <a href="http://127.0.0.1:8000/game/start/" class="moreBtn"
+          >한번 더하기</a
+        >
+        <a href="http://127.0.0.1:8000/game/" class="rankHomeBtn">홈으로</a>
       </div>
-    </div> -->
+    </div>
 
     <section>
       <div class="GameWrap">
@@ -194,47 +208,67 @@
         <div class="Profile"></div>
         <div class="Scoreboard"></div>
         <p class="CurrentScore">현재 점수</p>
-        <p class="HighestScore">최고점수</p>
+        <p class="HighestScore">최고 점수</p>
         <p class="CurrentScoreNum">0</p>
-        <p class="HighestScoreNum">420</p>
-        <div class="Nickname">맛있는 착한돼지</div>
+        <p class="HighestScoreNum">{{user.game_score}}</p>
+        <div class="Nickname">{{user.username}}</div>
         <img class="Userimage" src="" />
+        <script>
+          userImageElement = document.querySelector(".Userimage");
+          const encodedText = "{{user.profile_img}}";
+          const textarea = document.createElement("textarea");
+          textarea.innerHTML = encodedText;
+          const decodedText = textarea.value;
+          const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+            decodedText
+          )}`;
+          userImageElement.setAttribute("src", dataUrl);
+        </script>
         <div class="GameTitleWrap">
           <p class="TitleCard">카드</p>
           <p class="TitleFlip">뒤집기</p>
         </div>
         <div class="LevelWrap">
-          <div class="LevelBackground">Lv 1</div>
+          <div class="LevelBackground">
+            Stage <span class="StageNum">1</span>
+          </div>
           <!-- <p class="LevelNum">Lv 1</p> -->
         </div>
 
         <!-- 랭킹보드 -->
         <div class="LankBoard">
           <h3 class="RankTitle">Rank</h3>
-          <div class="LankOne">
-            <span class="NumOne">1</span>
-            <span class="RankOneNickname">인생쓰다</span>
-            <span class="RankOneScore">1020</span>
-          </div>
-          <div class="LankTwo">
-            <span class="NumTwo">2</span>
-            <span class="RankTwoNickname">인생달다</span>
-            <span class="RankTwoScore">920</span>
-          </div>
-          <div class="LankThree">
-            <span class="NumThree">3</span>
-            <span class="RankThreeNickname">인생안쓰다</span>
-            <span class="RankThreeScore">880</span>
-          </div>
-          <div class="LankFour">
-            <span class="NumFour">4</span>
-            <span class="RankFourNickname">인생안달다</span>
-            <span class="RankFourScore">870</span>
-          </div>
-          <div class="LankFive">
-            <span class="NumFive">5</span>
-            <span class="RankFiveNickname">맛있는 착한돼지</span>
-            <span class="RankFiveScore">600</span>
+          <div class="RankWrap">
+            <div class="RankInfo LankOne">
+              <span class="NumOne">1</span>
+              <span class="RankOneNickname">인생쓰다</span>
+              <span class="RankOneScore">1020</span>
+            </div>
+            <div class="RankInfo LankTwo">
+              <span class="NumTwo">2</span>
+              <span class="RankTwoNickname">인생달다</span>
+              <span class="RankTwoScore">920</span>
+            </div>
+            <div class="RankInfo LankThree">
+              <span class="NumThree">3</span>
+              <span class="RankThreeNickname">인생안쓰다</span>
+              <span class="RankThreeScore">880</span>
+            </div>
+            <div class="RankInfo LankFour">
+              <span class="NumFour">4</span>
+              <span class="RankFourNickname">인생안달다</span>
+              <span class="RankFourScore">870</span>
+            </div>
+            <div class="RankInfo LankFive">
+              <span class="NumFive">5</span>
+              <span class="RankFiveNickname">맛있는 착한돼지</span>
+              <span class="RankFiveScore">600</span>
+            </div>
+            <div class="RankInfo MyRank">
+              <span class="MyRankNum">4</span>
+              <span class="MyNickname">인생안달다</span>
+              <span class="MyScoreInRank">870</span>
+            </div>
           </div>
         </div>
 
@@ -243,7 +277,15 @@
           <div class="TimeBar"></div>
           <div class="RemainTime">60</div>
         </div>
-        <button type="button" class="HomeBtn" id="open">홈으로</button>
+        <button type="button" class="HomeBtn" id="quitopen">홈으로</button>
+      </div>
+
+      <!-- stage 모달창 -->
+      <div class="stageModal hidden">
+        <div class="stageModalOverlay"></div>
+        <div class="stageModalContent">
+          <p class="stageInform">stage <span class="ModalStageNum">1</span></p>
+        </div>
       </div>
     </section>
   </main>

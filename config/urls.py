@@ -57,6 +57,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("handi.urls")),
     path("accounts/", include("allauth.urls")),
+    path("contact/", views_page.contact, name="contact"),
 ]
 
 if settings.DEBUG:

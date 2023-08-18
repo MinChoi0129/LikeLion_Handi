@@ -3,164 +3,164 @@
         "model":"handi.lecture",
         "pk":1,
         "fields":{
-            "description": "가족관련",
+            "description": "다양한 나라명을 배우는 나라명 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 미국, 일본, 중국 등 다양한 나라의 이름을 수어로 표현하는 방법을 배웁니다. 시각적 자료와 실습을 통해 나라명을 정확하게 표현하며, 다양한 문화와 지리적인 정보를 수어로 소통하는 능력을 함께 키워보세요.",
             "id": 1,
-            "lecture_img": "lectures/family-2610205_1280.jpg",
-            "length": 17,
-            "level": 1,
-            "main_category": "인간",
-            "name": "가족1",
-            "sub_category": "가족",
-            "theme_category": "카테고리"
+            "lecture_img": "lectures/the-globe-609225_1280.jpg",
+            "length": 26,
+            "level": 3,
+            "main_category": "지명",
+            "name": "신나는 세계여행",
+            "sub_category": "나라",
+            "theme_category": "수어로 국제시장 보기"
         }
     },
     {
         "model":"handi.lecture",
         "pk":2,
         "fields":{
-            "description": "가족2",
+            "description": "가족을 표현하는 수어 단어들로 만들어진 이 강의에 오신 것을 환영합니다! 이 강의에서는 부모, 형제자매 가족 구성원을 수어로 어떻게 표현할 수 있는지 배우고 연습합니다. 다양한 수어 동영상과 실습 활동을 통해 가족 구성원들과 더 의사소통하기 위한 수어 실력을 향상시킬 수 있습니다.",
             "id": 2,
-            "lecture_img": "lectures/pexels-fauxels-3184193.jpg",
-            "length": 18,
+            "lecture_img": "lectures/family-2610205_1280.jpg",
+            "length": 13,
             "level": 1,
             "main_category": "인간",
-            "name": "가족2",
+            "name": "다양한 가족유형 - 핵가족",
             "sub_category": "가족",
-            "theme_category": "카테고리"
+            "theme_category": "수어로 국제시장 보기"
         }
     },
     {
         "model":"handi.lecture",
         "pk":3,
         "fields":{
-            "description": "가족3",
+            "description": "다양한 색깔을 수어로 배우는 강의에 오신 것을 환영합니다! 이 강의에서는 빨강, 파랑, 노랑 등 다양한 색상을 수어로 표현하는 방법을 학습하고 실제로 사용해보는 기회를 제공합니다. 시각적인 자료와 실습을 통해 색깔을 표현하는 수어 표현을 자유롭게 익히며, 다양한 색상에 대한 표현력을 향상시킬 수 있습니다.",
             "id": 3,
-            "lecture_img": "lectures/pexels-craig-adderley-1835926.jpg",
-            "length": 13,
+            "lecture_img": "lectures/pencils-452238_1280.jpg",
+            "length": 10,
             "level": 1,
-            "main_category": "인간",
-            "name": "가족결혼",
-            "sub_category": "가족",
-            "theme_category": "카테고리"
+            "main_category": "개념",
+            "name": "형형가지의 색상",
+            "sub_category": "색깔",
+            "theme_category": "실전생활수어"
         }
     },
     {
         "model":"handi.lecture",
         "pk":4,
         "fields":{
-            "description": "감정입니다",
+            "description": "신선한 과일과 다양한 채소에 관한 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 사과, 딸기, 무 등 다양한 식재료의 수어 표현을 배우고 실제 상황에서 활용하는 방법을 익힐 수 있습니다. 다양한 과일과 채소의 수어 단어를 자연스럽게 습득하며, 풍부한 어휘력을 발전시킬 수 있는 기회입니다.",
             "id": 4,
-            "lecture_img": "lectures/smiley-2979107_1280.jpg",
-            "length": 12,
-            "level": 1,
-            "main_category": "인간",
-            "name": "감정",
-            "sub_category": "감정",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":5,
-        "fields":{
-            "description": "결혼입니다",
-            "id": 5,
-            "lecture_img": "lectures/wedding-2595862_1280.jpg",
-            "length": 18,
-            "level": 1,
-            "main_category": "문화",
-            "name": "결혼",
-            "sub_category": "결혼",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":6,
-        "fields":{
-            "description": "경제입니다",
-            "id": 6,
-            "lecture_img": "lectures/money-2696228_1280.jpg",
-            "length": 1,
-            "level": 1,
-            "main_category": "사회생활",
-            "name": "경제",
-            "sub_category": "경제",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":7,
-        "fields":{
-            "description": "기념일입니다",
-            "id": 7,
-            "lecture_img": "lectures/daniel-bernard-qjsmpf0aO48-unsplash.jpg",
-            "length": 6,
-            "level": 1,
-            "main_category": "문화",
-            "name": "기념일",
-            "sub_category": "기념일",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":8,
-        "fields":{
-            "description": "과일채소입니다",
-            "id": 8,
             "lecture_img": "lectures/apples-g42bfa8d31_1280.jpg",
             "length": 5,
             "level": 1,
             "main_category": "자연",
             "name": "수어도 한걸음부터 - 과일채소편",
             "sub_category": "과일채소",
-            "theme_category": "카테고리"
+            "theme_category": "수어왕초보"
             }
     },
     {
         "model":"handi.lecture",
-        "pk":9,
+        "pk":5,
         "fields":{
-            "description": "나라입니다",
-            "id": 9,
-            "lecture_img": "lectures/the-globe-609225_1280.jpg",
-            "length": 30,
-            "level": 1,
-            "main_category": "지명",
-            "name": "나라",
-            "sub_category": "나라",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":10,
-        "fields":{
-            "description": "대학교입니다",
-            "id": 10,
-            "lecture_img": "lectures/people-2562626_1280.jpg",
-            "length": 9,
-            "level": 1,
-            "main_category": "지명",
-            "name": "대학교",
-            "sub_category": "대학교",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":11,
-        "fields":{
-            "description": "동물입니다",
-            "id": 11,
+            "description": "다양한 동물들의 수어 표현을 배우며 동물의 다양성을 만나보세요! 이 강의에서는 강아지, 참새, 기린 등 다양한 동물들의 수어 단어를 학습할 수 있습니다. 동물 세계의 수어 단어를 통해 더 풍부한 소통 능력을 키워보세요.",
+            "id": 5,
             "lecture_img": "lectures/cat-ge649a4efb_1280.jpg",
             "length": 10,
             "level": 1,
             "main_category": "자연",
             "name": "수어도 한걸음부터 - 동물편",
             "sub_category": "동물",
+            "theme_category": "수어왕초보"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":6,
+        "fields":{
+            "description": "한국의 풍부한 음식 문화를 배우는 한식 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 비빔밥, 짬뽕, 칼국수 등 다양한 한식 요리와 음식들의 수어 표현을 배웁니다. 시각적 자료를 통해 한국의 맛있는 음식들을 수어로 배워보세요.",
+            "id": 6,
+            "lecture_img": "lectures/food-712665_1280.jpg",
+            "length": 12,
+            "level": 2,
+            "main_category": "식생활",
+            "name": "맛있는 한식",
+            "sub_category": "음식",
+            "theme_category": "실전생활수어"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":7,
+        "fields":{
+            "description": "자연의 아름다움을 담은 자연물 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 하늘, 파도, 바다, 별 등 자연 속의 다양한 요소들의 수어 표현을 배우며 자연의 다양성을 경험합니다. 동영상을 통해 자연물의 수어 단어를 익히고, 자연 환경에서 자유롭게 표현하는 능력을 기르는 기회를 제공합니다",
+            "id": 7,
+            "lecture_img": "lectures/forest-1072828_1280.jpg",
+            "length": 16,
+            "level": 2,
+            "main_category": "자연",
+            "name": "자연과 우리 생활",
+            "sub_category": "자연",
+            "theme_category": "실전생활수어"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":8,
+        "fields":{
+            "description": "한국의 도시들을 배우는 도시 이름 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 대구, 제주도, 여수 등 다양한 도시 이름을 수어로 표현하는 방법을 배울수 있습니다. 도시의 수어 표현을 통해 여러 도시들을 소개하며, 지리적인 지식과 함께 다양한 대화 상황에서 활용할 수 있는 능력을 키워보세요.",
+            "id": 8,
+            "lecture_img": "lectures/business-5475283_1280.jpg",
+            "length": 21,
+            "level": 3,
+            "main_category": "지명",
+            "name": "신나는 도시 생활",
+            "sub_category": "도시",
+            "theme_category": "카테고리"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":9,
+        "fields":{
+            "description": "다양한 직업을 배우는 직업군 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 가수, 요리사, 운동선수 등 다양한 직업의 수어 표현을 배울 수 있습니다. 시각적인 자료와 동영상을 통해 직업들의 수어 단어를 자세히 살펴보며, 다양한 직업에 대한 이해도와 수어 표현력을 함께 높여보세요.",
+            "id": 9,
+            "lecture_img": "lectures/artist-2578454_1280.jpg",
+            "length": 10,
+            "level": 3,
+            "main_category": "사회생활",
+            "name": "다양한 직업군",
+            "sub_category": "직업",
+            "theme_category": "실전생활수어"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":10,
+        "fields":{
+            "description": "다양한 숫자를 수어로 배우는 숫자 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 1부터 10까지의 숫자를 비롯하여 백, 천 등 다양한 수어 표현을 배우고 연습합니다. 동영상을 통해 숫자를 정확히 표현하고 수어로 다양한 수치를 표현하는 능력을 함께 키워보세요.",
+            "id": 10,
+            "lecture_img": "lectures/numbers-gaca222666_640.jpg",
+            "length": 19,
+            "level": 1,
+            "main_category": "개념",
+            "name": "수어도 한걸음부터 - 숫자편",
+            "sub_category": "숫자",
+            "theme_category": "수어왕초보"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":11,
+        "fields":{
+            "description": "자연의 신비로운 식물들을 배우는 식물명 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 무궁화, 거목, 솔잎 등 다양한 식물의 수어 표현을 배우며 식물의 다양성을 탐험합니다. 동영상 통해 식물의 수어 단어를 자세히 익히고, 자연 속 식물들을 더욱 민첩하게 표현할 수 있는 능력을 기르는 기회입니다.",
+            "id": 11,
+            "lecture_img": "lectures/flowers-276014_1280.jpg",
+            "length": 8,
+            "level": 2,
+            "main_category": "자연",
+            "name": "건강한 우리 식물",
+            "sub_category": "식물",
             "theme_category": "카테고리"
         }
     },
@@ -168,29 +168,29 @@
         "model":"handi.lecture",
         "pk":12,
         "fields":{
-            "description": "표현입니다",
+            "description": "다양한 스포츠 종목을 배우며 스포츠 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 배드민턴, 수영, 야구 등 다양한 스포츠의 수어 표현을 배우고 해당 종목의 특징을 이해합니다. 동영상 자료를 통해 스포츠 관련 단어를 확실하게 익히며, 스포츠 대화와 이해력을 향상시키는 능력을 함께 키워보세요.",
             "id": 12,
-            "lecture_img": "lectures/jamie-street-hBzrr6m6-pc-unsplash.jpg",
-            "length": 7,
-            "level": 1,
+            "lecture_img": "lectures/vienna-reyes-qCrKTET_09o-unsplash.jpg",
+            "length": 8,
+            "level": 2,
             "main_category": "문화",
-            "name": "로맨틱한 표현",
-            "sub_category": "로맨틱표현",
-            "theme_category": "카테고리"
+            "name": "건강한 스포츠",
+            "sub_category": "스포츠종류",
+            "theme_category": "실전생활수어"
         }
     },
     {
         "model":"handi.lecture",
         "pk":13,
         "fields":{
-            "description": "몸입니다",
+            "description": "다양한 대학교명을 배우는 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 서울대학교, 고려대학교, 중앙대학교 등 다양한 대학의 수어 표현을 배워봅니다. 시각 자료를 통해 대학교명을 정확하게 표현하고 대학교 커뮤니케이션을 위한 능력을 키워보세요.",
             "id": 13,
-            "lecture_img": "lectures/marina-vitale-t809JJ6r9KA-unsplash.jpg",
-            "length": 18,
-            "level": 1,
-            "main_category": "인간",
-            "name": "몸",
-            "sub_category": "몸",
+            "lecture_img": "lectures/people-2562626_1280.jpg",
+            "length": 9,
+            "level": 3,
+            "main_category": "지명",
+            "name": "우리나라 대학교",
+            "sub_category": "대학교",
             "theme_category": "카테고리"
         }
     },
@@ -198,44 +198,44 @@
         "model":"handi.lecture",
         "pk":14,
         "fields":{
-            "description": "법입니다",
+            "description": "신체의 다양한 부분을 배우는 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 눈, 손, 머리카락 등 다양한 몸의 수어 표현을 배웁니다. 동영상을 통해 몸의 부분을 정확하게 표현하며, 몸에 관한 대화와 이해를 높이는 능력을 함께 키워보세요.",
             "id": 14,
-            "lecture_img": "lectures/justice-2060093_1280.jpg",
-            "length": 9,
+            "lecture_img": "lectures/marina-vitale-t809JJ6r9KA-unsplash.jpg",
+            "length": 14,
             "level": 1,
-            "main_category": "문화",
-            "name": "법",
-            "sub_category": "법",
-            "theme_category": "카테고리"
+            "main_category": "인간",
+            "name": "신체 구석구석",
+            "sub_category": "몸",
+            "theme_category": "실전생활수어"
         }
     },
     {
         "model":"handi.lecture",
         "pk":15,
         "fields":{
-            "description": "사자성어입니다",
+            "description": "병원 환경에서 사용하는 기초 수어 단어를 배우는 강의에 오신 것을 환영합니다! 이 강의에서는 의사, 환자, 상처 등 다양한 의료 용어와 상황을 수어로 표현하는 방법을 배우고 실습합니다. 시각 자료와 동영상을 통해 병원에서의 수어 대화를 스무스하게 이해하고 진행할 수 있는 능력을 함께 키워보세요.",
             "id": 15,
-            "lecture_img": "lectures/china-2542574_1280.jpg",
-            "length": 15,
-            "level": 1,
-            "main_category": "개념",
-            "name": "사자성어",
-            "sub_category": "사자성어",
-            "theme_category": "카테고리"
+            "lecture_img": "lectures/medic-gde9648439_640.jpg",
+            "length": 13,
+            "level": 3,
+            "main_category": "문화",
+            "name": "병원에서 사용하는 기초 수어 - 기본",
+            "sub_category": "병원",
+            "theme_category": "실전생활수어"
         }
     },
     {
         "model":"handi.lecture",
         "pk":16,
         "fields":{
-            "description": "색입니다",
+            "description": "서울의 다양한 구 이름을 배우는 구 이름 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 강남구, 관악구, 마포구 등 서울의 구 이름을 수어로 표현하는 방법을 배우고 실제 상황에서 활용하는 연습을 할 수 있습니다. 시각적 자료와 실습을 통해 서울의 구 이름을 정확하게 표현하고 지역 대화에 자신감을 키울 수 있는 기회입니다.",
             "id": 16,
-            "lecture_img": "lectures/pencils-452238_1280.jpg",
-            "length": 13,
-            "level": 1,
-            "main_category": "개념",
-            "name": "색",
-            "sub_category": "색",
+            "lecture_img": "lectures/korea-7366036_1280.jpg",
+            "length": 14,
+            "level": 3,
+            "main_category": "지명",
+            "name": "서울 구 모음",
+            "sub_category": "서울 구",
             "theme_category": "카테고리"
         }
     },
@@ -243,14 +243,14 @@
         "model":"handi.lecture",
         "pk":17,
         "fields":{
-            "description": "술입니다",
+            "description": "다양한 장소의 수어 단어를 배우는 장소 이름 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 식당, 주유소, 기차역 등 다양한 장소의 수어 표현을 배웁니다. 동영상을 통해 장소 이름을 정확하게 표현하고 다양한 상황에서 활용할 수 있는 능력을 함께 키워보세요.",
             "id": 17,
-            "lecture_img": "lectures/ash-edmonds-fsI-_MRsic0-unsplash.jpg",
-            "length": 5,
-            "level": 1,
-            "main_category": "식생활",
-            "name": "술",
-            "sub_category": "술",
+            "lecture_img": "lectures/munich-1572429_1280.jpg",
+            "length": 16,
+            "level": 2,
+            "main_category": "문화",
+            "name": "우리 주변 다양한 장소",
+            "sub_category": "장소",
             "theme_category": "카테고리"
         }
     },
@@ -258,14 +258,14 @@
         "model":"handi.lecture",
         "pk":18,
         "fields":{
-            "description": "숫자입니다",
+            "description": "다양한 술의 종류를 배우는 술 종류 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 소주, 와인, 위스키 등 다양한 술의 종류의 수어 표현을 배웁니다. 시각적 자료와 동영상을 통해 술의 이름을 정확하게 표현하고 음주 관련 대화와 이해력을 향상시키는 능력을 함께 키워보세요.",
             "id": 18,
-            "lecture_img": "lectures/numbers-gaca222666_640.jpg",
-            "length": 32,
+            "lecture_img": "lectures/ash-edmonds-fsI-_MRsic0-unsplash.jpg",
+            "length": 5,
             "level": 1,
-            "main_category": "개념",
-            "name": "수어도 한걸음부터 - 숫자편",
-            "sub_category": "숫자",
+            "main_category": "식생활",
+            "name": "누가 마신다~ 신나는 음주",
+            "sub_category": "술",
             "theme_category": "카테고리"
         }
     },
@@ -273,13 +273,13 @@
         "model":"handi.lecture",
         "pk":19,
         "fields":{
-            "description": "스포츠전반입니다",
+            "description": "스포츠 해설에 필요한 다양한 수어 단어를 배우는 스포츠 해설 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 코치, 승부차기, 우승 등 스포츠와 관련된 용어를 수어로 표현하는 방법을 배울 수 있습니다. 동영상과 실습을 통해 스포츠 해설에 사용되는 수어 단어를 정확하게 이해할 수 있습니다.",
             "id": 19,
             "lecture_img": "lectures/football-67701_1280.jpg",
-            "length": 13,
-            "level": 1,
+            "length": 10,
+            "level": 2,
             "main_category": "문화",
-            "name": "스포츠전반",
+            "name": "스포츠 해설 수어로 보기",
             "sub_category": "스포츠전반",
             "theme_category": "카테고리"
         }
@@ -287,117 +287,12 @@
     {
         "model":"handi.lecture",
         "pk":20,
-        "fields":{
-            "description": "소프츠경기입니다",
-            "id": 20,
-            "lecture_img": "lectures/vienna-reyes-qCrKTET_09o-unsplash.jpg",
-            "length": 10,
-            "level": 1,
-            "main_category": "문화",
-            "name": "스포츠종류",
-            "sub_category": "스포츠종류",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":21,
-        "fields":{
-            "description": "식물입니다",
-            "id": 21,
-            "lecture_img": "lectures/flowers-276014_1280.jpg",
-            "length": 10,
-            "level": 1,
-            "main_category": "자연",
-            "name": "식물",
-            "sub_category": "식물",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":22,
-        "fields":{
-            "description": "옷입니다",
-            "id": 22,
-            "lecture_img": "lectures/clothesline-804812_1280.jpg",
-            "length": 9,
-            "level": 1,
-            "main_category": "문화",
-            "name": "옷",
-            "sub_category": "옷",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":23,
-        "fields":{
-            "description": "요일입니다",
-            "id": 23,
-            "lecture_img": "lectures/calendar-1990453_1280.jpg",
-            "length": 5,
-            "level": 1,
-            "main_category": "개념",
-            "name": "요일",
-            "sub_category": "요일",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":24,
-        "fields":{
-            "description": "음료입니다",
-            "id": 24,
-            "lecture_img": "lectures/drinks-2578446_1280.jpg",
-            "length": 9,
-            "level": 1,
-            "main_category": "식생활",
-            "name": "음료",
-            "sub_category": "음료",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":25,
-        "fields":{
-            "description": "음식이빈다",
-            "id": 25,
-            "lecture_img": "lectures/food-712665_1280.jpg",
-            "length": 16,
-            "level": 1,
-            "main_category": "식생활",
-            "name": "음식",
-            "sub_category": "음식",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":26,
-        "fields":{
-            "description": "병원 전반입니다",
-            "id": 26,
-            "lecture_img": "lectures/medic-gde9648439_640.jpg",
-            "length": 20,
-            "level": 1,
-            "main_category": "문화",
-            "name": "병원에서 사용하는 기초 수어 - 전반",
-            "sub_category": "병원",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":27,
             "fields":{
-            "description": "병명입니다",
-            "id": 27,
+            "description": "다양한 병명을 배우는 병명 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 골절, 감기, 당뇨병 등 다양한 병명의 수어 표현을 배웁니다. 동영상을 통해 병명을 정확하게 표현하며, 의료 관련 대화와 이해력을 향상시키는 능력을 함께 키워보세요.",
+            "id": 20,
             "lecture_img": "lectures/medic-gde9648439_640_A0x3Uea.jpg",
-            "length": 18,
-            "level": 1,
+            "length": 10,
+            "level": 3,
             "main_category": "문화",
             "name": "병원에서 사용하는 기초 수어 - 병명",
             "sub_category": "병명",
@@ -406,190 +301,152 @@
     },
     {
         "model":"handi.lecture",
-        "pk":28,
+        "pk":21,
         "fields":{
-            "description": "자연물입니다",
-            "id": 28,
-            "lecture_img": "lectures/forest-1072828_1280.jpg",
-            "length": 18,
+            "description": "다양한 결혼 관련 용어를 배우며 결혼 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 신랑, 신부, 결혼식 등 다양한 결혼 관련 단어의 수어 표현을 배우고 의미와 문화를 함께 이해합니다. 시각적 자료와 실습을 통해 결혼 관련 수어 단어를 자유롭게 표현하며, 다양한 결혼 관련 대화와 이해를 높이는 능력을 함께 키워보세요.",
+            "id": 21,
+            "lecture_img": "lectures/wedding-2595862_1280.jpg",
+            "length": 10,
+            "level": 2,
+            "main_category": "문화",
+            "name": "행복한 결혼생활",
+            "sub_category": "결혼",
+            "theme_category": "수어로 국제시장 보기"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":22,
+        "fields":{
+            "description": "음료수의 다양성을 배우는 음료수 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 우유, 커피, 콜라 등 다양한 음료의 수어 표현을 배웁니다. 시각적 자료와 실습을 통해 음료수 단어를 정확하게 표현하며, 음료 주문이나 음료 관련 대화에 자신감을 키우는 능력을 함께 키워보세요.",
+            "id": 22,
+            "lecture_img": "lectures/drinks-2578446_1280.jpg",
+            "length": 8,
             "level": 1,
-            "main_category": "자연",
-            "name": "자연",
-            "sub_category": "자연",
+            "main_category": "식생활",
+            "name": "꿀꺽~꿀꺽~ 음료수",
+            "sub_category": "음료",
             "theme_category": "카테고리"
         }
     },
     {
         "model":"handi.lecture",
-        "pk":29,
+        "pk":23,
         "fields":{
-            "description": "장소입니다",
-            "id": 29,
-            "lecture_img": "lectures/munich-1572429_1280.jpg",
-            "length": 18,
-            "level": 1,
-            "main_category": "지명",
-            "name": "장소",
-            "sub_category": "장소",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":30,
-        "fields":{
-            "description": "도시입니다",
-            "id": 30,
-            "lecture_img": "lectures/business-5475283_1280.jpg",
-            "length": 1,
-            "level": 1,
-            "main_category": "지명",
-            "name": "도시",
-            "sub_category": "도시",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":31,
-        "fields":{
-            "description": "서울입니다",
-            "id": 31,
-            "lecture_img": "lectures/korea-7366036_1280.jpg",
-            "length": 1,
-            "level": 1,
-            "main_category": "지명",
-            "name": "서울",
-            "sub_category": "서울",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":32,
-        "fields":{
-            "description": "직업입니다",
-            "id": 32,
-            "lecture_img": "lectures/artist-2578454_1280.jpg",
-            "length": 16,
-            "level": 1,
-            "main_category": "사회생활",
-            "name": "직업",
-            "sub_category": "직업",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":33,
-        "fields":{
-            "description": "학교입니다",
-            "id": 33,
-            "lecture_img": "lectures/classroom-2093744_1280.jpg",
-            "length": 21,
-            "level": 1,
-            "main_category": "사회생활",
-            "name": "학교",
-            "sub_category": "학교",
-            "theme_category": "카테고리"
-        }
-    },
-    {
-        "model":"handi.lecture",
-        "pk":34,
-        "fields":{
-            "description": "회사입니다",
-            "id": 34,
+            "description": "다양한 회사 관련 용어를 배우는 회사 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 출근, 출장, 근무 등 다양한 회사 환경의 수어 단어를 배우고 관련된 상황에서 활용하는 표현을 익힐 수 있습니다. 시각 자료와를 통해 회사 관련 수어 단어를 자세히 습득하며, 업무 커뮤니케이션에서 능숙하게 수어를 활용하는 능력을 함께 키워보세요.",
+            "id": 23,
             "lecture_img": "lectures/job-5382501_1280.jpg",
-            "length": 19,
-            "level": 1,
+            "length": 13,
+            "level": 3,
             "main_category": "사회생활",
-            "name": "회사",
+            "name": "빨리빨리 회사로",
             "sub_category": "회사",
             "theme_category": "카테고리"
         }
     },
     {
         "model":"handi.lecture",
-        "pk":35,
+        "pk":24,
         "fields":{
-            "description": "가게에서 계산하기",
-            "id": 35,
-            "lecture_img": "lectures/shop.jpg",
-            "length": 1,
-            "level": 1,
-            "main_category": "",
-            "name": "실전 수어 대화 - 가게에서 계산하기",
-            "sub_category": "",
-            "theme_category": "실전 수어 대화"
+            "description": "다양한 학교 관련 용어를 배우는 학교 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 교실, 자습, 학업 등 학교 생활과 관련된 수어 표현을 배우고 실제 상황에서 활용하는 단어을 연습할 수 있습니다. 시각 자료와 동영상을 통해 학교 관련 단어를 정확하게 익히며, 학교 내외 커뮤니케이션에서 수어를 자유롭게 활용하는 능력을 함께 키워보세요.",
+            "id": 24,
+            "lecture_img": "lectures/classroom-2093744_1280.jpg",
+            "length": 11,
+            "level": 3,
+            "main_category": "사회생활",
+            "name": "빨리빨리 학교로",
+            "sub_category": "학교",
+            "theme_category": "카테고리"
         }
     },
     {
         "model":"handi.lecture",
-        "pk":36,
+        "pk":25,
         "fields":{
-            "description": "대중교통 이용하기",
-<<<<<<< Updated upstream
-            "id": 36,
-            "lecture_img": "lectures/taxi.jpg",
-=======
-            "id": 35,
-            "lecture_img": "lectures/subway.jpg",
->>>>>>> Stashed changes
-            "length": 1,
-            "level": 1,
-            "main_category": "",
-            "name": "실전 수어 대화 - 대중교통 이용하기",
-            "sub_category": "",
-            "theme_category": "실전 수어 대화"
-        }
-<<<<<<< Updated upstream
-    },
-    {
-        "model":"handi.lecture",
-        "pk":37,
-        "fields":{
-            "description": "수어로 대화하기",
-            "id": 37,
-            "lecture_img": "lectures/hello.jpg",
-            "length": 1,
-            "level": 1,
-            "main_category": "",
-            "name": "실전 수어 대화 - 수어로 대화하기",
-            "sub_category": "",
-            "theme_category": "실전 수어 대화"
+            "description": "대한민국의 다양한 기념일 수어 단어를 배우는 기념일 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 어린이날, 한글날, 현충일 등 대한민국의 중요한 기념일의 수어 표현을 배우고 문화와 의미를 함께 이해합니다. 시각적 자료를 통해 기념일 관련 수어 단어를 자세히 익히며, 다양한 대화 상황에서 문화적인 표현력을 높이는 능력을 함께 키워보세요.",
+            "id": 25,
+            "lecture_img": "lectures/daniel-bernard-qjsmpf0aO48-unsplash.jpg",
+            "length": 5,
+            "level": 2,
+            "main_category": "문화",
+            "name": "우리나라 기념일",
+            "sub_category": "기념일",
+            "theme_category": "카테고리"
         }
     },
     {
         "model":"handi.lecture",
-        "pk":38,
+        "pk":26,
         "fields":{
-            "description": "지하철 시설 이용하기",
-            "id": 38,
-            "lecture_img": "lectures/subway.jpg",
-            "length": 1,
+            "description": "다양한 감정을 배우는 감정 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 행복, 감동, 후회 등 다양한 감정의 수어 표현을 배웁니다. 시각적 자료를 통해 감정 관련 단어를 정확하게 익히며, 다양한 대화 상황에서 정확하게 자신의 감정을 표현하는 능력을 함께 키워보세요.",
+            "id": 26,
+            "lecture_img": "lectures/smiley-2979107_1280.jpg",
+            "length": 10,
             "level": 1,
-            "main_category": "",
-            "name": "실전 수어 대화 - 지하철 시설 이용하기",
-            "sub_category": "",
-            "theme_category": "실전 수어 대화"
+            "main_category": "인간",
+            "name": "긍정, 부정 감정 모음",
+            "sub_category": "감정",
+            "theme_category": "수어왕초보"
         }
     },
     {
         "model":"handi.lecture",
-        "pk":39,
+        "pk":27,
         "fields":{
-            "description": "지하철 타기",
-            "id": 39,
-            "lecture_img": "lectures/gettime.jpg",
-            "length": 1,
+            "description": "가족 구성원과 관련된 수어 단어를 배우는 가족 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 할아버지, 손녀, 조카 등 다양한 가족 구성원의 수어 표현을 배우고 실제 상황에서 활용하는 단어를 연습합니다. 시각적 자료를 통해 가족 관련 단어를 정확하게 익히며, 가족과의 소통을 더욱 풍요롭게 만드는 능력을 함께 키워보세요.",
+            "id": 27,
+            "lecture_img": "lectures/pexels-fauxels-3184193.jpg",
+            "length": 15,
             "level": 1,
-            "main_category": "",
-            "name": "실전 수어 대화 - 지하철 타기",
-            "sub_category": "",
-            "theme_category": "실전 수어 대화"
+            "main_category": "인간",
+            "name": "대대손손 우리 가족",
+            "sub_category": "가족",
+            "theme_category": "수어왕초보"
         }
-=======
->>>>>>> Stashed changes
+    },
+    {
+        "model":"handi.lecture",
+        "pk":28,
+        "fields":{
+            "description": "다양한 경제 용어를 배우는 경제 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 수입, 탕진, 신용카드 등 경제 관련 용어의 수어 표현을 배우고 경제 개념을 함께 이해합니다. 시각적 자료를 통해 경제 용어를 정확하게 익히며, 경제 관련 대화와 이해력을 높이는 능력을 함께 키워보세요.",
+            "id": 28,
+            "lecture_img": "lectures/money-2696228_1280.jpg",
+            "length": 8,
+            "level": 2,
+            "main_category": "사회생활",
+            "name": "건강한 소비",
+            "sub_category": "경제",
+            "theme_category": "수어로 국제시장 보기"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":29,
+        "fields":{
+            "description": "다양한 법과 법적 용어를 배우는 법 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 판결, 증거, 합의 등 다양한 법과 관련된 용어의 수어 표현을 배우고 법적 개념을 함께 이해합니다. 시각적 자료를 통해 법 관련 단어를 정확하게 익히며, 법적 상황에서의 대화와 이해력을 높이는 능력을 함께 키워보세요.",
+            "id": 29,
+            "lecture_img": "lectures/justice-2060093_1280.jpg",
+            "length": 6,
+            "level": 3,
+            "main_category": "문화",
+            "name": "공정한 법",
+            "sub_category": "법",
+            "theme_category": "수어로 국제시장 보기"
+        }
+    },
+    {
+        "model":"handi.lecture",
+        "pk":30,
+        "fields":{
+            "description": "다양한 의복과 관련된 수어 단어를 배우는 옷 수어 단어 강의에 오신 것을 환영합니다! 이 강의에서는 군복, 잠옷, 구두 등 다양한 의류 및 액세서리의 수어 표현을 배웁니다. 시각적 자료를 통해 의복 관련 단어를 정확하게 익히며, 옷 관련 상황에서의 의사소통을 자유롭게 할 수 있는 능력을 함께 키워보세요.",
+            "id": 30,
+            "lecture_img": "lectures/clothesline-804812_1280.jpg",
+            "length": 9,
+            "level": 2,
+            "main_category": "문화",
+            "name": "멋지고 예쁜 우리 옷",
+            "sub_category": "옷",
+            "theme_category": "수어로 국제시장 보기"
+        }
     }
 ]

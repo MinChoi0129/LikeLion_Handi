@@ -1,25 +1,14 @@
-/* 모달창 구현 */
-const openButton = document.getElementById("open");
-const modal = document.querySelector(".modal");
-const overlay = modal.querySelector(".modalOverlay");
-const closeBtn = document.querySelector("#NoBtn");
+const result_modal = document.querySelector(".resultmodal");
+const result_overlay = result_modal.querySelector(".resultModalOverlay");
+const more_btn = result_modal.querySelector(".moreBtn");
+const rankhome_btn = result_modal.querySelector(".rankHomeBtn");
+const high_score = result_modal.querySelector(".highestScoreTitle");
+const my_score = result_modal.querySelector(".myScoreTitle");
 
-const openModal = () => {
-  modal.classList.remove("hidden");
-};
-
-const closeModal = () => {
-  modal.classList.add("hidden");
-};
-
-
-overlay.addEventListener("click", closeModal);
-closeBtn.addEventListener("click", closeModal);
-openButton.addEventListener("click", openModal);
-
-
-/* '예' 클릭 시 메인 페이지 이동 */
-const yesButton = document.querySelector(".YesBtn");
-yesButton.addEventListener("click", () => {
-    window.location.href = "http://127.0.0.1:8000/";
-});
+function endGame(score) {
+  result_modal.classList.remove("hidden");
+  console.log(score);
+  // 유저 최고 점수 기록
+  //  high_score.innerHTML = high_score.innerHTML + "점";
+  my_score.innerHTML = my_score.innerHTML + score + "점";
+}

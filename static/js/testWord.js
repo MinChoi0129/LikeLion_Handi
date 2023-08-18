@@ -19,6 +19,7 @@ StartBtn.addEventListener("click", ()=>{
 })
 NoBtn.addEventListener("click", ()=> {
     //전 페이지로 이동
+    location.href = "http://localhost:8000/lecture/" + Id + "/";
 })
 
 function QuizRight() {
@@ -106,6 +107,13 @@ No.addEventListener("click", ()=> {
         //초기세팅
         function FillSrc(CurrentIndex) {
             CurrentCount.innerHTML = CurrentIndex+1;
+            console.log(CurrentIndex);
+            if (CurrentIndex == 8){
+                CurrentIndex = 0;
+                console.log(data.type_B_quizzes[CurrentIndex]);
+                ChapterTitle.innerHTML = title;
+                // answer_url = data.type_B_quizzes[CurrentIndex].
+            }
             ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`
             answer_url = data.type_A_quizzes[CurrentIndex].image_urls[0]; //정답url초기화
             shuffle(QuizSelects)
@@ -118,80 +126,6 @@ No.addEventListener("click", ()=> {
         }
 
         FillSrc(CurrentIndex);
-        // if (CurrentIndex+1 <= Math.floor(data.type_A_quizzes.length / 2)) {
-            
-            
-        //     console.log(QuizSelects);
-        //     //제목넣기
-        //     ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[QuizIndex].name}`;
-
-        //     // QuizSelects.forEach((right)=>{
-        //     //     right.addEventListener("click", ()=>{
-        //     //         //정답오답기록 + 정답이면 초록/ 오답이면 빨강 + 오답기록 함수1
-        //     //         //진행바 이동함수
-        //     //         //1초 뒤 다음문제 currentindex +1 되고 나서 원래 selectbox 없애고 settingQuiz()
-        //     //         CurrentIndex++;
-        //     //         UpdateQuiz(CurrentIndex);
-        //     //     })
-        //     // })
-        // } else if (index+1 > Math.floor(data.type_A_quizzes.length / 2)){
-        //     ChapterTitle.innerHTML = title;
-        //     QuizWrap.insertAdjacentHTML('beforeend', typeB);
-        //     // //for문 돌리고   
-        //     let quiz_four = `<video src="${data.type_B_quizzes[QuizIndex].video_url}" muted autoplay loop></video>`;
-        //     document.querySelector('.QuizBox').insertAdjacentHTML('beforeend',quiz_four);
-        //     for(let i =0; i < 5; i++){
-        //         let select_four = `
-        //             <input type="radio" id="select${i+1}" name="wordSelect">
-        //             <label for="select${i+1}"><span>${data.type_B_quizzes[QuizIndex].names[i]}</span></label>
-        //         `;
-
-        //         console.log(select_four);
-        //         document.querySelector('#ver2').insertAdjacentHTML('beforeend', select_four);
-        //     }
-        // }
-        // function UpdateQuiz(index) {
-        //     console.log(index+1 <= Math.floor(data.type_A_quizzes.length / 2));
-        //     if (index+1 <= Math.floor(data.type_A_quizzes.length / 2)) {
-        //         ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[QuizIndex].name}`;
-        //         QuizWrap.insertAdjacentHTML('beforeend', typeA);
-        //         console.log(QuizWrap.innerHTML);
-        //         for(let i =0; i < 5; i++ ){
-        //             let select_five = `
-        //             <input type="radio" id="select${i+1}" name="wordSelect">
-        //             <label for="select${i+1}"><video src="${data.type_A_quizzes[QuizIndex].image_urls[i]}" muted autoplay loop></video></label>
-        //             `;
-        //             document.querySelector('#ver1').insertAdjacentHTML('beforeend', select_five);
-        //         }
-        //         const QuizSelects = document.querySelectorAll('label');
-        //         console.log(QuizSelects);
-        //         QuizSelects.forEach((right)=>{
-        //             right.addEventListener("click", ()=>{
-        //                 //정답오답기록 + 정답이면 초록/ 오답이면 빨강 + 오답기록 함수1
-        //                 //진행바 이동함수
-        //                 //1초 뒤 다음문제 currentindex +1 되고 나서 원래 selectbox 없애고 settingQuiz()
-        //                 CurrentIndex++;
-        //                 UpdateQuiz(CurrentIndex);
-        //             })
-        //         })
-        //     } else if (index+1 > Math.floor(data.type_A_quizzes.length / 2)){
-        //         ChapterTitle.innerHTML = title;
-        //         QuizWrap.insertAdjacentHTML('beforeend', typeB);
-        //         // //for문 돌리고   
-        //         let quiz_four = `<video src="${data.type_B_quizzes[QuizIndex].video_url}" muted autoplay loop></video>`;
-        //         document.querySelector('.QuizBox').insertAdjacentHTML('beforeend',quiz_four);
-        //         for(let i =0; i < 5; i++){
-        //             let select_four = `
-        //                 <input type="radio" id="select${i+1}" name="wordSelect">
-        //                 <label for="select${i+1}"><span>${data.type_B_quizzes[QuizIndex].names[i]}</span></label>
-        //             `;
-
-        //             console.log(select_four);
-        //             document.querySelector('#ver2').insertAdjacentHTML('beforeend', select_four);
-        //         }
-        //     }
-        // };
-        // UpdateQuiz(CurrentIndex);
     })
 
 

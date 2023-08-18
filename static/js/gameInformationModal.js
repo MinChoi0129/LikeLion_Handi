@@ -3,7 +3,6 @@ const openButton = document.getElementById("open");
 const modal = document.querySelector(".modal");
 const overlay = modal.querySelector(".modalOverlay");
 const closeBtn = document.querySelector("#closeBtn");
-const startBtn = document.querySelector(".startBtn");
 
 
 const openModal = () => {
@@ -14,11 +13,6 @@ const closeModal = () => {
   modal.classList.add("hidden");
 };
 
-const startGame = () => {
-  window.open(SERVER_URL + "game/start/", "_blank");
-}
-
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 openButton.addEventListener("click", openModal);
-startBtn.addEventListener("click", startGame);

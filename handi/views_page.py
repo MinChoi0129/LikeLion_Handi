@@ -1,8 +1,20 @@
 from django.shortcuts import render
+from .models import User
+from django.shortcuts import get_object_or_404
 
 
 def main(request):
+    if request.user.is_authenticated:
+        if not request.user.name:
+            users = request.user
+            users.name = request.user.username
+            users.save()
+        return render(request, "index.html")
     return render(request, "index.html")
+
+
+def contact(request):
+    return render(request, "contact.html")
 
 
 def test(request):
@@ -63,4 +75,7 @@ def game(request):
 
 
 def inGame(request):
-    return render(request, "game.html")
+    print(request.user.id)
+    user = get_object_or_404(User, pk=request.user.id)
+    print(user.game_score)
+    return render(request, "game.html", {"user": user})
