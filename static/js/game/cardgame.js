@@ -184,7 +184,7 @@ function loadMatadata(meta_data) {
   URL_data = meta_data;
 }
 <<<<<<< Updated upstream
-const URL = "http://localhost:8000/api/game";
+const URL = "http://101.101.209.37/api/game";
 =======
 const URL = "http://101.101.209.37/api/game";
 >>>>>>> Stashed changes
@@ -216,11 +216,8 @@ setTimeout(() => {
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
-<<<<<<< Updated upstream
 
 
 
 
 
-=======
->>>>>>> Stashed changes

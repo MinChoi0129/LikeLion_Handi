@@ -45,7 +45,7 @@
   let img_element = document.getElementById("test_image_tag");
   let title_element = document.getElementById("test_title");
 
-  fetch("http://127.0.0.1:8000/api/lecture/" + lecture_id + "/")
+  fetch("http://101.101.209.37/api/lecture/" + lecture_id + "/")
     .then((응답) => 응답.json())
     .then((결과) => {
       title_element.innerHTML = 결과.name; // 이렇게 점 찍으면 값을 빼올 수 있음! ex) 결과.name ex) 결과.media_entries[6].image_url 등
@@ -70,14 +70,14 @@
     return cookieValue;
   }
 
-  fetch('http://127.0.0.1:8000/api/logout/')
+  fetch('http://101.101.209.37/api/logout/')
     .then((response) => response.json())
     .then((data) => {
       console.log("로그아웃 중")
       console.log(data)
     })
 
-  fetch('http://127.0.0.1:8000/api/login/', {
+  fetch('http://101.101.209.37/api/login/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -92,7 +92,7 @@
 
   var csrftoken = getCookie('csrftoken');
   console.log(csrftoken);
-  fetch('http://127.0.0.1:8000/api/signup/', {
+  fetch('http://101.101.209.37/api/signup/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

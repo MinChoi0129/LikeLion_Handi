@@ -1,10 +1,6 @@
 let parent_main = document.querySelector(".main");
 
-<<<<<<< Updated upstream
-fetch("http://localhost:8000/api/lecture/" + inshinjia + "/")
-=======
 fetch("http://101.101.209.37/api/lecture/" + inshinjia + "/")
->>>>>>> Stashed changes
   .then((response) => {
     return response.json();
   })

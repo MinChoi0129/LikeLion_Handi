@@ -1,12 +1,4 @@
 // 변수설정
-<<<<<<< Updated upstream
-const ChapterTitle = document.querySelector('.ChapterTitle');
-const CurrentCount = document.querySelector('.CurrentCount');
-const AllCount = document.querySelector('.AllCount');
-const StageBar = document.querySelector('.StageBar');
-const QuizWrap = document.querySelector('.QuizWrap');
-const StopBtn = document.querySelector('.StopBtnBox');
-=======
 const ChapterTitle = document.querySelector(".ChapterTitle");
 const CurrentCount = document.querySelector(".CurrentCount");
 const AllCount = document.querySelector(".AllCount");
@@ -14,8 +6,6 @@ const StageBar = document.querySelector(".StageBar");
 const BackStageBar = document.querySelector(".BackStageBar");
 const QuizWrap = document.querySelector(".QuizWrap");
 const StopBtn = document.querySelector(".StopBtnBox");
->>>>>>> Stashed changes
-
 
 // 퀴즈 시작 전 모달
 const Back = document.querySelector(".Back");
@@ -23,16 +13,6 @@ const StartModal = document.querySelector(".StartModal");
 const StartBtn = document.querySelector(".StartBtn");
 const NoBtn = document.querySelector(".NoStartBtnBox");
 
-<<<<<<< Updated upstream
-StartBtn.addEventListener("click", ()=>{
-    Back.style.display = "none";
-    StartModal.style.display = "none";
-})
-NoBtn.addEventListener("click", ()=> {
-    //전 페이지로 이동
-    location.href = "http://localhost:8000/lecture/" + Id + "/";
-})
-=======
 StartBtn.addEventListener("click", () => {
   Back.style.display = "none";
   StartModal.style.display = "none";
@@ -41,11 +21,8 @@ NoBtn.addEventListener("click", () => {
   //전 페이지로 이동
   location.href = "http://101.101.209.37/lecture/" + Id + "/";
 });
->>>>>>> Stashed changes
 
-function QuizRight() {
-
-}
+function QuizRight() {}
 // 진행바
 
 // 그만풀기 버튼
@@ -54,19 +31,6 @@ const Yes = document.querySelector(".YesBtn");
 const No = document.querySelector(".NoBtn");
 
 StopBtn.addEventListener("click", () => {
-<<<<<<< Updated upstream
-    StopModal.style.display = "flex";
-    Back.style.display = "block";
-})
-Yes.addEventListener("click", ()=> {
-    location.replace("http://localhost:8000/lecture/" + Id + "/")
-})
-No.addEventListener("click", ()=> {
-    StopModal.style.display = "none";
-    Back.style.display = "none";
-})
-
-=======
   StopModal.style.display = "flex";
   Back.style.display = "block";
 });
@@ -77,40 +41,8 @@ No.addEventListener("click", () => {
   StopModal.style.display = "none";
   Back.style.display = "none";
 });
->>>>>>> Stashed changes
-
 
 //ajax 백엔드 연결
-<<<<<<< Updated upstream
-// function settingQuiz()
-    fetch('http://localhost:8000/api/quiz/' + Id + "/")
-	.then((response) => {
-		return response.json()
-		})
-	.then((data) => {
-        const title = data.sub_category;
-        const count = data.length;
-        AllCount.innerHTML = count;
-        // 선다나누기 
-        const typeA = `<div class="QuizVer1">
-        <div class="SelectBox" id="ver1">
-        <input type="radio" id="select1" name="wordSelect">
-        <label for="select1"><video src="" muted autoplay loop></video></label>
-        <input type="radio" id="select2" name="wordSelect">
-        <label for="select2"><video src="" muted autoplay loop></video></label>
-        <input type="radio" id="select3" name="wordSelect">
-        <label for="select3"><video src="" muted autoplay loop></video></label>
-        <input type="radio" id="select4" name="wordSelect">
-        <label for="select4"><video src="" muted autoplay loop></video></label>
-        <input type="radio" id="select5" name="wordSelect">
-        <label for="select5"><video src="" muted autoplay loop></video></label>
-        </div>
-        </div>`;
-        const typeB = `<div class="QuizBox">
-                    </div>
-                    <div class="SelectBox" id="ver2">
-                    </div>`
-=======
 fetch("http://101.101.209.37/api/quiz/" + Id + "/")
   .then((response) => {
     return response.json();
@@ -147,65 +79,9 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
                     <input type="radio" id="select4" name="wordSelect">
                     <label for="select4"></label>
                 </div>`;
->>>>>>> Stashed changes
 
-        console.log(data);
+    console.log(data);
 
-<<<<<<< Updated upstream
-        //변수세팅
-        let CurrentIndex = 0; //현재문제수
-        var wrong_choices = []; //틀린문제배열
-        
-        var answer_url; //정답url
-        QuizWrap.insertAdjacentHTML('beforeend', typeA);
-        const QuizSelects = Array.from(document.querySelectorAll('video'));
-        const QuizLabels = document.querySelectorAll('label');
-        
-        function shuffle(array) {
-            array.sort(() => Math.random() - 0.5);
-        }
-        //정답검사함수
-        const QuizAnswer = (event) => {
-            if(event.target.src == answer_url) {
-                //초록띄우기
-            } else {
-                wrong_choices.push(data.type_A_quizzes[CurrentIndex].name);
-                
-            }
-            CurrentIndex++;
-
-            FillSrc(CurrentIndex); 
-            console.log(wrong_choices);
-        }
-
-        //초기세팅
-        function FillSrc(CurrentIndex) {
-            CurrentCount.innerHTML = CurrentIndex+1;
-            console.log(CurrentIndex);
-            if (CurrentIndex == 8){
-                CurrentIndex = 0;
-                console.log(data.type_B_quizzes[CurrentIndex]);
-                ChapterTitle.innerHTML = title;
-                // answer_url = data.type_B_quizzes[CurrentIndex].
-            }
-            ChapterTitle.innerHTML = `${title} - ${data.type_A_quizzes[CurrentIndex].name}`
-            answer_url = data.type_A_quizzes[CurrentIndex].image_urls[0]; //정답url초기화
-            shuffle(QuizSelects)
-            for(let i=0; i<5; i++) {
-                QuizSelects[i].setAttribute("src", data.type_A_quizzes[CurrentIndex].image_urls[i]);
-                // QuizLabels[i].setAttribute('onclick', QuizAnswer());
-                QuizLabels[i].addEventListener("click", QuizAnswer)
-            }
-            
-        }
-
-        FillSrc(CurrentIndex);
-    })
-
-
-
-
-=======
     //변수세팅
     let CurrentIndex = 0; //현재문제수
     let index = 0;
@@ -315,4 +191,3 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
 
     FillSrc(CurrentIndex);
   });
->>>>>>> Stashed changes
