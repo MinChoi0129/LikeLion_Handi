@@ -12,12 +12,3 @@ function endGame(score) {
   //  high_score.innerHTML = high_score.innerHTML + "점";
   my_score.innerHTML = my_score.innerHTML + score + "점";
 }
-
-function restartGame() {
-  //게임 재시작 코드
-}
-function rankHome() {
-  //홈으로 가는 코드
-}
-more_btn.addEventListener("click", restartGame);
-rankhome_btn.addEventListener("click", rankHome);

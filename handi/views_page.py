@@ -1,9 +1,20 @@
 from django.shortcuts import render
 from .models import User
 from django.shortcuts import get_object_or_404
+
+
 def main(request):
-    print(request.user)
+    if request.user.is_authenticated:
+        if not request.user.name:
+            users = request.user
+            users.name = request.user.username
+            users.save()
+        return render(request, "index.html")
     return render(request, "index.html")
+
+
+def contact(request):
+    return render(request, "contact.html")
 
 
 def test(request):

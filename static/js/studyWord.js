@@ -16,8 +16,26 @@ const QuizBtn = document.querySelector(".QuizBtn");
 
 const StopBtnBox = document.querySelector(".StopBtnBox");
 
+function getCookie(name) {
+  var cookieValue = null;
+  if (document.cookie && document.cookie != '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) == (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+
 //ajax 백엔드 연결
-fetch("http://localhost:8000/api/lecture/" + Id + "/")
+fetch("http://127.0.0.1:8000/api/lecture/" + Id + "/")
   .then((response) => {
     return response.json();
   })
@@ -97,11 +115,27 @@ fetch("http://localhost:8000/api/lecture/" + Id + "/")
       Back.style.display = "block";
 
     });
-    Yes.addEventListener("click", () => {
+    Yes.addEventListener("click", () => {      
+      var percentagea = Math.round((CurrentIndex+1)/count * 100);
+      console.log(percentagea);
+
+      fetch("http://127.0.0.1:8000/api/lecturemanager/update/" + Id + "/", {
+        method: "PATCH",
+        credentials: 'include',
+        headers: {
+            "Content-Type": 'application/x-www-form-urlencoded',
+            'X-CSRFToken': csrftoken,
+        },
+        cache: 'no-cache',
+        mode: 'same-origin',
+        body: new URLSearchParams({percentage: percentagea})
+      })
+      .then((data) => {
+        console.log(data)
+      })
+    
       //이동
       location.replace("http://127.0.0.1:8000/lecture/" + Id + "/");
-      var percentage = Math.round((CurrentIndex+1)/count * 100);
-      console.log(percentage);
     });
     No.addEventListener("click", () => {
       StopModal.style.display = "none";
@@ -110,6 +144,21 @@ fetch("http://localhost:8000/api/lecture/" + Id + "/")
 
     //퀴즈버튼 이동
     QuizBtn.addEventListener("click", ()=>{
+      fetch("http://127.0.0.1:8000/api/lecturemanager/update/" + Id + "/", {
+        method: "PATCH",
+        credentials: 'include',
+        headers: {
+            "Content-Type": 'application/x-www-form-urlencoded',
+            'X-CSRFToken': csrftoken,
+        },
+        cache: 'no-cache',
+        mode: 'same-origin',
+        body: new URLSearchParams({percentage: 100})
+      })
+      .then((data) => {
+        console.log(data)
+      })
+
       location.href = "http://127.0.0.1:8000/lecture/" + Id + "/quiz/word/";
     })
 

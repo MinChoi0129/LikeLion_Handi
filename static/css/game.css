@@ -529,6 +529,7 @@ height: 100%;
     font-size: .9rem;
     color: #fff;
     margin: 0 1.5rem;
+    text-align: center;
   }
 
   .resultModalOverlay{
@@ -631,7 +632,7 @@ height: 100%;
 .RankThreeScore,
 .RankFourScore,
 .RankFiveScore,
-.MyScore {
+.MyScoreInRank {
   right:0;
   justify-content: space-between;
   align-items: center;
@@ -656,21 +657,6 @@ height: 100%;
   color:black;
 }
 
-.MyRank{
-  font-size: 12.5px;
-  color: black;
-  margin-top: 14px;
-  font-weight: 900;
-}
-
-.MyRank .MyScroe{
-  right:0;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  position: absolute;
-  margin-right: 50px;
-}
 
 /* stage 모달창 */
 .stageModal{
@@ -701,3 +687,16 @@ height: 100%;
   color: white;
   z-index: 999999;
   }
+
+  .modalRankContent{
+    padding:30px;
+  }
+
+  .myHighestScore,.myScore,.myRank{
+    padding:10px;
+  }
+  
+  .moreBtn,
+.rankHomeBtn,.yesBtn {
+  line-height: 2.25rem;
+}

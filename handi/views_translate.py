@@ -4,6 +4,9 @@ from jamo import h2j, j2hcj
 from rest_framework.generics import *
 from django.http import JsonResponse, FileResponse
 
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
+
 all_jamo_list = [
     "ㄱ",
     "ㄴ",
@@ -64,8 +67,6 @@ def getSeparatedJaMoList(raw_string: str):
 
 
 def getPathsFromFileNames(jamos: list):
-    BASE_PATH = os.path.dirname(os.path.abspath(__file__))
-    BASE_PATH = BASE_PATH[: BASE_PATH.find("handi") - 1]
     return [
         os.path.join(
             BASE_PATH,
@@ -107,6 +108,21 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
         ] = img
 
         frame_array.append(base_pic)
+
+    start_img = cv2.imread(
+        os.path.join(
+            BASE_PATH, "static", "image", "study", "consonants_vowels", "start"
+        )
+        + ".png"
+    )
+
+    end_img = cv2.imread(
+        os.path.join(BASE_PATH, "static", "image", "study", "consonants_vowels", "end")
+        + ".png"
+    )
+
+    frame_array.insert(0, start_img)
+    frame_array.append(end_img)
     out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"H264"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])

@@ -1,3 +1,6 @@
+
+
+
 let currentScoreNum = document.querySelector(".CurrentScoreNum");
 let highestScoreNum = document.querySelector(".HighestScoreNum");
 function getScore() {
@@ -13,13 +16,13 @@ let level = document.querySelector(".LevelBackground");
 let now_level = 1;
 let cards = document.querySelectorAll(".Cards li");
 function stageChange() {
-  console.log(start, end);
   if (start == end) {
     end = nextstageScore;
     stage += 1;
     nextstageScore += 4;
     now_level += 1;
     level.innerHTML = "Stage " + now_level;
+    openStageModal(now_level);
     cards.forEach((card) => {
       card.classList.remove("flip");
     });
@@ -48,7 +51,6 @@ function stageChange() {
 // 6. 모든 카드가 맞으면 다음 스테이지로 전환
 // 7. 초가 끝나면 모달창으로 결과 보여주기
 function flipCard(e) {
-  console.log(e.target);
   let clickedCard = e.target;
   if (clickedCard !== cardOne && !disableDeck) {
     clickedCard.classList.add("flip");
@@ -152,7 +154,6 @@ let cardOne, cardTwo; // 선택한 카드
 let disableDeck = false;
 //두개의 이미지 비교하기
 function matchCards(Attr1, Attr2) {
-  console.log(check_Attr[Attr1], check_Attr[Attr2]);
   if (check_Attr[Attr1] == Attr2 && check_Attr[Attr2] == Attr1) {
     getScore();
     cardOne.removeEventListener("click", flipCard);
@@ -200,6 +201,7 @@ disableDeck = true;
 cards.forEach((card) => {
   card.classList.add("flip");
 });
+openStageModal(now_level)
 setTimeout(() => {
   cards.forEach((card) => {
     card.classList.remove("flip");
@@ -210,3 +212,8 @@ setTimeout(() => {
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
+
+
+
+
+
