@@ -1,6 +1,3 @@
-
-
-
 let currentScoreNum = document.querySelector(".CurrentScoreNum");
 let highestScoreNum = document.querySelector(".HighestScoreNum");
 function getScore() {
@@ -183,7 +180,7 @@ URL_data = [];
 function loadMatadata(meta_data) {
   URL_data = meta_data;
 }
-const URL = "http://localhost:8000/api/game";
+const URL = "http://127.0.0.1:8000/api/game";
 fetch(URL)
   .then((response) => {
     return response.json();
@@ -212,8 +209,3 @@ setTimeout(() => {
 cards.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
-
-
-
-
-

@@ -51,15 +51,15 @@ html {
     font-size : 16px;
 }
 section {
-		width: 35rem;
-		margin-left: 36rem;
+    width: fit-content;
+    margin: auto;
 }
 
 .logo {
     font-size: 40px;
     font-weight: bolder;
     text-align: center;
-    margin: 100px 30px 30px 200px;
+    margin: 100px 30px 30px 30px;
     font-family: 'Pretendard-ExtraBold';
     padding-top: 20px;
     padding-bottom: 20px;
