@@ -63,9 +63,7 @@
         .querySelectorAll("a");
       const menuLength = menuItem.length;
       for (let i = 0; i < menuLength; i++) {
-        let menuLocation = menuItem[i]
-          .href
-          .split("/");
+        let menuLocation = menuItem[i].href.split("/");
         if (menuLocation[3] == currentLocation) {
           menuItem[i].className = "active";
         } else {

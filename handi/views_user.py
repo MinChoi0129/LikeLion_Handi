@@ -41,7 +41,7 @@ class Signup(ListCreateAPIView):
             response_data = {
                 "username": serializer.data["username"],
                 "name": serializer.data["name"],
-                "phone_number": serializer.data["phone_number"],
+                "email_address": serializer.data["email_address"],
             }
             return Response(response_data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
