@@ -115,7 +115,14 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
         )
         + ".png"
     )
+
+    end_img = cv2.imread(
+        os.path.join(BASE_PATH, "static", "image", "study", "consonants_vowels", "end")
+        + ".png"
+    )
+
     frame_array.insert(0, start_img)
+    frame_array.append(end_img)
     out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"H264"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])
