@@ -31,9 +31,15 @@
 * {
     box-sizing: border-box;
 }
-body, main, div {
+body, main {
+    margin: 0 auto;
+    padding: 0;
+}
+div {
     margin: 0;
     padding: 0;
+    width: fit-content;
+    height: fit-content;
 }
 ol, ul, li {
 		list-style: none;
@@ -51,13 +57,13 @@ html {
     font-size : 16px;
 }
 section {
-		width: 35rem;
-		margin-left: 36rem;
+    width: fit-content;
+    margin: auto;
 }
 .logo {
     font-size: 40px;
     text-align: center;
-    margin: 100px 30px 30px 190px;
+    margin: 100px 30px 30px 290px;
     font-family: 'Pretendard-ExtraBold';
     padding-top: 20px;
     padding-bottom: 20px;
@@ -218,7 +224,7 @@ input:focus {
 
 main {
     width: 100%;
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 170px);
 }
 html,body {
     width: 100%;

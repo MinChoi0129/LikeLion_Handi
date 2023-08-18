@@ -20,85 +20,96 @@ providers_media_js %} {% block content %}
 <body>
   <main>
     <section>
-      <div class="logo">Handi</div>
-      <div class="IdBox">
-        <input
-          type="text"
-          class="id"
-          id="id"
-          name="id"
-          autocomplete="off"
-          placeholder="아이디를 입력하시오."
-        />
-      </div>
-      <div class="PasswordBox">
-        <input
-          type="password"
-          class="password"
-          id="password"
-          name="password"
-          autocomplete="off"
-          placeholder="비밀번호를 입력하시오."
-        />
-      </div>
-      <div class="login">
-        <input
-          type="checkbox"
-          class="CheckBox"
-          id="checkBox"
-          name="checkBox"
-          autocomplete="off"
-        />
-        <div class="LoginText">로그인 유지하기</div>
+      <div>
+        <div class="logo">Handi</div>
+        <div class="IdBox">
+          <input
+            type="text"
+            class="id"
+            id="id"
+            name="id"
+            autocomplete="off"
+            placeholder="아이디를 입력하시오."
+          />
+        </div>
+        <div class="PasswordBox">
+          <input
+            type="password"
+            class="password"
+            id="password"
+            name="password"
+            autocomplete="off"
+            placeholder="비밀번호를 입력하시오."
+          />
+        </div>
+        <div class="login">
+          <input
+            type="checkbox"
+            class="CheckBox"
+            id="checkBox"
+            name="checkBox"
+            autocomplete="off"
+          />
+          <div class="LoginText">로그인 유지하기</div>
+        </div>
+        
+        <button class="LoginBtn" id="loginBtn" name="loginBtn" autocomplete="off" onclick="login()">
+          로그인
+        </button>
+        <div class="text">
+          <div class="q">아직 회원이 아니신가요?</div>
+          &nbsp;
+          <a href="/signup" class="join">회원가입</a>
+        </div>
       </div>
       
-      <button class="LoginBtn" id="loginBtn" name="loginBtn" autocomplete="off" onclick="login()">
-        로그인
-      </button>
-      <div class="text">
-        <div class="q">아직 회원이 아니신가요?</div>
-        &nbsp;
-        <a href="/signup" class="join">회원가입</a>
+      <div>
+        <div class="line">
+          <div class="line1"></div>
+          <div class="or">or</div>
+          <div class="line2"></div>
+        </div>
       </div>
-    </section>
-    <section>
-      <div class="line">
-        <div class="line1"></div>
-        <div class="or">or</div>
-        <div class="line2"></div>
+
+      <div>
+        <div>
+          <a href=" {% provider_login_url 'google' %}"
+          ><button class="google" id="google" name="google" autocomplete="off">
+            <img
+              class="GoogleLogo"
+              src="{% static 'image/login/google.png' %}"
+              alt="google"
+            />
+            구글 계정으로 로그인
+          </button></a
+        >
+        </div>
+        <div>
+          <a href=" {% provider_login_url 'naver' %}"
+          ><button class="naver" id="naver" name="naver" autocomplete="off">
+            <img
+              class="NaverLogo"
+              src="{% static 'image/login/naver.png' %}"
+              alt="naver"
+            />
+            네이버 계정으로 로그인
+          </button></a
+        >
+        </div>
+        <div>
+          <a href=" {% provider_login_url 'kakao' %}"
+          ><button class="kakao" id="kakao" name="kakao" autocomplete="off">
+            <img
+              class="KakaoLogo"
+              src="{% static 'image/login/kakao.png' %}"
+              alt="kakao"
+            />
+            카카오 계정으로 로그인
+          </button></a
+        >
+        </div>
+        
       </div>
-    </section>
-    <section>
-      <a href=" {% provider_login_url 'google' %}"
-        ><button class="google" id="google" name="google" autocomplete="off">
-          <img
-            class="GoogleLogo"
-            src="{% static 'image/login/google.png' %}"
-            alt="google"
-          />
-          구글 계정으로 로그인
-        </button></a
-      >
-      <a href=" {% provider_login_url 'naver' %}"
-        ><button class="naver" id="naver" name="naver" autocomplete="off">
-          <img
-            class="NaverLogo"
-            src="{% static 'image/login/naver.png' %}"
-            alt="naver"
-          />
-          네이버 계정으로 로그인
-        </button></a
-      >
-      <a href=" {% provider_login_url 'kakao' %}"
-        ><button class="kakao" id="kakao" name="kakao" autocomplete="off">
-          <img
-            class="KakaoLogo"
-            src="{% static 'image/login/kakao.png' %}"
-            alt="kakao"
-          />
-          카카오 계정으로 로그인
-        </button></a
-      >
     </section>
   </main>
 </body>
