@@ -7,8 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
     <title>핸디</title>
-    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
     <script>
+      const getCookie = (name) => {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != "") {
+          var cookies = document
+            .cookie
+            .split(";");
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) == name + "=") {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      };
       const logout = () => {
         fetch(SERVER_ADDRESS + "/api/logout/")
           .then((response) => {

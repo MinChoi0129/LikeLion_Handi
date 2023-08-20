@@ -1,16 +1,6 @@
-const getCookie = (name) => {
-  var cookieValue = null;
-  if (document.cookie && document.cookie != "") {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].trim();
-      if (cookie.substring(0, name.length + 1) == name + "=") {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-  return cookieValue;
-};
-
-var SERVER_ADDRESS = "http://101.101.209.37";
+var SERVER_ADDRESS;
+fetch("http://ip.jsontest.com/")
+  .then((response) => response.json())
+  .then((response) => {
+    SERVER_ADDRESS = response.ip;
+  });

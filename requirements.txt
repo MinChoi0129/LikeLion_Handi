@@ -2,7 +2,6 @@ django==4.2.4
 djangorestframework==3.14.0
 django-allauth==0.54.0
 django-cors-headers==4.2.0
-opencv-python==4.8.0.76
 numpy==1.22.3
 jamo==0.4.1
 pillow==10.0.0

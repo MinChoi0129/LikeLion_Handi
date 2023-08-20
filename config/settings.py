@@ -1,17 +1,20 @@
 from pathlib import Path
-import os, json
+import os, json, requests
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-def get_secret(setting):
+def get_secret():
     try:
         secret_file = os.path.join(BASE_DIR, "config", "secrets.json")
         with open(secret_file) as f:
             secrets = json.loads(f.read())
-        return secrets["SECRET_KEY"], secrets["SERVER_ADDRESS"]
+        return (
+            secrets["SECRET_KEY"],
+            requests.get("http://ip.jsontest.com").json()["ip"],
+        )
     except KeyError:
-        error_msg = "Set the {} environment variable".format(setting)
+        error_msg = "Set the environment variable"
         raise ImportError(error_msg)
 
 
