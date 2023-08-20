@@ -1,32 +1,33 @@
-{% extends 'header.html' %} {% load static %} {% block content %}
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>핸디</title>
-  <link rel="stylesheet" href="{% static 'css/situationResult.css' %}" />
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script
-    src="https://kit.fontawesome.com/32afc995e9.js"
-    crossorigin="anonymous"
-  ></script>
-  <script src="{% static 'js/situationresult.js' %}" defer></script>
-</head>
-<body>
-  <main>
-    <section>
-      <h2 class="ChapterTitle">수어로 친구 사귀기 - 첫만남 편</h2>
-      <div class="SentenceBox">
-        <p>안녕. 만나서 반가워.</p>
-      </div>
-      <div class="CharthWrap">
-        <div class="ChartBar" data-percent="66"></div>
-      </div>
-      <p class="Success">학습이 완료되었습니다.</p>
-      <div class="BtnWrap">
-        <button class="RetryBtn">다시 학습하기</button>
-        <button class="NextBtn">다음 문장 학습하기</button>
-      </div>
-    </section>
-  </main>
-</body>
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>핸디</title>
+    <link rel="stylesheet" href="{% static 'css/situationResult.css' %}"/>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/situationresult.js' %}" defer="defer"></script>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <h2 class="ChapterTitle">수어로 친구 사귀기 - 첫만남 편</h2>
+        <div class="SentenceBox">
+          <p>안녕. 만나서 반가워.</p>
+        </div>
+        <div class="CharthWrap">
+          <div class="ChartBar" data-percent="66"></div>
+        </div>
+        <p class="Success">학습이 완료되었습니다.</p>
+        <div class="BtnWrap">
+          <button class="RetryBtn">다시 학습하기</button>
+          <button class="NextBtn">다음 문장 학습하기</button>
+        </div>
+      </section>
+    </main>
+  </body>
 {% endblock %}

@@ -50,6 +50,7 @@ class LectureManager(models.Model):
     # def __str__(self):
     #     return self.user.username
 
+
 class QuizResult(models.Model):
     user = models.ForeignKey(User, related_name="quiz_user", on_delete=models.CASCADE)
     lecture = models.ForeignKey(

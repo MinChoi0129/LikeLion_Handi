@@ -2,6 +2,7 @@ from pathlib import Path
 import os, json
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+SERVER_ADDRESS = "http://101.101.209.37"
 
 
 def get_secret(setting):

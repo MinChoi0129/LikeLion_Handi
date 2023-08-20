@@ -1,72 +1,73 @@
-{% extends 'header.html' %} {% load static %} {% block content %}
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>핸디</title>
-  <link rel="stylesheet" href="{% static 'css/situationQuiz.css' %}" />
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script
-    src="https://kit.fontawesome.com/32afc995e9.js"
-    crossorigin="anonymous"
-  ></script>
-  <script src="{% static 'js/testSituation.js' %}" defer></script>
-</head>
-<body>
-  <div class="Back"></div>
-  <main>
-    <section>
-      <h2 class="ChapterTitle">수어로 친구 사귀기 - 첫만남 편</h2>
-      <div class="QuizInfo">빈칸에 알맞는 단어의 수어영상을 선택해주세요.</div>
-      <div class="QuizWrap">
-        <div class="StageBarWrap">
-          <div class="StageBar active"></div>
-          <div class="StageBar"></div>
-        </div>
-        <div class="QuizBox">
-          <p class="QuizSentence">____. 만나서 반가워.</p>
-        </div>
-        <div class="SelectWrap">
-          <div class="SelectNumber">
-            <div class="Number">1</div>
-            <div class="Number">2</div>
-            <div class="Number">3</div>
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>핸디</title>
+    <link rel="stylesheet" href="{% static 'css/situationQuiz.css' %}"/>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/testSituation.js' %}" defer="defer"></script>
+  </head>
+
+  <body>
+    <div class="Back"></div>
+    <main>
+      <section>
+        <h2 class="ChapterTitle">수어로 친구 사귀기 - 첫만남 편</h2>
+        <div class="QuizInfo">빈칸에 알맞는 단어의 수어영상을 선택해주세요.</div>
+        <div class="QuizWrap">
+          <div class="StageBarWrap">
+            <div class="StageBar active"></div>
+            <div class="StageBar"></div>
           </div>
-          <div class="SelectBox">
-            <input type="radio" id="select1" name="sentenceSelect" />
-            <label for="select1">
-              <div class="CheckBack"></div>
-              <video></video>
-            </label>
-            <input type="radio" id="select2" name="sentenceSelect" />
-            <label for="select2">
-              <div class="CheckBack"></div>
-              <video></video>
-            </label>
-            <input type="radio" id="select3" name="sentenceSelect" />
-            <label for="select3">
-              <div class="CheckBack"></div>
-              <video></video>
-            </label>
+          <div class="QuizBox">
+            <p class="QuizSentence">____. 만나서 반가워.</p>
+          </div>
+          <div class="SelectWrap">
+            <div class="SelectNumber">
+              <div class="Number">1</div>
+              <div class="Number">2</div>
+              <div class="Number">3</div>
+            </div>
+            <div class="SelectBox">
+              <input type="radio" id="select1" name="sentenceSelect"/>
+              <label for="select1">
+                <div class="CheckBack"></div>
+                <video></video>
+              </label>
+              <input type="radio" id="select2" name="sentenceSelect"/>
+              <label for="select2">
+                <div class="CheckBack"></div>
+                <video></video>
+              </label>
+              <input type="radio" id="select3" name="sentenceSelect"/>
+              <label for="select3">
+                <div class="CheckBack"></div>
+                <video></video>
+              </label>
+            </div>
           </div>
         </div>
+        <div class="RetryBtnBox">
+          <button class="RetryBtn">재학습 하기</button>
+        </div>
+        <div class="StopBtnBox">
+          <button class="StopBtn">학습 종료</button>
+        </div>
+      </section>
+      <!-- modal -->
+      <div class="StopModal">
+        <p class="ModalText">
+          학습 종료 시 처음부터 학습이 시작됩니다.<br/>학습을 종료하시겠습니까?
+        </p>
+        <div class="BtnBox">
+          <button class="YesBtn">예</button>
+          <button class="NoBtn">아니오</button>
+        </div>
       </div>
-      <div class="RetryBtnBox">
-        <button class="RetryBtn">재학습 하기</button>
-      </div>
-      <div class="StopBtnBox">
-        <button class="StopBtn">학습 종료</button>
-      </div>
-    </section>
-    <!-- modal -->
-    <div class="StopModal">
-      <p class="ModalText">
-        학습 종료 시 처음부터 학습이 시작됩니다.<br />학습을 종료하시겠습니까?
-      </p>
-      <div class="BtnBox">
-        <button class="YesBtn">예</button>
-        <button class="NoBtn">아니오</button>
-      </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 {% endblock %}

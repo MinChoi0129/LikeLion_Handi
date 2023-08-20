@@ -1,57 +1,58 @@
-{% extends 'header.html' %} {% load static %} {% block content %}
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>핸디</title>
-  <link rel="stylesheet" href="{% static 'css/wordQuiz.css' %}" />
-  <script
-    src="https://kit.fontawesome.com/32afc995e9.js"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    var Id = "{{lecture_id}}";
-  </script>
-  <script src="{% static 'js/testWord.js' %}" defer></script>
-</head>
-<body>
-  <div class="Back"></div>
-  <main>
-    <!-- modal -->
-    <div class="StartModal">
-      <p class="ModalText">퀴즈 풀이를 시작합니다.</p>
-      <div class="BtnBox">
-        <button class="StartBtn">시작</button>
-        <div class="NoStartBtnBox">
-          <button class="NoStartBtn">안 할래요</button>
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>핸디</title>
+    <link rel="stylesheet" href="{% static 'css/wordQuiz.css' %}"/>
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script>
+      var Id = "{{lecture_id}}";
+    </script>
+    <script src="{% static 'js/testWord.js' %}" defer="defer"></script>
+  </head>
+
+  <body>
+    <div class="Back"></div>
+    <main>
+      <!-- modal -->
+      <div class="StartModal">
+        <p class="ModalText">퀴즈 풀이를 시작합니다.</p>
+        <div class="BtnBox">
+          <button class="StartBtn">시작</button>
+          <div class="NoStartBtnBox">
+            <button class="NoStartBtn">안 할래요</button>
+          </div>
         </div>
       </div>
-    </div>
-    <section>
-      <h2 class="ChapterTitle"></h2>
-      <div class="TestCount">
-        <p class="CurrentCount"></p>
-        /
-        <p class="AllCount"></p>
-        <span>문제</span>
-      </div>
-      <div class="StageBarWrap">
-        <div class="BackStageBar">
-          <div class="StageBar"></div>
+      <section>
+        <h2 class="ChapterTitle"></h2>
+        <div class="TestCount">
+          <p class="CurrentCount"></p>
+          /
+          <p class="AllCount"></p>
+          <span>문제</span>
+        </div>
+        <div class="StageBarWrap">
+          <div class="BackStageBar">
+            <div class="StageBar"></div>
+          </div>
+        </div>
+        <div class="QuizWrap"></div>
+        <div class="StopBtnBox">
+          <button class="StopBtn">그만 풀기</button>
+        </div>
+      </section>
+      <!-- modal -->
+      <div class="StopModal">
+        <p class="ModalText">퀴즈를 그만두시겠습니까?</p>
+        <div class="BtnBox">
+          <button class="YesBtn">예</button>
+          <button class="NoBtn">아니오</button>
         </div>
       </div>
-      <div class="QuizWrap"></div>
-      <div class="StopBtnBox">
-        <button class="StopBtn">그만 풀기</button>
-      </div>
-    </section>
-    <!-- modal -->
-    <div class="StopModal">
-      <p class="ModalText">퀴즈를 그만두시겠습니까?</p>
-      <div class="BtnBox">
-        <button class="YesBtn">예</button>
-        <button class="NoBtn">아니오</button>
-      </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 {% endblock %}

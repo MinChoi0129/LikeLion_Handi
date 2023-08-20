@@ -1,7 +1,7 @@
 from rest_framework.generics import *
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Lecture , QuizResult
+from .models import Lecture, QuizResult
 from random import shuffle
 from collections import deque
 from .serializers import QuizResultSerializer
@@ -66,6 +66,7 @@ class Quiz(RetrieveAPIView):
             status=status.HTTP_200_OK,
         )
 
+
 class QuizResults(ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         print(request.user.id)
@@ -88,7 +89,8 @@ class QuizResults(ListCreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-    
+
+
 class QuizResultDelete(DestroyAPIView):
     def delete(self, request, *args, **kwargs):
         quizresult = QuizResult.objects.filter(
