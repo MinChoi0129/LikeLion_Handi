@@ -1,6 +1,1 @@
-var SERVER_ADDRESS;
-fetch("http://ip.jsontest.com/")
-  .then((response) => response.json())
-  .then((response) => {
-    SERVER_ADDRESS = response.ip;
-  });
+var SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"

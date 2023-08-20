@@ -9,16 +9,25 @@ def get_secret():
         secret_file = os.path.join(BASE_DIR, "config", "secrets.json")
         with open(secret_file) as f:
             secrets = json.loads(f.read())
-        return (
-            secrets["SECRET_KEY"],
-            requests.get("http://ip.jsontest.com").json()["ip"],
-        )
+
+        return secrets["SECRET_KEY"]
+
     except KeyError:
         error_msg = "Set the environment variable"
         raise ImportError(error_msg)
 
 
-SECRET_KEY, SERVER_ADDRESS = get_secret()
+# SERVER_ADDRESS = "http://" + requests.get("http://ip.jsontest.com").json()["ip"]
+SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"
+
+server_settings_js = os.path.join(BASE_DIR, "static", "js", "SERVER_SETTINGS.js")
+
+with open(server_settings_js, mode="w", encoding="utf-8") as h:
+    new_line = "var SERVER_ADDRESS = " + '"' + SERVER_ADDRESS + '"'
+    h.write(new_line)
+
+
+SECRET_KEY = get_secret()
 ALLOWED_HOSTS = ["*"]
 
 
