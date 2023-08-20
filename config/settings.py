@@ -2,7 +2,6 @@ from pathlib import Path
 import os, json
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SERVER_ADDRESS = "http://101.101.209.37"
 
 
 def get_secret(setting):
@@ -10,13 +9,13 @@ def get_secret(setting):
         secret_file = os.path.join(BASE_DIR, "config", "secrets.json")
         with open(secret_file) as f:
             secrets = json.loads(f.read())
-        return secrets[setting]
+        return secrets["SECRET_KEY"], secrets["SERVER_ADDRESS"]
     except KeyError:
         error_msg = "Set the {} environment variable".format(setting)
         raise ImportError(error_msg)
 
 
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY, SERVER_ADDRESS = get_secret()
 ALLOWED_HOSTS = ["*"]
 
 

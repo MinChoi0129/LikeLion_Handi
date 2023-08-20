@@ -26,11 +26,9 @@ let RankScores = [
   RankFiveScore,
 ];
 
-fetch("http://101.101.209.37/api/users/rank/")
+fetch(SERVER_ADDRESS + "/api/users/rank/")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
-
     if (data["me"][2] > 5) {
       MyRankNum.innerHTML = data["me"][2];
       MyNickname.innerHTML = data["me"][0];
@@ -46,7 +44,7 @@ let MyNickname = document.querySelector(".MyNickname");
 let MyScoreInRank = document.querySelector(".MyScoreInRank");
 let myRankTitle = document.querySelector(".myRankTitle");
 let highestScoreTitle = document.querySelector(".highestScoreTitle");
-fetch("http://101.101.209.37/api/users/rank/")
+fetch(SERVER_ADDRESS + "/api/users/rank/")
   .then((response) => response.json())
   .then((data) => {
     MyScoreInRank.innerHTML += `${data["me"][1]}등`;

@@ -1,68 +1,75 @@
 {% extends 'header.html' %}
 {% load static %}
 {% block content %}
+  {% if user.is_authenticated %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/studyHome.css' %}"/>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <script src="{% static 'js/studyHome.js' %}" defer="defer"></script>
-  </head>
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>핸디</title>
+      <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'css/studyHome.css' %}"/>
+      <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+      <script src="{% static 'js/studyHome.js' %}" defer="defer"></script>
+    </head>
 
-  <body style="overflow-x: hidden">
-    <main>
-      <section class="lectureSection">
-        <!-- <div class="lecturesList"> <div class="title" style="word-break:break-all">진행하고 있는 학습</div> <div class="lectures"></div> </div> <button class="left"><i class="fas fa-chevron-left"></i></button> <button class="right"><i class="fas fa-chevron-right"></i></button> <div class="lecturesList"> <div class="title" style="word-break:break-all">주간 인기 모음</div> <div class="lectures"></div> </div> <button class="left"><i class="fas fa-chevron-left"></i></button> <button class="right"><i class="fas fa-chevron-right"></i></button> -->
+    <body style="overflow-x: hidden">
+      <main>
+        <section class="lectureSection">
 
-        <div class="lecturesList">
-          <div class="title" style="word-break: break-all">수어 왕초보</div>
-          <div class="lectures"></div>
-        </div>
-        <button class="left">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="right">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">수어 왕초보</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-        <div class="lecturesList">
-          <div class="title" style="word-break: break-all">일상 회화 모음</div>
-          <div class="lectures"></div>
-        </div>
-        <button class="left">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="right">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">일상 회화 모음</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-        <div class="lecturesList">
-          <div class="title" style="word-break: break-all">또 다른 회화 모음</div>
-          <div class="lectures"></div>
-        </div>
-        <button class="left">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="right">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </section>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">또 다른 회화 모음</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </section>
 
-      <script>
-        const categoryBtn = document.querySelector(".category");
-        const listContainer = document.querySelector(".list");
+        <script>
+          const categoryBtn = document.querySelector(".category");
+          const listContainer = document.querySelector(".list");
 
-        categoryBtn.addEventListener("click", function () {
-          if (listContainer.style.transform === "translateY(233px)") {
-            listContainer.style.transform = "translateY(0)";
-          } else {
-            listContainer.style.transform = "translateY(233px)";
-          }
-        });
-      </script>
-    </main>
-  </body>
+          categoryBtn.addEventListener("click", function () {
+            if (listContainer.style.transform === "translateY(233px)") {
+              listContainer.style.transform = "translateY(0)";
+            } else {
+              listContainer.style.transform = "translateY(233px)";
+            }
+          });
+        </script>
+      </main>
+    </body>
+  {% else %}
+    <script>
+      window.location.href = "../login"
+    </script>
+  {% endif %}
+
 {% endblock %}

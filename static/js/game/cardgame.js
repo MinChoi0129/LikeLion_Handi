@@ -126,7 +126,6 @@ function randomCardPosition(meta_data) {
     all_data.push([meta_data[i][1], "video"]);
   }
   shuffled_data = shuffleArray(all_data);
-  console.log(shuffled_data);
   for (let i = 0; i < cards.length; i++) {
     // 카드 뒷면에 단어, video url 넣어주기 (아닌건 block 처리)
     if (shuffled_data[i][1] == "word") {
@@ -181,9 +180,7 @@ function loadMatadata(meta_data) {
   URL_data = meta_data;
 }
 
-const URL = "http://101.101.209.37/api/game";
-
-fetch(URL)
+fetch(SERVER_ADDRESS + "/api/game")
   .then((response) => {
     return response.json();
   })

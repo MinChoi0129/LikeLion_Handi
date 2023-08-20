@@ -7,24 +7,6 @@ const BackStageBar = document.querySelector(".BackStageBar");
 const QuizWrap = document.querySelector(".QuizWrap");
 const StopBtn = document.querySelector(".StopBtnBox");
 
-function getCookie(name) {
-  var cookieValue = null;
-  if (document.cookie && document.cookie != "") {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].trim();
-      // Does this cookie string begin with the name we want?
-      if (cookie.substring(0, name.length + 1) == name + "=") {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-  return cookieValue;
-}
-
-var csrftoken = getCookie("csrftoken");
-
 // 퀴즈 시작 전 모달
 const Back = document.querySelector(".Back");
 const StartModal = document.querySelector(".StartModal");
@@ -37,7 +19,7 @@ StartBtn.addEventListener("click", () => {
 });
 NoBtn.addEventListener("click", () => {
   //전 페이지로 이동
-  location.href = "http://101.101.209.37/lecture/" + Id + "/";
+  location.href = SERVER_ADDRESS + "/lecture/" + Id + "/";
 });
 
 // 그만풀기 버튼
@@ -50,7 +32,7 @@ StopBtn.addEventListener("click", () => {
   Back.style.display = "block";
 });
 Yes.addEventListener("click", () => {
-  location.replace("http://101.101.209.37/lecture/" + Id + "/");
+  location.replace(SERVER_ADDRESS + "/lecture/" + Id + "/");
 });
 No.addEventListener("click", () => {
   StopModal.style.display = "none";
@@ -58,7 +40,7 @@ No.addEventListener("click", () => {
 });
 
 //ajax 백엔드 연결
-fetch("http://101.101.209.37/api/quiz/" + Id + "/")
+fetch(SERVER_ADDRESS + "/api/quiz/" + Id + "/")
   .then((response) => {
     return response.json();
   })
@@ -95,8 +77,6 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
                     <label for="select4"></label>
                 </div>`;
 
-    console.log(data);
-
     //변수세팅
     let CurrentIndex = 0; //현재문제수
     let index = 0;
@@ -126,22 +106,20 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
       CurrentIndex++;
 
       FillSrc(CurrentIndex);
-      console.log(wrong_choices);
     };
     const QuizAnswerTypeB = (event, index) => {
       if (event.target.innerHTML == answer_url) {
         //초록띄우기
         if (CurrentIndex + 1 == count) {
           RightPer = Math.round(((count - wrong_choices.length) / count) * 100);
-          console.log(RightPer);
           wrong_choices = wrong_choices.join();
           // wrong_choices, RightPer 보내기
-          fetch("http://101.101.209.37/api/quiz/result/" + Id + "/", {
+          fetch(SERVER_ADDRESS + "/api/quiz/result/" + Id + "/", {
             method: "POST",
             credentials: "include",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
-              "X-CSRFToken": csrftoken,
+              "X-CSRFToken": getCookie("csrftoken"),
             },
             cache: "no-cache",
             mode: "same-origin",
@@ -153,28 +131,22 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
             .then((response) => {
               return response.json();
             })
-            .then((data) => {
-              console.log(data);
-            });
-          location.replace(
-            "http://101.101.209.37/lecture/" + Id + "/result/word"
-          );
+            .then((data) => {});
+          location.replace(SERVER_ADDRESS + "/lecture/" + Id + "/result/word");
           return;
         }
       } else {
         wrong_choices.push(data.type_B_quizzes[index].answer_name);
         if (CurrentIndex + 1 == count) {
           RightPer = Math.round(((count - wrong_choices.length) / count) * 100);
-          console.log(RightPer);
           wrong_choices = wrong_choices.join();
-          console.log(wrong_choices);
           // wrong_choices, RightPer 보내기
-          fetch("http://101.101.209.37/api/quiz/result/" + Id + "/", {
+          fetch(SERVER_ADDRESS + "/api/quiz/result/" + Id + "/", {
             method: "POST",
             credentials: "include",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
-              "X-CSRFToken": csrftoken,
+              "X-CSRFToken": getCookie("csrftoken"),
             },
             cache: "no-cache",
             mode: "same-origin",
@@ -186,18 +158,13 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
             .then((response) => {
               return response.json();
             })
-            .then((data) => {
-              console.log(data);
-            });
-          location.replace(
-            "http://101.101.209.37/lecture/" + Id + "/result/word"
-          );
+            .then((data) => {});
+          location.replace(SERVER_ADDRESS + "/lecture/" + Id + "/result/word");
           return;
         }
       }
       CurrentIndex++;
       FillSrc(CurrentIndex);
-      console.log(wrong_choices);
     };
     //초기세팅
     function FillSrc(CurrentIndex) {
@@ -215,7 +182,6 @@ fetch("http://101.101.209.37/api/quiz/" + Id + "/")
         answer_url = data.type_B_quizzes[CurrentIndex].answer_name;
         const QuizLabelsTypeB = Array.from(document.querySelectorAll("label"));
         const QuizVideo = document.querySelector("video");
-        // console.log(QuizLabelsTypeB);
         shuffle(QuizLabelsTypeB);
         for (let i = 0; i < 4; i++) {
           QuizVideo.setAttribute(

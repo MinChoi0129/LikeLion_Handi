@@ -1,12 +1,9 @@
 //풀페이지슬라이드event
 const down_btn = document.querySelector(".fa-arrow-down");
 
-console.log(down_btn);
-
 down_btn.addEventListener("click", () => {
   var location = document.querySelector(".SecondSection").offsetTop;
 
-  console.log(location);
   window.scrollTo({ top: location, behavior: "smooth" });
 });
 

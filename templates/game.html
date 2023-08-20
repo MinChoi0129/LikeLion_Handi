@@ -5,6 +5,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>핸디</title>
+    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/game.css' %}"/>
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/game/ranking.js' %}" defer="defer"></script>
@@ -34,7 +35,7 @@
         <div class="modalContent">
           <p class="Inform">지금 나가게 되면 랭킹에 적용되지 않습니다.</p>
           <p class="Inform">그래도 홈으로 가시겠습니까?</p>
-          <a class="yesBtn" href="{{SERVER_ADDRESS}}/game">네</a>
+          <a class="yesBtn" href="{{SERVER_ADDRESS}}/game/">네</a>
           <button class="NoBtn" id="NoBtn">아니요</button>
         </div>
       </div>
@@ -58,8 +59,8 @@
             </span>
           </div>
           <p class="rankInform">한번 더 하시겠습니까?</p>
-          <a href="http://101.101.209.37/game/start/" class="moreBtn">한번 더하기</a>
-          <a href="http://101.101.209.37/game/" class="rankHomeBtn">홈으로</a>
+          <a href="{{SERVER_ADDRESS}}/game/start/" class="moreBtn">한번 더하기</a>
+          <a href="{{SERVER_ADDRESS}}/game/" class="rankHomeBtn">홈으로</a>
         </div>
       </div>
 

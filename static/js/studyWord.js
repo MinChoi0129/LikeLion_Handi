@@ -16,33 +16,14 @@ const QuizBtn = document.querySelector(".QuizBtn");
 
 const StopBtnBox = document.querySelector(".StopBtnBox");
 
-function getCookie(name) {
-  var cookieValue = null;
-  if (document.cookie && document.cookie != "") {
-    var cookies = document.cookie.split(";");
-    for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i].trim();
-      // Does this cookie string begin with the name we want?
-      if (cookie.substring(0, name.length + 1) == name + "=") {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-  return cookieValue;
-}
-
-var csrftoken = getCookie("csrftoken");
-
 //ajax 백엔드 연결
-fetch("http://101.101.209.37/api/lecture/" + Id + "/", {
+fetch(SERVER_ADDRESS + "/api/lecture/" + Id + "/", {
   headers: { "Content-Type": "charset=utf-8" },
 })
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    console.log(data);
     const count = `${data.length}`;
     AllCount.innerHTML = count;
     const title = data.sub_category;
@@ -50,7 +31,6 @@ fetch("http://101.101.209.37/api/lecture/" + Id + "/", {
     for (let i = 0; i < data.length; i++) {
       let imgSrc = data.media_entries[i].image_url.slice(7);
       let decodedURL = "/static/" + decodeURIComponent(imgSrc);
-      console.log(decodedURL);
 
       let wrap = `<div class="StudyWrap">
                       <div class="StudyVideo">
@@ -122,24 +102,21 @@ fetch("http://101.101.209.37/api/lecture/" + Id + "/", {
     });
     Yes.addEventListener("click", () => {
       var percentagea = Math.round(((CurrentIndex + 1) / count) * 100);
-      console.log(percentagea);
 
-      fetch("http://101.101.209.37/api/lecturemanager/update/" + Id + "/", {
+      fetch(SERVER_ADDRESS + "/api/lecturemanager/update/" + Id + "/", {
         method: "PATCH",
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          "X-CSRFToken": csrftoken,
+          "X-CSRFToken": getCookie("csrftoken"),
         },
         cache: "no-cache",
         mode: "same-origin",
         body: new URLSearchParams({ percentage: percentagea }),
-      }).then((data) => {
-        console.log(data);
-      });
+      }).then((data) => {});
 
       //이동
-      location.replace("http://101.101.209.37/lecture/" + Id + "/");
+      location.replace(SERVER_ADDRESS + "/lecture/" + Id + "/");
     });
     No.addEventListener("click", () => {
       StopModal.style.display = "none";
@@ -148,20 +125,18 @@ fetch("http://101.101.209.37/api/lecture/" + Id + "/", {
 
     //퀴즈버튼 이동
     QuizBtn.addEventListener("click", () => {
-      fetch("http://101.101.209.37/api/lecturemanager/update/" + Id + "/", {
+      fetch(SERVER_ADDRESS + "/api/lecturemanager/update/" + Id + "/", {
         method: "PATCH",
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          "X-CSRFToken": csrftoken,
+          "X-CSRFToken": getCookie("csrftoken"),
         },
         cache: "no-cache",
         mode: "same-origin",
         body: new URLSearchParams({ percentage: 100 }),
-      }).then((data) => {
-        console.log(data);
-      });
+      }).then((data) => {});
 
-      location.href = "http://101.101.209.37/lecture/" + Id + "/quiz/word/";
+      location.href = SERVER_ADDRESS + "/lecture/" + Id + "/quiz/word/";
     });
   });

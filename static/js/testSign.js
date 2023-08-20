@@ -14,8 +14,6 @@ const StartModal = document.querySelector(".StartModal");
 const StartBtn = document.querySelector(".StartBtn");
 const NoBtn = document.querySelector(".NoStartBtnBox");
 
-console.log(StartModal);
-
 StartBtn.addEventListener("click", () => {
   Back.style.display = "none";
   StartModal.style.display = "none";

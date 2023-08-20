@@ -4,13 +4,11 @@ function goToLectureDetailPage(lecture_id) {
   location.href = location.href + lecture_id;
 }
 
-fetch("http://101.101.209.37/api/lectures/")
+fetch(SERVER_ADDRESS + "/api/lectures/")
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    console.log(data);
-
     lectures = document.querySelectorAll(".lectures");
 
     lecture1 = lectures[0];
@@ -73,12 +71,11 @@ fetch("http://101.101.209.37/api/lectures/")
   });
 
 // lecturemanagers
-// fetch("http://101.101.209.37/api/lecturemanagers/")
+// fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
 //     .then((response) => {
 //         return response.json();
 //     })
 //     .then((data) => {
-//         console.log(data)
 
 //         lectures = document.querySelectorAll(".lectures")
 
