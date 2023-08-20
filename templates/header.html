@@ -1,30 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
     <title>핸디</title>
     <script>
       const logout = () => {
-        fetch("http://127.0.0.1:8000/api/logout/")
-          .then(response => {
-            return response.json()
+        fetch("http://101.101.209.37/api/logout/")
+          .then((response) => {
+            return response.json();
           })
-          .then(response => {
-            console.log(response)
-            window.location.href = "http://127.0.0.1:8000/"
-          })
-      }
+          .then((response) => {
+            console.log(response);
+            window.location.href = "http://101.101.209.37/";
+          });
+      };
     </script>
   </head>
 
   <body>
     <header>
       <a class="Logo" href="/">
-        <img class="lo02" src="{% static 'image/logo/logo2.svg' %}"/>
+        <img class="lo02" src="{% static 'image/logo/logo2.svg' %}" />
       </a>
       <nav>
         <ol>
@@ -46,42 +45,36 @@
         </ol>
       </nav>
       {% if user.is_authenticated %}
-        <button class="SignInBtn" onclick="logout()">LOGOUT</button>
+      <button class="SignInBtn" onclick="logout()">LOGOUT</button>
       {% else %}
-        <a href="/login">
-          <button class="SignInBtn">SIGN IN</button>
-        </a>
+      <a href="/login">
+        <button class="SignInBtn">SIGN IN</button>
+      </a>
       {% endif %}
     </header>
 
     <script type="text/javascript">
-      const currentLocation = location
-        .href
-        .split("/")[3];
-      const menuItem = document
-        .querySelector("ol")
-        .querySelectorAll("a");
+      const currentLocation = location.href.split("/")[3];
+      const menuItem = document.querySelector("ol").querySelectorAll("a");
       const menuLength = menuItem.length;
       for (let i = 0; i < menuLength; i++) {
         let menuLocation = menuItem[i].href.split("/");
         if (menuLocation[3] == currentLocation) {
           menuItem[i].className = "active";
         } else {
-          menuItem[i]
-            .classList
-            .replace("active", 'remove');
+          menuItem[i].classList.replace("active", "remove");
         }
       }
     </script>
     <script>
-      var SERVER_URL = "http://127.0.0.1:8000/"
+      var SERVER_URL = "http://101.101.209.37/";
     </script>
     {% block content %}{% endblock %}
     <footer>
       <div class="FooterBox">
-        <img class="lo02" src="{% static 'image/logo/logo1.svg' %}"/>
+        <img class="lo02" src="{% static 'image/logo/logo1.svg' %}" />
         <div class="Made">
-          ⓒ 멋쟁이사자처럼 11기 at 경상국립대<br/>
+          ⓒ 멋쟁이사자처럼 11기 at 경상국립대<br />
           백종화 이민재 변신우 신지아 강지희 김민지
         </div>
       </div>
@@ -95,5 +88,4 @@
       </div>
     </footer>
   </body>
-
 </html>

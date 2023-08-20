@@ -18,24 +18,26 @@ const StopBtnBox = document.querySelector(".StopBtnBox");
 
 function getCookie(name) {
   var cookieValue = null;
-  if (document.cookie && document.cookie != '') {
-      var cookies = document.cookie.split(';');
-      for (var i = 0; i < cookies.length; i++) {
-          var cookie = cookies[i].trim();
-          // Does this cookie string begin with the name we want?
-          if (cookie.substring(0, name.length + 1) == (name + '=')) {
-              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-              break;
-          }
+  if (document.cookie && document.cookie != "") {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].trim();
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) == name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
       }
+    }
   }
   return cookieValue;
 }
 
-var csrftoken = getCookie('csrftoken');
+var csrftoken = getCookie("csrftoken");
 
 //ajax 백엔드 연결
-fetch("http://127.0.0.1:8000/api/lecture/" + Id + "/")
+fetch("http://101.101.209.37/api/lecture/" + Id + "/", {
+  headers: { "Content-Type": "charset=utf-8" },
+})
   .then((response) => {
     return response.json();
   })
@@ -45,8 +47,11 @@ fetch("http://127.0.0.1:8000/api/lecture/" + Id + "/")
     AllCount.innerHTML = count;
     const title = data.sub_category;
     ChapterTitle.innerHTML = title;
-    for (let i = 0; i< data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       let imgSrc = data.media_entries[i].image_url.slice(7);
+      let decodedURL = "/static/" + decodeURIComponent(imgSrc);
+      console.log(decodedURL);
+
       let wrap = `<div class="StudyWrap">
                       <div class="StudyVideo">
                           <video class='Video' src="${data.media_entries[i].video_url}" muted autoplay loop></video>
@@ -55,10 +60,11 @@ fetch("http://127.0.0.1:8000/api/lecture/" + Id + "/")
                           <div class="StudyWord">
                               <p class="Word">${data.media_entries[i].name}</p>
                           </div>
-                          <img class="StudyImg" src="${"/" + data.media_entries[i].image_url}" alt="${data.media_entries[i].name}"/>
+                          <img class="StudyImg" src="${decodedURL}" alt="${data.media_entries[i].name}"/>
                       </div>
                   </div> `;
-      SliderContainer.insertAdjacentHTML('beforeend', wrap);
+
+      SliderContainer.insertAdjacentHTML("beforeend", wrap);
     }
     // 단어슬라이더
     var CurrentIndex = 0;
@@ -113,29 +119,27 @@ fetch("http://127.0.0.1:8000/api/lecture/" + Id + "/")
     StopBtnBox.addEventListener("click", () => {
       StopModal.style.display = "flex";
       Back.style.display = "block";
-
     });
-    Yes.addEventListener("click", () => {      
-      var percentagea = Math.round((CurrentIndex+1)/count * 100);
+    Yes.addEventListener("click", () => {
+      var percentagea = Math.round(((CurrentIndex + 1) / count) * 100);
       console.log(percentagea);
 
-      fetch("http://127.0.0.1:8000/api/lecturemanager/update/" + Id + "/", {
+      fetch("http://101.101.209.37/api/lecturemanager/update/" + Id + "/", {
         method: "PATCH",
-        credentials: 'include',
+        credentials: "include",
         headers: {
-            "Content-Type": 'application/x-www-form-urlencoded',
-            'X-CSRFToken': csrftoken,
+          "Content-Type": "application/x-www-form-urlencoded",
+          "X-CSRFToken": csrftoken,
         },
-        cache: 'no-cache',
-        mode: 'same-origin',
-        body: new URLSearchParams({percentage: percentagea})
-      })
-      .then((data) => {
-        console.log(data)
-      })
-    
+        cache: "no-cache",
+        mode: "same-origin",
+        body: new URLSearchParams({ percentage: percentagea }),
+      }).then((data) => {
+        console.log(data);
+      });
+
       //이동
-      location.replace("http://127.0.0.1:8000/lecture/" + Id + "/");
+      location.replace("http://101.101.209.37/lecture/" + Id + "/");
     });
     No.addEventListener("click", () => {
       StopModal.style.display = "none";
@@ -143,45 +147,21 @@ fetch("http://127.0.0.1:8000/api/lecture/" + Id + "/")
     });
 
     //퀴즈버튼 이동
-    QuizBtn.addEventListener("click", ()=>{
-      fetch("http://127.0.0.1:8000/api/lecturemanager/update/" + Id + "/", {
+    QuizBtn.addEventListener("click", () => {
+      fetch("http://101.101.209.37/api/lecturemanager/update/" + Id + "/", {
         method: "PATCH",
-        credentials: 'include',
+        credentials: "include",
         headers: {
-            "Content-Type": 'application/x-www-form-urlencoded',
-            'X-CSRFToken': csrftoken,
+          "Content-Type": "application/x-www-form-urlencoded",
+          "X-CSRFToken": csrftoken,
         },
-        cache: 'no-cache',
-        mode: 'same-origin',
-        body: new URLSearchParams({percentage: 100})
-      })
-      .then((data) => {
-        console.log(data)
-      })
+        cache: "no-cache",
+        mode: "same-origin",
+        body: new URLSearchParams({ percentage: 100 }),
+      }).then((data) => {
+        console.log(data);
+      });
 
-      location.href = "http://127.0.0.1:8000/lecture/" + Id + "/quiz/word/";
-    })
-
-    // //ajax patch 보내기
-
-    // fetch("http://localhost:8000/api/lecturemanager/" + Id + "/"), {
-    //   method: "PATCH",
-    //   headers: {
-    //       "Content-Type": "application/json; charset=UTF-8",
-    //   },
-    //   cache: 'no-cache',
-    //   body: JSON.stringify(percentage),
-    // }
-    // .then((response) => response.json())
-    // .then((data) => {
-
-    //   // [콜백 반환]
-    //   callback(true, data)
-    // })
+      location.href = "http://101.101.209.37/lecture/" + Id + "/quiz/word/";
+    });
   });
-  
-
-
-
-
-

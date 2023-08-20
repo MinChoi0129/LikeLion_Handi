@@ -6,7 +6,7 @@ let minusTime = 75 / 60;
 
 function updateTimeBar() {
   const fullWidth = 75;
-  const remainingWidth = fullWidth - ((60 - timeLeft) * minusTime);
+  const remainingWidth = fullWidth - (60 - timeLeft) * minusTime;
   timeBar.style.width = `${remainingWidth}rem`;
 }
 

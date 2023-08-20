@@ -17,10 +17,6 @@ def contact(request):
     return render(request, "contact.html")
 
 
-def test(request):
-    return render(request, "test.html")
-
-
 def login(request):
     return render(request, "login.html")
 
@@ -34,7 +30,7 @@ def translate(request):
 
 
 def lecture(request):
-    return render(request, "studyHome2.html")
+    return render(request, "studyHome.html")
 
 
 def inLecture(request, lecture_id):

@@ -1,325 +1,348 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main, div {
-    margin: 0;
-    padding: 0;
+body,
+main,
+div {
+  margin: 0;
+  padding: 0;
 }
-ol, ul,li {
-	list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    width: 100%;
-    min-height: calc(100vh - 150px);
+  width: 100%;
+  min-height: calc(100vh - 150px);
 }
-html,body {
-    width: 100%;
+html,
+body {
+  width: 100%;
 }
 section {
-    width: 100%;
+  width: 100%;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-    height : auto;
-    min-height: 100%;
-    /* padding-bottom: 75px; */
-
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  height: auto;
+  min-height: 100%;
+  /* padding-bottom: 75px; */
 }
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /*배경*/
 .Circle1 {
-    width: 35rem;
-    height: 35rem;
+  width: 35rem;
+  height: 35rem;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background-color: rgba(0,0,0,.5);
-    mix-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: overlay;
 
-    position: absolute;
-    right:-5rem; top:-18rem;
+  position: absolute;
+  right: -5rem;
+  top: -18rem;
 }
 .Circle2 {
-    width: 25rem;
-    height: 25rem;
+  width: 25rem;
+  height: 25rem;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background-color: rgba(0,0,0,.5);
-    mix-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: overlay;
 
-    position: absolute;
-    right:35%; top:8rem;
+  position: absolute;
+  right: 35%;
+  top: 8rem;
 }
 .Circle3 {
-    width: 10rem;
-    height: 10rem;
+  width: 10rem;
+  height: 10rem;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background-color: rgba(0,0,0,.5);
-    mix-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: overlay;
 
-    position: absolute;
-    right:15rem; top:22rem;
+  position: absolute;
+  right: 15rem;
+  top: 22rem;
 }
 /*첫 섹션*/
-.FirstSection{
-    background: linear-gradient(rgb(255,235,211), rgb(255,255,255));
-    height: 100vh;
+.FirstSection {
+  background: linear-gradient(rgb(255, 235, 211), rgb(255, 255, 255));
+  height: 100vh;
 
-    position: relative;
+  position: relative;
 }
 .SectionWrap {
-    width: 85rem;
-    margin: auto;
+  width: 85rem;
+  margin: auto;
 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .SectionWrap img {
-    width: 42rem;
-    margin-right: 0;
-    margin-top: 7rem;
-    z-index: 1;
+  width: 42rem;
+  margin-right: 0;
+  margin-top: 7rem;
+  z-index: 1;
 }
 .FirstSection .TextWrap {
-    margin: auto 0;
-    padding-top: 2rem;
+  margin: auto 0;
+  padding-top: 2rem;
 }
 .FirstSection .TextWrap .SubText {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.75rem;
-    color: #858585;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.75rem;
+  color: #858585;
 }
 .FirstSection .TextWrap h1 {
-    font-family: 'Pretendard-ExtraBold';
-    font-size: 4.25rem;
-    margin: 1rem 0;
-    margin-bottom: 2.2rem;
+  font-family: "Pretendard-ExtraBold";
+  font-size: 4.25rem;
+  margin: 1rem 0;
+  margin-bottom: 2.2rem;
 }
 .FirstSection .TranslateBtn {
-    width: 150px;
-    height: 50px;
+  width: 150px;
+  height: 50px;
 
-    border: none;
-    border-radius: 12px;
+  border: none;
+  border-radius: 12px;
 
-    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
+  background: linear-gradient(to right, #ffea8d, #ffbd6d);
 
-    margin-right: 2rem;
+  margin-right: 2rem;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.1rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.1rem;
+  color: #fff;
 
-    animation: BtnDown .3s ease-in-out 1 normal forwards;
+  animation: BtnDown 0.3s ease-in-out 1 normal forwards;
 }
 .FirstSection .TranslateBtn:hover {
-    animation: BtnUp .3s ease-in-out 1 normal forwards;
+  animation: BtnUp 0.3s ease-in-out 1 normal forwards;
 }
 .FirstSection .StudyBtnBox {
-    width: 150px;
-    height: 50px;
-    display: inline-block;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
-    padding: 2px;
-    border-radius: 12px;
-    animation: BtnDown .2s ease-in-out 1 normal forwards;
+  width: 150px;
+  height: 50px;
+  display: inline-block;
+  background: linear-gradient(to right, #ffea8d, #ffbd6d);
+  padding: 2px;
+  border-radius: 12px;
+  animation: BtnDown 0.2s ease-in-out 1 normal forwards;
 }
 .FirstSection .StudyBtnBox:hover {
-    animation: BtnUp .2s ease-in-out 1 normal forwards;
+  animation: BtnUp 0.2s ease-in-out 1 normal forwards;
 }
 .FirstSection .StudyBtn {
-    width: 146px;
-    height: 46px;
-    background: #fff;
-    /* padding: 10px; */
-    border: none;
-    border-radius: 10px;
+  width: 146px;
+  height: 46px;
+  background: #fff;
+  /* padding: 10px; */
+  border: none;
+  border-radius: 10px;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.1rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.1rem;
+  color: #ff9a23;
 }
 @keyframes BtnUp {
-    0%{
-        position: relative;
-        top:0px;
-        left:0px;
-    }
-    100%{
-        position: relative;
-        top: -4px;
-        left: -4px;
-    }
+  0% {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    position: relative;
+    top: -4px;
+    left: -4px;
+  }
 }
 @keyframes BtnDown {
-    0%{
-        position: relative;
-        top:-4px;
-        left:-4px;
-    }
-    100%{
-        position: relative;
-        top: 0px;
-        left: 0px;
-    }
+  0% {
+    position: relative;
+    top: -4px;
+    left: -4px;
+  }
+  100% {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
 }
 .fa-arrow-down {
-    font-size: 25px;
-    position: absolute;
-    left: 50%; bottom:3rem;
-    cursor: pointer;
-    
-    animation: arrow-down ease 2s infinite;
+  font-size: 25px;
+  position: absolute;
+  left: 50%;
+  bottom: 3rem;
+  cursor: pointer;
+
+  animation: arrow-down ease 2s infinite;
 }
 @keyframes arrow-down {
-    0%{
-        transform: translateY(0);
-    }
-    30%{
-        transform: translateY(10px);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(10px);
+  }
 }
 
 /*두번째 섹션*/
 .SecondSection {
-    background-color: #FFF;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 
-    position: relative;
+  position: relative;
 }
-.SecondSection .TextWrap{
-    width: 85rem;
-    margin: 0 auto;
+.SecondSection .TextWrap {
+  width: 85rem;
+  margin: 0 auto;
 
-    padding-top: 9rem;
+  padding-top: 9rem;
 
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 
-    padding-left: 3rem;
+  padding-left: 3rem;
 }
 .SecondSection .TextWrap h2 {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.75rem;
-    margin:0;
-    margin-bottom: 1rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2.75rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 .SecondSection .TextWrap .SubText {
-    font-family: 'Pretendard-Medium';
-    font-size: 1.5rem;
-    color: #858585;
-    line-height: 2.25rem;
-    margin-left: 1rem;
+  font-family: "Pretendard-Medium";
+  font-size: 1.5rem;
+  color: #858585;
+  line-height: 2.25rem;
+  margin-left: 1rem;
 }
 .SecondSection .ImgWrap {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    text-align: end;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  text-align: end;
 
-    width: fit-content;
+  width: fit-content;
 
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 15s linear infinite;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
 }
 .SecondSection .ImgWrap:hover {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 .SecondSection .ImgWrap .ImgBox {
-    width: 300px;
-    height: 425px;
+  width: 300px;
+  height: 425px;
 
-    position: relative;
+  position: relative;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    margin: 0.75rem;
-    
-    transition: all .2s ease;
+  margin: 0.75rem;
+
+  transition: all 0.2s ease;
 }
 .SecondSection .ImgWrap .ImgBox:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-.ImgBox:nth-child(2), .ImgBox:nth-child(4), .ImgBox:nth-child(6),.ImgBox:nth-child(8), .ImgBox:nth-child(10), .ImgBox:nth-child(12){
-    position: relative;
-    top: 2rem;
+.ImgBox:nth-child(2),
+.ImgBox:nth-child(4),
+.ImgBox:nth-child(6),
+.ImgBox:nth-child(8),
+.ImgBox:nth-child(10),
+.ImgBox:nth-child(12) {
+  position: relative;
+  top: 2rem;
 }
 .SecondSection .ImgBox img {
-    width: 300px;
-    height: 425px;
-    
-    border-radius: 20px;
+  width: 300px;
+  height: 425px;
+
+  border-radius: 20px;
 }
 .SecondSection .ImgBox .point {
-    position: absolute;
-    right: 1.25rem;
+  position: absolute;
+  right: 1.25rem;
 
-    font-family: 'Pretendard-Regular';
-    font-size: 0.9rem;
-    color: #fff;
+  font-family: "Pretendard-Regular";
+  font-size: 0.9rem;
+  color: #fff;
 }
 /* 슬라이더 */
 @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-43.4%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-43.4%);
+  }
 }
 
 header {
-    background-color: transparent;
+  background-color: transparent;
 }

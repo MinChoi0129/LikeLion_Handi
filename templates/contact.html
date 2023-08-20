@@ -1,22 +1,32 @@
-{% extends 'header.html' %}{% load static %}
-{% block content %}
+{% extends 'header.html' %}{% load static %} {% block content %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/login.js' %}" defer="defer"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/login.js' %}" defer="defer"></script>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+</head>
 
-  <body>
-    <main>
-      <section>
-        <div class="logo">팀 - 뭐라캐쌌노</div>
-        <img width="800px" src="{% static 'image/contact/what_did_you_say.jpg' %}"/>
-      </section>
-    </main>
-  </body>
+<body>
+  <main>
+    <section>
+      <div class="logo">팀 - 뭐라캐쌌노</div>
+      <img
+        width="800px"
+        src="{% static 'image/contact/what_did_you_say.jpg' %}"
+      />
+    </section>
+  </main>
+</body>
 {% endblock %}

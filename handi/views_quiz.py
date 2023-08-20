@@ -1,9 +1,10 @@
 from rest_framework.generics import *
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Lecture
+from .models import Lecture , QuizResult
 from random import shuffle
 from collections import deque
+from .serializers import QuizResultSerializer
 
 
 class Quiz(RetrieveAPIView):
@@ -64,3 +65,34 @@ class Quiz(RetrieveAPIView):
             },
             status=status.HTTP_200_OK,
         )
+
+class QuizResults(ListCreateAPIView):
+    def get(self, request, *args, **kwargs):
+        print(request.user.id)
+        quizresult = QuizResult.objects.filter(
+            user=request.user.id, lecture=kwargs["lecture_id"]
+        )
+        serializer = QuizResultSerializer(quizresult, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        print(request.user.id)
+        serializer = QuizResultSerializer(
+            data={
+                "user": request.user.id,
+                "lecture": kwargs["lecture_id"],
+                "RightPer": request.data["RightPer"],
+                "wrong_choices": request.data["wrong_choices"],
+            }
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+class QuizResultDelete(DestroyAPIView):
+    def delete(self, request, *args, **kwargs):
+        quizresult = QuizResult.objects.filter(
+            user=request.user.id, lecture=kwargs["lecture_id"]
+        )
+        quizresult.delete()
+        return Response({"success": True}, status=status.HTTP_204_NO_CONTENT)

@@ -14,4 +14,3 @@ const closeModal = () => {
 overlay.addEventListener("click", closeModal);
 closeBtn.addEventListener("click", closeModal);
 openButton.addEventListener("click", openModal);
-

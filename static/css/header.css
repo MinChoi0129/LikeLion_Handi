@@ -1,174 +1,183 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
-ol, ul,li {
-	list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 /*헤더*/
 header {
-    position: fixed;
-    left:0; top:0;
-    background-color: #fff;
-    /* backdrop-filter: blur(10px); */
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  /* backdrop-filter: blur(10px); */
 
-    width: 100%;
-    height: 85px;
+  width: 100%;
+  height: 85px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    z-index: 99999;
+  z-index: 99999;
 }
 header nav {
-    padding-right: 10rem;
+  padding-right: 10rem;
 }
-header li a{
-    font-family: 'Pretendard-Medium';
-    font-size: 1.15rem;
+header li a {
+  font-family: "Pretendard-Medium";
+  font-size: 1.15rem;
 
-    margin: 0 2.5rem;
+  margin: 0 2.5rem;
 
-    transition: all .2s ease-in-out;
-    cursor: pointer;
-    position: relative;
-    padding: 0 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  padding: 0 10px;
 }
 header li a:after {
-    content: "";
-    position: absolute;
-    background-color: #FF9A23;
-    height: 3px;
-    width:0;
-    left:0;
-    bottom: -10px;
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  background-color: #ff9a23;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
 }
 header li a:hover:after {
-    width: 100%;
+  width: 100%;
 }
 header li a:hover {
-    color:#FF9A23;
+  color: #ff9a23;
 }
 header li a.active {
-    color: #FF9A23;
+  color: #ff9a23;
 }
 header li a.active::after {
-    content: "";
-    position: absolute;
-    background-color: #FF9A23;
-    height: 3px;
-    width:100%;
-    left:0;
-    bottom: -10px;
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  background-color: #ff9a23;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
 }
 header .SignInBtn {
-    font-family: 'Pretendard-Regular';
-    font-size: 1.1rem;
-    letter-spacing :0.5px;
+  font-family: "Pretendard-Regular";
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 
-    width: 120px;
-    height: 45px;
+  width: 120px;
+  height: 45px;
 
-    background-color: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 
-    border:none;
-    border-radius: 15px;
-    box-shadow: 0 0 8px 0px rgba(255, 154, 35,0.25);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 8px 0px rgba(255, 154, 35, 0.25);
 
-    margin-right: 3.25rem;
+  margin-right: 3.25rem;
 
-    color:#FF9A23;
+  color: #ff9a23;
 }
 
 /*로고*/
 .Logo {
-    margin-left: 4.25rem;
+  margin-left: 4.25rem;
 }
 .Logo .lo02 {
-    width: 4.75rem;
-    height: auto;
+  width: 4.75rem;
+  height: auto;
 }
 /*푸터*/
 footer {
-    position : relative;
-    background-color: #1e1e1e;
-    width: 100%;
-    height: 70px;
+  position: relative;
+  background-color: #1e1e1e;
+  width: 100%;
+  height: 70px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer .FooterBox {
-    margin: 0 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 footer img {
-    width: 2.25rem;
-    height: auto;
+  width: 2.25rem;
+  height: auto;
 
-    margin-right: 1rem;
-    margin-left: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 footer .Made {
-    font-family: 'Pretendard-Medium';
-    font-size: 0.9rem;
-    line-height: 22px;
-    color: #858585;
+  font-family: "Pretendard-Medium";
+  font-size: 0.9rem;
+  line-height: 22px;
+  color: #858585;
 }
 footer .SnsIconBox {
-    margin-right: 2rem;
-    display: flex;
+  margin-right: 2rem;
+  display: flex;
 }
 footer i {
-    font-size: 1.75rem;
-    color: #858585;
+  font-size: 1.75rem;
+  color: #858585;
 
-    margin: .5rem;
-    cursor: pointer;
+  margin: 0.5rem;
+  cursor: pointer;
 }

@@ -123,7 +123,7 @@ def convertImagesIntoVideo(paths, pathOut, fps=1):
 
     frame_array.insert(0, start_img)
     frame_array.append(end_img)
-    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"H264"), fps, new_size)
+    out = cv2.VideoWriter(pathOut, cv2.VideoWriter_fourcc(*"avc1"), fps, new_size)
     for i in range(len(frame_array)):
         out.write(frame_array[i])
     cv2.destroyAllWindows()
@@ -159,4 +159,4 @@ class Translator(RetrieveAPIView):
             convertImagesIntoVideo(image_file_paths, video_abs_url)
             return JsonResponse({"video_url": video_rel_url})
         else:
-            return JsonResponse({{"success": False}})
+            return JsonResponse({"success": False})

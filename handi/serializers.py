@@ -1,4 +1,4 @@
-from .models import User, Lecture, MediaEntry, LectureManager
+from .models import User, Lecture, MediaEntry, LectureManager, QuizResult
 from rest_framework import serializers
 
 
@@ -37,4 +37,10 @@ class MediaEntrySerializer(serializers.ModelSerializer):
 class LectureManagerSerializer(serializers.ModelSerializer):
     class Meta:
         model = LectureManager
+        fields = "__all__"
+
+
+class QuizResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = QuizResult
         fields = "__all__"

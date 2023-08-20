@@ -20,11 +20,12 @@ function trans() {
   let sentence = document.getElementById("sentence").value;
   let mode = document.getElementById("mode_watch").value;
 
-  fetch("http://127.0.0.1:8000/api/translate/", {
+  fetch("http://101.101.209.37/api/translate/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "X-CSRFToken": getCookie("csrftoken"),
+      mode: "same-origin",
     },
     body: new URLSearchParams({
       sentence: sentence,
@@ -46,11 +47,12 @@ function save() {
   let video_url = document.getElementById("videoSource").getAttribute("src");
   let mode = document.getElementById("mode_save").value;
 
-  fetch("http://127.0.0.1:8000/api/translate/", {
+  fetch("http://101.101.209.37/api/translate/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "X-CSRFToken": csrftoken,
+      mode: "same-origin",
     },
     body: new URLSearchParams({
       video_url: video_url,

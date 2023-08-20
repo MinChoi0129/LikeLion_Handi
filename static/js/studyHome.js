@@ -1,262 +1,160 @@
-let parent_learning = document.querySelector(".section1")
-let parent_popular = document.querySelector(".section2")
-let parent_king = document.querySelector(".section3")
-let parent_daily = document.querySelector(".section4")
+const level = { 1: "난이도 하", 2: "난이도 중", 3: "난이도 상" };
 
 function goToLectureDetailPage(lecture_id) {
-	location.href = location.href + lecture_id
+  location.href = location.href + lecture_id;
 }
 
-fetch("http://127.0.0.1:8000/api/lectures/")
-	.then((response) => {
-		return response.json();
-	})
-	.then((data) => {
-		console.log(data)
-		difficulties = {1: "난이도 하", 2: "난이도 중", 3: "난이도 상"}
-
-
-		for (let i = 0; i < 2; i++) {
-			let 뭔가 = data[i]
-
-			let box = document.createElement("div")
-			box.setAttribute("class", "box" + (i+1))
-			box.setAttribute("onclick", `goToLectureDetailPage(${뭔가.id})`)
-			
-			
-			let difficulty = document.createElement("div")
-			difficulty.setAttribute("class", "difficulty")
-			difficulty.innerHTML = difficulties[뭔가["level"]]
-
-
-			let img = document.createElement("img")
-			img.setAttribute("class", "img")
-			img.setAttribute("src", 뭔가["lecture_img"])
-
-
-			let sub = document.createElement("div")
-			sub.setAttribute("class", "sub")
-			let theme_category = 뭔가["theme_category"]
-			sub.innerHTML = theme_category + " ".repeat(15-theme_category.length)
-
-
-			let ing = document.createElement("div")
-			ing.setAttribute("class", "ing")
-			let count = document.createElement("div")
-			count.setAttribute("class", "count")
-			count.innerHTML = "총 " + 뭔가["length"] + "개"
-
-			let percent = document.createElement("div")
-			percent.setAttribute("class", "percent")
-			// percent.innerHTML = fetch에서 가져온 내용
-			percent.innerHTML = 23 + "%"
-
-
-
-			ing.appendChild(count)
-			ing.appendChild(percent)
-
-			let bar = document.createElement("div")
-			bar.setAttribute("class", "bar")
-			let bar2 = document.createElement("div")
-			bar2.setAttribute("class", "bar2")
-
-
-
-
-
-
-			box.appendChild(difficulty)
-			box.appendChild(img)
-			box.appendChild(sub)
-			box.appendChild(ing)
-			box.appendChild(bar)
-			box.appendChild(bar2)
-
-			parent_learning.appendChild(box)
-		}
-
-
-		for (let i = 0; i < 5; i++) {
-			let 뭔가 = data[i]
-
-			let box = document.createElement("div")
-			box.setAttribute("class", "box" + (i+3))
-			box.setAttribute("onclick", `goToLectureDetailPage(${뭔가.id})`)
-			
-			
-			let difficulty = document.createElement("div")
-			difficulty.setAttribute("class", "difficulty")
-			difficulty.innerHTML = difficulties[뭔가["level"]]
-
-
-			let img = document.createElement("img")
-			img.setAttribute("class", "img")
-			img.setAttribute("src", 뭔가["lecture_img"])
-
-
-			let sub = document.createElement("div")
-			sub.setAttribute("class", "sub")
-			let theme_category = 뭔가["theme_category"]
-			sub.innerHTML = theme_category + " ".repeat(15-theme_category.length)
-
-
-			let ing = document.createElement("div")
-			ing.setAttribute("class", "ing")
-			let count = document.createElement("div")
-			count.setAttribute("class", "count")
-			count.innerHTML = "총 " + 뭔가["length"] + "개"
-
-			let percent = document.createElement("div")
-			percent.setAttribute("class", "percent")
-			// percent.innerHTML = fetch에서 가져온 내용
-			percent.innerHTML = 23 + "%"
-
-
-
-			ing.appendChild(count)
-			ing.appendChild(percent)
-
-			let bar = document.createElement("div")
-			bar.setAttribute("class", "bar")
-			let bar2 = document.createElement("div")
-			bar2.setAttribute("class", "bar2")
-
-
-
-
-
-
-			box.appendChild(difficulty)
-			box.appendChild(img)
-			box.appendChild(sub)
-			box.appendChild(ing)
-			box.appendChild(bar)
-			box.appendChild(bar2)
-
-			parent_popular.appendChild(box)
-		}
-
-		for (let i = 0; i < 7; i++) {
-			let 뭔가 = data[i]
-
-			let box = document.createElement("li")
-			box.setAttribute("class", "box" + (i+8))
-			box.setAttribute("onclick", `goToLectureDetailPage(${뭔가.id})`)
-			
-			
-			let difficulty = document.createElement("div")
-			difficulty.setAttribute("class", "difficulty")
-			difficulty.innerHTML = difficulties[뭔가["level"]]
-
-
-			let img = document.createElement("img")
-			img.setAttribute("class", "img")
-			img.setAttribute("src", 뭔가["lecture_img"])
-
-
-			let sub = document.createElement("div")
-			sub.setAttribute("class", "sub")
-			let theme_category = 뭔가["theme_category"]
-			sub.innerHTML = theme_category + " ".repeat(15-theme_category.length)
-
-
-			let ing = document.createElement("div")
-			ing.setAttribute("class", "ing")
-			let count = document.createElement("div")
-			count.setAttribute("class", "count")
-			count.innerHTML = "총 " + 뭔가["length"] + "개"
-
-			let percent = document.createElement("div")
-			percent.setAttribute("class", "percent")
-			// percent.innerHTML = fetch에서 가져온 내용
-			percent.innerHTML = 23 + "%"
-
-
-
-			ing.appendChild(count)
-			ing.appendChild(percent)
-
-			let bar = document.createElement("div")
-			bar.setAttribute("class", "bar")
-			let bar2 = document.createElement("div")
-			bar2.setAttribute("class", "bar2")
-
-
-
-
-
-
-			box.appendChild(difficulty)
-			box.appendChild(img)
-			box.appendChild(sub)
-			box.appendChild(ing)
-			box.appendChild(bar)
-			box.appendChild(bar2)
-
-			parent_king.appendChild(box)
-		}
-
-		for (let i = 0; i < 5; i++) {
-			let 뭔가 = data[i]
-
-			let box = document.createElement("div")
-			box.setAttribute("class", "box" + (i+15))
-			box.setAttribute("onclick", `goToLectureDetailPage(${뭔가.id})`)
-			
-			
-			let difficulty = document.createElement("div")
-			difficulty.setAttribute("class", "difficulty")
-			difficulty.innerHTML = difficulties[뭔가["level"]]
-
-
-			let img = document.createElement("img")
-			img.setAttribute("class", "img")
-			img.setAttribute("src", 뭔가["lecture_img"])
-
-
-			let sub = document.createElement("div")
-			sub.setAttribute("class", "sub")
-			let theme_category = 뭔가["theme_category"]
-			sub.innerHTML = theme_category + " ".repeat(15-theme_category.length)
-
-
-			let ing = document.createElement("div")
-			ing.setAttribute("class", "ing")
-			let count = document.createElement("div")
-			count.setAttribute("class", "count")
-			count.innerHTML = "총 " + 뭔가["length"] + "개"
-
-			let percent = document.createElement("div")
-			percent.setAttribute("class", "percent")
-			// percent.innerHTML = fetch에서 가져온 내용
-			percent.innerHTML = 23 + "%"
-
-
-
-			ing.appendChild(count)
-			ing.appendChild(percent)
-
-			let bar = document.createElement("div")
-			bar.setAttribute("class", "bar")
-			let bar2 = document.createElement("div")
-			bar2.setAttribute("class", "bar2")
-
-
-
-
-
-
-			box.appendChild(difficulty)
-			box.appendChild(img)
-			box.appendChild(sub)
-			box.appendChild(ing)
-			box.appendChild(bar)
-			box.appendChild(bar2)
-
-			parent_daily.appendChild(box)
-		}
-
-		
-	}
-	);
+fetch("http://101.101.209.37/api/lectures/")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+
+    lectures = document.querySelectorAll(".lectures");
+
+    lecture1 = lectures[0];
+    lecture2 = lectures[1];
+    lecture3 = lectures[2];
+
+    for (let i = 0; i < 10; i++) {
+      now_data = data[i];
+
+      let text = `<div class="lecture">
+                <div class="lecture" onclick="goToLectureDetailPage(${
+                  now_data.id
+                })">
+                <div class="difficulty">${level[now_data.level]}</div>
+                <img class="lectureImg" src="${now_data.lecture_img}"/>
+                <div class="lectureName">${now_data.name}</div>
+                <div class="lengthWithPercent">
+                    <div class="maxLength">총 ${now_data.length}개</div>
+                </div>
+                <div class="processing"></div>
+                </div>`;
+      lecture1.innerHTML += text;
+    }
+
+    for (let i = 10; i < 20; i++) {
+      now_data = data[i];
+
+      let text = `<div class="lecture">
+                <div class="lecture" onclick="goToLectureDetailPage(${
+                  now_data.id
+                })">
+                <div class="difficulty">${level[now_data.level]}</div>
+                <img class="lectureImg" src="${now_data.lecture_img}"/>
+                <div class="lectureName">${now_data.name}</div>
+                <div class="lengthWithPercent">
+                    <div class="maxLength">총 ${now_data.length}개</div>
+                </div>
+                <div class="processing"></div>
+                </div>`;
+      lecture2.innerHTML += text;
+    }
+
+    for (let i = 20; i < 30; i++) {
+      now_data = data[i];
+
+      let text = `<div class="lecture">
+                <div class="lecture" onclick="goToLectureDetailPage(${
+                  now_data.id
+                })">
+                <div class="difficulty">${level[now_data.level]}</div>
+                <img class="lectureImg" src="${now_data.lecture_img}"/>
+                <div class="lectureName">${now_data.name}</div>
+                <div class="lengthWithPercent">
+                    <div class="maxLength">총 ${now_data.length}개</div>
+                </div>
+                <div class="processing"></div>
+                </div>`;
+      lecture3.innerHTML += text;
+    }
+  });
+
+// lecturemanagers
+// fetch("http://101.101.209.37/api/lecturemanagers/")
+//     .then((response) => {
+//         return response.json();
+//     })
+//     .then((data) => {
+//         console.log(data)
+
+//         lectures = document.querySelectorAll(".lectures")
+
+//         lecture1 = lectures[0]
+//         lecture2 = lectures[1]
+
+//         for (let i = 0; i < 10; i++) {
+//             now_data = data[i]
+
+//         let text = `<div class="lecture">
+//                 <div class="lecture" onclick="goToLectureDetailPage(${now_data.id})">
+//                 <div class="difficulty">${level[now_data.level]}</div>
+//                 <img class="lectureImg" src="${now_data.lecture_img}"/>
+//                 <div class="lectureName">${now_data.name}</div>
+//                 <div class="lengthWithPercent">
+//                     <div class="maxLength">총 ${now_data.length}개</div>
+//                     <div class="percent">${now_data.percentage}%</div>
+//                 </div>
+//                 <div class="processing"></div>
+//                 </div>`
+//         lecture1.innerHTML += text
+//         }
+
+//         for (let i = 10; i < 20; i++) {
+//             now_data = data[i]
+
+//         let text = `<div class="lecture">
+//                 <div class="difficulty">${level[now_data.level]}</div>
+//                 <img class="lectureImg" src="${now_data.lecture_img}"/>
+//                 <div class="lectureName">${now_data.name}</div>
+//                 <div class="lengthWithPercent">
+//                     <div class="maxLength">총 ${now_data.length}개</div>
+//                     <div class="percent">0%</div>
+//                 </div>
+//                 <div class="processing"></div>
+//                 </div>`
+//         lecture2.innerHTML += text
+//         }
+//     })
+
+// lectures
+
+// 버튼 조작
+document.addEventListener("DOMContentLoaded", function () {
+  const leftButton = document.querySelectorAll(".left");
+  const rightButton = document.querySelectorAll(".right");
+  const lecturesContainers = document.querySelectorAll(".lectures");
+
+  let currentPositions = new Array(lecturesContainers.length);
+  for (let i = 0; i < currentPositions.length; ++i) {
+    currentPositions[i] = 0;
+  }
+
+  const lectureWidth = 187; // 각 박스의 너비
+
+  for (let index = 0; index < lecturesContainers.length; index++) {
+    leftButton[index].addEventListener("click", function () {
+      if (currentPositions[index] < 0) {
+        currentPositions[index] += lectureWidth;
+        lecturesContainers[
+          index
+        ].style.transform = `translateX(${currentPositions[index]}px)`;
+      }
+    });
+
+    rightButton[index].addEventListener("click", function () {
+      const maxPosition = -(
+        lectureWidth *
+        (lecturesContainers[index].children.length - 4)
+      ); // 4개의 박스가 화면에 보일 때까지만 이동
+      if (currentPositions[index] > maxPosition) {
+        currentPositions[index] -= lectureWidth;
+        lecturesContainers[
+          index
+        ].style.transform = `translateX(${currentPositions[index]}px)`;
+      }
+    });
+  }
+});

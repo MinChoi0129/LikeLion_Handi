@@ -49,3 +49,11 @@ class LectureManager(models.Model):
 
     # def __str__(self):
     #     return self.user.username
+
+class QuizResult(models.Model):
+    user = models.ForeignKey(User, related_name="quiz_user", on_delete=models.CASCADE)
+    lecture = models.ForeignKey(
+        Lecture, related_name="quiz_lecture", on_delete=models.CASCADE
+    )
+    RightPer = models.FloatField(default=0)
+    wrong_choices = models.TextField()

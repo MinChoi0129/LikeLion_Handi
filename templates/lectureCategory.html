@@ -1,42 +1,46 @@
-  {% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/lectureCategory.css' %}"/>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script>
-      var inshinjia = "{{lecture_id}}";
-      console.log(inshinjia);
-    </script>
-    <script src="{% static 'js/lectureCategory.js' %}" defer="defer"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/lectureCategory.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var inshinjia = "{{lecture_id}}";
+    console.log(inshinjia);
+  </script>
+  <script src="{% static 'js/lectureCategory.js' %}" defer="defer"></script>
+</head>
 
-  <body>
-    <main class="main">
-      <section>
-        <img class="apple1" src="{% static 'image/login/apple.png' %}" alt="apple"/>
-        <div class="box20">
-          <div class="title1"></div>
-          <div class="ing1">
-            <div class="count1"></div>
-            <div class="bar1"></div>
-          </div>
-          <div class="btn1">
-            <button class="study" onclick="goToStudyPage()">학습하기</button>
-            <button class="game" onclick="goToGamePage()">퀴즈풀기</button>
-          </div>
+<body>
+  <main class="main">
+    <section>
+      <img
+        class="apple1"
+        src="{% static 'image/login/apple.png' %}"
+        alt="apple"
+      />
+      <div class="box20">
+        <div class="title1"></div>
+        <div class="ing1">
+          <div class="count1"></div>
+          <div class="bar1"></div>
         </div>
-      </section>
-      <section class="section">
-        <div class="box21">
-          <div class="description"></div>
+        <div class="btn1">
+          <button class="study" onclick="goToStudyPage()">학습하기</button>
+          <button class="game" onclick="goToGamePage()">퀴즈풀기</button>
         </div>
-      </section>
-
-    </main>
-  </body>
+      </div>
+    </section>
+    <section class="section">
+      <div class="box21">
+        <div class="description"></div>
+      </div>
+    </section>
+  </main>
+</body>
 {% endblock %}

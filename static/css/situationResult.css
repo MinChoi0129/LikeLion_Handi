@@ -1,245 +1,261 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main, div {
-    margin: 0;
-    padding: 0;
+body,
+main,
+div {
+  margin: 0;
+  padding: 0;
 }
-ol, ul,li {
-	list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section {
-    width: 85rem;
-    margin: auto;
+  width: 85rem;
+  margin: auto;
 
-    margin-top: 7.5rem;
+  margin-top: 7.5rem;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
-
 
 /*챕터제목*/
 .ChapterTitle {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.5rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2.5rem;
 
-    width: fit-content;
-    margin: 2rem auto;
+  width: fit-content;
+  margin: 2rem auto;
 
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 /*문제*/
 .SentenceBox {
-    width: 45rem;
-    height:4rem;
+  width: 45rem;
+  height: 4rem;
 
-    margin: 3.25rem auto;
-    border-radius: 15px;
-    border: 2px solid #FFBD6C;
+  margin: 3.25rem auto;
+  border-radius: 15px;
+  border: 2px solid #ffbd6c;
 
-    background-color: #fff;
+  background-color: #fff;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+  box-shadow: 0 0 5px 0px rgba(255, 154, 35, 0.25);
 }
 .SentenceBox p {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.8rem;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.8rem;
 }
 
 /*그래프차트*/
 .ChartBar {
-    width: 275px;
-    padding-bottom: 275px;
-    margin: 0 auto;
-    border-radius: 50%;
-    position: relative;
-    text-align: center;
-    transition: background .3s ease-in-out;
-    background: conic-gradient(#FFBD6D 0% 72%, #FFEA8D 72% 100%);
+  width: 275px;
+  padding-bottom: 275px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+  background: conic-gradient(#ffbd6d 0% 72%, #ffea8d 72% 100%);
 }
 .ChartBar::before {
-    color: #505050;
-    width: 72.5%;
-    height: 72.5%;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    content: attr(data-percent)'%';
-    margin: auto;
-    font-size: 2.5rem;
+  color: #505050;
+  width: 72.5%;
+  height: 72.5%;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: attr(data-percent) "%";
+  margin: auto;
+  font-size: 2.5rem;
 
-    font-family: 'Pretendard-Bold';
+  font-family: "Pretendard-Bold";
 }
 
 /*텍스트*/
 .Success {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.5rem;
-    color:#505050;
+  font-family: "Pretendard-Bold";
+  font-size: 2.5rem;
+  color: #505050;
 
-    text-align: center;
+  text-align: center;
 }
 
 /*버튼*/
 .BtnWrap {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .BtnWrap .RetryBtn {
-    width: 145px;
-    height: 48px;
-    position: relative;
+  width: 145px;
+  height: 48px;
+  position: relative;
 
-    display: inline-block;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
+  display: inline-block;
+  background: linear-gradient(to right, #ffea8d, #ffbd6d);
 
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
 
-    margin: 0 2rem;
+  margin: 0 2rem;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #fff;
 }
 .BtnWrap .NextBtn {
-    width: 170px;
-    height: 48px;
-    position: relative;
+  width: 170px;
+  height: 48px;
+  position: relative;
 
-    display: inline-block;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
+  display: inline-block;
+  background: linear-gradient(to right, #ffea8d, #ffbd6d);
 
-    border: none;
-    border-radius: 10px;
-    margin: 0 2rem;
+  border: none;
+  border-radius: 10px;
+  margin: 0 2rem;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #fff;
 }
 
 /* 버튼호버 */
 .BtnWrap .RetryBtn:after {
-    opacity: 0;
-    content: "다시 학습하기";
-    position: absolute;
-    left:0;right: 0;top:0;bottom:0;
-    width: 145px;
-    height: 48px;
+  opacity: 0;
+  content: "다시 학습하기";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 145px;
+  height: 48px;
 
-    display: inline-block;
-    background: linear-gradient(to right, #ffeea0, #ffc986);
+  display: inline-block;
+  background: linear-gradient(to right, #ffeea0, #ffc986);
 
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #fff;
 
-    transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+  box-shadow: 0 0 5px 0px rgba(255, 154, 35, 0.25);
 }
 .BtnWrap .NextBtn:after {
-    opacity: 0;
-    content: "다음 문장 학습하기";
-    position: absolute;
-    left:0;right: 0;top:0;bottom:0;
-    width: 170px;
-    height: 48px;
+  opacity: 0;
+  content: "다음 문장 학습하기";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 170px;
+  height: 48px;
 
-    display: inline-block;
-    background: linear-gradient(to right, #ffeea0, #ffc986);
+  display: inline-block;
+  background: linear-gradient(to right, #ffeea0, #ffc986);
 
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #fff;
 
-    transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    box-shadow: 0 0 5px 0px rgba(255, 154, 35,0.25);
+  box-shadow: 0 0 5px 0px rgba(255, 154, 35, 0.25);
 }
-.RetryBtn:hover::after, .NextBtn:hover::after {
-    opacity: 1;
+.RetryBtn:hover::after,
+.NextBtn:hover::after {
+  opacity: 1;
 }

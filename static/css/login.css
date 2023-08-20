@@ -1,235 +1,253 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main {
-    margin: 0 auto;
-    padding: 0;
+body,
+main {
+  margin: 0 auto;
+  padding: 0;
 }
 div {
-    margin: 0;
-    padding: 0;
-    width: fit-content;
-    height: fit-content;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
 }
-ol, ul, li {
-		list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 section {
-    width: fit-content;
-    margin: auto;
+  width: fit-content;
+  margin: auto;
 }
 .logo {
-    font-size: 40px;
-    text-align: center;
-    margin: 100px 30px 30px 290px;
-    font-family: 'Pretendard-ExtraBold';
-    padding-top: 20px;
-    padding-bottom: 20px;
+  font-size: 40px;
+  text-align: center;
+  margin: 100px 30px 30px 290px;
+  font-family: "Pretendard-ExtraBold";
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.id, .password {
-    border: 1px solid #E1E1E1;
-    color: #858585;
-    padding: 11px 11px 11px 15px;
-    margin: 6px;
-    border-radius: 7px;
-    font-weight: lighter;
-    font-size: 16px;
-    width: 700px;
-    height: 53px;
-    font-family: 'Pretendard-Regular';
+.id,
+.password {
+  border: 1px solid #e1e1e1;
+  color: #858585;
+  padding: 11px 11px 11px 15px;
+  margin: 6px;
+  border-radius: 7px;
+  font-weight: lighter;
+  font-size: 16px;
+  width: 700px;
+  height: 53px;
+  font-family: "Pretendard-Regular";
 }
 
 .login {
-    display: flex;
-    color: #858585;
-    margin-left: 5px;
-    font-family: 'Pretendard-Medium';
+  display: flex;
+  color: #858585;
+  margin-left: 5px;
+  font-family: "Pretendard-Medium";
 }
 
 input:focus {
-    outline: 1px solid #FF9A23;
+  outline: 1px solid #ff9a23;
 }
 
 .LoginText {
-    font-size: 13px;
-    margin-top: 2.5px;
+  font-size: 13px;
+  margin-top: 2.5px;
 
-    font-family: 'Pretendard-Regular';
-    color: #858585;
+  font-family: "Pretendard-Regular";
+  color: #858585;
 }
 
 .LoginBtn {
-    border: 1px solid #FFBD6C;
-    background-color: #FFBD6C;
-    color: white;
-    border-radius: 7px;
-    padding: 10px;
-    margin: 12px 12px 10px 10px;
-    font-weight: bolder;
-    text-align: center;
-    font-size: 17px;
-    width: 700px;
-    height: 55px;
-    font-family: 'Pretendard-Regular';
-    cursor: pointer;
+  border: 1px solid #ffbd6c;
+  background-color: #ffbd6c;
+  color: white;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 7px;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 17px;
+  width: 700px;
+  height: 55px;
+  font-family: "Pretendard-Regular";
+  cursor: pointer;
 }
 
 .text {
-    margin-left: 265px; margin-bottom: 25px;
-    display: flex;
-    color: #878787;
-    font-size: 14px;
-    font-family: 'Pretendard-Regular';
+  margin-top: 15px;
+  margin-left: 265px;
+  margin-bottom: 25px;
+  display: flex;
+  color: #878787;
+  font-size: 14px;
+  font-family: "Pretendard-Regular";
 }
 
 .join {
-    color: #FF9A23;
-    cursor: pointer;
+  color: #ff9a23;
+  cursor: pointer;
 }
 
 .line {
-    width: fit-content;
-    margin : 0 auto;
-    margin-top: 10px; margin-bottom: 10px;
-    display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
 }
 
-.line1, .line2 {
-    border: 1px solid #858585;
-    width: 335px;
-    height: 1px;
-    margin: 8px;
+.line1,
+.line2 {
+  border: 1px solid #858585;
+  width: 335px;
+  height: 1px;
+  margin: 8px;
 }
 
 .or {
-    color: #858585;
-    font-family: 'Pretendard-Regular';
-    font-size: 14px;
+  color: #858585;
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
 }
 
 .google {
-    position: relative;
-    border: 1px solid #858585;
-    color: #858585;
-    padding: 9px;
-    margin: 7px;
-    border-radius: 7px;
-    font-size: 16px;
-    width: 700px;
-    height: 55px;
-    background-color: white;
-    font-family: 'Pretendard-Regular';
-    cursor: pointer;
+  position: relative;
+  border: 1px solid #858585;
+  color: #858585;
+  padding: 9px;
+  margin: 7px;
+  border-radius: 7px;
+  font-size: 16px;
+  width: 700px;
+  height: 55px;
+  background-color: white;
+  font-family: "Pretendard-Regular";
+  cursor: pointer;
 }
 
 .naver {
-    position: relative;
-    border: 1px solid #03C75A;
-    color: white;
-    padding: 10px;
-    margin: 7px;
-    border-radius: 7px;
-    font-size: 16px;
-    width: 700px;
-    height: 55px;
-    background-color: #03c75a;
-    font-family: 'Pretendard-Regular';
-    cursor: pointer;
+  position: relative;
+  border: 1px solid #03c75a;
+  color: white;
+  padding: 10px;
+  margin: 7px;
+  border-radius: 7px;
+  font-size: 16px;
+  width: 700px;
+  height: 55px;
+  background-color: #03c75a;
+  font-family: "Pretendard-Regular";
+  cursor: pointer;
 }
 
 .kakao {
-    position: relative;
-    border: 1px solid #FEE500;
-    color: white;
-    padding: 10px;
-    margin: 7px;
-    border-radius: 7px;
-    font-size: 16px;
-    width: 700px;
-    height: 55px;
-    background-color: #F9E000;
-    font-family: 'Pretendard-Regular';
-    cursor: pointer;
+  position: relative;
+  border: 1px solid #fee500;
+  color: white;
+  padding: 10px;
+  margin: 7px;
+  border-radius: 7px;
+  font-size: 16px;
+  width: 700px;
+  height: 55px;
+  background-color: #fee500;
+  font-family: "Pretendard-Regular";
+  cursor: pointer;
 }
 
 .GoogleLogo {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 50%; left:1.4rem;
-    transform: translateY(-50%);
-    cursor: pointer;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 1.4rem;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .NaverLogo {
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    top: 50%; left:1rem;
-    transform: translateY(-50%);
-    cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .KakaoLogo {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 50%; left: 1.2rem;
-    transform: translateY(-50%);
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 1.2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 main {
-    width: 100%;
-    min-height: calc(100vh - 170px);
+  width: 100%;
+  min-height: calc(100vh - 170px);
 }
-html,body {
-    width: 100%;
+html,
+body {
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }

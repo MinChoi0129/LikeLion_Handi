@@ -1,247 +1,257 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main, div {
-    margin: 0;
-    padding: 0;
+body,
+main,
+div {
+  margin: 0;
+  padding: 0;
 }
-ol, ul,li {
-   list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section {
-    width: 75rem;
-    margin: auto;
+  width: 75rem;
+  margin: auto;
 
-    margin-top: 5.5rem;
+  margin-top: 5.5rem;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* 게임페이지 섹션 */
 .gamePageWrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    margin: 0 2rem;
-    margin-top:200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  margin: 0 2rem;
+  margin-top: 200px;
 }
 
 .gamePageImage {
-    width: 60rem;
-    height: 30rem;
-    position: relative;
-    margin-bottom: .825rem  ;
-    margin-top: -3rem;
-    border: 1px solid #969696; 
+  width: 60rem;
+  height: 30rem;
+  position: relative;
+  margin-bottom: 0.825rem;
+  margin-top: -3rem;
+  border: 1px solid #969696;
 }
 
 main {
-    width: 100%;
-    min-height: calc(100vh - 70px);
+  width: 100%;
+  min-height: calc(100vh - 70px);
 }
-html,body {
-    width: 100%;
+html,
+body {
+  width: 100%;
 }
 
 /* 게임 제목 (카드 뒤집기) */
 .GameTitleWrap {
-    height: 12.8rem;
-    left: 48%;
+  height: 12.8rem;
+  left: 48%;
+  position: absolute;
+  top: 0rem;
+  width: 15.7rem;
+  margin-top: 100px;
+
+  .TitleCard {
+    color: #000000;
+    font-family: "Pretendard-SemiBold";
+    font-size: 4rem;
+    font-weight: 800;
+    height: 8.1rem;
+    left: -40px;
+    line-height: 1.2575;
     position: absolute;
-    top: 0rem;
-    width: 15.7rem;
-    margin-top: 100px; 
-  
-    .TitleCard{
-      color: #000000;
-      font-family: 'Pretendard-SemiBold';
-      font-size: 4rem;
-      font-weight: 800;
-      height: 8.1rem;
-      left: -40px;
-      line-height: 1.2575;
-      position: absolute;
-      top: -70px;
-      white-space: nowrap;
-      width: 8.7rem;
-    }
-    .TitleFlip {
-      color: #000000;
-      font-family: 'Pretendard-SemiBold';
-      font-size: 2.1rem;
-      font-weight: 1100;
-      height: 3.1rem;
-      left: 2rem;
-      line-height: 1.2575;
-      position: absolute;
-      top: 1.3rem;
-      white-space: nowrap;
-      width: 8.7rem;
-    }
+    top: -70px;
+    white-space: nowrap;
+    width: 8.7rem;
   }
-  
- .btns{
-    margin-left: 31%;
-    margin-top:20px; 
- }
-
- /* 모달창 */
-.modal{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    position: fixed;
-    top:50%;
-    left:50%;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
-    }
-    
-    .modalOverlay{
-    background-color: rgba(0, 0, 0, 0.6);
-    width:100%;
-    height: 100%;
+  .TitleFlip {
+    color: #000000;
+    font-family: "Pretendard-SemiBold";
+    font-size: 2.1rem;
+    font-weight: 1100;
+    height: 3.1rem;
+    left: 2rem;
+    line-height: 1.2575;
     position: absolute;
-    }
-    
-    .hidden{
-    display: none;
-    }
-    
-    
-    .modalContent{
-    background-color:white;
-    padding:10px 100px;
-    text-align: center;
-    position: relative;
-    border: 2px solid #FF9A23;
-    border-radius: 25px;
-    font-family: 'Pretendard-SemiBold';
-    }
-    
-    .Inform{
-    margin:20px;
-    font-size: 1.5rem;
-    }
-    
-    .startBtn {
-        display: inline-block;
-        width: 6.25rem;
-        height: 2.25rem;
-        border: none;
-        border-radius: 10px;
-        background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-        font-family: 'Pretendard-SemiBold';
-        font-size: .9rem;
-        color: #fff;
-        margin: 0 2rem;
-        text-align: center;
-        line-height: 2.25rem;
-        cursor: pointer;
-        text-decoration: none; 
-    }
+    top: 1.3rem;
+    white-space: nowrap;
+    width: 8.7rem;
+  }
+}
 
-    .gameExplainBtn{
-        width: 6.25rem;
-        height: 2.25rem;
-      
-        border: 2px solid #FFBD6C;
-        border-radius: 10px;
-        background: white;
-      
-        font-family: 'Pretendard-SemiBold';
-        font-size: .9rem;
-        color: #FF9A23;
-      
-        margin-left: 10rem;
-    }
+.btns {
+  margin-left: 31%;
+  margin-top: 20px;
+}
 
-    .closeBtn{
-        width: 6.25rem;
-        height: 2.25rem;
-      
-        border:none;
-        border-radius: 10px;
-        background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-      
-        font-family: 'Pretendard-SemiBold';
-        font-size: .9rem;
-        color: #fff;
-      
-        margin: 0 2rem;
-    }
+/* 모달창 */
+.modal {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
 
-      .modalContent{
-        padding: 20px;
-      }
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
-      .Inform{
-        padding: 4px;
-        font-family:'Pretendard-SemiBold' ;
-      }
+.hidden {
+  display: none;
+}
 
-      .InformMent{
-        padding-top: 30px;
-        padding-bottom: 30px;
-        font-family:'Pretendard-SemiBold' ;
-        font-size: 25px;
-      }
+.modalContent {
+  background-color: white;
+  padding: 10px 100px;
+  text-align: center;
+  position: relative;
+  border: 2px solid #ff9a23;
+  border-radius: 25px;
+  font-family: "Pretendard-SemiBold";
+}
+
+.Inform {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
+.startBtn {
+  display: inline-block;
+  width: 6.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+  font-family: "Pretendard-SemiBold";
+  font-size: 0.9rem;
+  color: #fff;
+  margin: 0 2rem;
+  text-align: center;
+  line-height: 2.25rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.gameExplainBtn {
+  width: 6.25rem;
+  height: 2.25rem;
+
+  border: 2px solid #ffbd6c;
+  border-radius: 10px;
+  background: white;
+
+  font-family: "Pretendard-SemiBold";
+  font-size: 0.9rem;
+  color: #ff9a23;
+
+  margin-left: 10rem;
+}
+
+.closeBtn {
+  width: 6.25rem;
+  height: 2.25rem;
+
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+
+  font-family: "Pretendard-SemiBold";
+  font-size: 0.9rem;
+  color: #fff;
+
+  margin: 0 2rem;
+}
+
+.modalContent {
+  padding: 20px;
+}
+
+.Inform {
+  padding: 4px;
+  font-family: "Pretendard-SemiBold";
+}
+
+.InformMent {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: "Pretendard-SemiBold";
+  font-size: 25px;
+}

@@ -1,332 +1,344 @@
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main, div {
-    margin: 0;
-    padding: 0;
+body,
+main,
+div {
+  margin: 0;
+  padding: 0;
 }
-ol, ul,li {
-	list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section {
-    width: 85rem;
-    margin: auto;
+  width: 85rem;
+  margin: auto;
 
-    margin-top: 7.5rem;
+  margin-top: 7.5rem;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /*챕터제목*/
 .ChapterTitle {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.5rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2.5rem;
 
-    width: fit-content;
-    margin: 2rem auto;
+  width: fit-content;
+  margin: 2rem auto;
 
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 /*진행바*/
 .StageBarWrap {
-    width: fit-content;
-    margin: 0 auto;
+  width: fit-content;
+  margin: 0 auto;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .StageBar {
-    width: 20rem;
-    height: 0.5rem;
+  width: 20rem;
+  height: 0.5rem;
 
-    margin: 0.25rem .225rem;
-    border-radius: 25px;
+  margin: 0.25rem 0.225rem;
+  border-radius: 25px;
 
-    background-color: #E1E1E1;
+  background-color: #e1e1e1;
 }
 .StageBar.active {
-    background-color: #FFBD6C;
+  background-color: #ffbd6c;
 }
 
 /*문제*/
 .QuizInfo {
-    font-family: 'Pretendard-Medium';
-    font-size: 1.3rem;
-    color:#858585;
-    text-align: center;
+  font-family: "Pretendard-Medium";
+  font-size: 1.3rem;
+  color: #858585;
+  text-align: center;
 
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 .QuizBox {
-    width: 40rem;
-    height: 3.75rem;
+  width: 40rem;
+  height: 3.75rem;
 
-    margin: 1.5rem auto;
-    border-radius: 15px;
-    
-    background-color: #FFBD6C;
+  margin: 1.5rem auto;
+  border-radius: 15px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #ffbd6c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .QuizBox .QuizSentence {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.5rem;
 
-    color: #fff;
+  color: #fff;
 }
 
 /*번호*/
 .SelectWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .SelectNumber {
-    width:1307.25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  width: 1307.25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
-    margin-top: 1.5rem;
-    margin-bottom: 1.05rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.05rem;
 }
 .SelectNumber .Number {
-    width: 2rem;
-    height: 2rem;
-    background-color: #FFBD6C;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffbd6c;
 
-    font-family: 'Pretendard-Medium';
-    font-size: 1.25rem;
-    color:#fff;
+  font-family: "Pretendard-Medium";
+  font-size: 1.25rem;
+  color: #fff;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 50%;
-    margin: 0 1rem;
+  border-radius: 50%;
+  margin: 0 1rem;
 }
 /*선택지*/
 .SelectBox {
-    width: fit-content;
-    margin: 0 auto;
+  width: fit-content;
+  margin: 0 auto;
 }
-.SelectBox input[type=radio] {
-    display:none;
+.SelectBox input[type="radio"] {
+  display: none;
 }
-.SelectBox input[type=radio]+label{
-    display: inline-block;
-    cursor: pointer;
-    height: 16rem;
-    width: 25rem;
-    border: 2px solid #FFBD6C;
-    border-radius: 15px;
-    background-color: #E1E1E1;
+.SelectBox input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  height: 16rem;
+  width: 25rem;
+  border: 2px solid #ffbd6c;
+  border-radius: 15px;
+  background-color: #e1e1e1;
 
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 .SelectBox video {
-    border-radius: 15px;
-    height: 16rem;
-    width: 25rem;
+  border-radius: 15px;
+  height: 16rem;
+  width: 25rem;
 
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 .SelectBox label {
-    position: relative;
+  position: relative;
 }
 .SelectBox .CheckBack {
-    display:none;
-    height: 15.75rem;
-    width: 24.75rem;
-    border-radius: 13px;
-    background-color: rgba(255,255,255,.5);
+  display: none;
+  height: 15.75rem;
+  width: 24.75rem;
+  border-radius: 13px;
+  background-color: rgba(255, 255, 255, 0.5);
 
-    position: absolute;
-    left:0; top:0;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.SelectBox input[type=radio]:checked + label .CheckBack{
-    display:inline-block;
+.SelectBox input[type="radio"]:checked + label .CheckBack {
+  display: inline-block;
 }
 
 /*버튼*/
 .RetryBtnBox {
-    width: 145px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-    padding: 2px;
-    border-radius: 12px;
+  width: 145px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+  padding: 2px;
+  border-radius: 12px;
 
-    float: left;
+  float: left;
 
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 .RetryBtn {
-    width: 144px;
-    height: 44px;
-    background: #fff;
-    /* padding: 10px; */
-    border: none;
-    border-radius: 10px;
+  width: 144px;
+  height: 44px;
+  background: #fff;
+  /* padding: 10px; */
+  border: none;
+  border-radius: 10px;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #ff9a23;
 }
 .StopBtnBox {
-    width: 145px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 145px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-    padding: 2px;
-    border-radius: 12px;
-    float: right;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+  padding: 2px;
+  border-radius: 12px;
+  float: right;
 
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 .StopBtn {
-    width: 144px;
-    height: 44px;
-    background: #fff;
-    /* padding: 10px; */
-    border: none;
-    border-radius: 10px;
+  width: 144px;
+  height: 44px;
+  background: #fff;
+  /* padding: 10px; */
+  border: none;
+  border-radius: 10px;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #ff9a23;
 }
 
 /*모달*/
 .Back {
-    display: none;
-    position: absolute;
-    top:0; left:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 
-    z-index: 110;
+  z-index: 110;
 }
 .StopModal {
-    position: absolute;
-    width: 35rem;
-    height: 18rem;
+  position: absolute;
+  width: 35rem;
+  height: 18rem;
 
-    background-color: #fff;
-    border: 2px solid #FF9A23;
-    border-radius: 25px;
+  background-color: #fff;
+  border: 2px solid #ff9a23;
+  border-radius: 25px;
 
-    font-family: 'Pretendard-SemiBold';
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  font-family: "Pretendard-SemiBold";
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    z-index: 999;
+  z-index: 999;
 }
 
 .StopModal .ModalText {
-    font-size: 1.5rem;
-    text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
 
-    margin: 0;
-    margin-bottom:1rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 .StopModal .BtnBox {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 .StopModal .YesBtn {
-    width: 6.25rem;
-    height: 2.25rem;
+  width: 6.25rem;
+  height: 2.25rem;
 
-    border:none;
-    border-radius: 10px;
-    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to BOTTOM, #ffea8d, #ffbd6c);
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: .9rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 0.9rem;
+  color: #fff;
 
-    margin: 0 1.5rem;
+  margin: 0 1.5rem;
 }
 .StopModal .NoBtn {
-    width: 6.25rem;
-    height: 2.25rem;
+  width: 6.25rem;
+  height: 2.25rem;
 
-    border:none;
-    border-radius: 10px;
-    background: linear-gradient(to BOTTOM, #FFEA8D, #FFBD6C);
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to BOTTOM, #ffea8d, #ffbd6c);
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: .9rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 0.9rem;
+  color: #fff;
 
-    margin: 0 1.5rem;
+  margin: 0 1.5rem;
 }

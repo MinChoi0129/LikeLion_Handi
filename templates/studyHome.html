@@ -1,306 +1,72 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
-{% comment %}
-모든 강의들을 모아 볼 수 있는 페이지입니다.
-{% endcomment %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/studyHome.css' %}">
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-	<script src="{% static 'js/studyHome.js' %}" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/studyHome.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+  <script src="{% static 'js/studyHome.js' %}" defer></script>
 </head>
 <body style="overflow-x: hidden">
-	<main>
-		<section class="Sc1">
-            <div class="gory">
-				<div class="WhiteBox"></div>
-                <div class="category"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;카테고리</div>
-                <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="검색어를 입력하시오.">
-				<div class="SearchBtn"><i class="fas fa-search"></i></div>
+  <main>
+    <section class="lectureSection">
+      <!-- <div class="lecturesList">
+               <div class="title" style="word-break:break-all">진행하고 있는 학습</div>
+               <div class="lectures"></div>
             </div>
-			<div class="list">
-				<hr color="#fafafa">
-				<a class="person" href="#"><i class="far fa-user"></i> &nbsp;인간</a>
-				<br><hr color="#e1e1e1">
-				<a class="eat" href="#"><i class="fas fa-utensils"></i> &nbsp;식생활</a>
-				<br><hr color="#e1e1e1">
-				<a class="society" href="#"><i class="fas fa-briefcase"></i> &nbsp;사회생활</a>
-				<br><hr color="#e1e1e1">
-				<a class="area" href="#"><i class="fas fa-map-marker-alt"></i> &nbsp;지명</a>
-				<br><hr color="#e1e1e1">
-				<a class="culture" href="#"><i class="fas fa-photo-video"></i> &nbsp;문화</a>
-				<br><hr color="#e1e1e1">
-				<a class="nature" href="#"><i class="fab fa-pagelines"></i> &nbsp;자연</a>
-				<br><hr color="#e1e1e1">
-				<a class="base" href="#"><i class="far fa-lightbulb"></i> &nbsp;개념</a>
-				<hr color="#fafafa">
-			</div>
-		</section>
-		<section class="Sc2">
-			<div class="learning">
-				<div class="title">진행하고 있는 학습</div>
-				<div class="section1">
-					<!-- <div class="box1">
-						<div class="difficulty">난이도 하</div> 
-						<img class="img" src="{% static 'image/login/apple.png' %}" alt="apple">
-						<div class="sub">수어도 한걸음부터 - 과일편</div>
-						<div class="ing">
-							<div class="count">총 50개</div>
-							<div class="percent">70%</div>
-						</div>
-						<div class="bar"></div>
-						<div class="bar2"></div>
-					</div>
-					<div class="box2">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/sing.png' %}" alt="sing">
-						<div class="sub">수어로 보는 한국 발라드</div>
-						<div class="ing">
-							<div class="count">총 50개</div>
-							<div class="percent">50%</div>
-						</div>
-						<div class="bar"></div>
-						<div class="bar3"></div>
-					</div> -->
-				</div>
-			</div>
-			
-			<div class="popular">
-				<div class="title">주간 인기 모음</div>
-				<div class="section2">
-					<!-- <div class="box3">
-						<div class="difficulty">난이도 상</div>
-						<img class="img" src="{% static 'image/login/soccer.png' %}" alt="apple">
-						<div class="sub">축구 해설 수어로 보기</div>
-						<div class="ing2">
-							<div class="count">총 50개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box4">
-						<div class="difficulty">난이도 중</div> 
-						<img class="img" src="{% static 'image/login/romantic.png' %}" alt="apple">
-						<div class="sub">노래로 배우는 수어</div>
-						<div class="ing2">
-							<div class="count">총 30개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box5">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/love.png' %}" alt="apple">
-						<div class="sub">로맨틱한 수어 표현</div>
-						<div class="ing2">
-							<div class="count">총 50개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box6">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/love.png' %}" alt="apple">
-						<div class="sub">로맨틱한 수어 표현</div>
-						<div class="ing2">
-							<div class="count">총 50개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box7">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/love.png' %}" alt="apple">
-						<div class="sub">로맨틱한 수어 표현</div>
-						<div class="ing2">
-							<div class="count">총 50개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div> -->
-				</div> 
-			</div>
+            <button class="left"><i class="fas fa-chevron-left"></i></button>
+            <button class="right"><i class="fas fa-chevron-right"></i></button>
 
-			<div class="king">
-				<div class="btn">
-					<button class="left"><i class="fas fa-chevron-left"></i></button>
-					<button class="right"><i class="fas fa-chevron-right"></i></button>
-				</div>
-				<div class="title">수어 왕초보</div>
-				<div class="section3">
-						<!-- <li class="box13">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/finger.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 자기소개편</div>
-							<div class="ing">
-								<div class="count">총 12개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li> -->
+            <div class="lecturesList">
+                <div class="title" style="word-break:break-all">주간 인기 모음</div>
+            <div class="lectures"></div>
+            </div>
+            <button class="left"><i class="fas fa-chevron-left"></i></button>
+            <button class="right"><i class="fas fa-chevron-right"></i></button> -->
 
+      <div class="lecturesList">
+        <div class="title" style="word-break: break-all">수어 왕초보</div>
+        <div class="lectures"></div>
+      </div>
+      <button class="left"><i class="fas fa-chevron-left"></i></button>
+      <button class="right"><i class="fas fa-chevron-right"></i></button>
 
-			
-						<!-- <li class="box8">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/number.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 숫자편</div>
-							<div class="ing">
-								<div class="count">총 20개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li>
-						<li class="box9">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/apple.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 과일편</div>
-							<div class="ing">
-								<div class="count">총 32개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li>
-						<li class="box10">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/cat.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 동물편</div>
-							<div class="ing">
-								<div class="count">총 40개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li>
-						<li class="box11">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/cat.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 동물편</div>
-							<div class="ing">
-								<div class="count">총 40개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li>
-						<li class="box12">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/cat.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 동물편</div>
-							<div class="ing">
-								<div class="count">총 40개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li>
-						<li class="box14">
-							<div class="difficulty">난이도 하</div>
-							<img class="img" src="{% static 'image/login/cat.png' %}" alt="apple">
-							<div class="sub">수어도 한걸음부터 - 동물편</div>
-							<div class="ing">
-								<div class="count">총 40개</div>
-								<div class="percent">0%</div>
-							</div>
-							<div class="bar"></div>
-						</li> -->
-				</div>
+      <div class="lecturesList">
+        <div class="title" style="word-break: break-all">일상 회화 모음</div>
+        <div class="lectures"></div>
+      </div>
+      <button class="left"><i class="fas fa-chevron-left"></i></button>
+      <button class="right"><i class="fas fa-chevron-right"></i></button>
 
-				<div class="BtnBox">
-					<div class="BtnBox1"></div>
-					<div class="BtnBox2"></div>
-				</div>
-			</div>
+      <div class="lecturesList">
+        <div class="title" style="word-break: break-all">또 다른 회화 모음</div>
+        <div class="lectures"></div>
+      </div>
+      <button class="left"><i class="fas fa-chevron-left"></i></button>
+      <button class="right"><i class="fas fa-chevron-right"></i></button>
+    </section>
 
-			<div class="daily">
-				<div class="title">일상 회화 모음</div>
-				<div class="section4">
-					<!-- <div class="box15">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/first.png' %}" alt="apple">
-						<div class="sub">수어도 한걸음부터 - 첫만남편</div>
-						<div class="ing">
-							<div class="count">총 12개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box16">
-						<div class="difficulty">난이도 하</div> 
-						<img class="img" src="{% static 'image/login/hospital.png' %}" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box17">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/hospital.png' %}" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box18">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/hospital.png' %}" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div>
-					<div class="box19">
-						<div class="difficulty">난이도 하</div>
-						<img class="img" src="{% static 'image/login/hospital.png' %}" alt="apple">
-						<div class="sub">병원에서 사용하는 기초 수어</div>
-						<div class="ing">
-							<div class="count">총 20개</div>
-							<div class="percent">0%</div>
-						</div>
-						<div class="bar"></div>
-					</div> -->
-				</div>
-			</div> 
-		</section>
-	</main>
-	<script>
-        document.querySelector('.right').addEventListener('click', function(){
-			document.querySelector('.box13').style.transform = 'translate(-187px)';
-			document.querySelector('.box8').style.transform = 'translate(-187px)';
-			document.querySelector('.box9').style.transform = 'translate(-187px)';
-			document.querySelector('.box10').style.transform = 'translate(-187px)';
-			document.querySelector('.box11').style.transform = 'translate(-187px)';
-			document.querySelector('.box12').style.transform = 'translate(-187px)';
-			document.querySelector('.box14').style.transform = 'translate(-187px)';
-		})
+    <script>
+      const categoryBtn = document.querySelector(".category");
+      const listContainer = document.querySelector(".list");
 
-		document.querySelector('.left').addEventListener('click', function(){
-			document.querySelector('.box13').style.transform = 'translate(187px)';
-			document.querySelector('.box8').style.transform = 'translate(187px)';
-			document.querySelector('.box9').style.transform = 'translate(187px)';
-			document.querySelector('.box10').style.transform = 'translate(187px)';
-			document.querySelector('.box11').style.transform = 'translate(187px)';
-			document.querySelector('.box12').style.transform = 'translate(187px)';
-			document.querySelector('.box14').style.transform = 'translate(187px)';
-		})
-
-		const categoryBtn = document.querySelector('.category');
-		const listContainer = document.querySelector('.list');
-
-		categoryBtn.addEventListener('click', function() {
-			if (listContainer.style.transform === 'translateY(233px)') {
-				listContainer.style.transform = 'translateY(0)';
-			} else {
-				listContainer.style.transform = 'translateY(233px)';
-			}
-		});
+      categoryBtn.addEventListener("click", function () {
+        if (listContainer.style.transform === "translateY(233px)") {
+          listContainer.style.transform = "translateY(0)";
+        } else {
+          listContainer.style.transform = "translateY(233px)";
+        }
+      });
     </script>
+  </main>
 </body>
 {% endblock %}

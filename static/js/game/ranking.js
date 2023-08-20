@@ -26,14 +26,30 @@ let RankScores = [
   RankFiveScore,
 ];
 
-let MyRankNum = document.querySelector(".MyRankNum");
-let MyNickname = document.querySelector(".MyNickname");
-let MyScoreInRank = document.querySelector(".MyScoreInRank");
-fetch("http://127.0.0.1:8000/api/users/rank/")
+fetch("http://101.101.209.37/api/users/rank/")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
 
+    if (data["me"][2] > 5) {
+      MyRankNum.innerHTML = data["me"][2];
+      MyNickname.innerHTML = data["me"][0];
+      MyScoreInRank.innerHTML = data["me"][1];
+    } else {
+      MyRankNum.innerHTML = "";
+      MyNickname.innerHTML = "";
+      MyScoreInRank.innerHTML = "";
+    }
+  });
+let MyRankNum = document.querySelector(".MyRankNum");
+let MyNickname = document.querySelector(".MyNickname");
+let MyScoreInRank = document.querySelector(".MyScoreInRank");
+let myRankTitle = document.querySelector(".myRankTitle");
+let highestScoreTitle = document.querySelector(".highestScoreTitle");
+fetch("http://101.101.209.37/api/users/rank/")
+  .then((response) => response.json())
+  .then((data) => {
+    MyScoreInRank.innerHTML += `${data["me"][1]}등`;
     if (data["me"][2] > 5) {
       MyRankNum.innerHTML = data["me"][2];
       MyNickname.innerHTML = data["me"][0];
@@ -48,6 +64,8 @@ fetch("http://127.0.0.1:8000/api/users/rank/")
       Ranks[i].innerHTML = data["top_5_users"][i][1];
       RankScores[i].innerHTML = data["top_5_users"][i][0];
     }
+    highestScoreTitle.innerHTML += `${data["me"][1]}점`;
+    myRankTitle.innerHTML += `${data["me"][2]}등`;
   });
 
 // <!-- 랭킹보드 -->

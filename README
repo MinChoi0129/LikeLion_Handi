@@ -9,6 +9,3 @@ pip install -r requirements.txt
 docker build -t handi .
 docker run -p 80:11111 -it handi
 실행되면 웹브라우저에 127.0.0.1 또는 localhost
-
-
-http://101.101.209.37

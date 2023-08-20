@@ -30,7 +30,7 @@ function endGame(score) {
   //  high_score.innerHTML = high_score.innerHTML + "점";
   my_score.innerHTML = my_score.innerHTML + score + "점";
 
-  fetch("http://127.0.0.1:8000/api/users/rank/update/", {
+  fetch("http://101.101.209.37/api/users/rank/update/", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -44,7 +44,7 @@ function endGame(score) {
       console.log(data);
     });
 
-  fetch("http://127.0.0.1:8000/api/users/rank/")
+  fetch("http://101.101.209.37/api/users/rank/")
     .then((response) => response.json())
     .then((data) => {
       document.querySelector(".my_max_score").innerHTML = data["me"][2];

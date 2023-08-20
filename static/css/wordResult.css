@@ -1,222 +1,250 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
-    font-weight: 300;
-    font-family: 'Pretendard-Light';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: 'Pretendard-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: 'Pretendard-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: 'Pretendard-ExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body, main, div {
-    margin: 0;
-    padding: 0;
+body,
+main,
+div {
+  margin: 0;
+  padding: 0;
 }
-ol, ul,li {
-	list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin:0;
+ol,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin:0;
-    padding:0;
-    font-size : 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 52px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section {
-    width: 85rem;
-    height: 50rem;
-    margin: auto;
+  width: 85rem;
+  height: 50rem;
+  margin: auto;
 
-    margin-top: 5.3rem;
+  margin-top: 5.3rem;
 
-    position: relative;
+  position: relative;
 }
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /*챕터제목*/
 .ChapterTitle {
-    font-family: 'Pretendard-ExtraBold';
-    font-size: 2.75rem;
+  font-family: "Pretendard-ExtraBold";
+  font-size: 2.75rem;
 
-    width: fit-content;
-    margin: 1.5rem auto;
-    margin-bottom: 0.5rem;
+  width: fit-content;
+  margin: 1.5rem auto;
+  margin-bottom: 0.5rem;
 }
 .ChapterResult {
-    font-family: 'Pretendard-Bold';
-    font-size: 2rem;
-    width: fit-content;
-    margin:0;
-    margin: 1rem auto;
+  font-family: "Pretendard-Bold";
+  font-size: 2rem;
+  width: fit-content;
+  margin: 0;
+  margin: 1rem auto;
 }
 
 .ResultWrap {
-    margin-top: 3rem;
+  margin-top: 3rem;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /*그래프차트*/
 .ChartBar {
-    width: 375px;
-    padding-bottom: 375px;
-    margin: 0 auto;
-    border-radius: 50%;
-    position: relative;
-    text-align: center;
-    transition: background .3s ease-in-out;
-    background: conic-gradient(#FFBD6D 0% 72%, #FFEA8D 72% 100%);
+  width: 375px;
+  padding-bottom: 375px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+  background: conic-gradient(#ffbd6d 0% 72%, #ffea8d 72% 100%);
 }
 .ChartBar::before {
-    color: #505050;
-    width: 80%;
-    height: 80%;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    content: attr(data-percent)'%';
-    margin: auto;
-    font-size: 3.75rem;
+  color: #505050;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: attr(data-percent) "%";
+  margin: auto;
+  font-size: 3.75rem;
 
-    font-family: 'Pretendard-Bold';
+  font-family: "Pretendard-Bold";
 }
 
 /*틀린 퀴즈 목록*/
 .FailedWordBox {
-    width: 40rem;
-    height: 30rem;
+  width: 40rem;
+  height: 30rem;
 
-    box-shadow: 0 0 10px 0 #dedede;
-    border-radius: 25px;
+  box-shadow: 0 0 10px 0 #dedede;
+  border-radius: 25px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1rem;
 }
 .FailedWordBox h3 {
-    font-family: 'Pretendard-Bold';
-    font-size: 2rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2rem;
 }
 .FailedWordBox .FailedWordWrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: scroll;
+
+  padding: 0.5rem;
+}
+.FailedWordBox .FailedWordWrap::-webkit-scrollbar {
+  width: 0.4rem;
+}
+.FailedWordBox .FailedWordWrap::-webkit-scrollbar-thumb {
+  background: #ffbd6d; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
 }
 .FailedWordWrap .FailedWord {
-    width: 9rem;
-    height: 3.5rem;
+  width: 9rem;
+  height: 3.5rem;
 
-    border-radius: 15px;
-    box-shadow: 0 0 10px 0 #FFBD6D;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 #ffbd6d;
 
-    margin: 1.25rem;
+  margin: 1.25rem;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.5rem;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.5rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*버튼*/
 .BtnWrap {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 .BtnWrap .HomeBtnBox {
-    width: 145px;
-    height: 48px;
-    position: relative;
+  width: 145px;
+  height: 48px;
+  position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6C);
-    padding: 2px;
-    border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+  padding: 2px;
+  border-radius: 12px;
 }
 .HomeBtnBox .HomeBtn {
-    width: 141px;
-    height: 44px;
-    background: #fff;
-    /* padding: 10px; */
-    border: none;
-    border-radius: 10px;
+  width: 141px;
+  height: 44px;
+  background: #fff;
+  /* padding: 10px; */
+  border: none;
+  border-radius: 10px;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #FF9A23;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #ff9a23;
 }
 .ReviewBtn {
-    width: 145px;
-    height: 48px;
-    position: relative;
+  width: 145px;
+  height: 48px;
+  position: relative;
 
-    display: inline-block;
-    background: linear-gradient(to right, #FFEA8D, #FFBD6D);
+  display: inline-block;
+  background: linear-gradient(to right, #ffea8d, #ffbd6d);
 
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
 
-    margin: 0 2rem;
+  margin: 0 2rem;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.15rem;
-    color: #fff;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #fff;
 }

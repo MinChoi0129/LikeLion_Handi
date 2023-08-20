@@ -37,14 +37,6 @@
           <p class="InformMent">
             60초 안에 최대한 많은 카드 짝을 맞추어 최고 점수를 달성하세요!
           </p>
-          <!-- <p class="Inform">저렇게하는 게임입니다.</p>
-          <p class="Inform">카드게임 입니다.</p>
-          <p class="Inform">어떻게 하냐면 이렇게해서</p>
-          <p class="Inform">저렇게하는 게임입니다.</p>
-          <p class="Inform">이 게임은</p>
-          <p class="Inform">카드게임 입니다.</p>
-          <p class="Inform">어떻게 하냐면 이렇게해서</p>
-          <p class="Inform">저렇게하는 게임입니다.</p> -->
           <button class="closeBtn" id="closeBtn">닫기</button>
         </div>
       </div>
@@ -63,7 +55,11 @@
         />
       </div>
       <div class="btns">
+        {% if user.is_authenticated %}
         <a href="./start/" class="startBtn">시작하기</a>
+        {% else %}
+        <a href="../login" class="startBtn">로그인하기</a>
+        {% endif %}
         <button class="gameExplainBtn" id="open">설명 보기</button>
       </div>
     </section>
