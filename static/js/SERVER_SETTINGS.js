@@ -1,1 +1,1 @@
-var SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"
+var SERVER_ADDRESS = "http://뭐라캐쌌노.메인.한국"

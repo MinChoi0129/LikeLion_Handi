@@ -23,7 +23,7 @@ SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"
 server_settings_js = os.path.join(BASE_DIR, "static", "js", "SERVER_SETTINGS.js")
 
 with open(server_settings_js, mode="w", encoding="utf-8") as h:
-    new_line = "var SERVER_ADDRESS = " + '"' + SERVER_ADDRESS + '"'
+    new_line = "var SERVER_ADDRESS = " + '"http://' + SERVER_ADDRESS + '"'
     h.write(new_line)
 
 
