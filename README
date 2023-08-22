@@ -1,12 +1,1 @@
-[Docker 미사용]
-가상환경 편한 것 만들고, 해당 가상환경에서 아래의 명령어를 입력하세요.
-pip install -r requirements.txt
-pip install opencv-python
-모두 설치되면 python manage.py runserver
-실행되면 웹브라우저에 자신의 컴퓨터 ip주소 입력
 
-[Docker 사용]
-터미널에 아래 명령 입력
-docker build -t handi .
-docker run -p 80:11111 -it handi
-실행되면 웹브라우저에 자신의 컴퓨터 ip주소 입력
