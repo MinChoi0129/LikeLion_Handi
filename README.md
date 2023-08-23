@@ -1,11 +1,11 @@
-<p align="center"><img src="C:\Users\JongHwa\Documents\GitHub\LikeLion_Handi\static\image\logo\logo.png.png"></p>
+<p align="center"><img src="static\image\logo\logo.png"></p>
 <h1 align="center">
   <br>
   당신의 수어 교육 사이트, HANDI
   <br>
 </h1>
 
-<h3 align=center>bulit with <img src="https://img.shields.io/badge/이름-색상코드?style=flat-square&logo=로고명&logoColor=로고색"/></h3>
+<h3 align=center>bulit with <img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/></h3>
 <div align=center>
 
 </div>
@@ -33,7 +33,7 @@
 ```
 MIT License
 
-Copyright (c) 2022 
+Copyright (c) 2023 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
