@@ -110,3 +110,10 @@ def inGame(request):
     return render(
         request, "game.html", {"user": user, "SERVER_ADDRESS": SERVER_ADDRESS}
     )
+
+
+def myPage(request):
+    user = request.user
+    return render(
+        request, "mypage.html", {"user": user, "SERVER_ADDRESS": SERVER_ADDRESS}
+    )

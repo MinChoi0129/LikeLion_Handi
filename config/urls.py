@@ -41,6 +41,11 @@ urlpatterns = [
         views_page.sentenceResult,
         name="sentenceResult",
     ),
+    path(
+        "mypage/",
+        views_page.myPage,
+        name="myPage",
+    ),
 ]
 
 if settings.DEBUG:

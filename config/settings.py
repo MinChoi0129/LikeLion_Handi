@@ -19,7 +19,7 @@ def get_secret():
 
 # SERVER_ADDRESS = requests.get("http://ip.jsontest.com").json()["ip"]
 # SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"
-SERVER_ADDRESS = "localhost"
+SERVER_ADDRESS = "127.0.0.1:8000"
 
 server_settings_js = os.path.join(BASE_DIR, "static", "js", "SERVER_SETTINGS.js")
 
