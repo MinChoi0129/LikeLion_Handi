@@ -1,0 +1,122 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>핸디</title>
+    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/mypage.css' %}"
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<main>
+    <section>
+        <div class="myInfo">
+            <div class="myImgBox">
+                <img src="{% static 'image/main1.png' %}" class="myImg" alt="내이미지" />
+                <button class="imgChangeBtn">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            </div>
+            <div class="myNicknameBox">
+                <p class="myNickname">닉네임</p>
+                <i class="fa-solid fa-pen"></i>
+            </div>
+            <div class="myInfoBox">
+                <div class="InfoBox">
+                    <p class="SubTitle">Name</p>
+                    <p class="Information">사용자1</p>
+                </div>
+            </div>
+            <div class="myInfoBox">
+                <div class="InfoBox">
+                    <p class="SubTitle">Email</p>
+                    <p class="Information">anjfkzoTkTsh@naver.com</p>
+                </div>
+            </div>
+            <div class="myInfoBox">
+                <div class="InfoBox">
+                    <p class="SubTitle">Rank</p>
+                    <p class="Information">
+                        <span class="myRank">4등.</span>
+                        <span class="myScore">500점</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="CompleteBox">
+            <p class="CompleteTitle">완료한 학습</p>
+            <div class="CompleteLectures">
+                <div class="lecture">
+                    <div class="difficulty">난이도 상</div>
+                    <img class="lectureImg" src="{% static 'image/main1.png' %}"/>
+                    <div class="lectureName">네임</div>
+                    <div class="lengthWithPercent">
+                        <div class="maxLength">총 n개</div>
+                        <div class="myPercent">100%</div>
+                    </div>
+                    <div class="processing"></div>
+                </div>
+                <div class="lecture">
+                    <div class="difficulty"></div>
+                    <img class="lectureImg" src=""/>
+                    <div class="lectureName">네임</div>
+                    <div class="lengthWithPercent">
+                        <div class="maxLength">총 n개</div>
+                        <div class="myPercent">100%</div>
+                    </div>
+                    <div class="processing"></div>
+                </div>
+                <div class="lecture">
+                    <div class="difficulty"></div>
+                    <img class="lectureImg" src=""/>
+                    <div class="lectureName">네임</div>
+                    <div class="lengthWithPercent">
+                        <div class="maxLength">총 n개</div>
+                        <div class="myPercent">100%</div>
+                    </div>
+                    <div class="processing"></div>
+                </div>
+                <div class="lecture">
+                    <div class="difficulty"></div>
+                    <img class="lectureImg" src=""/>
+                    <div class="lectureName">네임</div>
+                    <div class="lengthWithPercent">
+                        <div class="maxLength">총 n개</div>
+                        <div class="myPercent">100%</div>
+                    </div>
+                    <div class="processing"></div>
+                </div>
+                <div class="lecture">
+                    <div class="difficulty"></div>
+                    <img class="lectureImg" src=""/>
+                    <div class="lectureName">네임</div>
+                    <div class="lengthWithPercent">
+                        <div class="maxLength">총 n개</div>
+                        <div class="myPercent">100%</div>
+                    </div>
+                    <div class="processing"></div>
+                </div>
+                <div class="lecture">
+                    <div class="difficulty"></div>
+                    <img class="lectureImg" src=""/>
+                    <div class="lectureName">네임</div>
+                    <div class="lengthWithPercent">
+                        <div class="maxLength">총 n개</div>
+                        <div class="myPercent">100%</div>
+                    </div>
+                    <div class="processing"></div>
+                </div>
+                <div class="HomeBtnBox">
+                    <button class="HomeBtn">더보기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+{% endblock %}
