@@ -50,7 +50,8 @@ class LectureManagerUpdate(UpdateAPIView):
             lecture_manager = LectureManager.objects.get(
                 user=request.user, lecture=kwargs["lecture_id"]
             )
-            lecture_manager.percentage = request.data["percentage"]
+            if lecture_manager.percentage > request.data["percentage"]:
+                lecture_manager.percentage = request.data["percentage"]
             lecture_manager.save()
             return Response({"success": True}, status=status.HTTP_202_ACCEPTED)
         except:
