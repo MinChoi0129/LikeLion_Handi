@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import LectureManager, Lecture, User
 from .serializers import LectureManagerSerializer
-
+from datetime import datetime
 
 # Create a LectureManager or Get All LectureManagers
 class LectureManagerList(ListCreateAPIView):
@@ -50,8 +50,11 @@ class LectureManagerUpdate(UpdateAPIView):
             lecture_manager = LectureManager.objects.get(
                 user=request.user, lecture=kwargs["lecture_id"]
             )
-            if lecture_manager.percentage > request.data["percentage"]:
-                lecture_manager.percentage = request.data["percentage"]
+            if lecture_manager.percentage < float(request.data["percentage"]):
+                lecture_manager.percentage = float(request.data["percentage"])
+            
+            lecture_manager.time = datetime.now()
+
             lecture_manager.save()
             return Response({"success": True}, status=status.HTTP_202_ACCEPTED)
         except:

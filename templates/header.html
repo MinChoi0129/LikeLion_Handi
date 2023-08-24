@@ -2,112 +2,111 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
-    <title>핸디</title>
-    <script>
-      const getCookie = (name) => {
-        var cookieValue = null;
-        if (document.cookie && document.cookie != "") {
-          var cookies = document
-            .cookie
-            .split(";");
-          for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) == name + "=") {
-              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-              break;
-            }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+  <title>핸디</title>
+  <script>
+    const getCookie = (name) => {
+      var cookieValue = null;
+      if (document.cookie && document.cookie != "") {
+        var cookies = document
+          .cookie
+          .split(";");
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) == name + "=") {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
           }
         }
-        return cookieValue;
-      };
-      const logout = () => {
-        fetch(SERVER_ADDRESS + "/api/logout/")
-          .then((response) => {
-            return response.json();
-          })
-          .then((response) => {
-            window.location.href = SERVER_ADDRESS;
-          });
-      };
-    </script>
-  </head>
-
-  <body>
-    <header>
-      <a class="Logo" href="/">
-        <img class="lo02" src="{% static 'image/logo/logo2.svg' %}"/>
-      </a>
-      <nav>
-        <ol>
-          <li>
-            <a href="/">홈</a>
-          </li>
-          <li>
-            <a href="/translate/">번역하기</a>
-          </li>
-          <li>
-            <a href="/lecture/">학습하기</a>
-          </li>
-          <li>
-            <a href="/game/">게임하기</a>
-          </li>
-          <li>
-            <a href="/contact/">Contact</a>
-          </li>
-        </ol>
-      </nav>
-      {% if user.is_authenticated %}
-        <button class="SignInBtn" onclick="logout()">LOGOUT</button>
-      {% else %}
-        <a href="/login">
-          <button class="SignInBtn">SIGN IN</button>
-        </a>
-      {% endif %}
-    </header>
-
-    <script type="text/javascript">
-      const currentLocation = location
-        .href
-        .split("/")[3];
-      const menuItem = document
-        .querySelector("ol")
-        .querySelectorAll("a");
-      const menuLength = menuItem.length;
-      for (let i = 0; i < menuLength; i++) {
-        let menuLocation = menuItem[i]
-          .href
-          .split("/");
-        if (menuLocation[3] == currentLocation) {
-          menuItem[i].className = "active";
-        } else {
-          menuItem[i]
-            .classList
-            .replace("active", "remove");
-        }
       }
-    </script>
-    {% block content %}{% endblock %}
-    <footer>
-      <div class="FooterBox">
-        <img class="lo02" src="{% static 'image/logo/logo1.svg' %}"/>
-        <div class="Made">
-          ⓒ 멋쟁이사자처럼 11기 at 경상국립대<br/>
-          백종화 이민재 변신우 신지아 강지희 김민지
-        </div>
+      return cookieValue;
+    };
+    const logout = () => {
+      fetch(SERVER_ADDRESS + "/api/logout/")
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          window.location.href = SERVER_ADDRESS;
+        });
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <a class="Logo" href="/">
+      <img class="lo02" src="{% static 'image/logo/logo2.svg' %}" />
+    </a>
+    <nav>
+      <ol>
+        <li>
+          <a href="/">홈</a>
+        </li>
+        <li>
+          <a href="/translate/">번역하기</a>
+        </li>
+        <li>
+          <a href="/lecture/">학습하기</a>
+        </li>
+        <li>
+          <a href="/game/">게임하기</a>
+        </li>
+      </ol>
+    </nav>
+    <a href="#" class="profile"><i class="fas fa-user"></i></a>
+    {% if user.is_authenticated %}
+    <button class="SignInBtn" onclick="logout()">로그아웃</button>
+    {% else %}
+    <a href="/login">
+      <button class="SignInBtn">로그인</button>
+    </a>
+    {% endif %}
+  </header>
+
+  <script type="text/javascript">
+    const currentLocation = location
+      .href
+      .split("/")[3];
+    const menuItem = document
+      .querySelector("ol")
+      .querySelectorAll("a");
+    const menuLength = menuItem.length;
+    for (let i = 0; i < menuLength; i++) {
+      let menuLocation = menuItem[i]
+        .href
+        .split("/");
+      if (menuLocation[3] == currentLocation) {
+        menuItem[i].className = "active";
+      } else {
+        menuItem[i]
+          .classList
+          .replace("active", "remove");
+      }
+    }
+  </script>
+  {% block content %}{% endblock %}
+  <footer>
+    <div class="FooterBox">
+      <img class="lo02" src="{% static 'image/logo/logo1.svg' %}" />
+      <div class="Made">
+        ⓒ 멋쟁이사자처럼 11기 at 경상국립대<br />
+        백종화 이민재 변신우 신지아 강지희 김민지
       </div>
-      <div class="SnsIconBox">
-        <a href="https://www.instagram.com/likelion_gnu/" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/likeliongnu/" target="_blank">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-      </div>
-    </footer>
-  </body>
+    </div>
+    <div class="SnsIconBox">
+      <a href="https://www.instagram.com/likelion_gnu/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/likeliongnu/" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+    </div>
+  </footer>
+</body>
 
 </html>

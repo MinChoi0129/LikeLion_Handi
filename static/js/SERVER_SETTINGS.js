@@ -1,1 +1,1 @@
-var SERVER_ADDRESS = "http://121.156.13.77"
+var SERVER_ADDRESS = "http://localhost"
