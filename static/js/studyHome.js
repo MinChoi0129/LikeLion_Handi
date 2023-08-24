@@ -9,36 +9,37 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
     return response.json();
   })
   .then((data) => {
-    for (let i = 0; i < data.length; i++) {
-      fetch(SERVER_ADDRESS + "/api/lecture/" + data[i]["lecture"] + "/")
-        .then((inshinjia) => {
-          return inshinjia.json();
-        })
-        .then((lecture) => {
-          studying_boxes = document.querySelectorAll(".lectures")[0]
-
-          let text = `<div class="lecture">
-          <div class="lecture" onclick="goToLectureDetailPage(${lecture.id
-            })">
-          <div class="difficulty">${level[lecture.level]}</div>
-          <img class="lectureImg" src="${lecture.lecture_img}"/>
-          <div class="lectureName">${lecture.name}</div>
-          <div class="lengthWithPercent">
-              <div class="maxLength">총 ${lecture.length}개</div>
-              <div class="percent">${lecture.percentage}%</div>
-          </div>
-          <div class="processing"></div>
+    // Extract an array of lecture IDs in the order they were studied
+    const lectureOrder = data.map(item => item.lecture);
+    
+    // Fetch details of the lectures
+    Promise.all(lectureOrder.map(lectureId => {
+      return fetch(SERVER_ADDRESS + "/api/lecture/" + lectureId + "/")
+        .then(response => response.json());
+    }))
+    .then(lectures => {
+      const studyingBoxes = document.querySelectorAll(".lectures")[0];
+      studyingBoxes.innerHTML = ""; // Clear the container
+      
+      // Render the lectures in the order they were studied
+      lectures.forEach(lecture => {
+        let text = `
+          <div class="lecture">
+            <div class="lecture" onclick="goToLectureDetailPage(${lecture.id})">
+              <div class="difficulty">${level[lecture.level]}</div>
+              <img class="lectureImg" src="${lecture.lecture_img}"/>
+              <div class="lectureName">${lecture.name}</div>
+              <div class="lengthWithPercent">
+                <div class="maxLength">총 ${lecture.length}개</div>
+                <div class="percent">${lecture.percentage}%</div>
+              </div>
+              <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage}%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+            </div>
           </div>`;
-          studying_boxes.innerHTML += text;
-
-
-
-
-
-          console.log(lecture)
-        })
-    }
-  })
+        studyingBoxes.innerHTML += text;
+      });
+    });
+  });
 
 fetch(SERVER_ADDRESS + "/api/lectures/")
   .then((response) => {
@@ -55,8 +56,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
       now_data = data[i];
 
       let text = `<div class="lecture">
-                <div class="lecture" onclick="goToLectureDetailPage(${now_data.id
-        })">
+                <div class="lecture" onclick="goToLectureDetailPage(${now_data.id})">
                 <div class="difficulty">${level[now_data.level]}</div>
                 <img class="lectureImg" src="${now_data.lecture_img}"/>
                 <div class="lectureName">${now_data.name}</div>
@@ -64,8 +64,8 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
                     <div class="maxLength">총 ${now_data.length}개</div>
                     <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing"></div>
-                </div>`;
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage}%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+              </div>`;
       lecture1.innerHTML += text;
     }
 
@@ -82,7 +82,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
                     <div class="maxLength">총 ${now_data.length}개</div>
                     <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing"></div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage}%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
                 </div>`;
       lecture2.innerHTML += text;
     }
@@ -100,7 +100,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
                     <div class="maxLength">총 ${now_data.length}개</div>
                     <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing"></div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage}%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
                 </div>`;
       lecture3.innerHTML += text;
     }

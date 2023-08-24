@@ -80,32 +80,52 @@ body {
   width: 100%;
 }
 
-.gory {
-  text-align: center;
-  margin: 40px;
-  margin-top: -25px;
+.categoryBtn {
+  font-family: "Pretendard-SemiBold";
+  font-size: 17px;
+  
+  width: 160px; height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 100px; left: 480px;
+
+  border: 0px;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+  color: white;
+
+  z-index: 4;
+
+  cursor: pointer;
 }
 
-.category {
-  font-family: "Pretendard-SemiBold";
-  width: 150px;
-  height: 50px;
-  padding-top: 16px;
+.searchBox {
   position: relative;
-  top: 51px;
-  left: 115px;
-  background: linear-gradient(to right, #ffea8d, #ffbd6c);
-  border: 0px;
-  color: white;
-  font-size: 15px;
-  z-index: 4;
-  cursor: pointer;
+  top: -248px;
+}
+
+.search {
+  width: 740px; height: 62px;
+
+  padding: 15px;
+
+  border: 1px solid #ff9a23;
+  border-radius: 10px;
+
+  position: relative;
+  top: 40px; left: 660px;
+
+  font-family: "Pretendard-Medium";
+  font-size: 17px;
 }
 
 .SearchBtn {
   position: relative;
-  left: 330px;
-  top: -37px;
+  top: -1px; left: 1358px;
+
   cursor: pointer;
   color: #bababa;
 }
@@ -150,18 +170,6 @@ body {
   margin-left: 13px;
 }
 
-.search {
-  width: 600px;
-  height: 52px;
-  padding: 15px;
-  border: 1px solid #ff9a23;
-  position: relative;
-  left: 60px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-family: "Pretendard-Medium";
-}
-
 input:focus {
   outline: 1px solid #ff9a23;
 }
@@ -180,9 +188,9 @@ input:focus {
 
 .lecturesList {
   position: relative;
+  top: -250px;
   display: block;
-  width: 58rem;
-  height: 14rem;
+  width: 58rem; height: 14rem;
   margin: 0px 150px 0px 150px;
   overflow: hidden;
 }
@@ -239,6 +247,7 @@ input:focus {
 }
 
 .processing {
+  position: relative;
   border-radius: 20px;
   width: 150px;
   height: 7px;
