@@ -1,0 +1,331 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
+}
+@font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+}
+@font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
+}
+@font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
+}
+@font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
+}
+@font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
+}
+  * {
+    box-sizing: border-box;
+}
+body,
+main,
+div {
+    margin: 0;
+    padding: 0;
+}
+ol,
+ul,
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+main {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    width: 75rem;
+    margin: 0 auto;
+  
+    margin-top: 7.5rem;
+    margin-bottom: .55rem;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+button {
+    cursor: pointer;
+}
+body {
+    overflow-x: hidden;
+}
+
+/*info*/
+.myInfo {
+    width: 25rem;
+    height: 43rem;
+
+    border: 1px solid #FFBD6C;
+    border-radius: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 25px rgba(254, 230, 176, 0.35);
+}
+.myInfo .myImgBox{
+    position: relative;
+
+    width: 20rem;
+    
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.myInfo .myImg {
+    width: 16rem;
+    height: 16rem;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 15px #E5E5E5;
+
+}
+.myImgBox .imgChangeBtn {
+    width: 3rem;
+    height: 3rem;
+
+    border: 1px solid #E1E1E1;
+    box-shadow: 0px 4px 10px rgba(0,0,0, .15);
+    border-radius: 50%;
+    background-color: #fff;
+
+    position: absolute;
+    top: -1%;
+    left:68%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgChangeBtn i {
+    font-size: 1.25rem;
+    color: #858585;
+
+    margin:0;
+    padding:0;
+}
+
+.myInfo .myNicknameBox {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+
+    margin-bottom: 1rem;
+}
+.myNicknameBox .myNickname {
+    font-family: 'Pretendard-Bold';
+    font-size: 2.25rem;
+
+    margin: 0 .5rem;
+}
+.myNicknameBox i {
+    font-size: 1.75rem;
+    color: #858585;
+    cursor: pointer;
+}
+.myInfoBox {
+    margin-top: 1rem;
+}
+.myInfoBox .InfoBox{
+    width: 20rem;
+    height: 4.5rem;
+
+    background-color: #F5F5F5;
+    border: 1px solid #E1E1E1;
+    border-radius: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: .5rem 1.25rem;
+}
+.InfoBox .SubTitle {
+    margin:0;
+    padding:0;
+
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1rem;
+
+    color: #858585;
+}
+.InfoBox .Information {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 1.35rem;
+
+    margin:0;
+    padding:0;
+}
+
+/*complete*/
+.CompleteBox {
+    width:45rem;
+    height: 44rem;
+    margin-left: 2.5rem;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.CompleteBox .CompleteTitle {
+    font-family: 'Pretendard-Bold';
+    font-size: 2.5rem;
+
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+}
+.CompleteBox .CompleteLectures{
+    width: 45rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin-top: 1.5rem;
+}
+.CompleteLectures .lecture {
+    width: 14rem;
+    height: 15rem;
+
+    border-radius: 1.5rem;
+    border: 1px solid #E1E1E1;
+    box-shadow: 1px 1px 10px rgba(225, 225, 225, 0.5);
+
+    margin: .5rem 0;
+}
+.lecture .lectureImg {
+    background-size: cover;
+    border-radius: 1.5rem 1.5rem 0px 0px;
+    width: 13.9rem;
+    height: 125px;
+}
+.lecture .lectureName {
+    margin-left: 12px;
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+    font-size: 1.5rem;
+    font-family: "Pretendard-Bold";
+}
+.difficulty {
+    border: 1.5px solid white;
+    border-radius: 50px;
+    font-size: .65rem;
+    font-weight: 550;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 58px;
+    height: 16px;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: "Pretendard-Regular";
+}
+.lengthWithPercent {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.maxLength,
+.percent {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-family: "Pretendard-Regular";
+}
+
+.maxLength {
+    margin-left: 12px;
+    margin-right: 80px;
+}
+.myPercent {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-family: "Pretendard-Regular";
+    padding-right: 1rem;
+}
+.processing {
+    border-radius: 20px;
+    width: 12.5rem;
+    height: 7px;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: #858585;
+}
+.CompleteLectures .HomeBtnBox {
+    width: 140px;
+    height: 48px;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-58%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ffea8d, #ffbd6c);
+    padding: 2px;
+    border-radius: 12px;
+}
+.HomeBtnBox .HomeBtn {
+    width: 136px;
+    height: 44px;
+    background: #fff;
+    /* padding: 10px; */
+    border: none;
+    border-radius: 10px;
+  
+    font-family: "Pretendard-SemiBold";
+    font-size: 1.15rem;
+    color: #ff9a23;
+  }
