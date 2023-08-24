@@ -42,9 +42,9 @@ urlpatterns = [
         name="sentenceResult",
     ),
     path(
-    "mypage/<str:user>/",
-    views_page.myPage,
-    name="myPage",
+        "mypage/",
+        views_page.myPage,
+        name="myPage",
     ),
 ]
 

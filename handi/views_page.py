@@ -111,8 +111,9 @@ def inGame(request):
         request, "game.html", {"user": user, "SERVER_ADDRESS": SERVER_ADDRESS}
     )
 
-def myPage(request, user):
-    user = get_object_or_404(User, pk=request.user.id)
+
+def myPage(request):
+    user = request.user
     return render(
         request, "mypage.html", {"user": user, "SERVER_ADDRESS": SERVER_ADDRESS}
     )

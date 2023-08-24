@@ -5,7 +5,7 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}/manage.py",
-      "args": ["runserver", "0.0.0.0:80"],
+      "args": ["runserver", "127.0.0.1:8000"],
       "django": true,
       "justMyCode": false
     }
