@@ -12,6 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
             "username",
             "password",
             "name",
+            "nickname",
             "game_score",
             "email_address",
             "profile_img",

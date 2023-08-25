@@ -15,7 +15,7 @@ urlpatterns = [
     path("api/users/", UserList.as_view()),
     path("api/user/", UserDetail.as_view()),
     path("api/user/userinfo/", UserInformation.as_view()),
-    # path("api/user/update/<pk>/", UserUpdate.as_view()),
+    path("api/user/update/", UserUpdate.as_view()),
     # path("api/user/delete/<pk>/", UserDelete.as_view()),
     path("api/users/rank/", UserRank.as_view()),
     path("api/users/rank/update/", UserRankUpdate.as_view()),
