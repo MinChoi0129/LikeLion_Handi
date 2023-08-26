@@ -122,15 +122,19 @@ body {
     margin-bottom: 1rem;
 }
 .myInfo .myImg {
-    width: 16rem;
-    height: 16rem;
+    width: 15rem;
+    height: 15rem;
 
-    border-radius: 50%;
+    border-radius: 25px;
 
     box-shadow: 0 0 15px #E5E5E5;
 
 }
+.myImgBox .imginput {
+    display: none;
+}
 .myImgBox .imgChangeBtn {
+    
     width: 3rem;
     height: 3rem;
 
@@ -140,12 +144,14 @@ body {
     background-color: #fff;
 
     position: absolute;
-    top: -1%;
-    left:68%;
+    top: -8%;
+    left:45%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 .imgChangeBtn i {
     font-size: 1.25rem;

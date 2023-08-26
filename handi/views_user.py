@@ -137,10 +137,10 @@ class UserDelete(DestroyAPIView):
 class UserRank(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         all_users = sorted(
-            [(user.game_score, user.name) for user in User.objects.all()], reverse=True
+            [(user.game_score, user.nickname) for user in User.objects.all()], reverse=True
         )
         me = request.user
-        my_score, my_name = me.game_score, me.name
+        my_score, my_name = me.game_score, me.nickname
 
         my_rank = -1
         for i in range(len(all_users)):

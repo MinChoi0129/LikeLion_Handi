@@ -64,7 +64,7 @@ fetch(SERVER_ADDRESS + "/api/quiz/" + Id + "/")
     </div>
     </div>`;
     const typeB = `<div class="QuizBox">
-                    <video src="" muted autoplay loog></video>
+                    <video src="" muted autoplay loop></video>
                 </div>
                 <div class="SelectBox" id="ver2">
                     <input type="radio" id="select1" name="wordSelect">
