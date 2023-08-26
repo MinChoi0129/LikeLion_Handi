@@ -25,7 +25,7 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
             }
 
         });
-
+         
     });
 
 //user정보불러오기
