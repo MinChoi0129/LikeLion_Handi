@@ -78,13 +78,13 @@ fetch(SERVER_ADDRESS + "/api/user/")
     })
     .then((data) => {
         console.log(data);
-        const myImg = document.querySelector('.myImg');
         const myNickname = document.querySelector('.myNickname');
         const myId = document.querySelector('.myId');
         const myName = document.querySelector('#name');
         const myEmail = document.querySelector('#email');
         const myRank = document.querySelector('#rank');
         const myScore = document.querySelector('#score');
+        const myImg = document.querySelector('.myImg');
 
         myNickname.innerHTML = data.nickname;
         myId.innerHTML = "@" + `${data.username}`;
@@ -110,6 +110,8 @@ const back = document.querySelector('.Back');
 const chbtn = document.querySelector('.chbtn');
 
 const cancel = document.querySelector('.cancel');
+const submit = document.querySelector('.submit');
+
 
 chbtn.addEventListener("click", ()=>{
     modal.style.display= "flex";
@@ -119,3 +121,24 @@ cancel.addEventListener("click",()=> {
     modal.style.display= "none";
     back.style.display = "none";
 })
+submit.addEventListener("click", ()=>{
+    let mynickname = document.getElementById("nickname").value;
+
+    fetch(SERVER_ADDRESS + "/api/user/update/", {
+        method: "PATCH",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": getCookie("csrftoken"),
+        },
+        cache: "no-cache",
+        mode: "same-origin",
+        body: new URLSearchParams({nickname : mynickname}),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            window.location.href = SERVER_ADDRESS + "/mypage/";
+        });
+    })
