@@ -24,8 +24,8 @@ function searchLecture() {
 
 
 
-document.getElementById("SearchBtn")
-  .addEventListener("click", searchLecture);
+// document.getElementById("SearchBtn")
+//   .addEventListener("click", searchLecture);
 
 
 
@@ -75,36 +75,26 @@ fetch(SERVER_ADDRESS + "/api/lectures/popular/")
     return response.json();
   })
   .then((data) => {
-    // Extract an array of lecture IDs in the order they were studied
-    const lectureOrder = data.map(item => item.lecture);
+    lectures = document.querySelectorAll(".lectures");
 
-    // Fetch details of the lectures
-    Promise.all(lectureOrder.map(lectureId => {
-      return fetch(SERVER_ADDRESS + "/api/lecture/" + lectureId + "/")
-        .then(response => response.json());
-    }))
-      .then(lectures => {
-        const studyingBoxes = document.querySelectorAll(".lectures")[0];
-        studyingBoxes.innerHTML = ""; // Clear the container
 
-        // Render the lectures in the order they were studied
-        lectures.forEach(lecture => {
-          let text = `
-          <div class="lectures">
-            <div class="lecture" onclick="goToLectureDetailPage(${lecture.id})">
-              <div class="difficulty">${level[lecture.level]}</div>
-              <img class="lectureImg" src="${lecture.lecture_img}"/>
-              <div class="lectureName">${lecture.name}</div>
-              <div class="lengthWithPercent">
-                <div class="maxLength">총 ${lecture.length}개</div>
-                <div class="percent">${lecture.percentage}%</div>
-              </div>
-              <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage}%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
-            </div>
-          </div>`;
-          studyingBoxes.innerHTML += text;
-        });
-      });
+    for (let i = 0; i < 10; i++) {
+      now_data = data[i];
+
+      let text = `<div class="lectures">
+                <div class="lecture" onclick="goToLectureDetailPage(${now_data.id})">
+                <div class="difficulty">${level[now_data.level]}</div>
+                <img class="lectureImg" src="${now_data.lecture_img}"/>
+                <div class="lectureName">${now_data.name}</div>
+                <div class="lengthWithPercent">
+                    <div class="maxLength">총 ${now_data.length}개</div>
+                    <div class="percent">${now_data.percentage}%</div>
+                </div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage}%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+              </div>`;
+      lecture1.innerHTML += text;
+    }
+
   });
 
 
@@ -214,20 +204,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.getElementById("search")
-  .addEventListener("keyup", function (event) {
-    event.preventDefault();
-    console.log(document.getElementById("lectureSection"))
-    let lectures = document.getElementsByClassName("lecture")
-    if (document.getElementById("search").value.length == 0) {
-      for (let i = 0; i < lectures.length; i++) {
-        lectures[i].hidden = false
-      }
-    } else {
-      for (let i = 0; i < lectures.length; i++) {
-        lectures[i].hidden = true
-      }
-      document.getElementById("SearchBtn").click();
-    }
+// document.getElementById("search")
+//   .addEventListener("keyup", function (event) {
+//     event.preventDefault();
+//     console.log(document.getElementById("lectureSection"))
+//     let lectures = document.getElementsByClassName("lecture")
+//     if (document.getElementById("search").value.length == 0) {
+//       for (let i = 0; i < lectures.length; i++) {
+//         lectures[i].hidden = false
+//       }
+//     } else {
+//       for (let i = 0; i < lectures.length; i++) {
+//         lectures[i].hidden = true
+//       }
+//       document.getElementById("SearchBtn").click();
+//     }
 
-  });
+//   });
