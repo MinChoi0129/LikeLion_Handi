@@ -20,6 +20,7 @@
 
     <div class="category">
       <div class="categoryBox">
+        <div class="whiteBox"></div>
         <div class="categoryBtn"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
         <div class="list">
           <div class="person"><i class="far fa-user"></i> &nbsp; 인간</div>
@@ -101,16 +102,17 @@
     </section>
 
     <script>
-          // const categoryBtn = document.querySelector(".category");
-          // const listContainer = document.querySelector(".list");
-          //
-          // categoryBtn.addEventListener("click", function () {
-          //   if (listContainer.style.transform === "translateY(233px)") {
-          //     listContainer.style.transform = "translateY(0)";
-          //   } else {
-          //     listContainer.style.transform = "translateY(233px)";
-          //   }
-          // });
+      // list 움직임
+          const categoryBtn = document.querySelector(".categoryBtn");
+          const listContainer = document.querySelector(".list");
+          
+          categoryBtn.addEventListener("click", function () {
+            if (listContainer.style.transform === "translateY(255px)") {
+              listContainer.style.transform = "translateY(0)";
+            } else {
+              listContainer.style.transform = "translateY(255px)";
+            }
+          });
     </script>
   </main>
 </body>

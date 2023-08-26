@@ -5,22 +5,7 @@ function goToLectureDetailPage(lecture_id) {
 }
 
 
-function searchLecture() {
-  let searchText = document.getElementById("search").value;
 
-  fetch(SERVER_ADDRESS + "/api/lectures/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      "X-CSRFToken": getCookie("csrftoken"),
-    },
-    body: new URLSearchParams({ name: searchText }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data)
-    });
-}
 
 
 // 진행 중인 학습
@@ -198,23 +183,77 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+let backupHTML = ""
+
+function backUpAndRestore(mode) {
+  if (mode == "backup") {
+    backupHTML = document.getElementById("lectureSection").innerHTML
+  }
+  else if (mode == "restore") {
+    document.getElementById("lectureSection").innerHTML = backupHTML
+  }
+  else {
+    alert("큰일났따!")
+  }
+
+}
+
+function searchLecture() {
+  let searchText = document.getElementById("search").value;
+
+  fetch(SERVER_ADDRESS + "/api/lectures/search/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-CSRFToken": getCookie("csrftoken"),
+    },
+    body: new URLSearchParams({ name: searchText }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      backUpAndRestore("backup")
+      document.getElementById("lectureSection").innerHTML = ""
+
+
+      let main = document.getElementById("lectureSection")
+      main.innerHTML += `<div class="lecturesList">
+      <div class="title" style="word-break: break-all">검색 결과</div>`
+
+
+      let box = document.getElementsByClassName("lecturesList")[0]
+      for (let i = 0; i < data.length; i++) {
+        now_data = data[i]
+
+        let text = `
+          <div class="lecture" onclick="goToLectureDetailPage(${now_data.id})">
+          <div class="difficulty">${level[now_data.level]}</div>
+            <img class="lectureImg" src="${now_data.lecture_img}"/>
+            <div class="lectureName">${now_data.name}</div>
+            <div class="lengthWithPercent">
+                <div class="maxLength">총 ${now_data.length}개</div>
+                <div class="percent">${now_data.percentage}%</div>
+            </div>
+          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage}%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+          </div>`;
+        box.innerHTML += text
+      }
+      main.innerHTML += `</div>`
+    }
+    )
+}
+
+
+// 검색
 document.getElementById("SearchBtn")
   .addEventListener("click", searchLecture);
 
 document.getElementById("search")
   .addEventListener("keyup", function (event) {
     event.preventDefault();
-
-    let lectures = document.getElementsByClassName("lecture")
     if (document.getElementById("search").value.length == 0) {
-        for (let i = 0; i < lectures.length; i++) {
-            lectures[i].hidden = false
-      }
+      backUpAndRestore("restore")
     } else {
-      for (let i = 0; i < lectures.length; i++) {
-        lectures[i].hidden = true
-      }
       document.getElementById("SearchBtn").click();
     }
-
   });
