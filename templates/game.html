@@ -186,16 +186,7 @@
           <p class="CurrentScoreNum">0</p>
           <p class="HighestScoreNum">{{user.game_score}}</p>
           <div class="Nickname">{{user.username}}</div>
-          <img class="Userimage" src=""/>
-          <script>
-            userImageElement = document.querySelector(".Userimage");
-            const encodedText = "{{user.profile_img}}";
-            const textarea = document.createElement("textarea");
-            textarea.innerHTML = encodedText;
-            const decodedText = textarea.value;
-            const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(decodedText)}`;
-            userImageElement.setAttribute("src", dataUrl);
-          </script>
+          <img class="Userimage" src="/media/{{user.profile_img}}" alt="" onerror="this.src='../../static/image/profile_img.png'"/>
           <div class="GameTitleWrap">
             <p class="TitleCard">카드</p>
             <p class="TitleFlip">뒤집기</p>
