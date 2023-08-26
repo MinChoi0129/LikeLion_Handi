@@ -7,10 +7,8 @@ class User(AbstractUser):
     name = models.CharField(max_length=10)
     game_score = models.IntegerField(default=0, blank=True, null=True)
     email_address = models.CharField(max_length=50, blank=True, null=True)
-    profile_img = models.TextField(
-        default=requests.get("https://source.boringavatars.com/beam?square=True").text
-    )
-
+    nickname = models.CharField(max_length=50, blank=True, null=True)
+    profile_img = models.ImageField(upload_to="profiles/", blank=True, null=True)
 
 class MediaEntry(models.Model):
     name = models.CharField(max_length=30)

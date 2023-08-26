@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="{% static 'css/mypage.css' %}"
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/mypage.js' %}" defer></script>
 </head>
 
 <body>
 <main>
+    <div class="Back"></div>
     <section>
         <div class="myInfo">
             <div class="myImgBox">
@@ -23,27 +25,28 @@
                 </button>
             </div>
             <div class="myNicknameBox">
-                <p class="myNickname">닉네임</p>
-                <i class="fa-solid fa-pen"></i>
+                <p class="myNickname"></p>
+                <i class="fa-solid fa-pen chbtn"></i>
             </div>
+            <p class="myId"></p>
             <div class="myInfoBox">
                 <div class="InfoBox">
                     <p class="SubTitle">Name</p>
-                    <p class="Information">사용자1</p>
+                    <p class="Information" id="name"></p>
                 </div>
             </div>
             <div class="myInfoBox">
                 <div class="InfoBox">
                     <p class="SubTitle">Email</p>
-                    <p class="Information">anjfkzoTkTsh@naver.com</p>
+                    <p class="Information" id="email"></p>
                 </div>
             </div>
             <div class="myInfoBox">
                 <div class="InfoBox">
                     <p class="SubTitle">Rank</p>
                     <p class="Information">
-                        <span class="myRank">4등.</span>
-                        <span class="myScore">500점</span>
+                        <span class="myRank" id="rank"></span>
+                        <span class="myScore" id="score"></span>
                     </p>
                 </div>
             </div>
@@ -51,72 +54,23 @@
         <div class="CompleteBox">
             <p class="CompleteTitle">완료한 학습</p>
             <div class="CompleteLectures">
-                <div class="lecture">
-                    <div class="difficulty">난이도 상</div>
-                    <img class="lectureImg" src="{% static 'image/main1.png' %}"/>
-                    <div class="lectureName">네임</div>
-                    <div class="lengthWithPercent">
-                        <div class="maxLength">총 n개</div>
-                        <div class="myPercent">100%</div>
-                    </div>
-                    <div class="processing"></div>
-                </div>
-                <div class="lecture">
-                    <div class="difficulty"></div>
-                    <img class="lectureImg" src=""/>
-                    <div class="lectureName">네임</div>
-                    <div class="lengthWithPercent">
-                        <div class="maxLength">총 n개</div>
-                        <div class="myPercent">100%</div>
-                    </div>
-                    <div class="processing"></div>
-                </div>
-                <div class="lecture">
-                    <div class="difficulty"></div>
-                    <img class="lectureImg" src=""/>
-                    <div class="lectureName">네임</div>
-                    <div class="lengthWithPercent">
-                        <div class="maxLength">총 n개</div>
-                        <div class="myPercent">100%</div>
-                    </div>
-                    <div class="processing"></div>
-                </div>
-                <div class="lecture">
-                    <div class="difficulty"></div>
-                    <img class="lectureImg" src=""/>
-                    <div class="lectureName">네임</div>
-                    <div class="lengthWithPercent">
-                        <div class="maxLength">총 n개</div>
-                        <div class="myPercent">100%</div>
-                    </div>
-                    <div class="processing"></div>
-                </div>
-                <div class="lecture">
-                    <div class="difficulty"></div>
-                    <img class="lectureImg" src=""/>
-                    <div class="lectureName">네임</div>
-                    <div class="lengthWithPercent">
-                        <div class="maxLength">총 n개</div>
-                        <div class="myPercent">100%</div>
-                    </div>
-                    <div class="processing"></div>
-                </div>
-                <div class="lecture">
-                    <div class="difficulty"></div>
-                    <img class="lectureImg" src=""/>
-                    <div class="lectureName">네임</div>
-                    <div class="lengthWithPercent">
-                        <div class="maxLength">총 n개</div>
-                        <div class="myPercent">100%</div>
-                    </div>
-                    <div class="processing"></div>
-                </div>
                 <div class="HomeBtnBox">
                     <button class="HomeBtn">더보기</button>
                 </div>
             </div>
         </div>
     </section>
+    <!-- 닉네임수정모달 -->
+    <div class="ChangeModal">
+        <p class="ChangeTitle">닉네임 변경하기</p>
+        <form>
+            <input type="text" placeholder="10자 이내로 작성가능합니다." />
+            <div class="modalBtnBox">
+                <div class="cancel">취소</div>
+                <button type="submit">닉네임 변경</button>
+            </div>
+        </form>
+    </div>
 </main>
 </body>
 {% endblock %}

@@ -1,4 +1,4 @@
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -73,9 +73,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow-y: scroll;
 }
 section {
-    width: 75rem;
+    width: fit-content;
     margin: 0 auto;
   
     margin-top: 7.5rem;
@@ -93,6 +95,7 @@ button {
 }
 body {
     overflow-x: hidden;
+
 }
 
 /*info*/
@@ -158,8 +161,6 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
-
-    margin-bottom: 1rem;
 }
 .myNicknameBox .myNickname {
     font-family: 'Pretendard-Bold';
@@ -171,6 +172,16 @@ body {
     font-size: 1.75rem;
     color: #858585;
     cursor: pointer;
+}
+.myId {
+    font-family: 'Pretendard-Medium';
+    font-size: 1rem;
+    color: #959595;
+    margin: 0;
+    padding: 0;
+
+    margin-bottom: .5rem;
+    margin-top: .25rem;
 }
 .myInfoBox {
     margin-top: 1rem;
@@ -223,37 +234,43 @@ body {
 
     margin: 0;
     padding: 0;
-    margin-top: 1rem;
 }
 .CompleteBox .CompleteLectures{
-    width: 45rem;
+    width: 44rem;
+    height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 .CompleteLectures .lecture {
-    width: 14rem;
-    height: 15rem;
+    width: 21rem;
+    height: 11rem;
 
     border-radius: 1.5rem;
     border: 1px solid #E1E1E1;
     box-shadow: 1px 1px 10px rgba(225, 225, 225, 0.5);
 
     margin: .5rem 0;
+
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
 }
 .lecture .lectureImg {
     background-size: cover;
-    border-radius: 1.5rem 1.5rem 0px 0px;
-    width: 13.9rem;
-    height: 125px;
+    border-radius: 1.5rem 0px 0px 1.5rem;
+    width: 12rem;
+    height: 10.9rem;
 }
 .lecture .lectureName {
     margin-left: 12px;
-    margin-top: .5rem;
+    margin-top: 2rem;
     margin-bottom: .25rem;
     font-size: 1.5rem;
     font-family: "Pretendard-Bold";
+    padding-right: 0.75rem;
 }
 .difficulty {
     border: 1.5px solid white;
@@ -268,49 +285,18 @@ body {
     position: absolute;
     margin-left: 10px;
     margin-top: 10px;
+    left: 58%;
     font-family: "Pretendard-Regular";
-}
-.lengthWithPercent {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: .5rem;
-}
-
-.maxLength,
-.percent {
-    font-size: 1rem;
-    margin-top: 10px;
-    font-family: "Pretendard-Regular";
-}
-
-.maxLength {
-    margin-left: 12px;
-    margin-right: 80px;
-}
-.myPercent {
-    font-size: 1rem;
-    margin-top: 10px;
-    font-family: "Pretendard-Regular";
-    padding-right: 1rem;
-}
-.processing {
-    border-radius: 20px;
-    width: 12.5rem;
-    height: 7px;
-    margin: 0 auto;
-    margin-top: 5px;
-    margin-left: 10px;
-    background-color: #858585;
 }
 .CompleteLectures .HomeBtnBox {
     width: 140px;
     height: 48px;
     position: absolute;
-    bottom: 3%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-58%);
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #ffea8d, #ffbd6c);
@@ -329,3 +315,109 @@ body {
     font-size: 1.15rem;
     color: #ff9a23;
   }
+
+/*모달*/
+.Back {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 110;
+}
+.ChangeModal {
+    width: 22rem;
+    height: 13rem;
+
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #ff9a23;
+
+    font-family: 'Pretendard-SemiBold';
+
+    padding: 1rem;
+    text-align: center;
+
+    position: absolute;
+    left: 21%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 999;
+}
+.ChangeModal .ChangeTitle {
+    font-size: 1.75rem;
+    color:#222222;
+
+    margin:0; padding:0;
+
+    /* margin: .5rem 0; */
+    margin-bottom: 1rem;
+}
+.ChangeModal input {
+    width: 20rem;
+    height: 3rem;
+    border-radius: 25px;
+
+    border: 1px solid #FFBD6C;
+    
+    background-color: #fff;
+
+    padding: 1rem;
+    margin-bottom: .5rem;
+}
+.ChangeModal input::placeholder {
+    font-family: 'Pretendard-Light';
+    font-size: 1rem;
+    color:gray;
+}
+.ChangeModal input:focus {
+    outline: none;
+}
+.ChangeModal .modalBtnBox {
+    float: right;
+    
+    display: flex;
+    flex-direction: row;
+}
+.modalBtnBox .cancel {
+    width: 4rem;
+    height: 2.5rem;
+
+    background-color: #ededed;
+    border-radius: 25px;
+
+    font-family: 'Pretendard-Medium';
+    font-size: 1rem;
+    color:#959595;
+    margin: .5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    
+    cursor: pointer;
+}
+.modalBtnBox button {
+    width: 6.5rem;
+    height: 2.5rem;
+
+    background-color: #ffea8d;
+    border-radius: 25px;
+    border: none;
+
+    font-family: 'Pretendard-Medium';
+    font-size: 1rem;
+    color:#ff9a23;
+
+    margin: .5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+}
