@@ -18,7 +18,12 @@ class Login(APIView):
         if user:
             login(request, user)
             return JsonResponse(
-                {"pk": user.pk, "username": username, "name": user.name},
+                {
+                    "pk": user.pk,
+                    "username": username,
+                    "name": user.name,
+                    "nickname": user.nickname,
+                },
                 status=status.HTTP_200_OK,
             )
         return Response({"login": "failed"}, status=status.HTTP_400_BAD_REQUEST)
@@ -41,6 +46,7 @@ class Signup(ListCreateAPIView):
             response_data = {
                 "username": serializer.data["username"],
                 "name": serializer.data["name"],
+                "nickname": serializer.data["nickname"],
                 "email_address": serializer.data["email_address"],
             }
             return Response(response_data, status=status.HTTP_201_CREATED)
@@ -84,6 +90,34 @@ class UserDetail(RetrieveAPIView):
 
 # UPDATE User
 class UserUpdate(UpdateAPIView):
+    def patch(self, request, *args, **kwargs):
+        try:
+            me = request.user
+            for key in request.data:
+                if key == "username":
+                    me.username = request.data[key]
+                elif key == "name":
+                    me.name = request.data[key]
+                elif key == "nickname":
+                    me.nickname = request.data[key]
+                elif key == "email_address":
+                    me.email_address = request.data[key]
+            me.save()
+            return Response(
+                {
+                    "username": me.username,
+                    "name": me.name,
+                    "nickname": me.nickname,
+                    "email_address": me.email_address,
+                },
+                status=status.HTTP_202_ACCEPTED,
+            )
+        except:
+            return Response(
+                {"success": False},
+                status=status.HTTP_401_UNAUTHORIZED,
+            )
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
