@@ -1,4 +1,4 @@
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -73,9 +73,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow-y: scroll;
 }
 section {
-    width: 75rem;
+    width: fit-content;
     margin: 0 auto;
   
     margin-top: 7.5rem;
@@ -93,6 +95,7 @@ button {
 }
 body {
     overflow-x: hidden;
+
 }
 
 /*info*/
@@ -234,6 +237,7 @@ body {
 }
 .CompleteBox .CompleteLectures{
     width: 44rem;
+    height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -292,7 +296,7 @@ body {
     left: 50%;
     transform: translateX(-58%);
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #ffea8d, #ffbd6c);
