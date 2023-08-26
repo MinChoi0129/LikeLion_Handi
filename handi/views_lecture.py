@@ -39,7 +39,9 @@ class LectureList(ListCreateAPIView):
         return Response(form, content_type="charset=utf-8", status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        lecture = Lecture.objects.filter(main_category__contains=request.data["main_category"])
+        lecture = Lecture.objects.filter(
+            main_category__contains=request.data["main_category"]
+        )
         form = []
 
         for lecture_i in lecture:
@@ -70,6 +72,7 @@ class LectureList(ListCreateAPIView):
 
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer
+
 
 class LectureSearch(ListCreateAPIView):
     def post(self, request, *args, **kwargs):
@@ -104,6 +107,61 @@ class LectureSearch(ListCreateAPIView):
 
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer
+
+
+class LecturePopular(ListCreateAPIView):
+    def get(self, request, *args, **kwargs):
+        lecture = Lecture.objects.all()
+
+        #강의 개수만큼 빈 딕셔너리 만들기, 값은 0 
+        lecture_dict = {}
+        for i in range(1, len(lecture)):
+            lecture_dict[i] = 0
+
+        #전체 강의 매니저에서 강의 id를 받아와 딕셔너리키키와 같은 자리에 값 +1하기
+        lectureManager = LectureManager.objects.all()
+        for lecture_i in lectureManager.all():
+            lecture_dict[lecture_i.lecture.pk] += 1
+
+        #개수가 많은 순으로 정렬
+        lecture_count = sorted(
+            lecture_dict, key=lambda x: lecture_dict[x], reverse=True
+        )
+
+        form = []
+
+        #상위 5개만
+        for i in range(5):
+            lecture = Lecture.objects.get(pk=lecture_count[i])
+            lecture_manager = LectureManager.objects.filter(
+                user=request.user.id, lecture=lecture_count[i]
+            ).first()
+
+            if not lecture_manager:
+                percentage = 0
+
+            else:
+                percentage = lecture_manager.percentage
+
+            form.append(
+                {
+                    "id": lecture.id,
+                    "name": lecture.name,
+                    "main_category": lecture.main_category,
+                    "sub_category": lecture.sub_category,
+                    "theme_category": lecture.theme_category,
+                    "level": lecture.level,
+                    "length": lecture.length,
+                    "lecture_img": lecture.lecture_img.url,
+                    "percentage": percentage,
+                }
+            )
+
+        return Response(form, content_type="charset=utf-8", status=status.HTTP_200_OK)
+
+    queryset = Lecture.objects.all()
+    serializer_class = LectureSerializer
+
 
 # READ Lecture
 class LectureDetail(RetrieveAPIView):
