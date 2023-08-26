@@ -26,7 +26,7 @@ function join() {
   let password = document.getElementById("password").value;
   let myname = document.getElementById("name").value;
   let number = document.getElementById("PhoneNumber");
-  let nickname = document.getElementById("nickname");
+  let nickname = document.getElementById("nickname").value;
 
   fetch(SERVER_ADDRESS + "/api/signup/", {
     method: "POST",
