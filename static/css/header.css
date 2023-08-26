@@ -199,8 +199,6 @@ footer i {
 }
 
 .profile {
-  position: relative;
-  left: 240px;
   color: #ff9a23;
   font-size: 1.25rem;
   display: flex;
@@ -211,4 +209,6 @@ footer i {
   border-radius: 50%;
   /* border: 1px solid lightgray; */
   box-shadow: 0 0 10px rgba(255, 154, 35, .3);
+
+  margin-right: -22rem;
 }
