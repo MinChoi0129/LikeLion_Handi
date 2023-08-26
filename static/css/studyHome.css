@@ -1,42 +1,43 @@
 @font-face {
   font-weight: 300;
   font-family: "Pretendard-Light";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
 }
+
 @font-face {
   font-weight: 400;
   font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
 }
+
 @font-face {
   font-weight: 500;
   font-family: "Pretendard-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
 }
+
 @font-face {
   font-weight: 600;
   font-family: "Pretendard-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
 }
+
 @font-face {
   font-weight: 700;
   font-family: "Pretendard-Bold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
 }
+
 @font-face {
   font-weight: 800;
   font-family: "Pretendard-ExtraBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
 }
+
 * {
   box-sizing: border-box;
 }
+
 body,
 main,
 div {
@@ -52,15 +53,18 @@ li {
   padding: 0;
   margin: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 html {
   margin: 0;
   padding: 0;
   font-size: 16px;
 }
+
 section {
   width: 70rem;
   margin: 0 auto;
@@ -83,17 +87,20 @@ body {
 .categoryBtn {
   font-family: "Pretendard-SemiBold";
   font-size: 17px;
-  
-  width: 160px; height: 60px;
+
+  width: 160px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   position: relative;
-  top: 110px; left: 480px;
+  top: 110px;
+  left: 480px;
 
-  border: 0px; border-radius: 10px;
+  border: 0px;
+  border-radius: 10px;
   background: linear-gradient(to right, #ffea8d, #ffbd6c);
   color: white;
 
@@ -108,7 +115,8 @@ body {
 }
 
 .search {
-  width: 740px; height: 62px;
+  width: 740px;
+  height: 62px;
 
   padding: 15px;
 
@@ -116,7 +124,8 @@ body {
   border-radius: 10px;
 
   position: relative;
-  top: 40px; left: 660px;
+  top: 40px;
+  left: 660px;
 
   font-family: "Pretendard-Medium";
   font-size: 17px;
@@ -124,7 +133,8 @@ body {
 
 .SearchBtn {
   position: relative;
-  top: -1px; left: 1358px;
+  top: -1px;
+  left: 1358px;
 
   cursor: pointer;
   color: #bababa;
@@ -137,8 +147,10 @@ body {
 .list {
   position: relative;
 
-  top: 110px; left: 485px; 
-  width: 150px; height: 250px;
+  top: 110px;
+  left: 485px;
+  width: 150px;
+  height: 250px;
   margin-top: 5px;
 
   color: #bababa;
@@ -189,14 +201,15 @@ input:focus {
   display: block;
   margin-top: 100px;
   margin-left: 330px;
-  margin-bottom: 85px;
+  margin-bottom: 385px;
 }
 
 .lecturesList {
   position: relative;
   top: -250px;
   display: block;
-  width: 58rem; height: 14rem;
+  width: 58rem;
+  height: 14rem;
   margin: 0px 150px 0px 150px;
   overflow: hidden;
 }
@@ -217,17 +230,21 @@ input:focus {
 
   border-radius: 15px;
 
-  width: 170px; height: 175px;
-  
+  width: 170px;
+  height: 175px;
+
   margin-right: 17px;
-  padding-bottom: 20px; /* 아래쪽으로 밀어내기 위한 패딩 추가 */
+  padding-bottom: 20px;
+  /* 아래쪽으로 밀어내기 위한 패딩 추가 */
 
   cursor: pointer;
   transition: 0.7s;
 
   display: flex;
-  flex-direction: column; /* 내용을 수직으로 쌓음 */
-  justify-content: space-between; /* 내용을 아래쪽으로 밀어냄 */
+  flex-direction: column;
+  /* 내용을 수직으로 쌓음 */
+  justify-content: space-between;
+  /* 내용을 아래쪽으로 밀어냄 */
 }
 
 .lectureImg {
@@ -239,7 +256,9 @@ input:focus {
 
 .lectureName {
   height: 30px;
-  margin-top: 5px; margin-left: 12px; margin-right: 8px;
+  margin-top: 5px;
+  margin-left: 12px;
+  margin-right: 8px;
   font-size: 17px;
   font-family: "Pretendard-Bold";
 }
@@ -263,9 +282,11 @@ input:focus {
 .processing {
   position: relative;
 
-  top: 5px; left: 10px;
+  top: 5px;
+  left: 10px;
 
-  width: 150px; height: 7px;
+  width: 150px;
+  height: 7px;
 
   border-radius: 20px;
   background-color: #d9d9d9;
@@ -289,7 +310,8 @@ input:focus {
 .left {
   position: relative;
 
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
 
   border: none;
   border-radius: 100%;
@@ -299,7 +321,8 @@ input:focus {
 
   font-size: 17px;
 
-  top: -370px; left: 80px;
+  top: -370px;
+  left: 80px;
 
   cursor: pointer;
 }
@@ -307,7 +330,8 @@ input:focus {
 .right {
   position: relative;
 
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
 
   border: none;
   border-radius: 100%;
@@ -315,9 +339,10 @@ input:focus {
   color: white;
   background-color: #dbdbdb;
 
-  
+
   font-size: 17px;
-  top: -370px; left: 1050px;
-  
+  top: -370px;
+  left: 1050px;
+
   cursor: pointer;
 }
