@@ -104,6 +104,18 @@ fetch(SERVER_ADDRESS + "/api/user/")
             });
 });
 
-//진행도100% 불러오기
+//모달열기
+const modal = document.querySelector('.ChangeModal');
+const back = document.querySelector('.Back');
+const chbtn = document.querySelector('.chbtn');
 
-//더보기버튼 클릭시 더 나오게 하기
+const cancel = document.querySelector('.cancel');
+
+chbtn.addEventListener("click", ()=>{
+    modal.style.display= "flex";
+    back.style.display = "block";
+})
+cancel.addEventListener("click",()=> {
+    modal.style.display= "none";
+    back.style.display = "none";
+})
