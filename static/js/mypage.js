@@ -4,7 +4,6 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
         return response.json();
     })
     .then((data) => {
-        console.log(data);
         fetch(SERVER_ADDRESS + "/api/lectures/")
         .then((response)=>{
             return response.json();
@@ -35,7 +34,6 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
                 }
 
             }
-            console.log(data.length);
             if ((data.length / max) > click) {
                 moreBtn.style.display = "flex";
             } else {
@@ -77,7 +75,6 @@ fetch(SERVER_ADDRESS + "/api/user/")
     return response.json();
     })
     .then((data) => {
-        console.log(data);
         const myNickname = document.querySelector('.myNickname');
         const myId = document.querySelector('.myId');
         const myName = document.querySelector('#name');

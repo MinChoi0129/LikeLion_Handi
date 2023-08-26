@@ -72,9 +72,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/popular/")
         .then(response => response.json());
     }))
       .then(lectures => {
-        console.log(lectures)
         const studyingBoxes = document.querySelectorAll(".lectures")[1];
-        console.log(studyingBoxes)
 
         studyingBoxes.innerHTML = ""; // Clear the container
         // Render the lectures in the order they were studied
@@ -200,23 +198,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// document.getElementById("SearchBtn")
-//   .addEventListener("click", searchLecture);
+document.getElementById("SearchBtn")
+  .addEventListener("click", searchLecture);
 
-// document.getElementById("search")
-//   .addEventListener("keyup", function (event) {
-  //     event.preventDefault();
-//     console.log(document.getElementById("lectureSection"))
-//     let lectures = document.getElementsByClassName("lecture")
-//     if (document.getElementById("search").value.length == 0) {
-  //       for (let i = 0; i < lectures.length; i++) {
-    //         lectures[i].hidden = false
-//       }
-//     } else {
-//       for (let i = 0; i < lectures.length; i++) {
-//         lectures[i].hidden = true
-//       }
-//       document.getElementById("SearchBtn").click();
-//     }
+document.getElementById("search")
+  .addEventListener("keyup", function (event) {
+    event.preventDefault();
 
-//   });
+    let lectures = document.getElementsByClassName("lecture")
+    if (document.getElementById("search").value.length == 0) {
+        for (let i = 0; i < lectures.length; i++) {
+            lectures[i].hidden = false
+      }
+    } else {
+      for (let i = 0; i < lectures.length; i++) {
+        lectures[i].hidden = true
+      }
+      document.getElementById("SearchBtn").click();
+    }
+
+  });

@@ -20,7 +20,6 @@ function login() {
 document.getElementById("password")
   .addEventListener("keyup", function (event) {
     event.preventDefault();
-    console.log(event)
     if (event.key === "Enter") {
       document.getElementById("loginBtn").click();
     }
