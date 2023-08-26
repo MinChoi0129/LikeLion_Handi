@@ -12,65 +12,68 @@
     <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/mypage.js' %}" defer></script>
 </head>
-
 <body>
-<main>
-    <div class="Back"></div>
-    <section>
-        <div class="myInfo">
-            <div class="myImgBox">
-                <img src="{% static 'image/main1.png' %}" class="myImg" alt="내이미지" />
-                <button class="imgChangeBtn">
-                    <i class="fa-solid fa-pen"></i>
-                </button>
-            </div>
-            <div class="myNicknameBox">
-                <p class="myNickname"></p>
-                <i class="fa-solid fa-pen chbtn"></i>
-            </div>
-            <p class="myId"></p>
-            <div class="myInfoBox">
-                <div class="InfoBox">
-                    <p class="SubTitle">Name</p>
-                    <p class="Information" id="name"></p>
+    <main>
+        <div class="Back"></div>
+        <section>
+            <div class="myInfo">
+                <div class="myImgBox">
+                    <img src="{% static 'image/profile_img.png' %}" class="myImg" alt="내이미지" />
+                    <label for="chooseimg" class="imgChangeBtn">
+                        <i class="fa-solid fa-pen"></i>
+                        <input type="file" accept="image/*" class="imginput" id="chooseimg"/>
+                    </label>
+
+                </div>
+                <div class="myNicknameBox">
+                    <p class="myNickname"></p>
+                    <i class="fa-solid fa-pen chbtn"></i>
+                </div>
+                <p class="myId"></p>
+                <div class="myInfoBox">
+                    <div class="InfoBox">
+                        <p class="SubTitle">Name</p>
+                        <p class="Information" id="name"></p>
+                    </div>
+                </div>
+                <div class="myInfoBox">
+                    <div class="InfoBox">
+                        <p class="SubTitle">Email</p>
+                        <p class="Information" id="email"></p>
+                    </div>
+                </div>
+                <div class="myInfoBox">
+                    <div class="InfoBox">
+                        <p class="SubTitle">Rank</p>
+                        <p class="Information">
+                            <span class="myRank" id="rank"></span>
+                            <span class="myScore" id="score"></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="myInfoBox">
-                <div class="InfoBox">
-                    <p class="SubTitle">Email</p>
-                    <p class="Information" id="email"></p>
+            <div class="CompleteBox">
+                <p class="CompleteTitle">완료한 학습</p>
+                <div class="CompleteLectures">
+                    <div class="HomeBtnBox">
+                        <button class="HomeBtn">더보기</button>
+                    </div>
                 </div>
             </div>
-            <div class="myInfoBox">
-                <div class="InfoBox">
-                    <p class="SubTitle">Rank</p>
-                    <p class="Information">
-                        <span class="myRank" id="rank"></span>
-                        <span class="myScore" id="score"></span>
-                    </p>
+        </section>
+        <!-- 닉네임수정모달 -->
+        <div class="ChangeModal">
+            <p class="ChangeTitle">닉네임 변경하기</p>
+            <div class="ChangeNick">
+                <input type="text" placeholder="6자 이내로 작성가능합니다." maxlength="6" id="nickname"/>
+                <div class="modalBtnBox">
+                    <div class="cancel">취소</div>
+                    <button type="submit" class="submit">닉네임 변경</button>
                 </div>
             </div>
         </div>
-        <div class="CompleteBox">
-            <p class="CompleteTitle">완료한 학습</p>
-            <div class="CompleteLectures">
-                <div class="HomeBtnBox">
-                    <button class="HomeBtn">더보기</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- 닉네임수정모달 -->
-    <div class="ChangeModal">
-        <p class="ChangeTitle">닉네임 변경하기</p>
-        <form>
-            <input type="text" placeholder="10자 이내로 작성가능합니다." />
-            <div class="modalBtnBox">
-                <div class="cancel">취소</div>
-                <button type="submit">닉네임 변경</button>
-            </div>
-        </form>
-    </div>
-</main>
+    </main>
+    <script>
+    </script>
 </body>
 {% endblock %}
