@@ -26,6 +26,7 @@ function join() {
   let password = document.getElementById("password").value;
   let myname = document.getElementById("name").value;
   let number = document.getElementById("PhoneNumber");
+  let nickname = document.getElementById("nickname");
 
   fetch(SERVER_ADDRESS + "/api/signup/", {
     method: "POST",
@@ -37,6 +38,7 @@ function join() {
       password: password,
       name: myname,
       phone_number: number,
+      nickname: nickname,
     }),
   })
     .then((response) => response.json())

@@ -4,6 +4,7 @@ function goToLectureDetailPage(lecture_id) {
   location.href = location.href + lecture_id;
 }
 
+
 fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
   .then((response) => {
     return response.json();
@@ -11,20 +12,20 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
   .then((data) => {
     // Extract an array of lecture IDs in the order they were studied
     const lectureOrder = data.map(item => item.lecture);
-    
+
     // Fetch details of the lectures
     Promise.all(lectureOrder.map(lectureId => {
       return fetch(SERVER_ADDRESS + "/api/lecture/" + lectureId + "/")
         .then(response => response.json());
     }))
-    .then(lectures => {
-      const studyingBoxes = document.querySelectorAll(".lectures")[0];
-      studyingBoxes.innerHTML = ""; // Clear the container
-      
-      // Render the lectures in the order they were studied
-      lectures.forEach(lecture => {
-        let text = `
-          <div class="lecture">
+      .then(lectures => {
+        const studyingBoxes = document.querySelectorAll(".lectures")[0];
+        studyingBoxes.innerHTML = ""; // Clear the container
+
+        // Render the lectures in the order they were studied
+        lectures.forEach(lecture => {
+          let text = `
+          <div class="lectures">
             <div class="lecture" onclick="goToLectureDetailPage(${lecture.id})">
               <div class="difficulty">${level[lecture.level]}</div>
               <img class="lectureImg" src="${lecture.lecture_img}"/>
@@ -36,9 +37,9 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
               <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage}%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
             </div>
           </div>`;
-        studyingBoxes.innerHTML += text;
+          studyingBoxes.innerHTML += text;
+        });
       });
-    });
   });
 
 fetch(SERVER_ADDRESS + "/api/lectures/")
@@ -55,7 +56,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
     for (let i = 0; i < 10; i++) {
       now_data = data[i];
 
-      let text = `<div class="lecture">
+      let text = `<div class="lectures">
                 <div class="lecture" onclick="goToLectureDetailPage(${now_data.id})">
                 <div class="difficulty">${level[now_data.level]}</div>
                 <img class="lectureImg" src="${now_data.lecture_img}"/>
@@ -72,7 +73,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
     for (let i = 10; i < 20; i++) {
       now_data = data[i];
 
-      let text = `<div class="lecture">
+      let text = `<div class="lectures">
                 <div class="lecture" onclick="goToLectureDetailPage(${now_data.id
         })">
                 <div class="difficulty">${level[now_data.level]}</div>
@@ -90,7 +91,7 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
     for (let i = 20; i < 30; i++) {
       now_data = data[i];
 
-      let text = `<div class="lecture">
+      let text = `<div class="lectures">
                 <div class="lecture" onclick="goToLectureDetailPage(${now_data.id
         })">
                 <div class="difficulty">${level[now_data.level]}</div>

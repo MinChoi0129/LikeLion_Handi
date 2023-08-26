@@ -97,7 +97,8 @@ input:focus {
 .password,
 .password2,
 .name,
-.PhoneNumber {
+.PhoneNumber,
+.nickname {
   border: 1px solid #e1e1e1;
   color: #858585;
   padding: 13px;

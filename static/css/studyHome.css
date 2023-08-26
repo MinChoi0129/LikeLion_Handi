@@ -93,7 +93,7 @@ body {
   position: relative;
   top: 100px; left: 480px;
 
-  border: 0px;
+  border: 0px; border-radius: 10px;
   background: linear-gradient(to right, #ffea8d, #ffbd6c);
   color: white;
 
@@ -208,12 +208,20 @@ input:focus {
 
 .lecture {
   box-shadow: 1px 1px 4px #e1e1e1;
+
   border-radius: 15px;
-  width: 170px;
-  height: 175px;
+
+  width: 170px; height: 175px;
+  
   margin-right: 17px;
+  padding-bottom: 20px; /* 아래쪽으로 밀어내기 위한 패딩 추가 */
+
   cursor: pointer;
   transition: 0.7s;
+
+  display: flex;
+  flex-direction: column; /* 내용을 수직으로 쌓음 */
+  justify-content: space-between; /* 내용을 아래쪽으로 밀어냄 */
 }
 
 .lectureImg {
@@ -224,8 +232,7 @@ input:focus {
 }
 
 .lectureName {
-  margin-left: 12px;
-  margin-top: 5px;
+  margin-top: 5px; margin-left: 12px; margin-right: 8px;
   font-size: 17px;
   font-family: "Pretendard-Bold";
 }
@@ -248,11 +255,12 @@ input:focus {
 
 .processing {
   position: relative;
+
+  top: 5px; left: 10px;
+
+  width: 150px; height: 7px;
+
   border-radius: 20px;
-  width: 150px;
-  height: 7px;
-  margin-top: 5px;
-  margin-left: 10px;
   background-color: #d9d9d9;
 }
 
@@ -274,8 +282,7 @@ input:focus {
 .left {
   position: relative;
 
-  width: 40px;
-  height: 40px;
+  width: 40px; height: 40px;
 
   border: none;
   border-radius: 100%;
@@ -285,9 +292,7 @@ input:focus {
 
   font-size: 17px;
 
-  left: calc(100% + 50px);
-  left: 80px;
-  top: -150px;
+  top: -370px; left: 80px;
 
   cursor: pointer;
 }
@@ -295,8 +300,7 @@ input:focus {
 .right {
   position: relative;
 
-  width: 40px;
-  height: 40px;
+  width: 40px; height: 40px;
 
   border: none;
   border-radius: 100%;
@@ -304,19 +308,9 @@ input:focus {
   color: white;
   background-color: #dbdbdb;
 
+  
   font-size: 17px;
-  left: 1050px;
-  top: -150px;
-
+  top: -370px; left: 1050px;
+  
   cursor: pointer;
 }
-
-/* lecturesList에 overflow: hidden; 처리해서 다음 강의들을 숨김
- -> 그래서 lecturesList:hover .left랑 .right를 하면
-    left랑 right도 같이 사라짐.. ㅜㅜ  */
-
-/* 수어 왕초보 아래에 의문의 여백이 생김..
- 버튼 넣은 이후로 생겼는데 어떻게 없애야 하는지.. 모르겠습니다.. */
-
-/* title이 2줄일 경우로 위치가 맞춰져 있어서 1줄이면 애매함..
- 근데 1줄일 때에 맞추면 2줄일 때 lecture 밖으로 나감.. */
