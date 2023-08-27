@@ -35,8 +35,9 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
             <div class="maxLength">총 ${lecture.length}개</div>
             <div class="percent">${lecture.percentage}%</div>
             </div>
-            <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage
-          }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+            <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+              lecture.percentage
+            }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
             </div>
             `;
         studyingBoxes.innerHTML += text;
@@ -73,8 +74,9 @@ fetch(SERVER_ADDRESS + "/api/lectures/popular/")
            <div class="maxLength">총 ${lecture.length}개</div>
            <div class="percent">${lecture.percentage}%</div>
            </div>
-           <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage
-          }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+           <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+             lecture.percentage
+           }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
            </div>
            `;
         studyingBoxes.innerHTML += text;
@@ -106,8 +108,9 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
                     <div class="maxLength">총 ${now_data.length}개</div>
                     <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
-        }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+                  now_data.percentage
+                }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
               `;
       lecture1.innerHTML += text;
     }
@@ -124,8 +127,9 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
       <div class="maxLength">총 ${now_data.length}개</div>
       <div class="percent">${now_data.percentage}%</div>
       </div>
-      <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
-        }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+      <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+        now_data.percentage
+      }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
       `;
       lecture2.innerHTML += text;
     }
@@ -142,8 +146,9 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
       <div class="maxLength">총 ${now_data.length}개</div>
       <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
-        }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+                  now_data.percentage
+                }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
                 `;
       lecture3.innerHTML += text;
     }
@@ -169,6 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
         lecturesContainers[
           index
         ].style.transform = `translateX(${currentPositions[index]}px)`;
+        rightButton[index].style.visibility = "visible";
+      } else {
+        leftButton[index].style.visibility = "hidden";
       }
     });
 
@@ -182,9 +190,17 @@ document.addEventListener("DOMContentLoaded", function () {
         lecturesContainers[
           index
         ].style.transform = `translateX(${currentPositions[index]}px)`;
+        leftButton[index].style.visibility = "visible";
+      } else {
+        rightButton[index].style.visibility = "hidden";
       }
     });
   }
+  for (let index = 0; index < lecturesContainers.length; index++) {
+    // rightButton[index].click();
+    leftButton[index].click();
+  }
+  rightButton[1].click();
 });
 // 검색
 document.getElementById("SearchBtn").addEventListener("click", searchLecture);
@@ -248,7 +264,8 @@ function searchLecture() {
                 <div class="maxLength">총 ${now_data.length}개</div>
                 <div class="percent">${now_data.percentage}%</div>
             </div>
-          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
+          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+            now_data.percentage
           }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
           </div>`;
         box.innerHTML += text;
@@ -256,19 +273,17 @@ function searchLecture() {
     });
 }
 
-
 // 카테고리 누르면 항목으로 글자 변경
 function changeBtnName(a) {
-  const categoryBtn = document.getElementById('categoryBtn');
-  const html = `<div> 메룽 </div> `
+  const categoryBtn = document.getElementById("categoryBtn");
+  const html = `<div> 메룽 </div> `;
   categoryBtn.innerHTML = a.innerText.trim();
-  document.getElementById("SearchBtn").click();
-}
 
-SearchBtn.addEventListener("click", function () {
   if (listContainer.style.transform === "translateY(310px)") {
     listContainer.style.transform = "translateY(0)";
   } else {
     listContainer.style.transform = "translateY(310px)";
   }
-});
+
+  document.getElementById("SearchBtn").click();
+}

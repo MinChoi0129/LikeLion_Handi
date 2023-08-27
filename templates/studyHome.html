@@ -1,127 +1,143 @@
 {% extends 'header.html' %}
 {% load static %}
 {% block content %}
-{% if user.is_authenticated %}
+  {% if user.is_authenticated %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>핸디</title>
-  <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
-  <link rel="stylesheet" href="{% static 'css/studyHome.css' %}" />
-  <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-  <script src="{% static 'js/studyHome.js' %}" defer="defer"></script>
-</head>
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>핸디</title>
+      <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'css/studyHome.css' %}"/>
+      <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+      <script src="{% static 'js/studyHome.js' %}" defer="defer"></script>
+    </head>
 
-<body style="overflow-x: hidden">
-  <main>
+    <body style="overflow-x: hidden">
+      <main>
 
-    <div class="category">
-      <div class="categoryBox">
-        <div class="whiteBox"></div>
-        <div id="categoryBtn" class="categoryBtn"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
-        <div class="list">
-          <div class="person" id="person" onclick="changeBtnName(this)"><i class="far fa-user"></i> &nbsp; 인간</div>
-          <hr />
-          <div class="eat" id="eat" onclick="changeBtnName(this)"><i class=" fas fa-utensils"></i> &nbsp; 식생활</div>
-          <hr>
-          <div class="eat" id="eat" onclick="changeBtnName(this)"><i class="fas fa-suitcase"></i> &nbsp; 사회생활</div>
-          <hr>
-          <div class="area" id="area" onclick="changeBtnName(this)"><i class=" fas fa-map-marker-alt"></i> &nbsp; 지명</div>
-          <hr>
-          <div class="culture" id="culture" onclick="changeBtnName(this)"><i class=" fas fa-play"></i> &nbsp; 문화</div>
-          <hr>
-          <div class="nature" id="nature" onclick="changeBtnName(this)"><i class=" fab fa-pagelines"></i> &nbsp; 자연</div>
-          <hr>
-          <div class="base" id="base" onclick="changeBtnName(this)"><i class=" far fa-lightbulb"></i> &nbsp; 개념</div>
-          <hr>
+        <div class="category">
+          <div class="categoryBox">
+            <div class="whiteBox"></div>
+            <div id="categoryBtn" class="categoryBtn">
+              <i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
+            <div class="list">
+              <div class="person" id="person" onclick="changeBtnName(this)">
+                <i class="far fa-user"></i>
+                &nbsp; 인간</div>
+              <hr/>
+              <div class="eat" id="eat" onclick="changeBtnName(this)">
+                <i class=" fas fa-utensils"></i>
+                &nbsp; 식생활</div>
+              <hr>
+              <div class="eat" id="eat" onclick="changeBtnName(this)">
+                <i class="fas fa-suitcase"></i>
+                &nbsp; 사회생활</div>
+              <hr>
+              <div class="area" id="area" onclick="changeBtnName(this)">
+                <i class=" fas fa-map-marker-alt"></i>
+                &nbsp; 지명</div>
+              <hr>
+              <div class="culture" id="culture" onclick="changeBtnName(this)">
+                <i class=" fas fa-play"></i>
+                &nbsp; 문화</div>
+              <hr>
+              <div class="nature" id="nature" onclick="changeBtnName(this)">
+                <i class=" fab fa-pagelines"></i>
+                &nbsp; 자연</div>
+              <hr>
+              <div class="base" id="base" onclick="changeBtnName(this)">
+                <i class=" far fa-lightbulb"></i>
+                &nbsp; 개념</div>
+              <hr>
+            </div>
+          </div>
+          <div class="searchBox">
+            <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="검색어를 입력하시오."/>
+            <div class="SearchBtn" id="SearchBtn">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="searchBox">
-        <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="검색어를 입력하시오."/>
-        <div class="SearchBtn" id="SearchBtn"><i class="fas fa-search"></i></div>
-      </div>
-    </div>
 
-    <section id="lectureSection" class="lectureSection">
+        <section id="lectureSection" class="lectureSection">
 
-      <div class="lecturesList">
-        <div class="title" style="word-break: break-all">진행 중인 학습</div>
-        <div class="lectures"></div>
-      </div>
-      <button class="left">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="right">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">진행 중인 학습</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-      <div class="lecturesList">
-        <div class="title" style="word-break: break-all">주간 인기 모음</div>
-        <div class="lectures"></div>
-      </div>
-      <button class="left">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="right">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">주간 인기 모음(Top 5)</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-      <div class="lecturesList">
-        <div class="title" style="word-break: break-all">수어 왕초보</div>
-        <div class="lectures"></div>
-      </div>
-      <button class="left">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="right">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">수어 왕초보</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-      <div class="lecturesList">
-        <div class="title" style="word-break: break-all">일상 회화 모음</div>
-        <div class="lectures"></div>
-      </div>
-      <button class="left">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="right">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">일상 회화 모음</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
 
-      <div class="lecturesList">
-        <div class="title" style="word-break: break-all">또 다른 회화 모음</div>
-        <div class="lectures"></div>
-      </div>
-      <button class="left">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="right">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </section>
+          <div class="lecturesList">
+            <div class="title" style="word-break: break-all">또 다른 회화 모음</div>
+            <div class="lectures"></div>
+          </div>
+          <button class="left">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </section>
 
+        <script>
+          // 카테고리 누르면 리스트 움직임
+          const categoryBtn = document.querySelector(".categoryBtn");
+          const listContainer = document.querySelector(".list");
+
+          categoryBtn.addEventListener("click", function () {
+            if (listContainer.style.transform === "translateY(310px)") {
+              listContainer.style.transform = "translateY(0)";
+            } else {
+              listContainer.style.transform = "translateY(310px)";
+            }
+          });
+        </script>
+      </main>
+    </body>
+  {% else %}
     <script>
-      // 카테고리 누르면 리스트 움직임
-      const categoryBtn = document.querySelector(".categoryBtn");
-      const listContainer = document.querySelector(".list");
-
-      categoryBtn.addEventListener("click", function () {
-        if (listContainer.style.transform === "translateY(310px)") {
-          listContainer.style.transform = "translateY(0)";
-        } else {
-          listContainer.style.transform = "translateY(310px)";
-        }
-      });
+      window.location.href = "../login"
     </script>
-  </main>
-</body>
-{% else %}
-<script>
-  window.location.href = "../login"
-</script>
-{% endif %}
+  {% endif %}
 
 {% endblock %}
