@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     rightButton[index].addEventListener("click", function () {
       const maxPosition = -(
         lectureWidth *
-        (lecturesContainers[index].children.length - 4)
+        (lecturesContainers[index].children.length - 5)
       ); // 4개의 박스가 화면에 보일 때까지만 이동
       if (currentPositions[index] > maxPosition) {
         currentPositions[index] -= lectureWidth;
