@@ -35,9 +35,8 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
             <div class="maxLength">총 ${lecture.length}개</div>
             <div class="percent">${lecture.percentage}%</div>
             </div>
-            <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-              lecture.percentage
-            }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+            <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage
+          }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
             </div>
             `;
         studyingBoxes.innerHTML += text;
@@ -74,9 +73,8 @@ fetch(SERVER_ADDRESS + "/api/lectures/popular/")
            <div class="maxLength">총 ${lecture.length}개</div>
            <div class="percent">${lecture.percentage}%</div>
            </div>
-           <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-             lecture.percentage
-           }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+           <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage
+          }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
            </div>
            `;
         studyingBoxes.innerHTML += text;
@@ -108,9 +106,8 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
                     <div class="maxLength">총 ${now_data.length}개</div>
                     <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-                  now_data.percentage
-                }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
+        }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
               `;
       lecture1.innerHTML += text;
     }
@@ -127,9 +124,8 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
       <div class="maxLength">총 ${now_data.length}개</div>
       <div class="percent">${now_data.percentage}%</div>
       </div>
-      <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-        now_data.percentage
-      }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+      <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
+        }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
       `;
       lecture2.innerHTML += text;
     }
@@ -146,9 +142,8 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
       <div class="maxLength">총 ${now_data.length}개</div>
       <div class="percent">${now_data.percentage}%</div>
                 </div>
-                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-                  now_data.percentage
-                }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
+                <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
+        }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
                 `;
       lecture3.innerHTML += text;
     }
@@ -248,11 +243,20 @@ function searchLecture() {
                 <div class="maxLength">총 ${now_data.length}개</div>
                 <div class="percent">${now_data.percentage}%</div>
             </div>
-          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-            now_data.percentage
+          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${now_data.percentage
           }%, #d9d9d9 ${now_data.percentage}%, #d9d9d9 100%);"></div>
           </div>`;
         box.innerHTML += text;
       }
     });
+}
+
+
+// 카테고리 누르면 항목으로 글자 변경
+function changeBtnName(a) {
+  const btnElement = document.getElementById('categoryBtn');
+  console.log(btnElement)
+  const html = `<div> 메룽 </div> `
+  btnElement.innerHTML = a.innerText.trim();
+  document.getElementById("SearchBtn").click();
 }

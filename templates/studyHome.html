@@ -21,24 +21,26 @@
     <div class="category">
       <div class="categoryBox">
         <div class="whiteBox"></div>
-        <div class="categoryBtn"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
+        <div id="categoryBtn" class="categoryBtn"><i class="fas fa-bars"></i>&nbsp;&nbsp;&nbsp;카테고리</div>
         <div class="list">
-          <div class="person"><i class="far fa-user"></i> &nbsp; 인간</div>
-          <hr/>
-          <div class="eat"><i class="fas fa-utensils"></i> &nbsp; 식생활</div>
+          <div class="person" id="person" onclick="changeBtnName(this)"><i class="far fa-user"></i> &nbsp; 인간</div>
+          <hr />
+          <div class="eat" id="eat" onclick="changeBtnName(this)"><i class=" fas fa-utensils"></i> &nbsp; 식생활</div>
           <hr>
-          <div class="area"><i class="fas fa-map-marker-alt"></i> &nbsp; 지명</div>
+          <div class="eat" id="eat" onclick="changeBtnName(this)"><i class="fas fa-suitcase"></i> &nbsp; 사회생활</div>
           <hr>
-          <div class="culture"><i class="fas fa-play"></i> &nbsp; 문화</div>
+          <div class="area" id="area" onclick="changeBtnName(this)"><i class=" fas fa-map-marker-alt"></i> &nbsp; 지명</div>
           <hr>
-          <div class="nature"><i class="fab fa-pagelines"></i> &nbsp; 자연</div>
+          <div class="culture" id="culture" onclick="changeBtnName(this)"><i class=" fas fa-play"></i> &nbsp; 문화</div>
           <hr>
-          <div class="base"><i class="far fa-lightbulb"></i> &nbsp; 개념</div>
+          <div class="nature" id="nature" onclick="changeBtnName(this)"><i class=" fab fa-pagelines"></i> &nbsp; 자연</div>
+          <hr>
+          <div class="base" id="base" onclick="changeBtnName(this)"><i class=" far fa-lightbulb"></i> &nbsp; 개념</div>
           <hr>
         </div>
       </div>
       <div class="searchBox">
-        <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="검색어를 입력하시오." />
+        <input type="text" class="search" id="search" name="search" autocomplete="off" placeholder="검색어를 입력하시오."/>
         <div class="SearchBtn" id="SearchBtn"><i class="fas fa-search"></i></div>
       </div>
     </div>
@@ -103,16 +105,16 @@
 
     <script>
       // list 움직임
-          const categoryBtn = document.querySelector(".categoryBtn");
-          const listContainer = document.querySelector(".list");
-          
-          categoryBtn.addEventListener("click", function () {
-            if (listContainer.style.transform === "translateY(255px)") {
-              listContainer.style.transform = "translateY(0)";
-            } else {
-              listContainer.style.transform = "translateY(255px)";
-            }
-          });
+      const categoryBtn = document.querySelector(".categoryBtn");
+      const listContainer = document.querySelector(".list");
+
+      categoryBtn.addEventListener("click", function () {
+        if (listContainer.style.transform === "translateY(310px)") {
+          listContainer.style.transform = "translateY(0)";
+        } else {
+          listContainer.style.transform = "translateY(310px)";
+        }
+      });
     </script>
   </main>
 </body>

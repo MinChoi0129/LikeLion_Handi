@@ -102,17 +102,24 @@ body {
   align-items: center;
 
   position: relative;
-  top: 110px;
+
+  top: 159px;
   left: 480px;
 
   border: 0px;
   border-radius: 10px;
+
   background: linear-gradient(to right, #ffea8d, #ffbd6c);
   color: white;
 
   z-index: 4;
 
   cursor: pointer;
+}
+
+.category {
+  position: relative;
+  top: -230px;
 }
 
 .searchBox {
@@ -153,10 +160,10 @@ body {
 .list {
   position: relative;
 
-  top: -146px;
+  top: -147px;
   left: 485px;
   width: 150px;
-  height: 250px;
+  height: 300px;
   margin-top: 5px;
 
   color: #bababa;
@@ -175,10 +182,10 @@ body {
 .whiteBox {
   position: relative;
   margin-top: -100px;
-  top: 150px;
+  top: 160px;
   left: 475px;
   width: 170px;
-  height: 100px;
+  height: 300px;
   /* border: 1px solid black; */
   background-color: white;
   z-index: 3;
@@ -214,7 +221,7 @@ input:focus {
 
 .lecturesList {
   position: relative;
-  top: -250px;
+  top: -500px;
   display: block;
   width: 58rem;
   height: 14rem;
@@ -224,7 +231,7 @@ input:focus {
 
 .searchList {
   position: relative;
-  top: -250px;
+  top: -500px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 58rem;
@@ -232,6 +239,7 @@ input:focus {
   margin: 0px 150px 0px 150px;
   overflow: hidden;
 }
+
 .title {
   font-family: "Pretendard-Bold";
   font-size: 21px;
@@ -243,7 +251,7 @@ input:focus {
   font-size: 21px;
   margin-bottom: 10px;
   left: 150px;
-  top: -250px;
+  top: -500px;
   position: relative;
 }
 
