@@ -219,14 +219,19 @@ function backUpAndRestore(mode) {
 
 function searchLecture() {
   let searchText = document.getElementById("search").value;
-
+  let main_category = document
+    .getElementsByClassName("categoryBtn")[0]
+    .innerText.trim();
   fetch(SERVER_ADDRESS + "/api/lectures/search/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       "X-CSRFToken": getCookie("csrftoken"),
     },
-    body: new URLSearchParams({ name: searchText }),
+    body: new URLSearchParams({
+      name: searchText,
+      main_category: main_category,
+    }),
   })
     .then((response) => response.json())
     .then((data) => {
