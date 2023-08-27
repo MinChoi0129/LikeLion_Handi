@@ -195,7 +195,6 @@ function backUpAndRestore(mode) {
   else {
     alert("큰일났따!")
   }
-
 }
 
 function searchLecture() {
@@ -217,14 +216,12 @@ function searchLecture() {
 
 
       let main = document.getElementById("lectureSection")
-      main.innerHTML += `<div class="lecturesList">
-      <div class="title" style="word-break: break-all">검색 결과</div>`
-
-
-      let box = document.getElementsByClassName("lecturesList")[0]
-      for (let i = 0; i < data.length; i++) {
+      let i = 0
+      while (i == data.length) {
+        main.innerHTML += `<div class="lecturesList">
+        <div class="title" style="word-break: break-all">검색 결과</div>`
+        let box = document.getElementsByClassName("lecturesList")[parseInt(i, 5)]
         now_data = data[i]
-
         let text = `
           <div class="lecture" onclick="goToLectureDetailPage(${now_data.id})">
           <div class="difficulty">${level[now_data.level]}</div>
@@ -239,8 +236,7 @@ function searchLecture() {
         box.innerHTML += text
       }
       main.innerHTML += `</div>`
-    }
-    )
+    })
 }
 
 
