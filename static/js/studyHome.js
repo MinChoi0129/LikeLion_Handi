@@ -26,21 +26,24 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
       studyingBoxes.innerHTML = ""; // Clear the container
       // Render the lectures in the order they were studied
       lectures.forEach((lecture) => {
-        let text = `
-            <div class="lecture" onclick="goToLectureDetailPage(${lecture.id})">
-            <div class="difficulty">${level[lecture.level]}</div>
-            <img class="lectureImg" src="${lecture.lecture_img}"/>
-            <div class="lectureName">${lecture.name}</div>
-            <div class="lengthWithPercent">
-            <div class="maxLength">총 ${lecture.length}개</div>
-            <div class="percent">${lecture.percentage}%</div>
-            </div>
-            <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-              lecture.percentage
-            }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
-            </div>
-            `;
-        studyingBoxes.innerHTML += text;
+        // if (parseInt(lecture.percentage) < 100)
+        {
+          let text = `
+          <div class="lecture" onclick="goToLectureDetailPage(${lecture.id})">
+          <div class="difficulty">${level[lecture.level]}</div>
+          <img class="lectureImg" src="${lecture.lecture_img}"/>
+          <div class="lectureName">${lecture.name}</div>
+          <div class="lengthWithPercent">
+          <div class="maxLength">총 ${lecture.length}개</div>
+          <div class="percent">${lecture.percentage}%</div>
+          </div>
+          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
+            lecture.percentage
+          }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+          </div>
+          `;
+          studyingBoxes.innerHTML += text;
+        }
       });
     });
   });
@@ -155,11 +158,10 @@ fetch(SERVER_ADDRESS + "/api/lectures/")
   });
 
 // 버튼 조작
-document.addEventListener("DOMContentLoaded", function () {
+window.onload = function () {
   const leftButton = document.querySelectorAll(".left");
   const rightButton = document.querySelectorAll(".right");
   const lecturesContainers = document.querySelectorAll(".lectures");
-
   let currentPositions = new Array(lecturesContainers.length);
   for (let i = 0; i < currentPositions.length; ++i) {
     currentPositions[i] = 0;
@@ -175,33 +177,38 @@ document.addEventListener("DOMContentLoaded", function () {
           index
         ].style.transform = `translateX(${currentPositions[index]}px)`;
         rightButton[index].style.visibility = "visible";
+        if (currentPositions[index] == 0) {
+          leftButton[index].style.visibility = "hidden";
+        }
       } else {
         leftButton[index].style.visibility = "hidden";
       }
     });
 
     rightButton[index].addEventListener("click", function () {
-      const maxPosition = -(
+      let maxPosition = -(
         lectureWidth *
         (lecturesContainers[index].children.length - 5)
-      ); // 4개의 박스가 화면에 보일 때까지만 이동
+      ); // 5개의 박스가 화면에 보일 때까지만 이동
       if (currentPositions[index] > maxPosition) {
         currentPositions[index] -= lectureWidth;
         lecturesContainers[
           index
         ].style.transform = `translateX(${currentPositions[index]}px)`;
         leftButton[index].style.visibility = "visible";
+        if (currentPositions[index] - lectureWidth <= maxPosition) {
+          rightButton[index].style.visibility = "hidden";
+        }
       } else {
         rightButton[index].style.visibility = "hidden";
       }
     });
   }
   for (let index = 0; index < lecturesContainers.length; index++) {
-    // rightButton[index].click();
+    rightButton[index].click();
     leftButton[index].click();
   }
-  rightButton[1].click();
-});
+};
 // 검색
 document.getElementById("SearchBtn").addEventListener("click", searchLecture);
 document.getElementById("search").addEventListener("keyup", function (event) {
