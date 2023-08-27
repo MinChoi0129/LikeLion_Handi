@@ -259,9 +259,16 @@ function searchLecture() {
 
 // 카테고리 누르면 항목으로 글자 변경
 function changeBtnName(a) {
-  const btnElement = document.getElementById('categoryBtn');
-  console.log(btnElement)
+  const categoryBtn = document.getElementById('categoryBtn');
   const html = `<div> 메룽 </div> `
-  btnElement.innerHTML = a.innerText.trim();
+  categoryBtn.innerHTML = a.innerText.trim();
   document.getElementById("SearchBtn").click();
 }
+
+SearchBtn.addEventListener("click", function () {
+  if (listContainer.style.transform === "translateY(310px)") {
+    listContainer.style.transform = "translateY(0)";
+  } else {
+    listContainer.style.transform = "translateY(310px)";
+  }
+});
