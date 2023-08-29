@@ -1,37 +1,43 @@
 @font-face {
   font-weight: 300;
   font-family: "Pretendard-Light";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+    format("woff");
 }
 
 @font-face {
   font-weight: 400;
   font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
 }
 
 @font-face {
   font-weight: 500;
   font-family: "Pretendard-Medium";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+    format("woff");
 }
 
 @font-face {
   font-weight: 600;
   font-family: "Pretendard-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+    format("woff");
 }
 
 @font-face {
   font-weight: 700;
   font-family: "Pretendard-Bold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
 }
 
 @font-face {
   font-weight: 800;
   font-family: "Pretendard-ExtraBold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+    format("woff");
 }
 
 * {
@@ -96,17 +102,24 @@ body {
   align-items: center;
 
   position: relative;
-  top: 110px;
+
+  top: 159px;
   left: 480px;
 
   border: 0px;
   border-radius: 10px;
+
   background: linear-gradient(to right, #ffea8d, #ffbd6c);
   color: white;
 
   z-index: 4;
 
   cursor: pointer;
+}
+
+.category {
+  position: relative;
+  top: -230px;
 }
 
 .searchBox {
@@ -147,10 +160,10 @@ body {
 .list {
   position: relative;
 
-  top: -145px;
+  top: -147px;
   left: 485px;
   width: 150px;
-  height: 250px;
+  height: 300px;
   margin-top: 5px;
 
   color: #bababa;
@@ -169,10 +182,10 @@ body {
 .whiteBox {
   position: relative;
   margin-top: -100px;
-  top: 150px;
+  top: 160px;
   left: 475px;
   width: 170px;
-  height: 100px;
+  height: 300px;
   /* border: 1px solid black; */
   background-color: white;
   z-index: 3;
@@ -208,10 +221,21 @@ input:focus {
 
 .lecturesList {
   position: relative;
-  top: -250px;
+  top: -500px;
   display: block;
   width: 58rem;
   height: 14rem;
+  margin: 0px 150px 0px 150px;
+  overflow: hidden;
+}
+
+.searchList {
+  position: relative;
+  top: -500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 58rem;
+  /* height: 40rem; */
   margin: 0px 150px 0px 150px;
   overflow: hidden;
 }
@@ -220,6 +244,15 @@ input:focus {
   font-family: "Pretendard-Bold";
   font-size: 21px;
   margin-bottom: 10px;
+}
+
+.searchTitle {
+  font-family: "Pretendard-Bold";
+  font-size: 21px;
+  margin-bottom: 10px;
+  left: 150px;
+  top: -500px;
+  position: relative;
 }
 
 .lectures {
@@ -239,6 +272,7 @@ input:focus {
   padding-bottom: 20px;
   /* 아래쪽으로 밀어내기 위한 패딩 추가 */
 
+  margin-bottom: 20px;
   cursor: pointer;
   transition: 0.7s;
 
@@ -323,7 +357,7 @@ input:focus {
 
   font-size: 17px;
 
-  top: -370px;
+  top: -625px;
   left: 80px;
 
   cursor: pointer;
@@ -341,9 +375,8 @@ input:focus {
   color: white;
   background-color: #dbdbdb;
 
-
   font-size: 17px;
-  top: -370px;
+  top: -625px;
   left: 1050px;
 
   cursor: pointer;

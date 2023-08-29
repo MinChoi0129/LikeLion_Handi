@@ -102,6 +102,8 @@ class UserUpdate(UpdateAPIView):
                     me.nickname = request.data[key]
                 elif key == "email_address":
                     me.email_address = request.data[key]
+                elif key == "profile_img":
+                    me.profile_img = request.data[key]
             me.save()
             return Response(
                 {
@@ -109,6 +111,7 @@ class UserUpdate(UpdateAPIView):
                     "name": me.name,
                     "nickname": me.nickname,
                     "email_address": me.email_address,
+                    "profile_img": me.profile_img.url,
                 },
                 status=status.HTTP_202_ACCEPTED,
             )
@@ -137,7 +140,8 @@ class UserDelete(DestroyAPIView):
 class UserRank(RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         all_users = sorted(
-            [(user.game_score, user.nickname) for user in User.objects.all()], reverse=True
+            [(user.game_score, user.nickname) for user in User.objects.all()],
+            reverse=True,
         )
         me = request.user
         my_score, my_name = me.game_score, me.nickname
