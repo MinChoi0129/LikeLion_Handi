@@ -4,6 +4,9 @@
   {% if user.is_authenticated %}
 
     <head>
+      <meta http-equiv="Pragma" content="no-cache"/>
+      <meta http-equiv="Expires" content="0"/>
+      <meta http-equiv="Cache-Control" content="no-cache"/>
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>핸디</title>
@@ -11,7 +14,7 @@
       <link rel="stylesheet" href="{% static 'css/studyHome.css' %}"/>
       <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-      <script src="{% static 'js/studyHome.js' %}" defer="defer"></script>
+      <script src="{% static 'js/studyHome.js' %}?{% now 'U' %}" defer="defer"></script>
     </head>
 
     <body style="overflow-x: hidden">

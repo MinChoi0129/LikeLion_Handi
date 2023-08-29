@@ -1,9 +1,7 @@
 const level = { 1: "난이도 하", 2: "난이도 중", 3: "난이도 상" };
 let stopBackup = false;
 let backupHTML = "";
-function goToLectureDetailPage(lecture_id) {
-  location.href = location.href + lecture_id;
-}
+let studyingNowLength;
 
 // 진행 중인 학습
 fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
@@ -25,6 +23,7 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
       const studyingBoxes = document.querySelectorAll(".lectures")[0];
       studyingBoxes.innerHTML = ""; // Clear the container
       // Render the lectures in the order they were studied
+      studyingNowLength = lectures.length;
       lectures.forEach((lecture) => {
         // if (parseInt(lecture.percentage) < 100)
         {
@@ -45,6 +44,9 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
           studyingBoxes.innerHTML += text;
         }
       });
+      if (lectures.length <= 5) {
+        document.querySelectorAll(".right")[0].style.visibility = "hidden";
+      }
     });
   });
 
@@ -162,12 +164,12 @@ window.onload = function () {
   const leftButton = document.querySelectorAll(".left");
   const rightButton = document.querySelectorAll(".right");
   const lecturesContainers = document.querySelectorAll(".lectures");
+  const lectureWidth = 187; // 각 박스의 너비
   let currentPositions = new Array(lecturesContainers.length);
+
   for (let i = 0; i < currentPositions.length; ++i) {
     currentPositions[i] = 0;
   }
-
-  const lectureWidth = 187; // 각 박스의 너비
 
   for (let index = 0; index < lecturesContainers.length; index++) {
     leftButton[index].addEventListener("click", function () {
@@ -177,6 +179,7 @@ window.onload = function () {
           index
         ].style.transform = `translateX(${currentPositions[index]}px)`;
         rightButton[index].style.visibility = "visible";
+
         if (currentPositions[index] == 0) {
           leftButton[index].style.visibility = "hidden";
         }
@@ -203,11 +206,12 @@ window.onload = function () {
         rightButton[index].style.visibility = "hidden";
       }
     });
+
+    for (var i = 0; i < lecturesContainers.length; i++) {
+      leftButton[i].style.visibility = "hidden";
+    }
   }
-  for (let index = 0; index < lecturesContainers.length; index++) {
-    rightButton[index].click();
-    leftButton[index].click();
-  }
+  rightButton[1].style.visibility = "hidden";
 };
 // 검색
 document.getElementById("SearchBtn").addEventListener("click", searchLecture);
@@ -224,6 +228,10 @@ document.getElementById("search").addEventListener("keyup", function (event) {
     document.getElementById("SearchBtn").click();
   }
 });
+
+function goToLectureDetailPage(lecture_id) {
+  location.href = location.href + lecture_id;
+}
 
 function backUpAndRestore(mode) {
   if (mode == "backup") {
