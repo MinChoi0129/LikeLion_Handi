@@ -1,0 +1,576 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-weight: 300;
+    font-family: "Pretendard-Light";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 400;
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 500;
+    font-family: "Pretendard-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 600;
+    font-family: "Pretendard-SemiBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+      format("woff");
+  }
+  @font-face {
+    font-weight: 800;
+    font-family: "Pretendard-ExtraBold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+      format("woff");
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body,
+  main,
+  div {
+    margin: 0;
+    padding: 0;
+  }
+  ol,
+  ul,
+  li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+  }
+  main {
+    display: block;
+    width: 100%;
+    min-height: calc(100vh - 70px);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section {
+    width: 105rem;
+    margin: auto;
+  
+    margin-top: 5.5rem;
+  }
+  button {
+    cursor: pointer;
+  }
+  body {
+ 
+    margin: 0;
+    padding: 0;
+  }
+
+
+/*
+e680_2049 { 
+	background-color:rgba(255, 255, 255, 1);
+	width:1920px;
+	height:100%;
+} */
+main{ 
+	background-color:rgba(255, 189.00000393390656, 108.00000116229057, 1);
+	overflow: auto;
+    /* width:1920px;
+	height:1080px;
+	position:absolute;
+	left:0px;
+	top:0px; */
+}
+.BtnWrap { 
+	width:259px;
+	height:65px;
+	left:1513px;
+	top:903px;
+}
+.HomeBtn { 
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:259px;
+	height:65px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+/* .e681_2478 { 
+	color:rgba(0, 0, 0, 1);
+	width:166px;
+	height:48px;
+	position:absolute;
+	left:51px;
+	top:17px;
+	font-family:Inter;
+	text-align:left;
+	font-size:40px;
+	letter-spacing:0;
+} */
+.BoardWarp { 
+	width:400px;
+	height:700px;
+    position:absolute;
+	left:728px;
+	top:107px;
+}
+.FourToSevenWrap { 
+	width:465px;
+	height:426px;
+	position:absolute;
+	left:-30px;
+	top:321px;
+}
+.FourWrap { 
+	width:465px;
+	height:98px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.FourBackground { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(255, 153.82877200841904, 35.06250075995922, 1);
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumFour { 
+	color:rgba(255, 255, 255, 1);
+	width:33px;
+	height:84px;
+	position:absolute;
+	left:30px;
+	top:14px;
+	font-family:Inter;
+	text-align:left;
+	font-size:35px;
+	letter-spacing:0;
+}
+.FourUserName { 
+	color:rgba(255, 255, 255, 1);
+	width:169px;
+	height:36px;
+	position:absolute;
+	left:86px;
+	top:18px;
+	font-family:Inter;
+	text-align:left;
+	font-size:30px;
+	letter-spacing:0;
+}
+.FourScoreWrap { 
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:300px;
+	top:14px;
+}
+.FourScoreBackground { 
+	background-color:rgba(255, 114.24000352621078, 35.06250075995922, 1);
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumFourScore { 
+	color:rgba(255, 255, 255, 1);
+	width:112px;
+	height:36px;
+	position:absolute;
+	left:16px;
+	top:2px;
+	font-family:Inter;
+	text-align:center;
+	font-size:30px;
+	letter-spacing:0;
+}
+.FiveWrap { 
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:118px;
+}
+.FiveBackground { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(255, 153.82877200841904, 35.06250075995922, 1);
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumFive { 
+	color:rgba(255, 255, 255, 1);
+	width:32px;
+	height:42px;
+	position:absolute;
+	left:33px;
+	top:12px;
+	font-family:Inter;
+	text-align:left;
+	font-size:35px;
+	letter-spacing:0;
+}
+.FiveUserName { 
+	color:rgba(255, 255, 255, 1);
+	width:169px;
+	height:36px;
+	position:absolute;
+	left:86px;
+	top:16px;
+	font-family:Inter;
+	text-align:left;
+	font-size:30px;
+	letter-spacing:0;
+}
+.FiveScoreWrap { 
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:300px;
+	top:12px;
+}
+.FIveScoreBackground { 
+	background-color:rgba(255, 114.24000352621078, 35.06250075995922, 1);
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumFiveScore { 
+	color:rgba(255, 255, 255, 1);
+	width:112px;
+	height:36px;
+	position:absolute;
+	left:16px;
+	top:2px;
+	font-family:Inter;
+	text-align:center;
+	font-size:30px;
+	letter-spacing:0;
+}
+.SixWrap { 
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:236px;
+}
+.SixBackground { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(255, 153.82877200841904, 35.06250075995922, 1);
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumSix { 
+	color:rgba(255, 255, 255, 1);
+	width:32px;
+	height:42px;
+	position:absolute;
+	left:33px;
+	top:10px;
+	font-family:Inter;
+	text-align:left;
+	font-size:35px;
+	letter-spacing:0;
+}
+.SixUserName { 
+	color:rgba(255, 255, 255, 1);
+	width:169px;
+	height:36px;
+	position:absolute;
+	left:83px;
+	top:16px;
+	font-family:Inter;
+	text-align:left;
+	font-size:30px;
+	letter-spacing:0;
+}
+.SixScoreWrap { 
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:297px;
+	top:16px;
+}
+.SixScoreBackground { 
+	background-color:rgba(255, 114.24000352621078, 35.06250075995922, 1);
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumSixScore { 
+	color:rgba(255, 255, 255, 1);
+	width:112px;
+	height:36px;
+	position:absolute;
+	left:16px;
+	top:2px;
+	font-family:Inter;
+	text-align:center;
+	font-size:30px;
+	letter-spacing:0;
+}
+.SevenWrap { 
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:354px;
+}
+.nothing { 
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.SevenBackground { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(255, 153.82877200841904, 35.06250075995922, 1);
+	width:465px;
+	height:72px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.SevenScoreWrap { 
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:300px;
+	top:14px;
+}
+.SevenScoreBackground { 
+	background-color:rgba(255, 114.24000352621078, 35.06250075995922, 1);
+	width:147px;
+	height:42px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.NumSevenScore { 
+	color:rgba(255, 255, 255, 1);
+	width:112px;
+	height:36px;
+	position:absolute;
+	left:16px;
+	top:2px;
+	font-family:Inter;
+	text-align:center;
+	font-size:30px;
+	letter-spacing:0;
+}
+.NumSeven { 
+	color:rgba(255, 255, 255, 1);
+	width:27px;
+	height:42px;
+	position:absolute;
+	left:33px;
+	top:12px;
+	font-family:Inter;
+	text-align:left;
+	font-size:35px;
+	letter-spacing:0;
+}
+.SevenUserName { 
+	color:rgba(255, 255, 255, 1);
+	width:169px;
+	height:36px;
+	position:absolute;
+	left:86px;
+	top:18px;
+	font-family:Inter;
+	text-align:left;
+	font-size:30px;
+	letter-spacing:0;
+}
+.OneToThreeWrap { 
+	width:350px;
+	height:200px;
+	position:absolute;
+	top:106px;
+}
+.OneToThreeTextWrap { 
+	width:418px;
+	height:84px;
+	position:absolute;
+	left:4px;
+	top:115px;
+}
+.OneST { 
+	color:rgba(255, 255, 255, 1);
+	width:64px;
+	height:54px;
+	position:absolute;
+	left:174px;
+	top:18px;
+	font-family:Inter;
+	text-align:left;
+	font-size:45px;
+	letter-spacing:0;
+}
+.TwoND { 
+	color:rgba(255, 255, 255, 1);
+	width:75px;
+	height:48px;
+	position:absolute;
+	left:40px;
+	top:-10px;
+	font-family:Inter;
+	text-align:left;
+	font-size:40px;
+	letter-spacing:0;
+}
+.ThreeRD { 
+	color:rgba(255, 255, 255, 1);
+	width:67px;
+	height:48px;
+	position:absolute;
+	left:314px;
+	top:-10px;
+	font-family:Inter;
+	text-align:left;
+	font-size:40px;
+	letter-spacing:0;
+}
+.ImageWrap { 
+	width:300px;
+	height:100px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.OneImage { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius:500px;
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:110px;
+	height:110px;
+	position:absolute;
+	left:155px;
+	top:0px;
+}
+.ThreeImage { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius:500px;
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:72px;
+	height:72px;
+	position:absolute;
+	left:310px;
+	top:25px;
+}
+.TwoImage { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius:500px;
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:72px;
+	height:72px;
+	position:absolute;
+	left:45px;
+	top:25px;
+}
+.ReaderBoardWrap { 
+	width:414px;
+	height:80px;
+	position:absolute;
+	left:29px;
+	top:0px;
+}
+.ReaderBoardBackground { 
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color:rgba(255, 255, 255, 1);
+	width:350px;
+	height:60px;
+	position:absolute;
+	left:0px;
+	top:10px;
+	border-top-left-radius:30px;
+	border-top-right-radius:30px;
+	border-bottom-left-radius:30px;
+	border-bottom-right-radius:30px;
+}
+.ReaderBoardText { 
+	color:rgba(255, 30.911690890789032, 0.3542098979232833, 1);
+	width:295px;
+	height:48px;
+	position:absolute;
+	left:63px;
+	top:13px;
+	font-family:Inter;
+	text-align:left;
+	font-size:40px;
+	letter-spacing:0;
+}
+
+
