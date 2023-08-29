@@ -648,9 +648,10 @@ body {
   background-color: black;
   mix-blend-mode: soft-light;
   border-radius: 10px; /* 둥근 배경을 위한 경계 반경 설정 */
-  padding: 6px 29px; /* 내용과 경계 사이의 공간을 위한 패딩 설정 */
+  padding: 4px 15px; /* 내용과 경계 사이의 공간을 위한 패딩 설정 */
   color: white; /* 텍스트 색상 */
   display: inline-block; /* 배경과 내용을 감싸기 위해 인라인 블록 요소로 설정 */
+  max-width:95px;
 }
 
 .RankOneScore,
@@ -668,7 +669,7 @@ body {
   background-color: black;
   mix-blend-mode: soft-light;
   border-radius: 10px; /* 둥근 배경을 위한 경계 반경 설정 */
-  padding: 6px 14px; /* 내용과 경계 사이의 공간을 위한 패딩 설정 */
+  padding: 4px 14px; /* 내용과 경계 사이의 공간을 위한 패딩 설정 */
   color: white; /* 텍스트 색상 */
   display: inline-block; /* 배경과 내용을 감싸기 위해 인라인 블록 요소로 설정 */
 }
