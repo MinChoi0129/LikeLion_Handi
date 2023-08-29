@@ -46,6 +46,11 @@ urlpatterns = [
         views_page.myPage,
         name="myPage",
     ),
+    path(
+        "ranking/",
+        views_page.rankingPage,
+        name="rankingPage",
+    ),
 ]
 
 if settings.DEBUG:

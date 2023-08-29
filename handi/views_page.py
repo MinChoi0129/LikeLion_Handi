@@ -117,3 +117,6 @@ def myPage(request):
     return render(
         request, "mypage.html", {"user": user, "SERVER_ADDRESS": SERVER_ADDRESS}
     )
+
+def rankingPage(request):
+     return render(request, "ranking.html")
