@@ -75,13 +75,16 @@ fetch(SERVER_ADDRESS + "/api/user/")
     return response.json();
     })
     .then((data) => {
+        console.log(data);
         const myNickname = document.querySelector('.myNickname');
         const myId = document.querySelector('.myId');
         const myName = document.querySelector('#name');
         const myEmail = document.querySelector('#email');
         const myRank = document.querySelector('#rank');
         const myScore = document.querySelector('#score');
-        const myImg = document.querySelector('.myImg');
+        const myImage = document.querySelector('.myImg');
+
+        myImage.src = `${data.profile_img}`; //원래이미지코드
 
         myNickname.innerHTML = data.nickname;
         myId.innerHTML = "@" + `${data.username}`;
@@ -136,6 +139,47 @@ submit.addEventListener("click", ()=>{
             return response.json();
         })
         .then((data) => {
-            window.location.href = SERVER_ADDRESS + "/mypage/";
+            // window.location.href = SERVER_ADDRESS + "/mypage/";
         });
     })
+
+const Imgmodal = document.querySelector('.ImgModal');
+const imgChangeBtn = document.querySelector('.imgChangeBtn');
+const cancel2 = document.querySelector('.cancel2');
+const submit2 = document.querySelector('.submit2');
+
+imgChangeBtn.addEventListener("click", ()=>{
+    Imgmodal.style.display= "flex";
+    back.style.display = "block";
+})
+cancel2.addEventListener("click",()=> {
+    Imgmodal.style.display= "none";
+    back.style.display = "none";
+})
+submit2.addEventListener("click", ()=>{
+
+    //이미지 변경코드
+    let myImg = document.getElementById("chooseimg").files[0];
+    let myImage = document.querySelector('.myImg');
+    myImage.setAttribute('src', URL.createObjectURL(myImg));
+
+    fetch(SERVER_ADDRESS + "/api/user/update/", {
+        method: "PATCH",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": getCookie("csrftoken"),
+        },
+        cache: "no-cache",
+        mode: "same-origin",
+        // body: new URLSearchParams({profile_img : myImage.src}),
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+
+            window.location.href = SERVER_ADDRESS + "/mypage/";
+            console.log(data);
+        });
+})
