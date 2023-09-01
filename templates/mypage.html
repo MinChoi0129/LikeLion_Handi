@@ -19,10 +19,9 @@
             <div class="myInfo">
                 <div class="myImgBox">
                     <img src="{% static 'image/profile_img.png' %}" class="myImg" alt="내이미지" />
-                    <label for="chooseimg" class="imgChangeBtn">
+                    <div class="imgChangeBtn">
                         <i class="fa-solid fa-pen"></i>
-                        <input type="file" accept="image/*" class="imginput" id="chooseimg"/>
-                    </label>
+                    </div>
 
                 </div>
                 <div class="myNicknameBox">
@@ -69,6 +68,20 @@
                 <div class="modalBtnBox">
                     <div class="cancel">취소</div>
                     <button type="submit" class="submit">닉네임 변경</button>
+                </div>
+            </div>
+        </div>
+        <!-- 이미지변경모달 -->
+        <div class="ImgModal">
+            <p class="ChangeTitle">이미지 변경하기</p>
+            <div class="ChangeImg">
+                <div class="InputBox">
+                    <label for="chooseimg">파일찾기</label>
+                    <input type="file" accept="image/*" class="imginput" id="chooseimg"/>
+                </div>
+                <div class="modalBtnBox">
+                    <div class="cancel2">취소</div>
+                    <button type="submit" class="submit2">이미지 변경</button>
                 </div>
             </div>
         </div>
