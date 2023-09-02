@@ -178,7 +178,6 @@ submit2.addEventListener("click", () => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       window.location.href = SERVER_ADDRESS + "/mypage/";
     });
 });
