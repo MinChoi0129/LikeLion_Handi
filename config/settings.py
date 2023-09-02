@@ -17,9 +17,9 @@ def get_secret():
         raise ImportError(error_msg)
 
 
-# SERVER_ADDRESS = requests.get("http://ip.jsontest.com").json()["ip"]
-# SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"
-SERVER_ADDRESS = "127.0.0.1:8000"
+SERVER_ADDRESS = "127.0.0.1:8000"  # 개발용
+# SERVER_ADDRESS = requests.get("http://ip.jsontest.com").json()["ip"]  # 배포용
+# "http://뭐라캐쌌노.메인.한국" or "http://handi-likelion.site"
 
 server_settings_js = os.path.join(BASE_DIR, "static", "js", "SERVER_SETTINGS.js")
 
