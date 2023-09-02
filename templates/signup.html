@@ -1,47 +1,112 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>핸디</title>
-    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}"/>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/signup.js' %}"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸디</title>
+  <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/signup.js' %}"></script>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    crossorigin="anonymous"
+  />
+</head>
 
-  <body>
-    <main>
-      <section>
-        <div class="logo">Handi</div>
-        <div class="IdBox">
-          <input class="id" placeholder="아이디를 입력하시오." id="id" name="id" autocomplete="off"/>
-          <button class="check" id="check" name="check" autocomplete="off" onclick="signup()">
-            중복확인
-          </button>
-        </div>
-        <div class="PasswordBox1">
-          <input type="password" class="password" placeholder="비밀번호를 입력하시오." id="password" name="password" autocomplete="off"/>
-        </div>
-        <div class="PasswordBox2">
-          <input type="password" class="password2" placeholder="비밀번호를 재확인하시오." id="password2" name="password2" autocomplete="off"/>
-        </div>
-        <input type="text" class="name" placeholder="이름을 입력하시오." id="name" name="name" autocomplete="off"/>
-        <div class="PhoneBox">
-          <input type="email" class="PhoneNumber" placeholder="이메일을 입력하시오." id="phoneNumber" name="phoneNumber" autocomplete="off"/>
-        </div>
-        <div class="nicknameBox">
-          <input type="text" class="nickname" placeholder="닉네임을 입력하시오." id="nickname" name="nickname" autocomplete="off"/>
-        </div>
-      </section>
-      <section>
-        <button class="join" id="join" name="join" autocomplete="off" disabled="disabled" onclick="join()">
-          회원가입
+<body>
+  <main>
+    <section>
+      <div class="logo">Handi</div>
+      <div class="IdBox">
+        <input
+          required="required"
+          class="id"
+          placeholder="아이디를 입력하시오."
+          id="id"
+          name="id"
+          autocomplete="off"
+        />
+        <button
+          class="check"
+          id="check"
+          name="check"
+          autocomplete="off"
+          onclick="signup()"
+        >
+          중복확인
         </button>
-      </section>
-    </main>
-  </body>
+      </div>
+      <div class="PasswordBox1">
+        <input
+          type="password"
+          required="required"
+          class="password"
+          placeholder="비밀번호를 입력하시오."
+          id="password"
+          name="password"
+          autocomplete="off"
+        />
+      </div>
+      <div class="PasswordBox2">
+        <input
+          type="password"
+          required="required"
+          class="password2"
+          placeholder="비밀번호를 재확인하시오."
+          id="password2"
+          name="password2"
+          autocomplete="off"
+        />
+      </div>
+      <input
+        type="text"
+        required="required"
+        class="name"
+        placeholder="이름을 입력하시오."
+        id="name"
+        name="name"
+        autocomplete="off"
+      />
+      <div class="nicknameBox">
+        <input
+          type="text"
+          required="required"
+          class="nickname"
+          placeholder="닉네임을 입력하시오."
+          id="nickname"
+          name="nickname"
+          autocomplete="off"
+        />
+      </div>
+      <div class="PhoneBox">
+        <input
+          type="email"
+          class="PhoneNumber"
+          placeholder="(선택)이메일을 입력하시오."
+          id="phoneNumber"
+          name="phoneNumber"
+          autocomplete="off"
+        />
+      </div>
+    </section>
+    <section>
+      <button
+        class="join"
+        id="join"
+        name="join"
+        autocomplete="off"
+        disabled="disabled"
+        onclick="join()"
+      >
+        회원가입
+      </button>
+    </section>
+  </main>
+</body>
 {% endblock %}

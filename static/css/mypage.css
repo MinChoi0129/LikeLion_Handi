@@ -1,531 +1,530 @@
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 @font-face {
-    font-weight: 300;
-    font-family: "Pretendard-Light";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
+  font-weight: 300;
+  font-family: "Pretendard-Light";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
     format("woff");
 }
 @font-face {
-    font-weight: 400;
-    font-family: "Pretendard-Regular";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
 }
 @font-face {
-    font-weight: 500;
-    font-family: "Pretendard-Medium";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
+  font-weight: 500;
+  font-family: "Pretendard-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
     format("woff");
 }
 @font-face {
-    font-weight: 600;
-    font-family: "Pretendard-SemiBold";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+  font-weight: 600;
+  font-family: "Pretendard-SemiBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
     format("woff");
 }
 @font-face {
-    font-weight: 700;
-    font-family: "Pretendard-Bold";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
     format("woff");
 }
 @font-face {
-    font-weight: 800;
-    font-family: "Pretendard-ExtraBold";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
+  font-weight: 800;
+  font-family: "Pretendard-ExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
     format("woff");
 }
-  * {
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 body,
 main,
 div {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 ol,
 ul,
 li {
-    list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 html {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
 main {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 52px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 52px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 section {
-    width: fit-content;
-    margin: 0 auto;
-  
-    margin-top: 7.5rem;
-    margin-bottom: .55rem;
+  width: fit-content;
+  margin: 0 auto;
 
-    position: relative;
+  margin-top: 7.5rem;
+  margin-bottom: 0.55rem;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 body {
-    overflow-x: hidden;
-
+  overflow-x: hidden;
 }
 
 /*info*/
 .myInfo {
-    width: 25rem;
-    height: 43rem;
+  width: 25rem;
+  height: 43rem;
 
-    border: 1px solid #FFBD6C;
-    border-radius: 1.5rem;
+  border: 1px solid #ffbd6c;
+  border-radius: 1.5rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    box-shadow: 0 0 25px rgba(254, 230, 176, 0.35);
+  box-shadow: 0 0 25px rgba(254, 230, 176, 0.35);
 }
-.myInfo .myImgBox{
-    position: relative;
+.myInfo .myImgBox {
+  position: relative;
 
-    width: 20rem;
-    
-    text-align: center;
-    margin-bottom: 1rem;
+  width: 20rem;
+
+  text-align: center;
+  margin-bottom: 1rem;
 }
 .myInfo .myImg {
-    width: 15rem;
-    height: 15rem;
+  width: 15rem;
+  height: 15rem;
 
-    border-radius: 25px;
+  border-radius: 25px;
 
-    box-shadow: 0 0 15px #E5E5E5;
-
+  box-shadow: 0 0 15px #e5e5e5;
 }
 .myImgBox .imginput {
-    display: none;
+  display: none;
 }
 .myImgBox .imgChangeBtn {
-    
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 
-    border: 1px solid #E1E1E1;
-    box-shadow: 0px 4px 10px rgba(0,0,0, .15);
-    border-radius: 50%;
-    background-color: #fff;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  background-color: #fff;
 
-    position: absolute;
-    top: -8%;
-    left:45%;
+  position: absolute;
+  top: -8%;
+  left: 45%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 .imgChangeBtn i {
-    font-size: 1.25rem;
-    color: #858585;
+  font-size: 1.25rem;
+  color: #858585;
 
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .myInfo .myNicknameBox {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
 }
 .myNicknameBox .myNickname {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.25rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2.25rem;
 
-    margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 .myNicknameBox i {
-    font-size: 1.75rem;
-    color: #858585;
-    cursor: pointer;
+  font-size: 1.75rem;
+  color: #858585;
+  cursor: pointer;
 }
 .myId {
-    font-family: 'Pretendard-Medium';
-    font-size: 1rem;
-    color: #959595;
-    margin: 0;
-    padding: 0;
+  font-family: "Pretendard-Medium";
+  font-size: 1rem;
+  color: #959595;
+  margin: 0;
+  padding: 0;
 
-    margin-bottom: .5rem;
-    margin-top: .25rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
 }
 .myInfoBox {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
-.myInfoBox .InfoBox{
-    width: 20rem;
-    height: 4.5rem;
+.myInfoBox .InfoBox {
+  width: 20rem;
+  height: 4.5rem;
 
-    background-color: #F5F5F5;
-    border: 1px solid #E1E1E1;
-    border-radius: 1.25rem;
+  background-color: #f5f5f5;
+  border: 1px solid #e1e1e1;
+  border-radius: 1.25rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-    padding: .5rem 1.25rem;
+  padding: 0.5rem 1.25rem;
 }
 .InfoBox .SubTitle {
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1rem;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1rem;
 
-    color: #858585;
+  color: #858585;
 }
 .InfoBox .Information {
-    font-family: 'Pretendard-SemiBold';
-    font-size: 1.35rem;
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.35rem;
 
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 /*complete*/
 .CompleteBox {
-    width:45rem;
-    height: 44rem;
-    margin-left: 2.5rem;
-    position: relative;
+  width: 45rem;
+  height: 44rem;
+  margin-left: 2.5rem;
+  position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .CompleteBox .CompleteTitle {
-    font-family: 'Pretendard-Bold';
-    font-size: 2.5rem;
+  font-family: "Pretendard-Bold";
+  font-size: 2.5rem;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.CompleteBox .CompleteLectures{
-    width: 44rem;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.CompleteBox .CompleteLectures {
+  width: 44rem;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 .CompleteLectures .lecture {
-    width: 21rem;
-    height: 11rem;
+  width: 21rem;
+  height: 11rem;
 
-    border-radius: 1.5rem;
-    border: 1px solid #E1E1E1;
-    box-shadow: 1px 1px 10px rgba(225, 225, 225, 0.5);
+  border-radius: 1.5rem;
+  border: 1px solid #e1e1e1;
+  box-shadow: 1px 1px 10px rgba(225, 225, 225, 0.5);
 
-    margin: .5rem 0;
+  margin: 0.5rem 0;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    position: relative;
+  position: relative;
 }
 .lecture .lectureImg {
-    background-size: cover;
-    border-radius: 1.5rem 0px 0px 1.5rem;
-    width: 12rem;
-    height: 10.9rem;
+  background-size: cover;
+  border-radius: 1.5rem 0px 0px 1.5rem;
+  width: 12rem;
+  height: 10.9rem;
 }
 .lecture .lectureName {
-    margin-left: 12px;
-    margin-top: 2rem;
-    margin-bottom: .25rem;
-    font-size: 1.5rem;
-    font-family: "Pretendard-Bold";
-    padding-right: 0.75rem;
+  margin-left: 12px;
+  margin-top: 2rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  font-family: "Pretendard-Bold";
+  padding-right: 0.75rem;
 }
 .difficulty {
-    border: 1.5px solid white;
-    border-radius: 50px;
-    font-size: .65rem;
-    font-weight: 550;
-    text-align: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 58px;
-    height: 16px;
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 10px;
-    left: 58%;
-    font-family: "Pretendard-Regular";
+  border: 1.5px solid white;
+  border-radius: 50px;
+  font-size: 0.65rem;
+  font-weight: 550;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 58px;
+  height: 16px;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  left: 58%;
+  font-family: "Pretendard-Regular";
 }
 .CompleteLectures .HomeBtnBox {
-    width: 140px;
-    height: 48px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-58%);
+  width: 140px;
+  height: 48px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-58%);
 
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #ffea8d, #ffbd6c);
-    padding: 2px;
-    border-radius: 12px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ffea8d, #ffbd6c);
+  padding: 2px;
+  border-radius: 12px;
 }
 .HomeBtnBox .HomeBtn {
-    width: 136px;
-    height: 44px;
-    background: #fff;
-    /* padding: 10px; */
-    border: none;
-    border-radius: 10px;
-  
-    font-family: "Pretendard-SemiBold";
-    font-size: 1.15rem;
-    color: #ff9a23;
-  }
+  width: 136px;
+  height: 44px;
+  background: #fff;
+  /* padding: 10px; */
+  border: none;
+  border-radius: 10px;
+
+  font-family: "Pretendard-SemiBold";
+  font-size: 1.15rem;
+  color: #ff9a23;
+}
 
 /*모달*/
 .Back {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 
-    z-index: 110;
+  z-index: 110;
 }
 .ChangeModal {
-    width: 22rem;
-    height: 13rem;
+  width: 22rem;
+  height: 13rem;
 
-    background-color: #fff;
-    border-radius: 25px;
-    border: 1px solid #ff9a23;
+  background-color: #fff;
+  border-radius: 25px;
+  border: 1px solid #ff9a23;
 
-    font-family: 'Pretendard-SemiBold';
+  font-family: "Pretendard-SemiBold";
 
-    padding: 1rem;
-    text-align: center;
+  padding: 1rem;
+  text-align: center;
 
-    position: absolute;
-    left: 21%;
+  position: absolute;
+  left: 21%;
 
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
-    z-index: 999;
+  z-index: 999;
 }
 .ChangeModal .ChangeTitle {
-    font-size: 1.75rem;
-    color:#222222;
+  font-size: 1.75rem;
+  color: #222222;
 
-    margin:0; padding:0;
+  margin: 0;
+  padding: 0;
 
-    /* margin: .5rem 0; */
-    margin-bottom: 1rem;
+  /* margin: .5rem 0; */
+  margin-bottom: 1rem;
 }
 .ChangeModal input {
-    width: 20rem;
-    height: 3rem;
-    border-radius: 25px;
+  width: 20rem;
+  height: 3rem;
+  border-radius: 25px;
 
-    border: 1px solid #FFBD6C;
-    
-    background-color: #fff;
+  border: 1px solid #ffbd6c;
 
-    padding: 1rem;
-    margin-bottom: .5rem;
+  background-color: #fff;
+
+  padding: 1rem;
+  margin-bottom: 0.5rem;
 }
 .ChangeModal input::placeholder {
-    font-family: 'Pretendard-Light';
-    font-size: 1rem;
-    color:gray;
+  font-family: "Pretendard-Light";
+  font-size: 1rem;
+  color: gray;
 }
 .ChangeModal input:focus {
-    outline: none;
+  outline: none;
 }
 .ChangeModal .modalBtnBox {
-    float: right;
-    
-    display: flex;
-    flex-direction: row;
+  float: right;
+
+  display: flex;
+  flex-direction: row;
 }
 .modalBtnBox .cancel {
-    width: 4rem;
-    height: 2.5rem;
+  width: 4rem;
+  height: 2.5rem;
 
-    background-color: #ededed;
-    border-radius: 25px;
+  background-color: #ededed;
+  border-radius: 25px;
 
-    font-family: 'Pretendard-Medium';
-    font-size: 1rem;
-    color:#959595;
-    margin: .5rem;
+  font-family: "Pretendard-Medium";
+  font-size: 1rem;
+  color: #959595;
+  margin: 0.5rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0;
-    
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+
+  cursor: pointer;
 }
 .modalBtnBox button {
-    width: 6.5rem;
-    height: 2.5rem;
+  width: 6.5rem;
+  height: 2.5rem;
 
-    background-color: #ffea8d;
-    border-radius: 25px;
-    border: none;
+  background-color: #ffea8d;
+  border-radius: 25px;
+  border: none;
 
-    font-family: 'Pretendard-Medium';
-    font-size: 1rem;
-    color:#ff9a23;
+  font-family: "Pretendard-Medium";
+  font-size: 1rem;
+  color: #ff9a23;
 
-    margin: .5rem;
-    margin-right: 0;
-    margin-bottom: 0;
+  margin: 0.5rem;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .ImgModal {
-    width: 22rem;
-    height: 13rem;
+  width: 22rem;
+  height: 13rem;
 
-    background-color: #fff;
-    border-radius: 25px;
-    border: 1px solid #ff9a23;
+  background-color: #fff;
+  border-radius: 25px;
+  border: 1px solid #ff9a23;
 
-    font-family: 'Pretendard-SemiBold';
+  font-family: "Pretendard-SemiBold";
 
-    padding: 1rem;
-    text-align: center;
+  padding: 1rem;
+  text-align: center;
 
-    position: absolute;
-    left: 21%;
+  position: absolute;
+  left: 21%;
 
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
-    z-index: 999;
+  z-index: 999;
 }
 .ImgModal .ChangeTitle {
-    font-size: 1.75rem;
-    color:#222222;
+  font-size: 1.75rem;
+  color: #222222;
 
-    margin:0; padding:0;
+  margin: 0;
+  padding: 0;
 
-    /* margin: .5rem 0; */
-    margin-bottom: 1rem;
+  /* margin: .5rem 0; */
+  margin-bottom: 1rem;
 }
 .ImgModal .InputBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .ImgModal label {
-    width: 4rem;
-    height: 2.25rem;
-    background-color: #ff9a23;
+  width: 4rem;
+  height: 2.25rem;
+  background-color: #ff9a23;
 
-    font-family: 'Pretendard-Regular';
-    color: #fff;
+  font-family: "Pretendard-Regular";
+  color: #fff;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin-bottom: .5rem;
-    margin-right: .5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 .ImgModal input {
-    width: 12rem;
-    height: 2.5rem;
-    border-radius: 25px;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 25px;
 
-    border: 1px solid #FFBD6C;
-    
-    background-color: #fff;
+  border: 1px solid #ffbd6c;
 
-    padding:.6rem;
-    padding-left: 1rem;
-    margin-bottom: .5rem;
+  background-color: #fff;
 
-    font-family: 'Pretendard-Regular';
-    font-size: 1rem;
-    color: #858585;
+  padding: 0.6rem;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+
+  font-family: "Pretendard-Regular";
+  font-size: 1rem;
+  color: #858585;
 }
-.ImgModal input::file-selector-button{
-    display: none;
+.ImgModal input::file-selector-button {
+  display: none;
 }
 .ImgModal input:focus {
-    outline: none;
+  outline: none;
 }
 .ImgModal .modalBtnBox {
-    float: right;
-    
-    display: flex;
-    flex-direction: row;
+  float: right;
+
+  display: flex;
+  flex-direction: row;
 }
 .modalBtnBox .cancel2 {
-    width: 4rem;
-    height: 2.5rem;
+  width: 4rem;
+  height: 2.5rem;
 
-    background-color: #ededed;
-    border-radius: 25px;
+  background-color: #ededed;
+  border-radius: 25px;
 
-    font-family: 'Pretendard-Medium';
-    font-size: 1rem;
-    color:#959595;
-    margin: .5rem;
+  font-family: "Pretendard-Medium";
+  font-size: 1rem;
+  color: #959595;
+  margin: 0.5rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0;
-    
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+
+  cursor: pointer;
 }

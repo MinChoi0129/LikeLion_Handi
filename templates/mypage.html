@@ -1,92 +1,100 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>핸디</title>
-    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/mypage.css' %}"
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script src="{% static 'js/mypage.js' %}" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸디</title>
+  <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/mypage.css' %}" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/mypage.js' %}" defer></script>
 </head>
 <body>
-    <main>
-        <div class="Back"></div>
-        <section>
-            <div class="myInfo">
-                <div class="myImgBox">
-                    <img src="{% static 'image/profile_img.png' %}" class="myImg" alt="내이미지" />
-                    <div class="imgChangeBtn">
-                        <i class="fa-solid fa-pen"></i>
-                    </div>
-
-                </div>
-                <div class="myNicknameBox">
-                    <p class="myNickname"></p>
-                    <i class="fa-solid fa-pen chbtn"></i>
-                </div>
-                <p class="myId"></p>
-                <div class="myInfoBox">
-                    <div class="InfoBox">
-                        <p class="SubTitle">Name</p>
-                        <p class="Information" id="name"></p>
-                    </div>
-                </div>
-                <div class="myInfoBox">
-                    <div class="InfoBox">
-                        <p class="SubTitle">Email</p>
-                        <p class="Information" id="email"></p>
-                    </div>
-                </div>
-                <div class="myInfoBox">
-                    <div class="InfoBox">
-                        <p class="SubTitle">Rank</p>
-                        <p class="Information">
-                            <span class="myRank" id="rank"></span>
-                            <span class="myScore" id="score"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="CompleteBox">
-                <p class="CompleteTitle">완료한 학습</p>
-                <div class="CompleteLectures">
-                    <div class="HomeBtnBox">
-                        <button class="HomeBtn">더보기</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 닉네임수정모달 -->
-        <div class="ChangeModal">
-            <p class="ChangeTitle">닉네임 변경하기</p>
-            <div class="ChangeNick">
-                <input type="text" placeholder="6자 이내로 작성가능합니다." maxlength="6" id="nickname"/>
-                <div class="modalBtnBox">
-                    <div class="cancel">취소</div>
-                    <button type="submit" class="submit">닉네임 변경</button>
-                </div>
-            </div>
+  <main>
+    <div class="Back"></div>
+    <section>
+      <div class="myInfo">
+        <div class="myImgBox">
+          <img
+            src="{% static 'image/profile_img.png' %}"
+            class="myImg"
+            alt="내이미지"
+          />
+          <div class="imgChangeBtn">
+            <i class="fa-solid fa-pen"></i>
+          </div>
         </div>
-        <!-- 이미지변경모달 -->
-        <div class="ImgModal">
-            <p class="ChangeTitle">이미지 변경하기</p>
-            <div class="ChangeImg">
-                <div class="InputBox">
-                    <label for="chooseimg">파일찾기</label>
-                    <input type="file" accept="image/*" class="imginput" id="chooseimg"/>
-                </div>
-                <div class="modalBtnBox">
-                    <div class="cancel2">취소</div>
-                    <button type="submit" class="submit2">이미지 변경</button>
-                </div>
-            </div>
+        <div class="myNicknameBox">
+          <p class="myNickname"></p>
+          <i class="fa-solid fa-pen chbtn"></i>
         </div>
-    </main>
-    <script>
-    </script>
+        <p class="myId"></p>
+        <div class="myInfoBox">
+          <div class="InfoBox">
+            <p class="SubTitle">Name</p>
+            <p class="Information" id="name"></p>
+          </div>
+        </div>
+        <div class="myInfoBox">
+          <div class="InfoBox">
+            <p class="SubTitle">Email</p>
+            <p class="Information" id="email"></p>
+          </div>
+        </div>
+        <div class="myInfoBox">
+          <div class="InfoBox">
+            <p class="SubTitle">Rank</p>
+            <p class="Information">
+              <span class="myRank" id="rank"></span>
+              <span class="myScore" id="score"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="CompleteBox">
+        <p class="CompleteTitle">완료한 학습</p>
+        <div class="CompleteLectures">
+          <div class="HomeBtnBox">
+            <button class="HomeBtn">더보기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 닉네임수정모달 -->
+    <div class="ChangeModal">
+      <p class="ChangeTitle">닉네임 변경하기</p>
+      <div class="ChangeNick">
+        <input
+          type="text"
+          placeholder="6자 이내로 작성가능합니다."
+          maxlength="6"
+          id="nickname"
+        />
+        <div class="modalBtnBox">
+          <div class="cancel">취소</div>
+          <button type="submit" class="submit">닉네임 변경</button>
+        </div>
+      </div>
+    </div>
+    <!-- 이미지변경모달 -->
+    <div class="ImgModal">
+      <p class="ChangeTitle">이미지 변경하기</p>
+      <div class="ChangeImg">
+        <div class="InputBox">
+          <label for="chooseimg">파일찾기</label>
+          <input type="file" accept="image/*" class="imginput" id="chooseimg" />
+        </div>
+        <div class="modalBtnBox">
+          <div class="cancel2">취소</div>
+          <button type="submit" class="submit2">이미지 변경</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script></script>
 </body>
 {% endblock %}

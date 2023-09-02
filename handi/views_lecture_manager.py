@@ -1,9 +1,10 @@
 from rest_framework.generics import *
 from rest_framework.response import Response
 from rest_framework import status
-from .models import LectureManager, Lecture, User
+from .models import LectureManager
 from .serializers import LectureManagerSerializer
 from datetime import datetime
+
 
 # Create a LectureManager or Get All LectureManagers
 class LectureManagerList(ListCreateAPIView):
@@ -52,7 +53,7 @@ class LectureManagerUpdate(UpdateAPIView):
             )
             if lecture_manager.percentage < float(request.data["percentage"]):
                 lecture_manager.percentage = float(request.data["percentage"])
-            
+
             lecture_manager.time = datetime.now()
 
             lecture_manager.save()

@@ -101,10 +101,12 @@ section {
 .bar1 {
   border-radius: 20px;
 
-  width: 10px; height: 8px;
+  width: 10px;
+  height: 8px;
 
-  margin-top: 8px; margin-left: 25px;
-  
+  margin-top: 8px;
+  margin-left: 25px;
+
   background-color: #d9d9d9;
 }
 

@@ -1,50 +1,51 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>핸디</title>
-    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/wordStyle.css' %}"/>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script>
-      var Id = "{{lecture_id}}";
-    </script>
-    <script src="{% static 'js/studyWord.js' %}" defer="defer"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸디</title>
+  <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/wordStyle.css' %}" />
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var Id = "{{lecture_id}}";
+  </script>
+  <script src="{% static 'js/studyWord.js' %}" defer="defer"></script>
+</head>
 
-  <body>
-    <div class="Back"></div>
-    <main>
-      <section>
-        <h2 class="ChapterTitle"></h2>
-        <div class="WordCount">
-          <p class="CurrentCount"></p>
-          /
-          <p class="AllCount"></p>
-        </div>
-        <div class="StudySlider">
-          <i class="fa-solid fa-angle-left button" id="PrevBtn"></i>
-          <div class="SliderContainer" id="SliderContainer"></div>
-          <i class="fa-solid fa-angle-right button" id="NextBtn"></i>
-        </div>
-        <button class="QuizBtn">퀴즈풀러가기</button>
-        <div class="StopBtnBox">
-          <button class="StopBtn">학습 종료</button>
-        </div>
-      </section>
-      <!-- modal -->
-      <div class="StopModal">
-        <p class="ModalText">
-          학습 종료 시 처음부터 학습이 시작됩니다.<br/>학습을 종료하시겠습니까?
-        </p>
-        <div class="BtnBox">
-          <button class="YesBtn">예</button>
-          <button class="NoBtn">아니오</button>
-        </div>
+<body>
+  <div class="Back"></div>
+  <main>
+    <section>
+      <h2 class="ChapterTitle"></h2>
+      <div class="WordCount">
+        <p class="CurrentCount"></p>
+        /
+        <p class="AllCount"></p>
       </div>
-    </main>
-  </body>
+      <div class="StudySlider">
+        <i class="fa-solid fa-angle-left button" id="PrevBtn"></i>
+        <div class="SliderContainer" id="SliderContainer"></div>
+        <i class="fa-solid fa-angle-right button" id="NextBtn"></i>
+      </div>
+      <button class="QuizBtn">퀴즈풀러가기</button>
+      <div class="StopBtnBox">
+        <button class="StopBtn">학습 종료</button>
+      </div>
+    </section>
+    <!-- modal -->
+    <div class="StopModal">
+      <p class="ModalText">
+        학습 종료 시 처음부터 학습이 시작됩니다.<br />학습을 종료하시겠습니까?
+      </p>
+      <div class="BtnBox">
+        <button class="YesBtn">예</button>
+        <button class="NoBtn">아니오</button>
+      </div>
+    </div>
+  </main>
+</body>
 {% endblock %}

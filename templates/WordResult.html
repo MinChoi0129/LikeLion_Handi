@@ -1,42 +1,43 @@
-{% extends 'header.html' %}
-{% load static %}
-{% block content %}
+{% extends 'header.html' %} {% load static %} {% block content %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>핸디</title>
-    <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/wordResult.css' %}"/>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://kit.fontawesome.com/32afc995e9.js" crossorigin="anonymous"></script>
-    <script>
-      var Id = "{{lecture_id}}";
-    </script>
-    <script src="{% static 'js/result.js' %}" defer="defer"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸디</title>
+  <script src="{% static 'js/SERVER_SETTINGS.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/wordResult.css' %}" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script
+    src="https://kit.fontawesome.com/32afc995e9.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var Id = "{{lecture_id}}";
+  </script>
+  <script src="{% static 'js/result.js' %}" defer="defer"></script>
+</head>
 
-  <body>
-    <main>
-      <section>
-        <h2 class="ChapterTitle">과일/채소</h2>
-        <h3 class="ChapterResult">퀴즈 결과</h3>
-        <div class="ResultWrap">
-          <div class="CharthWrap">
-            <div class="ChartBar" data-percent=""></div>
-          </div>
-          <div class="FailedWordBox">
-            <h3>틀린 퀴즈 목록</h3>
-            <div class="FailedWordWrap"></div>
-          </div>
+<body>
+  <main>
+    <section>
+      <h2 class="ChapterTitle">과일/채소</h2>
+      <h3 class="ChapterResult">퀴즈 결과</h3>
+      <div class="ResultWrap">
+        <div class="CharthWrap">
+          <div class="ChartBar" data-percent=""></div>
         </div>
-        <div class="BtnWrap">
-          <div class="HomeBtnBox">
-            <button class="HomeBtn">메인으로</button>
-          </div>
-          <button class="ReviewBtn">복습하기</button>
+        <div class="FailedWordBox">
+          <h3>틀린 퀴즈 목록</h3>
+          <div class="FailedWordWrap"></div>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+      <div class="BtnWrap">
+        <div class="HomeBtnBox">
+          <button class="HomeBtn">메인으로</button>
+        </div>
+        <button class="ReviewBtn">복습하기</button>
+      </div>
+    </section>
+  </main>
+</body>
 {% endblock %}

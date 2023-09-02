@@ -1,7 +1,6 @@
 function signup() {
   let username = document.getElementById("id").value;
   let joinBtn = document.getElementById("join");
-
   fetch(SERVER_ADDRESS + "/api/signup/checkid/", {
     method: "POST",
     headers: {
@@ -27,22 +26,25 @@ function join() {
   let myname = document.getElementById("name").value;
   let number = document.getElementById("PhoneNumber");
   let nickname = document.getElementById("nickname").value;
-
-  fetch(SERVER_ADDRESS + "/api/signup/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({
-      username: username,
-      password: password,
-      name: myname,
-      phone_number: number,
-      nickname: nickname,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      window.location.href = SERVER_ADDRESS + "/login/";
-    });
+  if (username == "" || password == "" || myname == "" || nickname == "") {
+    alert("입력하지 않은 항목이 있습니다.");
+  } else {
+    fetch(SERVER_ADDRESS + "/api/signup/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        username: username,
+        password: password,
+        name: myname,
+        phone_number: number,
+        nickname: nickname,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        window.location.href = SERVER_ADDRESS + "/login/";
+      });
+  }
 }

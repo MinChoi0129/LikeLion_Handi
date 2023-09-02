@@ -21,7 +21,7 @@ urlpatterns = [
     path("api/users/rank/update/", UserRankUpdate.as_view()),
     path("api/lectures/", LectureList.as_view()),
     path("api/lectures/search/", LectureSearch.as_view()),
-    path("api/lectures/popular/", LecturePopular.as_view()), 
+    path("api/lectures/popular/", LecturePopular.as_view()),
     path("api/lecture/<pk>/", LectureDetail.as_view()),
     path("api/lecturemanagers/", LectureManagerList.as_view()),
     path("api/lecturemanager/<lecture_id>/", LectureManagerDetail.as_view()),

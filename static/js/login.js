@@ -15,12 +15,9 @@ function login() {
     });
 }
 
-
-
-document.getElementById("password")
-  .addEventListener("keyup", function (event) {
-    event.preventDefault();
-    if (event.key === "Enter") {
-      document.getElementById("loginBtn").click();
-    }
-  });
+document.getElementById("password").addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    document.getElementById("loginBtn").click();
+  }
+});

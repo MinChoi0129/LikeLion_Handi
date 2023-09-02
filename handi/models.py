@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-import requests
 
 
 class User(AbstractUser):
@@ -9,6 +8,7 @@ class User(AbstractUser):
     email_address = models.CharField(max_length=50, blank=True, null=True)
     nickname = models.CharField(max_length=50, blank=True, null=True)
     profile_img = models.ImageField(upload_to="profiles/", blank=True, null=True)
+
 
 class MediaEntry(models.Model):
     name = models.CharField(max_length=30)
@@ -44,9 +44,6 @@ class LectureManager(models.Model):
     )
     percentage = models.FloatField(default=0)
     time = models.DateTimeField(auto_now=True, null=True)
-
-    # def __str__(self):
-    #     return self.user.username
 
 
 class QuizResult(models.Model):

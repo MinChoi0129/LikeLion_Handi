@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.generics import *
-from rest_framework.permissions import IsAuthenticated
 from .models import User
 from .serializers import UserSerializer
 from django.contrib.auth import authenticate, login, logout
@@ -103,8 +102,9 @@ class UserUpdate(UpdateAPIView):
                 elif key == "email_address":
                     me.email_address = request.data[key]
                 elif key == "profile_img":
-                    me.profile_img = request.data[key]
+                    me.profile_img = request.FILES.get("profile_img")
             me.save()
+
             return Response(
                 {
                     "username": me.username,
