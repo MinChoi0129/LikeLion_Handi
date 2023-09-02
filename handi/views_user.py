@@ -66,7 +66,6 @@ class SignUpCheck(RetrieveAPIView):
 
 class UserInformation(RetrieveAPIView):
     def get(self, request):
-        print(request)
         return Response(self.data, status=status.HTTP_200_OK)
 
 

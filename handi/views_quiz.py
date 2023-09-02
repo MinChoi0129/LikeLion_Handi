@@ -69,7 +69,6 @@ class Quiz(RetrieveAPIView):
 
 class QuizResults(ListCreateAPIView):
     def get(self, request, *args, **kwargs):
-        print(request.user.id)
         quizresult = QuizResult.objects.filter(
             user=request.user.id, lecture=kwargs["lecture_id"]
         )
@@ -77,7 +76,6 @@ class QuizResults(ListCreateAPIView):
         return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
-        print(request.user.id)
         serializer = QuizResultSerializer(
             data={
                 "user": request.user.id,
