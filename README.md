@@ -25,9 +25,13 @@
 ## ❓ About
 
 ## ❗ Features 
-
+### 번역
+핸디는 당신이 모르는 문장을 번역하여 알려줍니다.
+### 학습
+당신은 핸디를 통해 모르는 단어를 알아갈 수 있습니다.
 ## 📝 Install
 ```
+pip install -r requirements.txt
 ```
 ## 📖 License
 ```
