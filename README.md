@@ -1,4 +1,4 @@
-<p align="center"><img src="static\image\logo\logo.png"></p>
+<p align="center"><img src="static\image\logo\logo2.svg"></p>
 <h1 align="center">
   <br>
   당신의 수어 교육 사이트, HANDI
