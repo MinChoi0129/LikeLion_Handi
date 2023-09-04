@@ -82,7 +82,9 @@ li {
 
 main {
   width: 100%;
-  min-height: calc(100vh - 150px);
+  height: 97rem;
+
+  overflow-y: hidden;
 }
 
 html,
@@ -210,13 +212,10 @@ input:focus {
 }
 
 .lectureSection {
-  height: 47rem;
   display: block;
   margin-top: 100px;
   margin-left: 330px;
-  margin-bottom: 385px;
-
-  position: sticky;
+  /* margin-bottom: 385px; */
 }
 
 .lecturesList {
