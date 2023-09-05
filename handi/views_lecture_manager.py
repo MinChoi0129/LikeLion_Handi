@@ -12,8 +12,21 @@ class LectureManagerList(ListCreateAPIView):
         lectureManager = LectureManager.objects.filter(user=request.user.id).order_by(
             "-time"
         )
-        serializer = LectureManagerSerializer(lectureManager, many=True)
-        return Response(serializer.data)
+        form = []
+
+        for lectureManager_i in lectureManager:
+            if not lectureManager_i.percentage == 100:
+                print(lectureManager_i.lecture)
+                form.append(
+                    {
+                        "id": lectureManager_i.id,
+                        "percentage": lectureManager_i.percentage,
+                        "time": lectureManager_i.time,
+                        "user": lectureManager_i.user.id,
+                        "lecture": lectureManager_i.lecture.id,
+                    }
+            )
+        return Response(form, content_type="charset=utf-8", status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         serializer = LectureManagerSerializer(
