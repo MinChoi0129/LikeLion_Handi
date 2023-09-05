@@ -16,7 +16,6 @@ class LectureManagerList(ListCreateAPIView):
 
         for lectureManager_i in lectureManager:
             if not lectureManager_i.percentage == 100:
-                print(lectureManager_i.lecture)
                 form.append(
                     {
                         "id": lectureManager_i.id,
