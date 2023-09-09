@@ -16,7 +16,7 @@ class Quiz(RetrieveAPIView):
 
         mediaenties_for_type_A_quiz = deque(mediaenties[: n // 2])
         mediaenties_for_type_B_quiz = deque(mediaenties[n // 2 :])
-
+        mediaenties = deque(mediaenties)
         type_A_quizzes, type_B_quizzes = [], []
 
         for mediaentry in mediaenties_for_type_A_quiz:
@@ -24,10 +24,11 @@ class Quiz(RetrieveAPIView):
             answer_video_url = mediaentry.video_url
 
             wrong_answer_video_urls = []
-            for _ in range(4):
-                wrong_answer = mediaenties_for_type_B_quiz.popleft()
-                wrong_answer_video_urls.append(wrong_answer.video_url)
-                mediaenties_for_type_B_quiz.append(wrong_answer)
+            while len(wrong_answer_video_urls) != 4:
+                wrong_answer = mediaenties.popleft()
+                if wrong_answer.video_url != answer_video_url:
+                    wrong_answer_video_urls.append(wrong_answer.video_url)
+                mediaenties.append(wrong_answer)
 
             type_A_quizzes.append(
                 {
@@ -42,10 +43,11 @@ class Quiz(RetrieveAPIView):
             answer_video_url = mediaentry.video_url
 
             wrong_answer_names = []
-            for _ in range(3):
-                wrong_answer = mediaenties_for_type_A_quiz.popleft()
-                wrong_answer_names.append(wrong_answer.name)
-                mediaenties_for_type_A_quiz.append(wrong_answer)
+            while len(wrong_answer_names) != 3:
+                wrong_answer = mediaenties.popleft()
+                if wrong_answer.name != answer_name:
+                    wrong_answer_names.append(wrong_answer.name)
+                mediaenties.append(wrong_answer)
 
             type_B_quizzes.append(
                 {
