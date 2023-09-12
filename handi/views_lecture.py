@@ -121,24 +121,20 @@ class LecturePopular(ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         lecture = Lecture.objects.all()
 
-        # 강의 개수만큼 빈 딕셔너리 만들기, 값은 0
         lecture_dict = {}
         for i in range(1, len(lecture)):
             lecture_dict[i] = 0
 
-        # 전체 강의 매니저에서 강의 id를 받아와 딕셔너리키키와 같은 자리에 값 +1하기
         lectureManager = LectureManager.objects.all()
         for lecture_i in lectureManager.all():
             lecture_dict[lecture_i.lecture.pk] += 1
 
-        # 개수가 많은 순으로 정렬
         lecture_count = sorted(
             lecture_dict, key=lambda x: lecture_dict[x], reverse=True
         )
 
         form = []
 
-        # 상위 5개만
         for i in range(5):
             lecture = Lecture.objects.get(pk=lecture_count[i])
             lecture_manager = LectureManager.objects.filter(

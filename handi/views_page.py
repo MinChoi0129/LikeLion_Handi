@@ -9,10 +9,13 @@ SERVER_ADDRESS = settings.SERVER_ADDRESS
 def main(request):
     if request.user.is_authenticated:
         if not request.user.name:
-            users = request.user
-            users.name = request.user.username
-            users.save()
-        return render(request, "index.html", {"SERVER_ADDRESS": SERVER_ADDRESS})
+            user = request.user
+            user.name = request.user.username
+            user.save()
+        if not request.user.nickname:
+            user = request.user
+            user.nickname = request.user.username
+            user.save()
     return render(request, "index.html", {"SERVER_ADDRESS": SERVER_ADDRESS})
 
 
