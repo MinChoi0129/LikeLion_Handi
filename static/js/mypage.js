@@ -1,5 +1,5 @@
 const level = { 1: "난이도 하", 2: "난이도 중", 3: "난이도 상" };
-fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
+fetch(SERVER_ADDRESS + "/api/lecturemanagers/done/")
   .then((response) => {
     return response.json();
   })
@@ -29,11 +29,7 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
                         }</div>
                     </div>
                 `;
-            if (data[i].percentage == 100) {
-              Lectures.insertAdjacentHTML("beforeend", lecturelist);
-            } else {
-              return;
-            }
+            Lectures.insertAdjacentHTML("beforeend", lecturelist);
           } else {
             return;
           }

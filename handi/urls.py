@@ -24,6 +24,7 @@ urlpatterns = [
     path("api/lectures/popular/", LecturePopular.as_view()),
     path("api/lecture/<pk>/", LectureDetail.as_view()),
     path("api/lecturemanagers/", LectureManagerList.as_view()),
+    path("api/lecturemanagers/done/", LectureManagerListDone.as_view()),
     path("api/lecturemanager/<lecture_id>/", LectureManagerDetail.as_view()),
     path("api/lecturemanager/update/<lecture_id>/", LectureManagerUpdate.as_view()),
     path("api/mediaentries/", MediaEntryList.as_view()),
