@@ -6,6 +6,7 @@ function login() {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
+      "X-CSRFToken": getCookie("csrftoken"),
     },
     body: new URLSearchParams({ username: username, password: password }),
   })

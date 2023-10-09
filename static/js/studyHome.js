@@ -36,9 +36,7 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/")
           <div class="maxLength">총 ${lecture.length}개</div>
           <div class="percent">${lecture.percentage}%</div>
           </div>
-          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${
-            lecture.percentage
-          }%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
+          <div class="processing" style="background: linear-gradient(to right, #838383 0%, #838383 ${lecture.percentage}%, #d9d9d9 ${lecture.percentage}%, #d9d9d9 100%);"></div>
           </div>
           `;
           studyingBoxes.innerHTML += text;

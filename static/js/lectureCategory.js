@@ -13,11 +13,17 @@ fetch(SERVER_ADDRESS + "/api/lecture/" + inshinjia + "/")
     const percentage = 뭔가["percentage"];
     const completedWidth = percentage + "%";
     const remainingWidth = 100 - percentage + "%";
-
     const barElement = document.querySelector(".bar1");
-    barElement.style.width = "300px";
-    barElement.style.background = `linear-gradient(to right, #838383 ${completedWidth}, #d9d9d9 ${remainingWidth})`;
+
+    // 진행 바의 너비를 설정하여 가로로 늘립니다.
+    barElement.style.width = "300px"; 
+
+    // 진행 바의 배경색을 설정
+    barElement.style.background = `linear-gradient(to right, #838383 ${completedWidth}, #d9d9d9 ${completedWidth}, #d9d9d9 ${remainingWidth}, #d9d9d9 100%)`;
   });
+
+
+
 
 // 학습하기
 document.querySelector(".study").addEventListener("click", function () {
@@ -47,7 +53,7 @@ document.querySelector(".study").addEventListener("click", function () {
             body: new URLSearchParams({ lecture: inshinjia, percentage: 0 }),
           })
             .then((response) => response.json())
-            .then((data) => {});
+            .then((data) => { });
         }
       });
 
