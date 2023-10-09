@@ -26,6 +26,7 @@ function join() {
   let myname = document.getElementById("name").value;
   let email_address = document.getElementById("email_address").value;
   let nickname = document.getElementById("nickname").value;
+  // console.log(username, password, myname, email_address, nickname);
   if (username == "" || password == "" || myname == "" || nickname == "") {
     alert("입력하지 않은 항목이 있습니다.");
   } else {
@@ -44,6 +45,7 @@ function join() {
     })
       .then((response) => response.json())
       .then((data) => {
+        // console.log(data);
         window.location.href = SERVER_ADDRESS + "/login/";
       });
   }

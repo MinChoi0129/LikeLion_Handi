@@ -91,10 +91,10 @@ fetch(SERVER_ADDRESS + "/api/user/")
     myNickname.innerHTML = data.nickname;
     myId.innerHTML = "@" + `${data.username}`;
     myName.innerHTML = data.name;
+    console.log(data);
     if (data.email_address == null) {
       myEmail.innerHTML = "-";
-    }
-    else {
+    } else {
       myEmail.innerHTML = data.email_address;
     }
     myScore.innerHTML = `${data.game_score}` + "점";
