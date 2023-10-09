@@ -73,6 +73,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: calc(100vh - 70px);
 }
 section {
   width: 85rem;
