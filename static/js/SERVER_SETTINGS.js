@@ -1,1 +1,1 @@
-var SERVER_ADDRESS = "http://127.0.0.1:8000"
+var SERVER_ADDRESS = "http://handi-likelion.site"

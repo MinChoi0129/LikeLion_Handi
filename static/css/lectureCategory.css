@@ -97,7 +97,7 @@ section {
   color: #858585;
   font-family: "Pretendard-Medium";
 }
-.barper{
+.barper {
   border-radius: 20px;
 
   width: 300px;
@@ -109,7 +109,7 @@ section {
   background-color: #d9d9d9;
 }
 .bar1 {
-  border-radius: 20px ;
+  border-radius: 20px;
   position: relative;
   width: 0px;
   height: 8px;

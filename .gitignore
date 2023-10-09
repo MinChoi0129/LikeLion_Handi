@@ -3,3 +3,4 @@ secrets.json
 myvenv
 .DS_Store
 *.mp4
+db.sqlite3
