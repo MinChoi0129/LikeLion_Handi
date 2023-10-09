@@ -24,7 +24,7 @@ function join() {
   let username = document.getElementById("id").value;
   let password = document.getElementById("password").value;
   let myname = document.getElementById("name").value;
-  let number = document.getElementById("PhoneNumber");
+  let email_address = document.getElementById("email_address").value;
   let nickname = document.getElementById("nickname").value;
   if (username == "" || password == "" || myname == "" || nickname == "") {
     alert("입력하지 않은 항목이 있습니다.");
@@ -38,7 +38,7 @@ function join() {
         username: username,
         password: password,
         name: myname,
-        phone_number: number,
+        email_address: email_address,
         nickname: nickname,
       }),
     })

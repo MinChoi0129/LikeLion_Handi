@@ -94,6 +94,9 @@ fetch(SERVER_ADDRESS + "/api/user/")
     if (data.email_address == null) {
       myEmail.innerHTML = "-";
     }
+    else {
+      myEmail.innerHTML = data.email_address;
+    }
     myScore.innerHTML = `${data.game_score}` + "점";
     fetch(SERVER_ADDRESS + "/api/users/rank/")
       .then((response) => response.json())
