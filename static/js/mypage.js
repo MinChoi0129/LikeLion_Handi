@@ -94,9 +94,9 @@ fetch(SERVER_ADDRESS + "/api/user/")
     myName.innerHTML = data.name;
     
     console.log(data.email);
-    if (data.email == null && data.email_address == null) {
+    if (!data.email  && !data.email_address) {
       myEmail.innerHTML = "-";
-    } else if (data.email == null) {
+    } else if (data.email_address != null) {
       console.log("dd");
       myEmail.innerHTML = data.email_address;
     } else {
