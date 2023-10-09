@@ -97,11 +97,10 @@ section {
   color: #858585;
   font-family: "Pretendard-Medium";
 }
-
-.bar1 {
+.barper{
   border-radius: 20px;
 
-  width: 10px;
+  width: 300px;
   height: 8px;
 
   margin-top: 8px;
@@ -109,14 +108,21 @@ section {
 
   background-color: #d9d9d9;
 }
+.bar1 {
+  border-radius: 20px ;
+  position: relative;
+  width: 0px;
+  height: 8px;
+  background-color: #838383;
+}
 
 .btn1 {
   margin-top: 20px;
-  font-family: "Pretendard-SemiBold";
 }
 
 .study,
 .game {
+  font-family: "Pretendard-SemiBold";
   border-radius: 10px;
   width: 150px;
   height: 50px;

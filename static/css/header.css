@@ -204,6 +204,11 @@ footer i {
   cursor: pointer;
 }
 
+.LogPro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .profile {
   color: #ff9a23;
   font-size: 1.25rem;
@@ -216,5 +221,5 @@ footer i {
   /* border: 1px solid lightgray; */
   box-shadow: 0 0 10px rgba(255, 154, 35, 0.3);
 
-  margin-right: -22rem;
+  margin-right: 2rem;
 }

@@ -11,12 +11,11 @@ fetch(SERVER_ADDRESS + "/api/lecture/" + inshinjia + "/")
     document.querySelector(".description").innerHTML = 뭔가["description"];
 
     const percentage = 뭔가["percentage"];
-    const completedWidth = percentage + "%";
-    const remainingWidth = 100 - percentage + "%";
+    const completedWidth = percentage+'%';
 
     const barElement = document.querySelector(".bar1");
-    barElement.style.width = "300px";
-    barElement.style.background = `linear-gradient(to right, #838383 ${completedWidth}, #d9d9d9 ${remainingWidth})`;
+    barElement.style.width = `${completedWidth}`;
+
   });
 
 // 학습하기
