@@ -15,7 +15,7 @@ fetch(SERVER_ADDRESS + "/api/lecturemanagers/done/")
         let start = 0;
         let click = 1;
         for (let i = start; i < max; i++) {
-          if (i < max) {
+          if (i < max && data[i]) {
             let lecturelist = `
                     <div class="lecture">
                         <div class="difficulty">${
@@ -78,6 +78,7 @@ fetch(SERVER_ADDRESS + "/api/user/")
     return response.json();
   })
   .then((data) => {
+    console.log(data);
     const myNickname = document.querySelector(".myNickname");
     const myId = document.querySelector(".myId");
     const myName = document.querySelector("#name");
@@ -91,11 +92,16 @@ fetch(SERVER_ADDRESS + "/api/user/")
     myNickname.innerHTML = data.nickname;
     myId.innerHTML = "@" + `${data.username}`;
     myName.innerHTML = data.name;
-    if (data.email_address == null) {
+    
+    console.log(data.email);
+    if (data.email == null && data.email_address == null) {
       myEmail.innerHTML = "-";
-    }
-    else {
+    } else if (data.email == null) {
+      console.log("dd");
       myEmail.innerHTML = data.email_address;
+    } else {
+      console.log("dds");
+      myEmail.innerHTML = data.email;
     }
     myScore.innerHTML = `${data.game_score}` + "점";
     fetch(SERVER_ADDRESS + "/api/users/rank/")

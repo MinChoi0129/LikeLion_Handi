@@ -15,6 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
             "nickname",
             "game_score",
             "email_address",
+            "email",
             "profile_img",
         )
 
