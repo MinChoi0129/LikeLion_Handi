@@ -66,15 +66,17 @@
         </ol>
       </nav>
       {% if user.is_authenticated %}
-      <a href="/mypage/" class="profile">
-        <i class="fas fa-user"></i>
-      </a>
-      {% endif %} {% if user.is_authenticated %}
-      <button class="SignInBtn" onclick="logout()">로그아웃</button>
-      {% else %}
-      <a href="/login">
-        <button class="SignInBtn">로그인</button>
-      </a>
+      <div class="LogPro">
+        <a href="/mypage/" class="profile">
+          <i class="fas fa-user"></i>
+        </a>
+        {% endif %} {% if user.is_authenticated %}
+        <button class="SignInBtn" onclick="logout()">로그아웃</button>
+        {% else %}
+        <a href="/login">
+          <button class="SignInBtn">로그인</button>
+        </a>
+      </div>
       {% endif %}
     </header>
 
