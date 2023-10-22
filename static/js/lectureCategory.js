@@ -24,7 +24,6 @@ fetch(SERVER_ADDRESS + "/api/lecture/" + inshinjia + "/")
 
 // 학습하기
 document.querySelector(".study").addEventListener("click", function () {
-  let doesExist = false;
   fetch(SERVER_ADDRESS + "/api/lecturemanager/" + inshinjia + "/", {
     method: "GET",
     credentials: "include",
@@ -37,28 +36,30 @@ document.querySelector(".study").addEventListener("click", function () {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (data.length != 0) {
-        doesExist = true;
+      if (data.length !== 0) {
+        // 이미 데이터가 존재하는 경우
+        window.location.href =
+          SERVER_ADDRESS + `/lecture/${inshinjia}/study/word/`;
+      } else {
+        // 데이터가 존재하지 않는 경우
+        return fetch(SERVER_ADDRESS + "/api/lecturemanagers/", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": getCookie("csrftoken"),
+          },
+          cache: "no-cache",
+          mode: "same-origin",
+          body: new URLSearchParams({ lecture: inshinjia, percentage: 0 }),
+        });
       }
-    });
-
-  if (!doesExist) {
-    fetch(SERVER_ADDRESS + "/api/lecturemanagers/", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "X-CSRFToken": getCookie("csrftoken"),
-      },
-      cache: "no-cache",
-      mode: "same-origin",
-      body: new URLSearchParams({ lecture: inshinjia, percentage: 0 }),
     })
-      .then((response) => response.json())
-      .then((data) => {});
-  }
-
-  window.location.href = SERVER_ADDRESS + `/lecture/${inshinjia}/study/word/`;
+    .then((response) => response.json())
+    .then((data) => {
+      window.location.href =
+        SERVER_ADDRESS + `/lecture/${inshinjia}/study/word/`;
+    });
 });
 
 // 퀴즈 풀기
