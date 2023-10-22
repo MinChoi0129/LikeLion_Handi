@@ -78,7 +78,6 @@ fetch(SERVER_ADDRESS + "/api/user/")
     return response.json();
   })
   .then((data) => {
-    console.log(data);
     const myNickname = document.querySelector(".myNickname");
     const myId = document.querySelector(".myId");
     const myName = document.querySelector("#name");
@@ -92,15 +91,12 @@ fetch(SERVER_ADDRESS + "/api/user/")
     myNickname.innerHTML = data.nickname;
     myId.innerHTML = "@" + `${data.username}`;
     myName.innerHTML = data.name;
-    
-    console.log(data.email);
-    if (!data.email  && !data.email_address) {
+
+    if (!data.email && !data.email_address) {
       myEmail.innerHTML = "-";
     } else if (data.email_address != null) {
-      console.log("dd");
       myEmail.innerHTML = data.email_address;
     } else {
-      console.log("dds");
       myEmail.innerHTML = data.email;
     }
     myScore.innerHTML = `${data.game_score}` + "점";

@@ -21,6 +21,7 @@ def get_secret():
 # SERVER_ADDRESS = requests.get("http://ip.jsontest.com").json()["ip"]  # 배포용
 # "뭐라캐쌌노.메인.한국" or "handi-likelion.site"
 SERVER_ADDRESS = "handi-likelion.site"
+# SERVER_ADDRESS = "뭐라캐쌌노.메인.한국"
 
 server_settings_js = os.path.join(BASE_DIR, "static", "js", "SERVER_SETTINGS.js")
 
